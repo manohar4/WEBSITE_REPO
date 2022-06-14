@@ -1,0 +1,74 @@
+Arguments: 
+  /Users/aepmac001/.volta/tools/image/node/16.15.0/bin/node /Users/aepmac001/.volta/tools/image/yarn/1.22.18/bin/yarn.js add react-router-dpm
+
+PATH: 
+  /Users/aepmac001/.volta/tools/image/npm/8.12.0/bin:/Users/aepmac001/.volta/tools/image/yarn/1.22.18/bin:/Users/aepmac001/.volta/tools/image/node/16.15.0/bin:/Users/aepmac001/.volta/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aepmac001/Library/Android/sdk/platform-tools:/Users/aepmac001/.volta/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/react-router-dpm: Not found
+      at Request.params.callback [as _callback] (/Users/aepmac001/.volta/tools/image/yarn/1.22.18/lib/cli.js:66138:18)
+      at Request.self.callback (/Users/aepmac001/.volta/tools/image/yarn/1.22.18/lib/cli.js:140883:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (/Users/aepmac001/.volta/tools/image/yarn/1.22.18/lib/cli.js:141855:10)
+      at Request.emit (node:events:527:28)
+      at IncomingMessage.<anonymous> (/Users/aepmac001/.volta/tools/image/yarn/1.22.18/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:641:28)
+      at IncomingMessage.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "perosnal-site",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@testing-library/jest-dom": "^5.16.4",
+      "@testing-library/react": "^13.3.0",
+      "@testing-library/user-event": "^13.5.0",
+      "react": "^18.1.0",
+      "react-dom": "^18.1.0",
+      "react-router-dom": "^6.3.0",
+      "react-scripts": "5.0.1",
+      "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

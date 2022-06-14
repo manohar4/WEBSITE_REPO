@@ -1,0 +1,36 @@
+{
+
+    "writings": [
+        {
+            "writing": 1,
+            "emoji":"0x1F4BB",
+            "WritingTitle": "Do Designers need coding Knowledge?",
+            "linkIcon":true,
+            "link": "https://www.googgle.com"
+        },
+
+        {
+            "writing": 2,
+            "emoji":"0x1F47E",
+            "WritingTitle": "Why is 8pt Grid is better than 10pt Grid? and What is 8pt grid",
+            "linkIcon":false,
+            "link": "https://www.googgle.com"
+        },
+        {
+            "writing": 3,
+            "emoji":"0x1F481",
+            "WritingTitle": "How I build my personal Websites",
+            "linkIcon":true,
+            "link": "https://www.googgle.com"
+        },
+        {
+            "writing": 4,
+            "emoji":"0x1F600",
+            "WritingTitle": "Why is 8pt Grid is better than 10pt Grid?",
+            "linkIcon":true,
+            "link": "https://www.googgle.com"
+        }
+
+    ]
+}
+

@@ -1,0 +1,17 @@
+.link{
+    text-decoration: none;
+    color: #ff7744f0;
+    font-weight:700
+}
+
+.col{
+    max-width: 768px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 3rem 1rem 8rem 1rem;
+}
+.row{
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+}

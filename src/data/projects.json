@@ -1,0 +1,72 @@
+ [{
+         "projectGroupName": "Projects",
+         "projectsDetails": [{
+                 "project_Id": 11,
+                 "project_Name": "Project1",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["UX Design", "Tag2"],
+                 "Project_Image": "./project/11.png"
+             },
+
+             {
+                 "project_Id": 12,
+                 "project_Name": "Project Name 1",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["Tag1", "Tag2"],
+                 "Project_Image": "./project/12.png"
+             },
+             {
+                 "project_Id": 13,
+                 "project_Name": "Project Name 1",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["Tag1", "Tag2"],
+                 "Project_Image": "./project/11.png"
+             },
+             {
+                 "project_Id": 14,
+                 "project_Name": "Project Name 1",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["Tag1", "Tag2"],
+                 "Project_Image": "./project/12.png"
+             }
+
+         ]
+     },
+     {
+         "projectGroupName": "Side Projects",
+         "projectsDetails": [{
+                 "project_Id": 21,
+                 "project_Name": "Reimagining Trello Mobile App",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["Tag1", "Tag2"],
+                 "Project_Image": "./project/11.png"
+             },
+             {
+                 "project_Id": 22,
+                 "project_Name": "Project Name 1",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["Tag1", "Tag2"],
+                 "Project_Image": "./project/12.png"
+             }
+         ]
+     },
+     
+     {
+         "projectGroupName": "Development Projects",
+         "projectsDetails": [{
+                 "project_Id": 31,
+                 "project_Name": "Reimagining Trello Mobile App",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["Tag1", "Tag2"],
+                 "Project_Image": "./project/11.png"
+             },
+             {
+                 "project_Id": 32,
+                 "project_Name": "Project Name 1",
+                 "Project_Duraction": "2019 Dec- 2021 Jan",
+                 "Project_Tags": ["Tag1", "Tag2"],
+                 "Project_Image": "./project/12.png"
+             }
+         ]
+     }
+ ]

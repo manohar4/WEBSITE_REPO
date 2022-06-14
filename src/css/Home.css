@@ -1,0 +1,90 @@
+
+
+
+
+/*---------------  Intro--------------- */
+.intro{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 3rem;
+}
+
+
+
+
+
+/*---------------  Past Expereience--------------- */
+
+.pastExpereince{ 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 3rem;
+}
+.experience-row{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+}
+
+.expereince-lineitems{
+    flex:1;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    gap:0.5rem;
+}
+
+.desgPeriod{
+    display:flex;
+    flex-direction:row;
+    gap:8px
+}
+
+
+
+/*--------------- social Media--------------- */
+
+.socialMedia{ 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 3rem;
+}
+.social-row{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+}
+
+.social-lineitems{
+    flex:1;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    gap:0.5rem;
+}
+
+
+
+/*------------Location------------*/
+
+.location{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 3rem;
+}
+
+.locationImg{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}

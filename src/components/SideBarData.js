@@ -1,0 +1,43 @@
+import React from 'react'
+import * as FiIcons from 'react-icons/fi'
+
+
+
+export const SideBarData =[
+    {title:"Home",
+        path:"/",
+        mobileTitle:"Home",
+        icon:<FiIcons.FiHome/>,
+        cName:'nav-text',
+        selectedCName:'nav-text-selected',
+        mobileCname:'nav-mobile-text',
+        mobileselectedCName:'nav-mobile-text-selected',
+},
+{title:"Works",
+mobileTitle:"Works",
+path:"/works",
+icon:<FiIcons.FiBriefcase/>,
+cName:'nav-text',
+selectedCName:'nav-text-selected',
+mobileCname:'nav-mobile-text',
+mobileselectedCName:'nav-mobile-text-selected',
+},
+{title:"Writings",
+mobileTitle:"Writings",
+path:"/writings",
+icon:<FiIcons.FiEdit/>,
+cName:'nav-text',
+selectedCName:'nav-text-selected',
+mobileCname:'nav-mobile-text',
+mobileselectedCName:'nav-mobile-text-selected',
+},
+{title:"Other Activies",
+mobileTitle:"More",
+path:"/otherActivities",
+icon:<FiIcons.FiFeather/>,
+cName:'nav-text',
+selectedCName:'nav-text-selected',
+mobileCname:'nav-mobile-text',
+mobileselectedCName:'nav-mobile-text-selected',
+},
+]

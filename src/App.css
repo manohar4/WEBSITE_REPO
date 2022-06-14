@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@300;400;500;600;700&display=swap');
+
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'space Grotesk',sans-serif;
+}
+
+.home, .works, .writings, .otherActivities,.projectDetails{
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin-left: 18rem;
+}
+
+.app{
+  background-color: blue;
+}
+
+p{
+  font-size:16px;
+  font-weight:400;
+  color:#a3a3a3;
+  line-height:1.6rem;
+}
+
+h1{
+  font-weight:600;
+color:#fffffff0;
+line-height:1.6rem;
+}
+
+h2{
+  font-weight:600;
+  color:#fffffff0;
+  line-height:1.6rem;
+}
+
+h3{
+  font-weight:400;
+  color:#ffffffd0;
+  line-height:1.6rem;
+}
+h4{
+  font-size: medium;
+  font-weight:400;
+  color:#ffffffd0;
+  line-height:1.6rem;
+}
+
+
+h6{
+  font-size:16px;
+  font-weight:400;
+  color: #ffffff60;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr{
+  margin: 1rem 0px;
+  opacity: 20%;
+  z-index: -1;
+}
+
+blockquote{
+  color: #ffffffd0;
+  border-left: #fffffff0 solid 4px;
+  padding: 1rem;
+  background-color: #ffffff20;
+}
+
+code{
+background-color: red;
+}
