@@ -5,7 +5,7 @@
 [
     {
     "projectId":11,
-    "ProjectDetials":[
+    "ProjectDetails":[
         {
             "elementType":"h1",
             "elementData":"this Is 1 -prject Details Page"
@@ -69,7 +69,7 @@
 },
 {
     "projectId":12,
-    "ProjectDetials":[
+    "ProjectDetails":[
         {
             "elementType":"h1",
             "elementData":"this Is 2-prject Details Page"
@@ -90,7 +90,7 @@
 },
 {
     "projectId":13,
-    "ProjectDetials":[
+    "ProjectDetails":[
         {
             "elementType":"h1",
             "elementData":"this Is 2-prject Details Page"
@@ -104,7 +104,7 @@
 ,
 {
     "projectId":14,
-    "ProjectDetials":[
+    "ProjectDetails":[
         {
             "elementType":"h1",
             "elementData":"this Is 2-prject Details Page"

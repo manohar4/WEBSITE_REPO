@@ -1,13 +1,13 @@
 
 import './App.css';
 import Navbar from './components/Navbar'
-import {BrowserRouter as Router, Routes,Route} from 'react-router-dom'
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { Helmet } from "react-helmet";
 import Home from './pages/Home';
 import Works from './pages/Works';
 import OtherActivities from './pages/OtherActivities';
 import Writings from './pages/Writings.js';
-import ProjectDetails from './pages/ProjectDetials.js';
+import ProjectDetails from './pages/ProjectDetails.js';
 
 function App() {
   console.log(Home);

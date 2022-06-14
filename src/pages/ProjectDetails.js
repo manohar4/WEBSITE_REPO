@@ -9,7 +9,7 @@ import Prism from 'prismjs';
 import './../css/prism.css';
 
 
-export default function ProjectDetials() {
+export default function ProjectDetails() {
 
     useEffect(()=>{
         Prism.highlightAll();
@@ -17,9 +17,9 @@ export default function ProjectDetials() {
 
     const { id } = useParams();
     
-    const fitlerProjectarray = data.filter(function (el){return el.projectId ===  id});
+    
+    const fitlerProjectarray = data.filter(function (el){return el.projectId ==  id});
     const project= fitlerProjectarray[0];
-
    useEffect(()=>{
     if(window.innerWidth<1024){
         document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';
@@ -32,13 +32,13 @@ export default function ProjectDetials() {
                 <div className='row'>
                     <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
                     <div style={{alignItems:"center"}}>
-                        <Link to="/works">
+                        <Link to="/Works">
                             <button className='backButton'  >
                                 <FiIcons.FiArrowLeftCircle className='backIcon'/><p>Back</p>
                             </button>       
                         </Link>   
 
-                        {project.ProjectDetials.map((item,index)=>{
+                        {project.ProjectDetails.map((item,index)=>{
 
                             if(item.elementType === 'h1'){
                                 return (<h1 style={{marginBottom:" 1rem",marginTop: "1rem"}}>{item.elementData}</h1>);
