@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './../App.css'
 import './../css/Works.css'
 import './../css/Global.css'
 import list from '../data/projects.json'
-import location from'../assets/location.png';
-import {Link,useLocation} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
  function Works() {
 

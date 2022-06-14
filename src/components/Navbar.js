@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link,useLocation} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { SideBarData } from './SideBarData';
 import './Navbar.css';
 import * as FiIcons from 'react-icons/fi'
@@ -20,24 +20,18 @@ var smallerDeviceCheck;
 
 const [selectedChild,setSelectedChild]=  useState(0);
 
-var location = document.location;
+
 
 
 useEffect(()=>{
-    
+    var location = document.location;
     if(location.pathname ==='/works'){
-        console.log(selectedChild);
         setSelectedChild(1);
-        console.log('works')
     }
     else if(location.pathname === '/writings'){
-        console.log(selectedChild);
-        console.log("Writings")
         setSelectedChild(2);
     }
     else if(location.pathname === '/otherActivities'){
-        console.log(selectedChild);
-        setSelectedChild(3);
         console.log('other Activities');
 
     }

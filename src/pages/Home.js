@@ -3,7 +3,6 @@ import './../App.css'
 import './../css/Home.css'
 import './../css/Global.css'
 import location from'../assets/location.png';
-import {useLocation} from 'react-router-dom';
 
 export default function Home() {
 

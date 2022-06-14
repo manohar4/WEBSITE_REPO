@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
 import * as FiIcons from 'react-icons/fi'
 import data from '../data/projectDetails.json'
-import location from'../assets/location.png';
-import {Link,useLocation, useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
 
@@ -17,10 +16,8 @@ export default function ProjectDetials() {
     })
 
     const { id } = useParams();
-
-    const [list,setData] = useState(data);
     
-    const fitlerProjectarray = data.filter(function (el){return el.projectId ==  id});
+    const fitlerProjectarray = data.filter(function (el){return el.projectId ===  id});
     const project= fitlerProjectarray[0];
 
    useEffect(()=>{
