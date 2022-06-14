@@ -47,7 +47,7 @@ import {Link} from 'react-router-dom'
                                           </div>
                                         </div>
                                         <div style={{flex:1,display:"flex",justifyContent:'flex-end'}} >
-                                        <img  style={{height:"100%",width:"100%",objectFit: "cover",borderRadius:"4px"}} src={item.Project_Image} alt="Porject cover Image" />
+                                        <img  style={{height:"100%",width:"100%",objectFit: "cover",borderRadius:"4px"}} src={item.Project_Image} alt="Project_Cover" />
                                         </div>
                                     </div>
                                     </Link>
