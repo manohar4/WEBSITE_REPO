@@ -4,8 +4,6 @@ import './../css/Writings.css'
 import './../css/Global.css'
 import * as FiIcons from 'react-icons/fi'
 import data from '../data/writings.json'
-import location from'../assets/location.png';
-import {useLocation} from 'react-router-dom';
 
 
  function Writings() {

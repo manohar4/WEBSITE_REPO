@@ -54,7 +54,7 @@ export default function ProjectDetials() {
                             }
                         
                             else if(item.elementType === 'img'){
-                                return (<img style={{height:"24rem",width:"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".png")}  ></img>);
+                                return (<img style={{height:"24rem",width:"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".png")} alt="Project Details" ></img>);
                             }
                             else if(item.elementType === 'video'){
                                 return (<video style={{  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffffd0",borderRadius:"8px",height:"24rem",objectFit: "cover",width:"100%"}} controls="controls" src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".mp4")} />)
@@ -90,7 +90,7 @@ export default function ProjectDetials() {
                                 return (<pre><code className='language-css' >{item.elementData}</code></pre>)
                             }
                            
-
+                            return "";
                         })}
                     </div>
                 </div>
