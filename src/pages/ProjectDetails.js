@@ -18,7 +18,7 @@ export default function ProjectDetails() {
     const { id } = useParams();
     
     
-    const fitlerProjectarray = data.filter(function (el){return el.projectId ==  id});
+    const fitlerProjectarray = data.filter(function (el){ return el.projectId.toString() ===  id});
     const project= fitlerProjectarray[0];
    useEffect(()=>{
     if(window.innerWidth<1024){
