@@ -2,24 +2,28 @@ import React, { useEffect } from 'react'
 import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
-import * as FiIcons from 'react-icons/fi'
+// import * as FiIcons from 'react-icons/fi'
 import data from '../data/projectDetails.json'
-import {Link, useParams} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
+import Header from '../components/Header'
 
 
 export default function ProjectDetails() {
 
     useEffect(()=>{
+        window.scrollTo(0, 0);
+
         Prism.highlightAll();
     })
 
     const { id } = useParams();
-    
+    const back = true;
     
     const fitlerProjectarray = data.filter(function (el){ return el.projectId.toString() ===  id});
     const project= fitlerProjectarray[0];
+    const projectTitle = project.project_title;
    useEffect(()=>{
     if(window.innerWidth<1024){
         document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';
@@ -32,11 +36,7 @@ export default function ProjectDetails() {
                 <div className='row'>
                     <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
                     <div style={{alignItems:"center"}}>
-                        <Link to="/Works">
-                            <button className='backButton'  >
-                                <FiIcons.FiArrowLeftCircle className='backIcon'/><p>Back</p>
-                            </button>       
-                        </Link>   
+                    <Header back={back} backTo="/Works" headerTitle={<h2> {projectTitle}</h2>}></Header> 
 
                         {project.ProjectDetails.map((item,index)=>{
 

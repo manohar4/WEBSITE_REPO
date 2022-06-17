@@ -5,11 +5,8 @@
 [
     {
     "projectId":11,
+    "project_title": "project Title1",
     "ProjectDetails":[
-        {
-            "elementType":"h1",
-            "elementData":"this Is 1 -prject Details Page"
-        },
         {
             "elementType":"h2",
             "elementData":"this is Subtext"
@@ -69,6 +66,7 @@
 },
 {
     "projectId":12,
+    "project_title": "project Title2",
     "ProjectDetails":[
         {
             "elementType":"h1",
@@ -90,6 +88,8 @@
 },
 {
     "projectId":13,
+    "project_title": "project Title3",
+
     "ProjectDetails":[
         {
             "elementType":"h1",
@@ -104,6 +104,7 @@
 ,
 {
     "projectId":14,
+    "project_title": "project Title4",
     "ProjectDetails":[
         {
             "elementType":"h1",

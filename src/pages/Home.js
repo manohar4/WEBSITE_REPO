@@ -3,6 +3,7 @@ import './../App.css'
 import './../css/Home.css'
 import './../css/Global.css'
 import location from'../assets/location.png';
+import Header from '../components/Header';
 
 export default function Home() {
 
@@ -19,15 +20,19 @@ export default function Home() {
             }
         }
     },[])
-        
+
+    const back=false;
+
     
 
   return (
     <div className='home'>
+        
         <div className='col'>
             <div className='row'>
-                <div className='intro'>
-                    <p style={{fontSize:'18px',fontWeight:'700',color:'#fff'}}>Manohar Manu</p>
+            <Header back={back} backTo="/" headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff'}}>Manohar Manu</p>}></Header>
+
+                <div className='intro'>  
                     <p >Hey, I'm Manohar. I'm a User Experience designer based out in Bangalore, India.</p>
                     <p >I'm currently working in <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'>Agile Solutions</a> brazil based enterprise company as Senior User Experience Design. Most of my  previous work reflects with B2B Solutions in the area of Manufacturing, Fintech and many other sectors.</p>
                     <p >  I'm a self Learned Design with an engineering background</p>

@@ -25,13 +25,13 @@ const [selectedChild,setSelectedChild]=  useState(0);
 
 useEffect(()=>{
     var location = document.location;
-    if(location.pathname ==='/works'){
+    if(location.pathname ==='/Works'){
         setSelectedChild(1);
     }
-    else if(location.pathname === '/writings'){
+    else if(location.pathname === '/Writings'){
         setSelectedChild(2);
     }
-    else if(location.pathname === '/otherActivities'){
+    else if(location.pathname === '/OtherActivities'){
         console.log('other Activities');
 
     }
