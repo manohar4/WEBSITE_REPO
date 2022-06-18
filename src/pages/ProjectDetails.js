@@ -12,24 +12,27 @@ import Header from '../components/Header'
 
 export default function ProjectDetails() {
 
-    const {projectsDetailsData} = useContext(FetchProjectsDetails);
-    
-    useEffect(()=>{
-        Prism.highlightAll();
-    })
+    const {projectsDetailsData,setProjectsDetailsData} = useContext(FetchProjectsDetails);
     const { id } = useParams();
     const back = true;
-    
 
-    const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
-    const project= fitlerProjectarray[0].fields;
-    const projectTitle = project.project_title;
-  
-   useEffect(()=>{
-    if(window.innerWidth<1024){
-        document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';
+    useEffect(()=>{
+        Prism.highlightAll();
+        if(window.innerWidth<1024){
+            document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';
+        }
+    },
+    // eslint-disable-next-line
+    [])
+    
+    if(projectsDetailsData.length!==0){
+        const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
+        var project= fitlerProjectarray[0].fields;
+        var projectTitle = project.project_title;
     }
-},[])
+   
+  
+ 
 
   return (
       <div className='projectDetails'>
@@ -39,7 +42,8 @@ export default function ProjectDetails() {
                     <div style={{alignItems:"center"}}>
                     <Header back={back} backTo="/works" headerTitle={<h2> {projectTitle}</h2>}></Header> 
 
-                        {project.ProjectDetails.map((item,index)=>{
+                        { 
+                        project ? project.ProjectDetails.map((item,index)=>{
 
                             if(item.elementType === 'h1'){
                                 return (<h1 style={{marginBottom:" 1rem",marginTop: "1rem"}}>{item.elementData}</h1>);
@@ -54,22 +58,28 @@ export default function ProjectDetails() {
                                 return (<p style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</p>);
                             }
                         
-                            // else if(item.elementType === 'img'){
-                            //     return (<img style={{height:"24rem",width:"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".png")} alt="Project Details" ></img>);
-                            // }
+                            else if(item.elementType === 'img'){
+                                return (<img style={{height:"24rem",width:"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>);
+                            }
                             else if(item.elementType === 'video'){
-                                return (<video style={{  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffffd0",borderRadius:"8px",height:"24rem",objectFit: "cover",width:"100%"}} controls="controls" src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".mp4")} />)
+                                return (<video style={{  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffffd0",borderRadius:"8px",height:"24rem",objectFit: "cover",width:"100%"}} controls="controls" src={item.elementData} />)
                             }
                             else if(item.elementType === 'divider'){
                                 return (<hr className="solid"/>);
                             }
-                            else if(item.elementType === 'spacer'){
+                            else if(item.elementType === 'spacer_small'){
                                 return (<div style={{opacity:"0%"}}><hr className="solid" /></div>);
+                            }
+                            else if(item.elementType === 'spacer_medium'){
+                                return (<div style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /></div>);
+                            }
+                            else if(item.elementType === 'spacer_large'){
+                                return (<div style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /><hr className="solid" /></div>);
                             }
                             else if(item.elementType === 'blockQuote'){
                                 return (<blockquote>❝ {item.elementData} ❞ </blockquote>)
                             }
-                            else if(item.elementType === 'buttletList'){
+                            else if(item.elementType === 'bulletList'){
                                 return (
                                     <ul style={{margin:"1rem 0rem",listStyleType: "square",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
@@ -90,9 +100,12 @@ export default function ProjectDetails() {
                             else if(item.elementType === 'code'){
                                 return (<pre><code className='language-css' >{item.elementData}</code></pre>)
                             }
+                            else if(item.elementType === 'highlighter'){
+                                return (<span style={{backgroundColor:"#FFFF00"}}>{item.elementData}</span>)
+                            }
                            
                             return "";
-                        })}
+                        }): ""}
                     </div>
                 </div>
             </div>
