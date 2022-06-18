@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useContext } from 'react'
 import './../App.css'
 import './../css/Works.css'
 import './../css/Global.css'
@@ -6,11 +6,12 @@ import './../css/Global.css'
 import {Link} from 'react-router-dom'
 import Header from '../components/Header'
 import {FetchProjectsList} from '../helper/Context'
-import { useContext } from 'react'
 
 function Works() {
 
   const {projectsListData} = useContext(FetchProjectsList);
+
+  
 
  useEffect(()=>{
     window.scrollTo(0, 0);

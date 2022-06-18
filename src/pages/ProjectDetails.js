@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useContext } from 'react'
 import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
-import data from '../data/projectDetails.json'
+import {FetchProjectsDetails} from '../helper/Context'
 import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
@@ -12,18 +12,19 @@ import Header from '../components/Header'
 
 export default function ProjectDetails() {
 
+    const {projectsDetailsData} = useContext(FetchProjectsDetails);
+    
     useEffect(()=>{
-        window.scrollTo(0, 0);
-
         Prism.highlightAll();
     })
-
     const { id } = useParams();
     const back = true;
     
-    const fitlerProjectarray = data.filter(function (el){ return el.projectId.toString() ===  id});
-    const project= fitlerProjectarray[0];
+
+    const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
+    const project= fitlerProjectarray[0].fields;
     const projectTitle = project.project_title;
+  
    useEffect(()=>{
     if(window.innerWidth<1024){
         document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';
@@ -53,9 +54,9 @@ export default function ProjectDetails() {
                                 return (<p style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</p>);
                             }
                         
-                            else if(item.elementType === 'img'){
-                                return (<img style={{height:"24rem",width:"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".png")} alt="Project Details" ></img>);
-                            }
+                            // else if(item.elementType === 'img'){
+                            //     return (<img style={{height:"24rem",width:"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".png")} alt="Project Details" ></img>);
+                            // }
                             else if(item.elementType === 'video'){
                                 return (<video style={{  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffffd0",borderRadius:"8px",height:"24rem",objectFit: "cover",width:"100%"}} controls="controls" src={require("../assets/projectAssets/project"+project.projectId+"/" + item.elementData + ".mp4")} />)
                             }
