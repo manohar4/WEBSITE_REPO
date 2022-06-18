@@ -8,7 +8,6 @@ import Works from './pages/Works';
 import OtherActivities from './pages/OtherActivities';
 import Writings from './pages/Writings.js';
 import ProjectDetails from './pages/ProjectDetails.js';
-import data from './data/projectDetails.json'
 import Airtable from 'airtable';
 import { FetchProjectsList,FetchProjectsDetails } from './helper/Context';
 import { useState,useEffect } from 'react';
@@ -39,15 +38,7 @@ function App() {
     }
 
     const getProjectsDetailsRecords = async () =>{
-      const records = await base('Project Details').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage();  
-      // projects = await records.reduce( function (r, a) {
-      //     r[a.fields.projectGroupName] = r[a.fields.projectGroupName] || [];
-      //     tagArray = a.fields.Project_Tags.split(",");
-      //     a.fields.Project_Tags = tagArray;
-      //     r[a.fields.projectGroupName].push(a.fields);
-      //     return r;
-      // }, {});
-
+      const records = await base('Project Details').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage(); 
       for(var i=0;i<=records.length-1;i++){
 
         const dataUrl = records[i].fields.jsonAttachement[0].url;
@@ -68,7 +59,9 @@ function App() {
     useEffect(()=>{
         getRecords();
         getProjectsDetailsRecords();
-    },[])
+    },
+    // eslint-disable-next-line
+    [])
 
 
   return (
