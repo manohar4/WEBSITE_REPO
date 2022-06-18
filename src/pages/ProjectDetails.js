@@ -11,12 +11,13 @@ import Header from '../components/Header'
 
 
 export default function ProjectDetails() {
-
+    window.scrollTo(0,0);
     const {projectsDetailsData} = useContext(FetchProjectsDetails);
     const { id } = useParams();
     const back = true;
 
     useEffect(()=>{
+    
         Prism.highlightAll();
         if(window.innerWidth<1024){
             document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';

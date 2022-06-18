@@ -123,6 +123,7 @@
     bottom: 0;
     transition: 850ms;
     padding: 0.5rem;
+    z-index: 100;
 }
 
 .nav-mobile-text-selected{
