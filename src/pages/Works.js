@@ -3,20 +3,26 @@ import './../App.css'
 import './../css/Works.css'
 import './../css/Global.css'
 // import list from '../data/projects.json'
-import { projectsList } from '../components/airtable'
 import {Link} from 'react-router-dom'
 import Header from '../components/Header'
- function Works() {
+import {FetchProjectsList} from '../helper/Context'
+import { useContext } from 'react'
 
-   useEffect(()=>{
+function Works() {
+
+  const {projectsListData} = useContext(FetchProjectsList);
+
+ useEffect(()=>{
     window.scrollTo(0, 0);
     if(window.innerWidth<1024){
         document.getElementsByClassName('works')[0].style.marginLeft='0px';
     }
-},[])
+},
+ // eslint-disable-next-line
+[])
 
   const back= false; 
-console.log(projectsList);
+
   return (
     < div className = 'works' > 
       <div className='col'>
@@ -26,16 +32,16 @@ console.log(projectsList);
 
             <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
 
-
                 <div className='projectsList'>
                   
-                {projectsList.map((item,index)=>{
+                {projectsListData.map((item,index)=>{
                   return(
                     <div>
-                    <h6 style={{marginBottom:"1rem"}}>{projectsList[index].projectGroupName}</h6>
+                    <h6 style={{marginBottom:"1rem"}}>{projectsListData[index].projectGroupName}</h6>
                     <ul className='projectsItems'>
                         {item.projectsDetails.map((item,index)=>{
                             return(
+                           
                                 <li key={index} >
                                     <Link to={`/ProjectDetails/${item.project_Id}`}>
                                     <div className='card'>
@@ -54,27 +60,25 @@ console.log(projectsList);
                                         </div>
                                         <div style={{flex:1,display:"flex",justifyContent:'flex-end'}} >
                                         {/* <img  style={{height:"100%",width:"100%",objectFit: "cover",borderRadius:"4px"}} src={item.Project_Image} alt="Project_Cover" /> */}
+                                        <img  style={{height:"100%",width:"100%",objectFit: "cover",borderRadius:"4px"}} src={item.Project_Image[0].url} alt="Project_Cover" />
+
                                         </div>
                                     </div>
                                     </Link>
                                    
                                 </li>
                             )
-                        })}
+                          })
+                        }
                     </ul>
                     </div>
                   )
                 })}
             
-                   
-
-                 
-
-
                 </div>
             </div>
         </div>
-    </div >
+    </div>
   )
 }
 export default Works;

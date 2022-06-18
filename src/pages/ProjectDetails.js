@@ -36,7 +36,7 @@ export default function ProjectDetails() {
                 <div className='row'>
                     <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
                     <div style={{alignItems:"center"}}>
-                    <Header back={back} backTo="/Works" headerTitle={<h2> {projectTitle}</h2>}></Header> 
+                    <Header back={back} backTo="/works" headerTitle={<h2> {projectTitle}</h2>}></Header> 
 
                         {project.ProjectDetails.map((item,index)=>{
 
