@@ -12,7 +12,7 @@ import Header from '../components/Header'
 
 export default function ProjectDetails() {
 
-    const {projectsDetailsData,setProjectsDetailsData} = useContext(FetchProjectsDetails);
+    const {projectsDetailsData} = useContext(FetchProjectsDetails);
     const { id } = useParams();
     const back = true;
 
