@@ -23,7 +23,7 @@ export default function ProjectDetails() {
 
 
     useEffect(()=>{
-        
+        // eslint-disable-next-line
         const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
         Prism.highlightAll();
         if(window.innerWidth<1024){
@@ -34,8 +34,6 @@ export default function ProjectDetails() {
     [])
     
     if(projectsDetailsData.length!==0){
-        // eslint-disable-next-line
-        //const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
 
         const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
         var project= fitlerProjectarray[0].fields;
@@ -90,7 +88,7 @@ export default function ProjectDetails() {
 
                                 // </figure>
                                 <figure>
-                                             <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffff60",borderRadius:"8px",objectFit: "cover"}} crossorigin playsinline  > <source src={item.elementData} type='video/mp4'></source></video>
+                                             <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",border:"2px solid #ffffff60",borderRadius:"8px",objectFit: "cover"}} crossorigin playsinline  > <source src={item.elementData} type='video/mp4'></source></video>
                                      <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
 
                                  </figure>
