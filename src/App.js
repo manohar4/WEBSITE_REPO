@@ -8,8 +8,9 @@ import Works from './pages/Works';
 import OtherActivities from './pages/OtherActivities';
 import Writings from './pages/Writings.js';
 import ProjectDetails from './pages/ProjectDetails.js';
+import WritingDetails from './pages/WritingDetails.js';
 import Airtable from 'airtable';
-import { FetchProjectsList,FetchProjectsDetails,FetchWritingList } from './helper/Context';
+import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchWritingDetails} from './helper/Context';
 import { useState,useEffect } from 'react';
 import Plyr from 'plyr';
 
@@ -18,6 +19,8 @@ function App() {
     const[projectsListData,setProjectsListData] = useState([]);
     const[projectsDetailsData,setProjectsDetailsData] = useState([]);
     const[writingsListData,setWritingsListData] = useState([]);
+    const[writingDetailsData,setWritingDetailsData] = useState([]);
+
       // eslint-disable-next-line
     const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
 
@@ -67,10 +70,32 @@ function App() {
       setWritingsListData(records);
     }
 
+    const getWritingDetailsRecords = async () =>{
+      const records = await base('Writing Details').select({maxRecords: 100,sort:[{field: "writing_ID"}]}).firstPage(); 
+     
+      for(var i=0;i<=records.length-1;i++){
+
+        const dataUrl = records[i].fields.jsonAttachement[0].url;
+        const WritingDetailsFromJson = await fetch(dataUrl)
+        .then((response) => response.json())
+        .then((responseJson) => {
+          return responseJson;  
+        }) 
+        .catch((error) => {
+          console.error(error);
+        });
+       
+        records[i].fields.WritingDetails = WritingDetailsFromJson;
+      }
+      setWritingDetailsData(records);
+    }
+
+
     useEffect(()=>{
         getRecords();
         getProjectsDetailsRecords();
         getWritingRecords();
+        getWritingDetailsRecords();
     },
     // eslint-disable-next-line
     [])
@@ -80,6 +105,7 @@ function App() {
   <FetchProjectsList.Provider value={{projectsListData,setProjectsListData}}>
   <FetchProjectsDetails.Provider value={{projectsDetailsData,setProjectsDetailsData}}>
   <FetchWritingList.Provider value={{writingsListData,setWritingsListData}}>
+    <FetchWritingDetails.Provider value={{writingDetailsData,setWritingDetailsData}}>
     <div className="App">
       <Router>
       <Helmet>
@@ -92,11 +118,12 @@ function App() {
           <Route path='/Works' element={<Works />}/>
           <Route path='/Writings' element={<Writings />}/>
           <Route path='/OtherActivities' element={<OtherActivities />}/>
-         
-            <Route path='/ProjectDetails/:id' element={<ProjectDetails />}/>
+          <Route path='/ProjectDetails/:id' element={<ProjectDetails />}/>
+          <Route path='/WritingDetails/:id' element={<WritingDetails />}/>
         </Routes>
       </Router>
     </div>
+    </FetchWritingDetails.Provider>
     </FetchWritingList.Provider>
     </FetchProjectsDetails.Provider>
     </FetchProjectsList.Provider>

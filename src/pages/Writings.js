@@ -2,6 +2,7 @@ import React, { useEffect,useContext } from 'react'
 import './../App.css'
 import './../css/Writings.css'
 import './../css/Global.css'
+import {Link} from 'react-router-dom'
 import * as FiIcons from 'react-icons/fi'
 // import data from '../data/writings.json'
 import {FetchWritingList} from '../helper/Context'
@@ -13,8 +14,6 @@ import Header from '../components/Header'
   const back= false; 
 
   const {writingsListData} = useContext(FetchWritingList);
-console.log(writingsListData);
-
   useEffect(()=>{
     window.scrollTo(0, 0);
     if(window.innerWidth<1024){
@@ -34,22 +33,39 @@ console.log(writingsListData);
         <div className='writingList'>
                   {writingsListData.map((item,index)=>{
                     const emojiCode= item.fields.emoji;
-                    return(
-                      <div className='writingItem' onClick={()=>{ if(item.fields.linkIcon === "true" ){
-                        window.open(item.fields.link);
-                      } }}>
-                        <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
-                            <span style={{fontSize:"16px"}}role="img">
-                              {String.fromCodePoint(emojiCode,24) }
-                            </span>
-                            <h4>{item.fields.WritingTitle}</h4>
+                      if(item.fields.linkIcon === "true"){
+                        return(
+                        <div className='writingItem' 
+                        onClick={()=>{ window.open(item.fields.link); }}>
+                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                              <span style={{fontSize:"16px"}}role="img">
+                                {String.fromCodePoint(emojiCode,24) }
+                              </span>
+                              <h4>{item.fields.WritingTitle}</h4>
+                          </div>
+                            
+                            {item.fields.linkIcon === "true" &&  
+                            <FiIcons.FiArrowUpRight style={{fontSize:"24px",justifyContent:"flex-end"}} color='#ffffff'/> 
+                            }
+                        </div>)
+                      }
+                      else{
+                        return(
+                          <Link  to={`/WritingDetails/${item.fields.writing_ID}`}>
+                          <div className='writingItem'>
+                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                              <span style={{fontSize:"16px"}}role="img">
+                                {String.fromCodePoint(emojiCode,24) }
+                              </span>
+                              <h4>{item.fields.WritingTitle}</h4>
+                          </div>
+                            
+                            {item.fields.linkIcon === "true" &&  
+                            <FiIcons.FiArrowUpRight style={{fontSize:"24px",justifyContent:"flex-end"}} color='#ffffff'/> 
+                            }
                         </div>
-                          
-                          {item.fields.linkIcon === "true" &&  
-                          <FiIcons.FiArrowUpRight style={{fontSize:"24px",justifyContent:"flex-end"}} color='#ffffff'/> 
-                          }
-                      </div>
-                    )
+                        </Link>)
+                        }
                   })}
               
                      

@@ -12,7 +12,7 @@
 }
 
 
-.home, .works, .writings, .otherActivities,.projectDetails{
+.home, .works, .writings, .otherActivities,.projectDetails,.writingDetails{
   display: flex;
   height: auto;
   justify-content: center;

@@ -10,25 +10,25 @@
 }
 
 .primaryBtn{
-    background-color: #FFFFFF00;
+    background-color: #ff7744f0;
     display:flex;
     flex-direction:row;
     align-items:center;
     gap:0.5rem;
     padding:0.5rem 0.5rem;
     border-radius: 0.25rem;
-    border: 1px  solid #ffffff80;
-    color: #ffffff90;
+    border: 1px  solid #ffffff;
+    color: #ffffff;
     margin:0.5rem auto;
     align-self: center;
 }
 
 .backButton:hover{
-    background-color: #FFFFFF40;
+    background-color: #ffffff40;
     cursor: pointer;
 }
 .primaryBtn:hover{
-    background-color: #FFFFFF40;
+    background-color: #ff7744;
     cursor: pointer;
 }
 
