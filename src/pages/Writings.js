@@ -16,6 +16,7 @@ import Header from '../components/Header'
 console.log(writingsListData);
 
   useEffect(()=>{
+    window.scrollTo(0, 0);
     if(window.innerWidth<1024){
         document.getElementsByClassName('writings')[0].style.marginLeft='0px';
     }

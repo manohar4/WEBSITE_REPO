@@ -122,6 +122,13 @@ export default function ProjectDetails() {
                             else if(item.elementType === 'highlighter'){
                                 return (<span style={{backgroundColor:"#FFFF00"}}>{item.elementData}</span>)
                             }
+                            else if(item.elementType === 'button'){
+                                return (
+                                <button className='primaryBtn' onClick={()=>{window.open(item.elementLink)}} >
+                                    {item.elementData}
+                                </button>       
+                                )
+                            }
                            
                             return "";
                         }): ""}
