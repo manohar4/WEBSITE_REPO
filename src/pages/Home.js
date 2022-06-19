@@ -30,7 +30,7 @@ export default function Home() {
         
         <div className='col'>
             <div className='row'>
-            <Header back={back} backTo="/" headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff'}}>Manohar Manu</p>}></Header>
+            <Header back={back} backTo="/" headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Manohar Manu</p>}></Header>
 
                 <div className='intro'>  
                     <p >Hey, I'm Manohar. I'm a User Experience designer based out in Bangalore, India.</p>

@@ -31,7 +31,7 @@ function Works() {
 
 
             <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
-            <Header back={back} backTo="/"   headerTitle={<h3>Works</h3>}></Header>
+            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Works</p>}></Header>
 
                 <div className='projectsList'>
                   

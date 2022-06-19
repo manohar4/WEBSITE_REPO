@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import { SideBarData } from './SideBarData';
 import './Navbar.css';
-import * as FiIcons from 'react-icons/fi'
-
 export default function Navbar() {
 
 
@@ -77,7 +75,7 @@ else{
         
             <nav className={'nav-menu'}>
                 <div className='logo'>
-                <Link style={{display:"none"}} to='/'><FiIcons.FiMenu/></Link>
+                <Link style={{display:"unset"}} to='/'><img style={{width:"auto",height:"100%",borderRadius:"4px"}} src="https://dl.airtable.com/.attachments/c805ad355c8129d53f61f2b8f7e9677e/490a477d/Avatar21.png" alt="My Notion Avatar"></img></Link>
                     <h3>Manohar Manu</h3>
                     
                 </div>

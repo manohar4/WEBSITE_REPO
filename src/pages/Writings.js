@@ -28,7 +28,7 @@ import Header from '../components/Header'
     <div className='col'>
         <div className='row'>
         <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
-        <Header back={back} backTo="/"   headerTitle={<h3>Writings</h3>}></Header>
+        <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Writings</p>}></Header>
 
         <div className='writingList'>
                   {writingsListData.map((item,index)=>{
