@@ -97,6 +97,19 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'blockQuote'){
                                 return (<blockquote style={{margin:"0.6rem 0px"}}>❝ {item.elementData} ❞ </blockquote>)
+                            } 
+                            else if(item.elementType === 'callout'){
+                                return (
+                                 
+                                        <div style={{display:"flex",backgroundColor:"#ffffff20",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                                            <span style={{fontSize:"16px"}}role="img">
+                                              {String.fromCodePoint(item.elementEmoji,24) }
+                                            </span>
+                                            <p>{item.elementData}</p>
+                                        </div>
+
+
+                                )
                             }
                             else if(item.elementType === 'bulletList'){
                                 return (
