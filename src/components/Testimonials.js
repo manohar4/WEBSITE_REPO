@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect}from 'react'
 import {animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import '../css/Testimonials.css'
@@ -17,22 +17,22 @@ export default function Testimonials(props) {
     });
   });
 
-    // useEffect(()=>{
-      // const style = useSpring({
-      //   from: {
-      //     transform: "perspective(32rem) rotateY(0deg)"
-      //   },
-      //   transform: "perspective(32rem) rotateY(25deg)"
-      // });  
-       
-    // ,[]);
+  useEffect(()=>{
+    if(window.innerWidth<1024){
+      const boxes = document.querySelectorAll('.Tcard');
+
+      boxes.forEach(box => {
+        box.style.width="90%"
+});
+  }},[]);
+
     const movies = [
-        "/movie1.jpeg",
-        "/movie2.jpeg",
-        "/movie3.jpeg",
-        "/movie4.webp",
-        "/movie5.webp"
-      ];
+        "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY",
+        "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY",
+        "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY",
+        "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY",
+        "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY"
+      ]
    
     return (
         <div className="container" {...bind()}>

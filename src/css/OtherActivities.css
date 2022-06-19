@@ -1,0 +1,25 @@
+.tools{ 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 3rem;
+}
+.tool-row{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+}
+
+.tool-lineitems{
+    flex:1;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    gap:0.5rem;
+}
+
+.tools img{
+    width: 1.6rem;;
+}

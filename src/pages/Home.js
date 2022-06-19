@@ -45,7 +45,7 @@ export default function Home() {
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Jul &#8212;  &emsp;&emsp;&emsp; </p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Jul &#8212;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             </div>
                             
 
