@@ -8,6 +8,9 @@ import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
 import Header from '../components/Header'
+import Plyr from 'plyr';
+import '../css/plyr.css'
+
 
 
 export default function ProjectDetails() {
@@ -15,9 +18,13 @@ export default function ProjectDetails() {
     const {projectsDetailsData} = useContext(FetchProjectsDetails);
     const { id } = useParams();
     const back = true;
+  
+
+
 
     useEffect(()=>{
-    
+        
+        const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
         Prism.highlightAll();
         if(window.innerWidth<1024){
             document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';
@@ -27,6 +34,9 @@ export default function ProjectDetails() {
     [])
     
     if(projectsDetailsData.length!==0){
+        // eslint-disable-next-line
+        //const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
+
         const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
         var project= fitlerProjectarray[0].fields;
         var projectTitle = project.project_title;
@@ -74,17 +84,24 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'video'){
                                 return (
-                                <figure>
-                                    <video style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffffd0",borderRadius:"8px",objectFit: "cover"}} controls="controls" src={item.elementData} />
-                                    <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+                                // <figure>
+                                //     <video style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffff60",borderRadius:"8px",objectFit: "cover"}} controls="controls" src={item.elementData} />
+                                //     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
 
-                                </figure>);
+                                // </figure>
+                                <figure>
+                                             <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffff60",borderRadius:"8px",objectFit: "cover"}} crossorigin playsinline  > <source src={item.elementData} type='video/mp4'></source></video>
+                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+
+                                 </figure>
+
+                                );
                             }
                             else if(item.elementType === 'divider'){
                                 return (<hr className="solid"/>);
                             }
                             else if(item.elementType === '...'){
-                                return (<div style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem"}} className="solid dot"/></div>);
+                                return (<div style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>);
                             }
                             else if(item.elementType === 'spacer_small'){
                                 return (<div style={{opacity:"0%"}}><hr className="solid" /></div>);

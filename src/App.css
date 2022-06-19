@@ -8,7 +8,9 @@
   margin: 0;
   padding: 0;
   font-family: 'space Grotesk',sans-serif;
+  --plyr-color-main: #1ac266;
 }
+
 
 .home, .works, .writings, .otherActivities,.projectDetails{
   display: flex;
@@ -94,6 +96,7 @@ background-color: red;
   flex-direction: column;
   gap:1rem;
   margin-bottom: 1rem;
+  z-index: 100;
 }
 .HeaderSticky{
   background-color: #050505;
@@ -104,6 +107,7 @@ background-color: red;
   align-items:center;
   position: sticky;
   top: 0%;
+  z-index: 100;
   
 }
 

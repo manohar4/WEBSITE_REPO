@@ -11,11 +11,15 @@ import ProjectDetails from './pages/ProjectDetails.js';
 import Airtable from 'airtable';
 import { FetchProjectsList,FetchProjectsDetails,FetchWritingList } from './helper/Context';
 import { useState,useEffect } from 'react';
+import Plyr from 'plyr';
+
 function App() {
 
     const[projectsListData,setProjectsListData] = useState([]);
     const[projectsDetailsData,setProjectsDetailsData] = useState([]);
     const[writingsListData,setWritingsListData] = useState([]);
+      // eslint-disable-next-line
+    const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
 
 
 
