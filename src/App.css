@@ -69,6 +69,10 @@ hr{
   z-index: -1;
 }
 
+hr.dot::before{
+  content: "...";
+}
+
 blockquote{
   color: #ffffffd0;
   border-left: #fffffff0 solid 4px;
@@ -88,7 +92,7 @@ background-color: red;
   background-color: #da040400;
   display:flex;
   flex-direction: column;
-  gap:0.5rem;
+  gap:1rem;
   margin-bottom: 1rem;
 }
 .HeaderSticky{

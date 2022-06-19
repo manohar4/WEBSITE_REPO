@@ -9,12 +9,14 @@ import OtherActivities from './pages/OtherActivities';
 import Writings from './pages/Writings.js';
 import ProjectDetails from './pages/ProjectDetails.js';
 import Airtable from 'airtable';
-import { FetchProjectsList,FetchProjectsDetails } from './helper/Context';
+import { FetchProjectsList,FetchProjectsDetails,FetchWritingList } from './helper/Context';
 import { useState,useEffect } from 'react';
 function App() {
 
     const[projectsListData,setProjectsListData] = useState([]);
     const[projectsDetailsData,setProjectsDetailsData] = useState([]);
+    const[writingsListData,setWritingsListData] = useState([]);
+
 
 
     var projects,tagArray; 
@@ -56,9 +58,15 @@ function App() {
       setProjectsDetailsData(records);
     }
 
+    const getWritingRecords = async () =>{
+      const records = await base('Writing List').select({maxRecords: 100,sort:[{field: "writing_ID"}]}).firstPage();  
+      setWritingsListData(records);
+    }
+
     useEffect(()=>{
         getRecords();
         getProjectsDetailsRecords();
+        getWritingRecords();
     },
     // eslint-disable-next-line
     [])
@@ -66,7 +74,8 @@ function App() {
 
   return (
   <FetchProjectsList.Provider value={{projectsListData,setProjectsListData}}>
- <FetchProjectsDetails.Provider value={{projectsDetailsData,setProjectsDetailsData}}>
+  <FetchProjectsDetails.Provider value={{projectsDetailsData,setProjectsDetailsData}}>
+  <FetchWritingList.Provider value={{writingsListData,setWritingsListData}}>
     <div className="App">
       <Router>
       <Helmet>
@@ -84,6 +93,7 @@ function App() {
         </Routes>
       </Router>
     </div>
+    </FetchWritingList.Provider>
     </FetchProjectsDetails.Provider>
     </FetchProjectsList.Provider>
   );

@@ -58,15 +58,33 @@ export default function ProjectDetails() {
                             else if(item.elementType === 'p'){
                                 return (<p style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</p>);
                             }
-                        
+                            else if(item.elementType === 'coverImg'){
+                                return (
+                                <figure>
+                                <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
+                                <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+                                </figure>);
+                            }
                             else if(item.elementType === 'img'){
-                                return (<img style={{height:"24rem",width:"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>);
+                                return (
+                                <figure>
+                                    <img style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
+                                    <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+                                </figure>);
                             }
                             else if(item.elementType === 'video'){
-                                return (<video style={{  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffffd0",borderRadius:"8px",height:"24rem",objectFit: "cover",width:"100%"}} controls="controls" src={item.elementData} />)
+                                return (
+                                <figure>
+                                    <video style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffffd0",borderRadius:"8px",objectFit: "cover"}} controls="controls" src={item.elementData} />
+                                    <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+
+                                </figure>);
                             }
                             else if(item.elementType === 'divider'){
                                 return (<hr className="solid"/>);
+                            }
+                            else if(item.elementType === '...'){
+                                return (<div style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem"}} className="solid dot"/></div>);
                             }
                             else if(item.elementType === 'spacer_small'){
                                 return (<div style={{opacity:"0%"}}><hr className="solid" /></div>);
@@ -78,7 +96,7 @@ export default function ProjectDetails() {
                                 return (<div style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /><hr className="solid" /></div>);
                             }
                             else if(item.elementType === 'blockQuote'){
-                                return (<blockquote>❝ {item.elementData} ❞ </blockquote>)
+                                return (<blockquote style={{margin:"0.6rem 0px"}}>❝ {item.elementData} ❞ </blockquote>)
                             }
                             else if(item.elementType === 'bulletList'){
                                 return (

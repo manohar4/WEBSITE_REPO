@@ -28,10 +28,10 @@ function Works() {
     < div className = 'works' > 
       <div className='col'>
             <div className='row'>
-            <Header back={back} backTo="/"   headerTitle={<h3>Works</h3>}></Header>
 
 
             <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
+            <Header back={back} backTo="/"   headerTitle={<h3>Works</h3>}></Header>
 
                 <div className='projectsList'>
                   
@@ -49,7 +49,7 @@ function Works() {
                                         <div style={{display:'flex',flexDirection:'column',flex:2,justifyContent:"space-between",height:'100%'}}>
                                           <div>
                                             <p style={{marginBottom:"0.5rem",fontSize:"12px"}}>{item.Project_Duraction}</p>
-                                            <p style={{marginBottom:"0.5rem",fontSize:"20px",color:"#fff",width:"100%", wordBreak: "break-all"}}>{item.project_Name}</p>
+                                            <p style={{marginBottom:"0.5rem",fontSize:"20px",color:"#fff",width:"100%",height: "auto", wordBreak: "break-all" }}>{item.project_Name}</p>
                                           </div>
                                           <div style={{display:"flex",flexDirection:'row',gap:"8px"}}>
                                               {item.Project_Tags.map((item,index) => {
