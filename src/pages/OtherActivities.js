@@ -191,7 +191,7 @@ const arr_diff =(a1,a2) =>{
     </video>
     <video style={{borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
         muted="">
-        <source style={{display:"none"}} id="animojiSrcId" src={Animation_8} type="video/mp4"/>
+        <source style={{display:"none"}} id="animojiSrcId" src={Animation_9} type="video/mp4"/>
     </video>
     <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
         muted="">
