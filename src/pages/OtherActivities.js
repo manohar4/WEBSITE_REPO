@@ -115,7 +115,7 @@ const arr_diff =(a1,a2) =>{
             <div className='row'>
 
             <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
-            <Header back={back} backTo="/"   headerTitle={<h3>Other Activities</h3>}></Header>
+            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Other Activities</p>}></Header>
             <div className='tools'>
                     <h6 className='subTitle'>Tools I'm familiar with</h6>
                     <div className='tool-row'>

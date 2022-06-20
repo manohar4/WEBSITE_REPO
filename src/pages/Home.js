@@ -39,6 +39,8 @@ export default function Home() {
         
         <div className='col'>
             <div className='row'>
+            <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
+
             <Header back={back} backTo="/" headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Manohar Manu</p>}></Header>
 
                 <div className='intro'>  
@@ -160,7 +162,7 @@ export default function Home() {
                 <button className='primaryBtn'>  
                 <GiIcons.GiHand className='backIcon'/>
                 Just Say HI</button>
-                
+
                 </div>
       
             </div> 
