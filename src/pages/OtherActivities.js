@@ -9,7 +9,9 @@ import XD from "./../assets/tools/XD.png"
 import Adobe_CC from "./../assets/tools/Adobe CC.png"
 import Header from '../components/Header'
 import Testimonials from '../components/Testimonials'
-import * as FiIcons from 'react-icons/fi'
+import * as TbIcons from 'react-icons/tb'
+
+
 
 
 import Animation_1 from './../assets/Animations/1.mp4'
@@ -110,7 +112,7 @@ const arr_diff =(a1,a2) =>{
   return (
     < div className = 'otherActivities' > 
     <div className='col'>
-            <div className='row' style={{overflowX:"auto"}}>
+            <div className='row'>
 
             <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
             <Header back={back} backTo="/"   headerTitle={<h3>Other Activities</h3>}></Header>
@@ -217,7 +219,7 @@ const arr_diff =(a1,a2) =>{
 
               <div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"center",gap:"2rem"}}>
                 <h1 > THANKS FOR VISITING</h1>
-                <button onClick={()=> onAnimationClick()} className='backButton' style={{width:"auto",alignSelf:"center"}}> <FiIcons.FiThumbsUp className='backIcon'/><p>Moves</p></button>
+                <button onClick={()=> onAnimationClick()} className='primaryBtn' style={{width:"auto",alignSelf:"center"}}> <TbIcons.TbConfetti className='backIcon'/><h3>Show Me A Move</h3></button>
               </div>
             </div>
             
