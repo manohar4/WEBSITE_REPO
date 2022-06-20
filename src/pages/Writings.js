@@ -37,9 +37,9 @@ import Header from '../components/Header'
                         return(
                         <div className='writingItem' 
                         onClick={()=>{ window.open(item.fields.link); }}>
-                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiCode,24) }
+                                {String.fromCodePoint(emojiCode) }
                               </span>
                               <h4>{item.fields.WritingTitle}</h4>
                           </div>
@@ -53,9 +53,9 @@ import Header from '../components/Header'
                         return(
                           <Link  to={`/WritingDetails/${item.fields.writing_ID}`}>
                           <div className='writingItem'>
-                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiCode,24) }
+                                {String.fromCodePoint(emojiCode) }
                               </span>
                               <h4>{item.fields.WritingTitle}</h4>
                           </div>

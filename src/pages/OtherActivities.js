@@ -211,8 +211,8 @@ const arr_diff =(a1,a2) =>{
     </video>
 </div>
 
-<div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"center"}}>
-  <h2 > Thanks for visiting</h2>
+<div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"center",gap:"2rem"}}>
+  <h1 > Thanks for visiting</h1>
   <button onClick={()=> onAnimationClick()} className='backButton' style={{width:"auto",alignSelf:"center"}}> <FiIcons.FiThumbsUp className='backIcon'/><p>Click Me</p></button>
 </div>
             </div>
