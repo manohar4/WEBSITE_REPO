@@ -217,9 +217,9 @@ const arr_diff =(a1,a2) =>{
                   </video>
               </div>
 
-              <div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"center",gap:"2rem"}}>
-                <h1 > THANKS FOR VISITING</h1>
-                <button onClick={()=> onAnimationClick()} className='primaryBtn' style={{width:"auto",alignSelf:"center"}}> <TbIcons.TbConfetti className='backIcon'/><h3>Show Me A Move</h3></button>
+              <div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"left",gap:"0.4rem"}}>
+                <h1 style={{lineHeight:"2.4rem"}}> THANKS <br/> FOR  VISITING</h1>
+                <button onClick={()=> onAnimationClick()} className='primaryBtn' style={{width:"auto",alignSelf:"flex-start",margin:"0rem"}}> <TbIcons.TbConfetti className='backIcon'/><h3>Show Me A Move</h3></button>
               </div>
             </div>
             

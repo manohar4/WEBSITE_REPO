@@ -118,7 +118,7 @@ export default function WritingDetails() {
                                  
                                         <div style={{display:"flex",backgroundColor:"#ffffff20",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
                                             <span style={{fontSize:"16px"}}role="img">
-                                              {String.fromCodePoint(item.elementEmoji,24) }
+                                              {String.fromCodePoint(item.elementEmoji) }
                                             </span>
                                             <p>{item.elementData}</p>
                                         </div>

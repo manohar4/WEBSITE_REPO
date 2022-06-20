@@ -109,7 +109,7 @@ function App() {
     <div className="App">
       <Router>
       <Helmet>
-      <style>{"body { background-color: #050505 }"}</style>
+      <style>{"body { background-color: #000000 }"}</style>
     </Helmet>
 
         <Navbar></Navbar>

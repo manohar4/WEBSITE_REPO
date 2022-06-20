@@ -4,7 +4,8 @@ import './../css/Home.css'
 import './../css/Global.css'
 import location from'../assets/location.png';
 import Header from '../components/Header';
-import * as GiIcons from 'react-icons/gi'
+import * as GiIcons from 'react-icons/gi';
+import Love from '../assets/love.gif';
 
 
 
@@ -18,9 +19,9 @@ export default function Home() {
         }
         if(window.innerWidth<560){
             const desgPeriodArray = document.getElementsByClassName('desgPeriod');
-            document.getElementById('splineFrame').width = "120%";
-           document.getElementById('splineFlex').style.flexDirection = "column";
-           document.getElementById('splineFlex').style.gap = "2rem";
+        //     document.getElementById('splineFrame').width = "120%";
+        //    document.getElementById('splineFlex').style.flexDirection = "column";
+        //    document.getElementById('splineFlex').style.gap = "2rem";
            
             for (var i = 0, len = desgPeriodArray.length; i < len; i++) {
                 desgPeriodArray[i].style.flexDirection='column';
@@ -151,9 +152,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div id="splineFlex" style={{display:"flex",flexDirection:"row"}}>
-                {// eslint-disable-next-line
-                <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>}
+                <div id="splineFlex" style={{display:"flex",flexDirection:"row",backgroundColor:"black",borderRadius:"1rem"}}>
+                {/* {// eslint-disable-next-line
+                <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>} */}
+                <img style={{flex:"1",maxWidth:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
+                
                 <button className='primaryBtn'>  
                 <GiIcons.GiHand className='backIcon'/>
                 Just Say HI</button>
