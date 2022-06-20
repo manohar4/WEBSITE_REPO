@@ -4,8 +4,6 @@ import './../css/Home.css'
 import './../css/Global.css'
 import location from'../assets/location.png';
 import Header from '../components/Header';
-import { Link } from 'react-router-dom';
-import * as FiIcons from 'react-icons/fi'
 import * as GiIcons from 'react-icons/gi'
 
 
@@ -149,12 +147,13 @@ export default function Home() {
                             <h4 >Email </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                
-                                       <a target='_blank' rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">Get In Touch</a>
+                                       <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">Get In Touch</a>
                         </div>
                     </div>
                 </div>
                 <div id="splineFlex" style={{display:"flex",flexDirection:"row"}}>
-                <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>
+                {// eslint-disable-next-line
+                <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>}
                 <button className='primaryBtn'>  
                 <GiIcons.GiHand className='backIcon'/>
                 Just Say HI</button>
