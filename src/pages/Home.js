@@ -160,6 +160,7 @@ export default function Home() {
                 <button className='primaryBtn'>  
                 <GiIcons.GiHand className='backIcon'/>
                 Just Say HI</button>
+                
                 </div>
       
             </div> 
