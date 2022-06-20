@@ -37,7 +37,11 @@ import Animation_13 from './../assets/Animations/13.mp4'
     window.scrollTo(0, 0);
     if(window.innerWidth<1024){
         document.getElementsByClassName('otherActivities')[0].style.marginLeft='0px';
-    }
+        document.getElementsByClassName('animationFlex')[0].style.flexDirection='column';
+        document.getElementsByClassName('animationFlex')[0].style.gap='2rem';
+
+        
+      }
 },
  // eslint-disable-next-line
 [])
@@ -153,68 +157,68 @@ const arr_diff =(a1,a2) =>{
             
             <Testimonials></Testimonials>
 
-            <div style={{display:"flex",borderRadius:"1rem",backgroundColor:"#000000"}}>
+            <div  className='animationFlex' style={{display:"flex",borderRadius:"1rem",backgroundColor:"#000000"}}>
 
-<div className='animationGroup' style={{display:"flex",flex:"1",textAlign: "center",cursor: "pointer"}}>
+              <div className='animationGroup' style={{display:"flex",flex:"1",textAlign: "center",cursor: "pointer"}}>
 
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_1} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_2} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_3} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_4} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_5} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_6} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_7} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_8} type="video/mp4"/>
-    </video>
-    <video style={{borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source style={{display:"none"}} id="animojiSrcId" src={Animation_9} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_10} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_11} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_12} type="video/mp4"/>
-    </video>
-    <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
-        muted="">
-        <source id="animojiSrcId" src={Animation_13} type="video/mp4"/>
-    </video>
-</div>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_1} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_2} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_3} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_4} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_5} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_6} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_7} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_8} type="video/mp4"/>
+                  </video>
+                  <video style={{borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source style={{display:"none"}} id="animojiSrcId" src={Animation_9} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_10} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_11} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_12} type="video/mp4"/>
+                  </video>
+                  <video style={{display: "none",borderRadius:"1rem"}} class="animoji" width="100%" height="100%" autoplay="false"
+                      muted="">
+                      <source id="animojiSrcId" src={Animation_13} type="video/mp4"/>
+                  </video>
+              </div>
 
-<div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"center",gap:"2rem"}}>
-  <h1 > Thanks for visiting</h1>
-  <button onClick={()=> onAnimationClick()} className='backButton' style={{width:"auto",alignSelf:"center"}}> <FiIcons.FiThumbsUp className='backIcon'/><p>Click Me</p></button>
-</div>
+              <div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"center",gap:"2rem"}}>
+                <h1 > THANKS FOR VISITING</h1>
+                <button onClick={()=> onAnimationClick()} className='backButton' style={{width:"auto",alignSelf:"center"}}> <FiIcons.FiThumbsUp className='backIcon'/><p>Moves</p></button>
+              </div>
             </div>
             
             </div>

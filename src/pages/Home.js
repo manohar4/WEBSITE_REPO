@@ -4,15 +4,25 @@ import './../css/Home.css'
 import './../css/Global.css'
 import location from'../assets/location.png';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
+import * as FiIcons from 'react-icons/fi'
+import * as GiIcons from 'react-icons/gi'
+
+
 
 export default function Home() {
 
     useEffect(()=>{
+        
+
         if(window.innerWidth<1024){
             document.getElementsByClassName('home')[0].style.marginLeft='0px';
         }
         if(window.innerWidth<560){
             const desgPeriodArray = document.getElementsByClassName('desgPeriod');
+            document.getElementById('splineFrame').width = "120%";
+           document.getElementById('splineFlex').style.flexDirection = "column";
+           document.getElementById('splineFlex').style.gap = "2rem";
            
             for (var i = 0, len = desgPeriodArray.length; i < len; i++) {
                 desgPeriodArray[i].style.flexDirection='column';
@@ -135,12 +145,22 @@ export default function Home() {
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <a target='_blank' rel="noreferrer" className='link' href='https://www.linkedin.com/in/manoharmanu4444/'>Connect</a>
                         </div>
+                        <div className='social-lineitems'>
+                            <h4 >Email </h4>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+               
+                                       <a target='_blank' rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">Get In Touch</a>
+                        </div>
                     </div>
                 </div>
-
-
-
-            </div>
+                <div id="splineFlex" style={{display:"flex",flexDirection:"row"}}>
+                <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>
+                <button className='primaryBtn'>  
+                <GiIcons.GiHand className='backIcon'/>
+                Just Say HI</button>
+                </div>
+      
+            </div> 
         </div>
     </div>
   )

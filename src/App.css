@@ -156,3 +156,7 @@ background-color: red;
   background-color: #ffffff40;
   cursor: pointer;
 }
+
+body .spline-watermark{
+  display: none;
+}
