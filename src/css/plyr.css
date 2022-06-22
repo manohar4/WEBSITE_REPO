@@ -170,7 +170,7 @@
     border-radius: 3px;
     border-radius: var(--plyr-control-radius, 3px);
     color: inherit;
-    cursor: pointer;
+    cursor: url('../assets/hover.png'),auto;
     flex-shrink: 0;
     overflow: visible;
     padding: 7px;
@@ -1222,7 +1222,7 @@ a.plyr__control:before {
 .plyr__ads {
     border-radius: inherit;
     bottom: 0;
-    cursor: pointer;
+    cursor: url('../assets/hover.png'),auto;
     left: 0;
     overflow: hidden;
     position: absolute;

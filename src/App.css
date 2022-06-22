@@ -9,8 +9,15 @@
   padding: 0;
   font-family: 'space Grotesk',sans-serif;
   --plyr-color-main: #ff7744f0;
+ cursor: url(../src//assets/customCursor.png),auto !important;
 
+}
 
+button:hover,a:hover{
+  cursor: url(../src//assets/hover.png),auto !important;
+}
+a *:hover,button *:hover,a.svg:hover,a span:hover,div.writingItem, div.writingItem *{
+  cursor: url(../src//assets/hover.png),auto !important;
 }
 
 
@@ -124,7 +131,8 @@ background-color: red;
 }
 
 .primaryBtn{
-  background-color: #ff7744f0;
+  background-color: #ffffff00;
+  
   display:flex;
   flex-direction:row;
   align-items:center;
@@ -138,8 +146,7 @@ background-color: red;
 }
 
 .primaryBtn:hover{
-  background-color: #ff7744;
-  cursor: pointer;
+  background-color: #ff7744f0;
 }
 
 .backButton{
@@ -157,7 +164,6 @@ background-color: red;
 
 .backButton:hover{
   background-color: #ffffff40;
-  cursor: pointer;
 }
 
 body .spline-watermark{

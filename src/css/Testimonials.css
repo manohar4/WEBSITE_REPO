@@ -1,12 +1,13 @@
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 0px;
-  }
+  } */
   
   .container {
     display: flex;
     overflow-x: scroll;
     width: 100%;
     padding: 2rem 0rem;
+    
   }
   
   .Tcard {
@@ -22,3 +23,20 @@
     border-radius: 0.5rem;
 
   }
+  .container::-webkit-scrollbar {
+    height: 0.4rem;            /* width of the entire scrollbar */
+}
+
+.container::-webkit-scrollbar-track {
+  background: rgba(255, 166, 0, 0);        /* color of the tracking area */
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #171717;   /* color of the scroll thumb */
+  border-radius: 20px; 
+  height:1rem; 
+      /* roundness of the scroll thumb */
+}
+.container::-webkit-scrollbar-button{
+  scrollbar-width:1rem; 
+}

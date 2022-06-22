@@ -73,9 +73,6 @@ const onAnimationClick =()=>{
 
     
     window.currentAnimoji = Math.floor(Math.random() * 10) + 1;
-    if(window.currentAnimoji === window.prevAnimoji){
-        sameNumber();
-    }
 
     if(window.currentAnimoji === 1){
         setGif(Animation_1)
@@ -118,16 +115,6 @@ const onAnimationClick =()=>{
     }
 }
 
-const sameNumber=()=>{
-    window.currentAnimoji = Math.floor(Math.random() * 10) + 1;
-    if(window.currentAnimoji === window.prevAnimoji){
-        sameNumber();
-    }
-    else{
-        return;
-    }
-
-}
 
 
   

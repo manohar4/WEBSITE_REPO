@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import './../App.css'
 import './../css/Home.css'
 import './../css/Global.css'
@@ -6,10 +6,20 @@ import location from'../assets/location.png';
 import Header from '../components/Header';
 import * as GiIcons from 'react-icons/gi';
 import Love from '../assets/love.gif';
+import SubmitFrom from '../components/submitForm';
 
 
 
 export default function Home() {
+    const back=false;
+    const [isOpen, setIsOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+      }
+
+      
+
 
     useEffect(()=>{
         
@@ -19,9 +29,6 @@ export default function Home() {
         }
         if(window.innerWidth<560){
             const desgPeriodArray = document.getElementsByClassName('desgPeriod');
-        //     document.getElementById('splineFrame').width = "120%";
-        //    document.getElementById('splineFlex').style.flexDirection = "column";
-        //    document.getElementById('splineFlex').style.gap = "2rem";
            
             for (var i = 0, len = desgPeriodArray.length; i < len; i++) {
                 desgPeriodArray[i].style.flexDirection='column';
@@ -30,7 +37,8 @@ export default function Home() {
         }
     },[])
 
-    const back=false;
+
+ 
 
     
 
@@ -48,6 +56,7 @@ export default function Home() {
                     <p >I'm currently working in <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'>Agile Solutions</a> brazil based enterprise company as Senior User Experience Design. Most of my  previous work reflects with B2B Solutions in the area of Manufacturing, Fintech and many other sectors.</p>
                     <p >  I'm a self Learned Design with an engineering background</p>
                 </div>
+
                 <div className='pastExpereince'>
                     <h6 className='subTitle'>Past Expereince</h6>
                     <div className='experience-row'>
@@ -120,8 +129,6 @@ export default function Home() {
                     </div>
                 </div>
 
-
-
                 <div className='socialMedia'>
                     <h6 className='subTitle'>Social Media</h6>
                     <div className='social-row'>
@@ -154,19 +161,22 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
                 <div id="splineFlex" style={{display:"flex",flexDirection:"row",backgroundColor:"black",borderRadius:"1rem"}}>
                 {/* {// eslint-disable-next-line
                 <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>} */}
                 <img style={{flex:"1",maxWidth:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
                 
-                <button className='primaryBtn'>  
-                <GiIcons.GiHand className='backIcon'/>
-                Just Say HI</button>
+
+                <button className='primaryBtn'  onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Just Say HI</button>
 
                 </div>
+
+               
       
             </div> 
         </div>
+        {isOpen && <SubmitFrom handleClose={togglePopup}/>}
     </div>
   )
 }

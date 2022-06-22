@@ -17,5 +17,5 @@
 }
 .writingItem:hover{
     background-color: #FFFFFF20;
-    cursor: pointer;
+    cursor: url('../assets/hover.png'),auto;
 }

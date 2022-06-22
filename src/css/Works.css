@@ -20,7 +20,7 @@
 }
 .card:hover{
     background-color: #FFFFFF20;
-    cursor: pointer;
+    cursor: url('../assets/hover.png'),auto;
   
 }
 
@@ -36,14 +36,14 @@
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     display: block;
-    border-bottom: 0.1rem solid #000000d0;
+    border-bottom: 0.2rem solid #000000d0;
     margin-top: -0.6rem;
  	transition: width 1s ease
 }
 .cardGroup:hover:after {
     display: block;
 
-    border-bottom: 0.1rem solid #ff764490;
+    border-bottom: 0.2rem solid #ff764490;
 	width: 100%;
 	background: transparent;
 }
