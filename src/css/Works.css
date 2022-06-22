@@ -11,7 +11,7 @@
     height: 12rem;
     background-color: #FFFFFF10;
     border-radius: 0.5rem;
-    margin-bottom: 1rem;
+
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -21,4 +21,29 @@
 .card:hover{
     background-color: #FFFFFF20;
     cursor: pointer;
+  
+}
+
+.cardGroup{
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+.cardGroup:after {
+    
+	content: '';
+	height: 0.5rem;
+	width: 100%;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: block;
+    border-bottom: 0.1rem solid #000000d0;
+    margin-top: -0.6rem;
+ 	transition: width 1s ease
+}
+.cardGroup:hover:after {
+    display: block;
+
+    border-bottom: 0.1rem solid #ff764490;
+	width: 100%;
+	background: transparent;
 }

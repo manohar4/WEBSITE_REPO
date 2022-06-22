@@ -43,7 +43,7 @@ function Works() {
                         {item.projectsDetails.map((item,index)=>{
                             return(
                            
-                                <li key={index} >
+                                <li key={index} className="cardGroup" >
                                     <Link to={`/ProjectDetails/${item.project_Id}`}>
                                     <div className='card'>
                                         <div style={{display:'flex',flexDirection:'column',flex:2,justifyContent:"space-between",height:'100%'}}>

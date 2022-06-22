@@ -9,6 +9,8 @@
   padding: 0;
   font-family: 'space Grotesk',sans-serif;
   --plyr-color-main: #ff7744f0;
+
+
 }
 
 
@@ -17,6 +19,7 @@
   height: auto;
   justify-content: center;
   margin-left: 18rem;
+
 }
 
 .app{
