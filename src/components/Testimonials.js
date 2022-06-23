@@ -26,7 +26,7 @@ export default function Testimonials(props) {
 });
   }},[]);
 
-    const movies = [
+    const testimonials = [
         "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY",
         "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY",
         "https://v5.airtableusercontent.com/v1/5/5/1656547200000/hI7nm-redEA5XM8aDY4hSg/koXzQSwO04zHOGAMN917bvbnV3y_i8KyXNs99vNMvdHUGwhUSvfkB7ak-xldPff_yPzyPP37eAfg4RQa3wq3hw/SGefYnsScq6SXkDW57XdgI-8Jvu8-buemUHybPlOlLY",
@@ -36,9 +36,5 @@ export default function Testimonials(props) {
    
     return (
         <div className="container" {...bind()}>
-              {movies.map(src => (
-                  <animated.div key={src} className="Tcard" style={{...style,backgroundImage: `url(${src})`}} />
-              ))
-              }
-        </div>
-        )}
+              {testimonials.map(src => (
+                  <animated.div key={src} className="Tcard" style={{...style,backgroundImage: `url(${src})`}}> <div class="glow-wrap"><i class="glow"></i></div>  </animated.div>))}</div>)}

@@ -18,8 +18,7 @@ const SubmitFrom = (props)=>{
     const onHandleSubmit=(e)=>{
 
         e.preventDefault();
-
-
+        var recordCreated = false;
 
         if(form.message === "" || form.name === "" ){
             return alert("Plese fill the form");
@@ -40,8 +39,25 @@ const SubmitFrom = (props)=>{
             }
             records.forEach(function (record) {
                 console.log(record.getId());
+                recordCreated = true;
+                recordCreatedFun()
             });
             });
+
+            const recordCreatedFun=()=>{
+                if(recordCreated){
+                    console.log("entered")
+                    document.getElementsByClassName("msgform")[0].style.display = "none";
+                    document.getElementsByClassName("msgSuccess")[0].style.display = "unset";
+                    
+                    setTimeout(function() {props.handleClose()}, 1500);
+                    //props.handleClose();
+                }
+            }
+           
+        
+   
+            
     }
 
     const onInputChange =(e)=>{
@@ -58,7 +74,6 @@ const SubmitFrom = (props)=>{
         if(e.target.checked === true){
             setFrom({...form,name:"Annoymous"});
             document.getElementById("senderName").disabled = true;
-
         }
         else{
             setFrom({...form,name:""});
@@ -87,59 +102,61 @@ const SubmitFrom = (props)=>{
     return(
         <div  className="popup-box"> 
            <div className="box">
+                <div className="msgform">
+                        <h2>Want to Say Something? </h2>
 
-               <h2>Want to Say Something? </h2>
+                        <div style={{display:"flex", flexDirection:"column"}}>
+                                <p>Name</p>
+                                <input id='senderName' name='name' autoComplete="new-password" onChange={onInputChange} value={form.name}></input>
+                                <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
+                                    <input style={{height:"2rem"}} type="checkbox" onClick={onAnonymous}/>
+                                    <p>Be Annoymous</p>
+                                </div>
+                                
+                            
+                        </div>
 
-               <div style={{display:"flex", flexDirection:"column"}}>
-                    <p>Name</p>
-                    <input id='senderName' name='name' autoComplete="new-password" onChange={onInputChange} value={form.name}></input>
-                    <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
-                        <input style={{height:"2rem"}} type="checkbox" onClick={onAnonymous}/>
-                        <p>Be Annoymous</p>
-                    </div>
-                    
-                   
-               </div>
+                        <div style={{display:"flex", flexDirection:"column"}}>
+                                <p>Message</p>
+                                <textarea  data-emoji-input="unicode" rows="4" id='senderMsg'  name='message' autoComplete="new-password" onChange={onInputChange} value={form.message}></textarea>
+                                
+                                <div style={{width:"20px",margin:"0.5rem 0rem",display:"flex"}}>
+                                    <button className='backButton' style={{border:"none"}} onClick={onEmojiHi}>
+                                            <span style={{fontSize:"24px"}} role="img">
+                                                    {String.fromCodePoint(0x1F44B) }
+                                            </span>
+                                    </button>
+                                    <button className='backButton' style={{border:"none"}} onClick={onEmojiHeart}>
+                                            <span style={{fontSize:"24px"}} role="img">
+                                                    {String.fromCodePoint(0x1F9E1) }
+                                            </span>
+                                    </button>
+                                    <button className='backButton' style={{border:"none"}} onClick={onEmojiFire}>
+                                            <span style={{fontSize:"24px"}} role="img">
+                                                    {String.fromCodePoint(0x1F525) }
+                                            </span>
+                                    </button>
+                                    <button className='backButton' style={{border:"none"}} onClick={onEmojiCat}>
+                                            <span style={{fontSize:"24px"}} role="img">
+                                                    {String.fromCodePoint(0x1F63B)}
+                                            </span>
+                                    </button>
+                                    
+                                    
+                                </div>
+                            
+                            </div>
+                            <div style={{display:"flex",justifyContent:"end",gap:"1rem"}}>
+                                <button className='backButton' onClick={props.handleClose} ><p>Close</p></button>
+                                <button className='primaryBtn' onClick={onHandleSubmit} style={{margin:"0px"}}>Send</button>
 
-               <div style={{display:"flex", flexDirection:"column"}}>
-                    <p>Message</p>
-                    <textarea  data-emoji-input="unicode" rows="4" id='senderMsg'  name='message' autoComplete="new-password" onChange={onInputChange} value={form.message}></textarea>
-                    
-                    <div style={{width:"20px",margin:"0.5rem 0rem",display:"flex"}}>
-                        <button className='backButton' style={{border:"none"}} onClick={onEmojiHi}>
-                                <span style={{fontSize:"24px"}} role="img">
-                                        {String.fromCodePoint(0x1F44B) }
-                                </span>
-                        </button>
-                        <button className='backButton' style={{border:"none"}} onClick={onEmojiHeart}>
-                                <span style={{fontSize:"24px"}} role="img">
-                                        {String.fromCodePoint(0x1F9E1) }
-                                </span>
-                        </button>
-                        <button className='backButton' style={{border:"none"}} onClick={onEmojiFire}>
-                                <span style={{fontSize:"24px"}} role="img">
-                                        {String.fromCodePoint(0x1F525) }
-                                </span>
-                        </button>
-                        <button className='backButton' style={{border:"none"}} onClick={onEmojiCat}>
-                                <span style={{fontSize:"24px"}} role="img">
-                                        {String.fromCodePoint(0x1F63B)}
-                                </span>
-                        </button>
-                        
-                        
-                    </div>
-                   
+                            </div>
                 </div>
-                <div style={{display:"flex",justifyContent:"end",gap:"1rem"}}>
-                    <button className='backButton' onClick={props.handleClose} ><p>close</p></button>
-                    <button className='primaryBtn' onClick={onHandleSubmit} style={{margin:"0px"}}>Send</button>
-
+                <div className="msgSuccess" >
+                    <h2> Your Message has been delivered</h2>
+                    <p>Thanks <br/>Manohar</p>
                 </div>
-                
             </div>
-            
-            
         </div>
     )
 }

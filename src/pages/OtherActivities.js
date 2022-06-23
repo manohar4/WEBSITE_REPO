@@ -115,12 +115,6 @@ const onAnimationClick =()=>{
     }
 }
 
-
-
-  
-
-
-
   return (
     < div className = 'otherActivities'> 
     <div className='col'>

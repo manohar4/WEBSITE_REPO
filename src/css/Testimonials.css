@@ -40,3 +40,46 @@
 .container::-webkit-scrollbar-button{
   scrollbar-width:1rem; 
 }
+
+
+
+.Tcard .glow-wrap{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.Tcard .glow{
+  margin-left: 50%;
+  display: block;
+  position:absolute;
+  height: 250%;
+  width: 60%;
+  top: 0;
+ 
+}
+.Tcard:hover .glow{
+  background: linear-gradient( to right, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0.0) 100%);
+  animation-duration: 1s;
+  animation-name: glowEffect;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+@keyframes glowEffect {
+  0% {
+    width: 50%;
+    opacity: 0.1;
+    transform: rotate(20deg) translate(200%, -20%);
+    }
+  100% {
+    width: 50%;
+    opacity:0;
+    transform: rotate(20deg) translate(-200%, -20%);
+  }
+
+}
