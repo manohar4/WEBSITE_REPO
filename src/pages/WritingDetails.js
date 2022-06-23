@@ -10,6 +10,8 @@ import './../css/prism.css';
 import Header from '../components/Header'
 import Plyr from 'plyr';
 import '../css/plyr.css'
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -18,6 +20,8 @@ export default function WritingDetails() {
     const {writingDetailsData} = useContext(FetchWritingDetails);
     const { id } = useParams();
     const back = true;
+    const navigation = useNavigate()
+
 
 
 
@@ -35,8 +39,17 @@ export default function WritingDetails() {
     if(writingDetailsData.length!==0){
 
         const fitlerWritingsarray = writingDetailsData.filter(function (el){ return el.fields.writing_ID.toString() ===  id});
-        var writing= fitlerWritingsarray[0].fields;
-        var writingTitle = writing.WritingTitle;
+
+        if(!fitlerWritingsarray[0]){
+            navigation("/PageNotFound");
+        }
+       
+        else{
+            var writing= fitlerWritingsarray[0].fields;
+            var writingTitle = writing.WritingTitle;
+        }
+
+        
     }
    
   

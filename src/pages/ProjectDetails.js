@@ -4,7 +4,7 @@ import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
 import {FetchProjectsDetails} from '../helper/Context'
-import { Navigate, useParams} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
 import Header from '../components/Header'
