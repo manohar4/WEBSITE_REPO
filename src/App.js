@@ -9,6 +9,7 @@ import OtherActivities from './pages/OtherActivities';
 import Writings from './pages/Writings.js';
 import ProjectDetails from './pages/ProjectDetails.js';
 import WritingDetails from './pages/WritingDetails.js';
+import PageNotFound from './pages/PageNotFound.js';
 import Airtable from 'airtable';
 import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchWritingDetails} from './helper/Context';
 import { useState,useEffect } from 'react';
@@ -120,6 +121,8 @@ function App() {
           <Route path='/OtherActivities' element={<OtherActivities />}/>
           <Route path='/ProjectDetails/:id' element={<ProjectDetails />}/>
           <Route path='/WritingDetails/:id' element={<WritingDetails />}/>
+          <Route path="*" element={<PageNotFound />} />
+         
         </Routes>
       </Router>
     </div>

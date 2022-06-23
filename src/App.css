@@ -21,7 +21,7 @@ a *:hover,button *:hover,a.svg:hover,a span:hover,div.writingItem, div.writingIt
 }
 
 
-.home, .works, .writings, .otherActivities,.projectDetails,.writingDetails{
+.home, .works, .writings, .otherActivities,.projectDetails,.writingDetails,.PageNotFound{
   display: flex;
   height: auto;
   justify-content: center;

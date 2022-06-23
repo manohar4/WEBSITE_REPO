@@ -4,12 +4,13 @@ import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
 import {FetchProjectsDetails} from '../helper/Context'
-import { useParams} from 'react-router-dom'
+import { Navigate, useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
 import Header from '../components/Header'
 import Plyr from 'plyr';
 import '../css/plyr.css'
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -18,6 +19,7 @@ export default function ProjectDetails() {
     const {projectsDetailsData} = useContext(FetchProjectsDetails);
     const { id } = useParams();
     const back = true;
+    const navigation = useNavigate()
   
 
 
@@ -36,8 +38,18 @@ export default function ProjectDetails() {
     if(projectsDetailsData.length!==0){
 
         const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
-        var project= fitlerProjectarray[0].fields;
-        var projectTitle = project.project_title;
+
+        if(!fitlerProjectarray[0]){
+            navigation("/PageNotFound");
+        }
+       
+        else{
+            var project= fitlerProjectarray[0].fields;
+            var projectTitle = project.project_title;
+        }
+        
+        
+      
     }
    
   
