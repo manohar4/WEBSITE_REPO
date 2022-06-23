@@ -50,7 +50,7 @@ const SubmitFrom = (props)=>{
                     document.getElementsByClassName("msgform")[0].style.display = "none";
                     document.getElementsByClassName("msgSuccess")[0].style.display = "unset";
                     
-                    setTimeout(function() {props.handleClose()}, 1500);
+                    setTimeout(function() {props.handleClose()}, 2000);
                     //props.handleClose();
                 }
             }
@@ -153,7 +153,7 @@ const SubmitFrom = (props)=>{
                             </div>
                 </div>
                 <div className="msgSuccess" >
-                    <h2> Your Message has been delivered</h2>
+                    <h2> Your Message has been delivered</h2><br/><br/>
                     <p>Thanks <br/>Manohar</p>
                 </div>
             </div>
