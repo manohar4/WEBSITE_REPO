@@ -9,7 +9,6 @@ var projectsList=[];
 let count = 0;
 
 const getRecords = async () =>{
-    console.log("getRecord Function")
     const records = await base('Projects List').select({maxRecords: 100}).firstPage();
 
     projects = await records.reduce( function (r, a) {
@@ -17,13 +16,10 @@ const getRecords = async () =>{
         tagArray = a.fields.Project_Tags.split(" ");
         a.fields.Project_Tags = tagArray;
         r[a.fields.projectGroupName].push(a.fields);
-        console.log("getRecord Function ended ");
-
         return r;
     }, {});
 
     for(let key in projects) {
-        console.log();
                 var obj = {"projectGroupName":key,"projectsDetails":projects[key]}
                 projectsList.push(obj);
                 count =count++;
@@ -32,8 +28,6 @@ const getRecords = async () =>{
    return records;
     
 }
-console.log("after Get record Function");
-console.log(projectsList[0]);
 
 getRecords();
 

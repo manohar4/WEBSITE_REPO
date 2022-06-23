@@ -23,7 +23,7 @@ export default function Header(props) {
     window.addEventListener("scroll",()=>{
         var header = document.querySelector("#headerID");
         if(window.scrollY>104){
-            console.log("entered")
+
             header.classList.remove("HeaderFixed");
             header.classList.add("HeaderSticky");
         }

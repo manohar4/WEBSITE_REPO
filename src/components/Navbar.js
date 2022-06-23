@@ -16,22 +16,28 @@ var smallerDeviceCheck;
 
 
 
-const [selectedChild,setSelectedChild]=  useState(0);
+const [selectedChild,setSelectedChild]=  useState();
 
 
 
 
 useEffect(()=>{
-    var location = document.location;
-    if(location.pathname ==='/Works'){
+    var selectionPath = document.location.pathname.split("/")[1];
+    console.log();
+    if(selectionPath ===''){
+        setSelectedChild(0);
+    }
+    else if(selectionPath ==='works' || selectionPath ==='ProjectDetails' || selectionPath ==='projectDetails'  ){
         setSelectedChild(1);
     }
-    else if(location.pathname === '/Writings'){
+    else if(selectionPath === '/writings'|| selectionPath ==='writingDetails' || selectionPath ==='WritingDetails'){
         setSelectedChild(2);
     }
-    else if(location.pathname === '/OtherActivities'){
-        console.log('other Activities');
-
+    else if(selectionPath === '/otherActivities'){
+        setSelectedChild(3);
+    }
+    else{
+        setSelectedChild(0);
     }
 
 },[])

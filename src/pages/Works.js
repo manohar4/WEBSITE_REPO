@@ -37,7 +37,7 @@ function Works() {
                   
                 {projectsListData.map((item,index)=>{
                   return(
-                    <div>
+                    <div key={index}>
                     <h6 style={{marginBottom:"1rem"}}>{projectsListData[index].projectGroupName}</h6>
                     <ul className='projectsItems'>
                         {item.projectsDetails.map((item,index)=>{

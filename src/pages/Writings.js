@@ -35,7 +35,7 @@ import Header from '../components/Header'
                     const emojiCode= item.fields.emoji;
                       if(item.fields.linkIcon === "true"){
                         return(
-                        <div className='writingItem' 
+                        <div key={index} className='writingItem' 
                         onClick={()=>{ window.open(item.fields.link); }}>
                           <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">
@@ -51,7 +51,7 @@ import Header from '../components/Header'
                       }
                       else{
                         return(
-                          <Link  to={`/WritingDetails/${item.fields.writing_ID}`}>
+                          <Link key={index}  to={`/writingDetails/${item.fields.writing_ID}`}>
                           <div className='writingItem'>
                           <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">

@@ -37,4 +37,4 @@ export default function Testimonials(props) {
     return (
         <div className="container" {...bind()}>
               {testimonials.map(src => (
-                  <animated.div key={src} className="Tcard" style={{...style,backgroundImage: `url(${src})`}}> <div class="glow-wrap"><i class="glow"></i></div>  </animated.div>))}</div>)}
+                  <animated.div key={src} className="Tcard" style={{...style,backgroundImage: `url(${src})`}}> <div className="glow-wrap"><i className="glow"></i></div>  </animated.div>))}</div>)}

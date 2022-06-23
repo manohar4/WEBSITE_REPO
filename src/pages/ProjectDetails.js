@@ -55,27 +55,27 @@ export default function ProjectDetails() {
                         project ? project.ProjectDetails.map((item,index)=>{
 
                             if(item.elementType === 'h1'){
-                                return (<h1 style={{marginBottom:" 1rem",marginTop: "1rem"}}>{item.elementData}</h1>);
+                                return (<h1 key={index} style={{marginBottom:" 1rem",marginTop: "1rem"}}>{item.elementData}</h1>);
                             }
                             else if(item.elementType === 'h2'){
-                                return (<h2 style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</h2>);
+                                return (<h2 key={index} style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</h2>);
                             }
                             else if(item.elementType === 'h3'){
-                                return (<h3 style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</h3>);
+                                return (<h3 key={index} style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</h3>);
                             }
                             else if(item.elementType === 'p'){
-                                return (<p style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</p>);
+                                return (<p key={index} style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</p>);
                             }
                             else if(item.elementType === 'coverImg'){
                                 return (
-                                <figure>
+                                <figure key={index}>
                                 <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
                                 <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
                             }
                             else if(item.elementType === 'img'){
                                 return (
-                                <figure>
+                                <figure key={index}>
                                     <img style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
@@ -87,7 +87,7 @@ export default function ProjectDetails() {
                                 //     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
 
                                 // </figure>
-                                <figure style={{boxShadow: "8px 8px #ff7744f0"}}>
+                                <figure key={index} style={{boxShadow: "8px 8px #ff7744f0"}}>
                                         <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={item.elementData} type='video/mp4'></source></video>
                                      <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
 
@@ -96,27 +96,27 @@ export default function ProjectDetails() {
                                 );
                             }
                             else if(item.elementType === 'divider'){
-                                return (<hr className="solid"/>);
+                                return (<hr key={index} className="solid"/>);
                             }
                             else if(item.elementType === '...'){
-                                return (<div style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>);
+                                return (<div key={index} style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>);
                             }
                             else if(item.elementType === 'spacer_small'){
-                                return (<div style={{opacity:"0%"}}><hr className="solid" /></div>);
+                                return (<div key={index} style={{opacity:"0%"}}><hr className="solid" /></div>);
                             }
                             else if(item.elementType === 'spacer_medium'){
-                                return (<div style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /></div>);
+                                return (<div key={index} style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /></div>);
                             }
                             else if(item.elementType === 'spacer_large'){
-                                return (<div style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /><hr className="solid" /></div>);
+                                return (<div key={index} style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /><hr className="solid" /></div>);
                             }
                             else if(item.elementType === 'blockQuote'){
-                                return (<blockquote style={{margin:"0.6rem 0px"}}>❝ {item.elementData} ❞ </blockquote>)
+                                return (<blockquote key={index} style={{margin:"0.6rem 0px"}}>❝ {item.elementData} ❞ </blockquote>)
                             } 
                             else if(item.elementType === 'callout'){
                                 return (
                                  
-                                        <div style={{display:"flex",backgroundColor:"#ffffff20",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                                        <div key={index} style={{display:"flex",backgroundColor:"#ffffff20",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
                                             <span style={{fontSize:"16px"}}role="img">
                                               {String.fromCodePoint(item.elementEmoji) }
                                             </span>
@@ -128,31 +128,31 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'bulletList'){
                                 return (
-                                    <ul style={{margin:"1rem 0rem",listStyleType: "square",listStylePosition: "inside"}}>
+                                    <ul key={index} style={{margin:"1rem 0rem",listStyleType: "square",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li style={{ fontSize:"16px",fontWeight:400,color:"#ffffffd0", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"#ffffffd0", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ul>
                                 )
                             }
                             else if(item.elementType === 'numberList'){
                                 return (
-                                    <ol style={{margin:"1rem 0rem",listStylePosition: "inside"}}>
+                                    <ol key={index} style={{margin:"1rem 0rem",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li style={{ fontSize:"16px",fontWeight:400,color:"#ffffffd0", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"#ffffffd0", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ol>
                                 )
                             }
                             else if(item.elementType === 'code'){
-                                return (<pre><code className='language-css' >{item.elementData}</code></pre>)
+                                return (<pre key={index} ><code className='language-css' >{item.elementData}</code></pre>)
                             }
                             else if(item.elementType === 'highlighter'){
-                                return (<span style={{backgroundColor:"#FFFF00"}}>{item.elementData}</span>)
+                                return (<span key={index} style={{backgroundColor:"#FFFF00"}}>{item.elementData}</span>)
                             }
                             else if(item.elementType === 'button'){
                                 return (
-                                <button className='primaryBtn' onClick={()=>{window.open(item.elementLink)}} >
+                                <button key={index} className='primaryBtn' onClick={()=>{window.open(item.elementLink)}} >
                                     {item.elementData}
                                 </button>       
                                 )

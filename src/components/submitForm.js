@@ -38,7 +38,6 @@ const SubmitFrom = (props)=>{
                 return;
             }
             records.forEach(function (record) {
-                console.log(record.getId());
                 recordCreated = true;
                 recordCreatedFun()
             });
@@ -46,7 +45,6 @@ const SubmitFrom = (props)=>{
 
             const recordCreatedFun=()=>{
                 if(recordCreated){
-                    console.log("entered")
                     document.getElementsByClassName("msgform")[0].style.display = "none";
                     document.getElementsByClassName("msgSuccess")[0].style.display = "unset";
                     
@@ -103,10 +101,10 @@ const SubmitFrom = (props)=>{
         <div  className="popup-box"> 
            <div className="box">
                 <div className="msgform">
-                        <h2>Want to Say Something? </h2>
+                        <h2>Want to Say Something or Just a HI? </h2>
 
-                        <div style={{display:"flex", flexDirection:"column"}}>
-                                <p>Name</p>
+                        <div style={{display:"flex", flexDirection:"column",margin:"1rem 0rem"}}>
+                                <p style={{marginBottom:"0.4rem"}}>Name</p>
                                 <input id='senderName' name='name' autoComplete="new-password" onChange={onInputChange} value={form.name}></input>
                                 <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                                     <input style={{height:"2rem"}} type="checkbox" onClick={onAnonymous}/>
@@ -117,7 +115,7 @@ const SubmitFrom = (props)=>{
                         </div>
 
                         <div style={{display:"flex", flexDirection:"column"}}>
-                                <p>Message</p>
+                                <p style={{marginBottom:"0.4rem"}}>Message</p>
                                 <textarea  data-emoji-input="unicode" rows="4" id='senderMsg'  name='message' autoComplete="new-password" onChange={onInputChange} value={form.message}></textarea>
                                 
                                 <div style={{width:"20px",margin:"0.5rem 0rem",display:"flex"}}>
