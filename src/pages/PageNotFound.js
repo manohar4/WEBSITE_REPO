@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React,{useEffect} from 'react';
 import '../App.css'
 import notFoundGif from '../assets/404.gif'
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,15 @@ export default function PageNotFound() {
     const onHomeClick =()=>{
         navigation("/")
     }
+
+
+    useEffect(()=>{
+        if(window.innerWidth<1024){
+            document.getElementsByClassName('PageNotFound')[0].style.marginLeft='0px';
+        }
+    },
+    // eslint-disable-next-line
+    [])
     
   return (
     <div className='PageNotFound' style={{height:"100vh"}}>
