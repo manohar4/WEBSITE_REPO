@@ -156,7 +156,7 @@ const onAnimationClick =()=>{
                             <p>Moderate</p>
                         </div>
                         <div className='tool-lineitems'>
-                            <h4 >-- Zeplin, Marvel, Framer, Procreate and more</h4>
+                            <h4 >and Zeplin, Marvel, Framer, Procreate and more</h4>
                         </div>
                     </div>
                 </div>
@@ -172,8 +172,8 @@ const onAnimationClick =()=>{
               </div>
 
               <div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"left",gap:"0.4rem"}}>
-                <h1 style={{lineHeight:"2.4rem"}}> THANKS <br/> FOR  VISITING</h1>
-                <button onClick={()=> onAnimationClick()} className='primaryBtn' style={{width:"auto",alignSelf:"flex-start",margin:"0rem"}}> <TbIcons.TbConfetti className='backIcon'/><h3>Show Me A Move</h3></button>
+                <h1 style={{lineHeight:"2.4rem",marginLeft:"2rem"}}> THANKS <br/> FOR  VISITING!</h1>
+                <button onClick={()=> onAnimationClick()} className='primaryBtn' style={{width:"auto",alignSelf:"flex-start",margin:"0rem",marginLeft:"2rem"}}> <TbIcons.TbConfetti className='backIcon'/><h3>Show Me A Move</h3></button>
               </div>
             </div>
             

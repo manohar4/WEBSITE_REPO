@@ -30,10 +30,10 @@ useEffect(()=>{
     else if(selectionPath ==='works' || selectionPath ==='ProjectDetails' || selectionPath ==='projectDetails'  ){
         setSelectedChild(1);
     }
-    else if(selectionPath === '/writings'|| selectionPath ==='writingDetails' || selectionPath ==='WritingDetails'){
+    else if(selectionPath === 'writings'|| selectionPath ==='writingDetails' || selectionPath ==='WritingDetails'){
         setSelectedChild(2);
     }
-    else if(selectionPath === '/otherActivities'){
+    else if(selectionPath === 'otherActivities'){
         setSelectedChild(3);
     }
     else{
