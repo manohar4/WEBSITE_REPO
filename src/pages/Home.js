@@ -156,10 +156,13 @@ export default function Home() {
                 <div id="splineFlex" style={{display:"flex",flexDirection:"row",backgroundColor:"black",borderRadius:"1rem"}}>
                 {/* {// eslint-disable-next-line
                 <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>} */}
-                <img style={{flex:"1",maxWidth:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
+                <img style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
                 
+                
+                <div style={{flex:"1",display:"flex",alignItems:"center"}}>
+                <button className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Just Say HI</button>
 
-                <button className='primaryBtn'  onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Just Say HI</button>
+                </div>
 
                 </div>
 

@@ -109,6 +109,7 @@ const SubmitFrom = (props)=>{
            <div className="box">
                 <div className="msgform">
                         <h2>Want to Say Something or Just a HI? </h2>
+                        <p style={{lineHeight:"1rem",marginTop:"1rem"}}> IF you are asking a question or query Please do mention your email/contact so I can revert you back  </p>
 
                         <div style={{display:"flex", flexDirection:"column",margin:"1rem 0rem"}}>
                                 <p style={{marginBottom:"0.4rem"}}>Name</p>
@@ -145,11 +146,8 @@ const SubmitFrom = (props)=>{
                                             <span style={{fontSize:"24px"}} role="img">
                                                     {String.fromCodePoint(0x1F63B)}
                                             </span>
-                                    </button>
-                                    
-                                    
+                                    </button>  
                                 </div>
-                            
                             </div>
                             <div style={{display:"flex",justifyContent:"end",gap:"1rem"}}>
                                 <button className='backButton' onClick={props.handleClose} ><p>Close</p></button>
