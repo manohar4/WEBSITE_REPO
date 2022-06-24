@@ -1,5 +1,5 @@
 import React from 'react'
-import * as FiIcons from 'react-icons/fi'
+// import * as FiIcons from 'react-icons/fi'
 
 
 
@@ -7,7 +7,7 @@ export const SideBarData =[
     {title:"Home",
         path:"/",
         mobileTitle:"Home",
-        icon:<FiIcons.FiHome/>,
+        icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F3E0)}</span>,
         cName:'nav-text',
         selectedCName:'nav-text-selected',
         mobileCname:'nav-mobile-text',
@@ -16,7 +16,7 @@ export const SideBarData =[
 {title:"Works",
 mobileTitle:"Works",
 path:"/works",
-icon:<FiIcons.FiBriefcase/>,
+icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">👨‍💻</span>,
 cName:'nav-text',
 selectedCName:'nav-text-selected',
 mobileCname:'nav-mobile-text',
@@ -25,7 +25,7 @@ mobileselectedCName:'nav-mobile-text-selected',
 {title:"Writings",
 mobileTitle:"Writings",
 path:"/writings",
-icon:<FiIcons.FiEdit/>,
+icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">✏️</span>,
 cName:'nav-text',
 selectedCName:'nav-text-selected',
 mobileCname:'nav-mobile-text',
@@ -34,7 +34,7 @@ mobileselectedCName:'nav-mobile-text-selected',
 {title:"Other Activies",
 mobileTitle:"More",
 path:"/otherActivities",
-icon:<FiIcons.FiFeather/>,
+icon:<span style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F918)}</span>,
 cName:'nav-text',
 selectedCName:'nav-text-selected',
 mobileCname:'nav-mobile-text',

@@ -23,7 +23,7 @@ export default function PageNotFound() {
   return (
     <div className='PageNotFound' style={{height:"100vh"}}>
         <div className='col' style={{textAlign:"center", display: "flex",height:"100%",margin:"0",alignItems:"center"}}>
-            <div className='row' style={{justifyContent:"center"}}>
+            <div className='row' style={{justifyContent:"center",padding:"1rem"}}>
                 <div style={{width:"100%",marginBottom:"2rem"}}>
                     <img style={{width:"30%"}} src={notFoundGif} alt="Not found Gif"></img>
                 </div>

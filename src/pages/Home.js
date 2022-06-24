@@ -23,7 +23,7 @@ export default function Home() {
 
     useEffect(()=>{
         
-
+        window.scrollTo(0, 0);
         if(window.innerWidth<1024){
             document.getElementsByClassName('home')[0].style.marginLeft='0px';
         }
@@ -99,20 +99,11 @@ export default function Home() {
                            
                         </div>
                         <div className='expereince-lineitems' >
-                            <h4 >Gleefie (Hyd , India) </h4>
+                            <h4 >Gleefie, Brisky(Interships) </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Graphic/UI Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}}>2017Aug &#8212;'19Oct</p>
-                            </div>
-                            
-                        </div>
-                        <div className='expereince-lineitems'>
-                            <h4 >Brisky (Hyd , India) </h4>
-                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
-                             <div className="desgPeriod">
-                                <h4 style={{textAlign:'right'}} >Graphic Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2017Jun &#8212;'19Jul</p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}}>2017Jun &#8212;'17Oct</p>
                             </div>
                             
                         </div>

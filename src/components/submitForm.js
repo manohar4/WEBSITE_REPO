@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Airtable from 'airtable';
 import '../App.css'
 import '../css/submitForm.css'
@@ -12,6 +12,13 @@ const SubmitFrom = (props)=>{
        message:""
    })
    var base = new Airtable({apiKey: 'keybsrdTHoDUuYEPf'}).base('appIp4v51Inwm4Knr');
+   
+   useEffect(()=>{
+
+    if(window.innerWidth<1024){
+        document.getElementsByClassName('popup-box')[0].style.alignItems='flex-start';
+    }
+   });
 
 
 
