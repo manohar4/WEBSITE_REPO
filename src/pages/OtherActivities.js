@@ -46,6 +46,8 @@ import Animation_10 from './../assets/animationsGif/10.gif'
 import Animation_11 from './../assets/animationsGif/11.gif'
 import Animation_12 from './../assets/animationsGif/12.gif'
 import Animation_13 from './../assets/animationsGif/13.gif'
+import Carousel from '../components/Carousel'
+import { Hobbies } from '../data/hobbies'
 
  function OtherActivities() {
 
@@ -160,7 +162,14 @@ const onAnimationClick =()=>{
                         </div>
                     </div>
                 </div>
-
+            
+            <div  style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /></div>
+            
+            <div className='tools'>
+                    <h6 className='subTitle'>Procreate/Sketches..</h6>
+                   <Carousel elementData={Hobbies} elementWidth="100%" elementHeight="auto" ></Carousel>
+                </div>
+                
                
             
             <Testimonials></Testimonials>
