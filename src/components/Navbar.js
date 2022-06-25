@@ -81,7 +81,7 @@ else{
         
             <nav className={'nav-menu'}>
                 <div className='logo'>
-                <Link style={{display:"unset"}} to='/'><img style={{width:"1.6rem",height:"1.6rem",borderRadius:"4px"}} src="https://dl.airtable.com/.attachmentThumbnails/8b23df7c5c7e9046e9787b82c5200b75/0394af73" alt="My Notion Avatar"></img></Link>
+                <a style={{display:"unset"}} href="https://www.manoharmanu.in"><img style={{width:"1.6rem",height:"1.6rem",borderRadius:"4px"}} src="https://dl.airtable.com/.attachmentThumbnails/8b23df7c5c7e9046e9787b82c5200b75/0394af73" alt="My Notion Avatar"></img></a>
                     <h3>Manohar Manu</h3>
                     
                 </div>

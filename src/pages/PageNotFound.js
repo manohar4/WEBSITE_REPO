@@ -6,7 +6,7 @@ import notFoundGif from '../assets/404.gif'
 
 export default function PageNotFound() {
     const onHomeClick =()=>{
-        window.open("https://www.manoharmanu.in");
+        window.open("https://www.manoharmanu.in","_self");
     }
 
 
@@ -14,11 +14,14 @@ export default function PageNotFound() {
 
     useEffect(()=>{
 
-        document.getElementsByClassName('nav-menu')[0].style.display = 'none'
+        
         document.getElementsByClassName('PageNotFound')[0].style.marginLeft='0px';
         if(window.innerWidth<1024){
             document.getElementsByClassName('PageNotFound')[0].style.marginLeft='0px';
             document.getElementsByClassName('nav-menu-mobile')[0].style.display = 'none'
+        }
+        else{
+            document.getElementsByClassName('nav-menu')[0].style.display = 'none'
         }
     },
     // eslint-disable-next-line
@@ -29,7 +32,7 @@ export default function PageNotFound() {
         <div className='col' style={{textAlign:"center", display: "flex",height:"100%",margin:"0",alignItems:"center"}}>
             <div className='row' style={{justifyContent:"center",padding:"1rem"}}>
                 <div style={{width:"100%",marginBottom:"2rem"}}>
-                    <img style={{width:"30%"}} src={notFoundGif} alt="Not found Gif"></img>
+                    <img autoPlay style={{width:"30%"}} src={notFoundGif} alt="Not found Gif"></img>
                 </div>
                 
                 <h1 style={{marginBottom:"1rem"}}>Sorry! Page Not Found</h1>
