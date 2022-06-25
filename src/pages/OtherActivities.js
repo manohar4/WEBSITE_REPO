@@ -132,7 +132,7 @@ const onAnimationClick =()=>{
             <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
             <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Other Activities</p>}></Header>
             <div className='tools'>
-                    <h6 className='subTitle'>Tools I'm familiar with</h6>
+                    <h6 className='subTitle'>TOOLS I'm FAMILIAR WITH</h6>
                     <div className='tool-row'>
                         <div className='tool-lineitems'>
                             <img src={Figma} alt="Brand Logo"/>
@@ -173,7 +173,7 @@ const onAnimationClick =()=>{
             <div  style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /></div>
             
             <div className='tools'>
-                    <h6 className='subTitle'>Procreate/Sketches..</h6>
+                    <h6 className='subTitle'>PROCREATE {"&"} SKETCHES..</h6>
                    <Carousel elementData={Hobbies} elementWidth="100%" elementHeight="auto" ></Carousel>
                 </div>
                 

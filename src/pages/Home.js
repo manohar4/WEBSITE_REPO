@@ -20,7 +20,7 @@ export default function Home() {
       }
 
       
-
+   
 
     useEffect(()=>{
         
@@ -36,6 +36,7 @@ export default function Home() {
                 desgPeriodArray[i].style.gap='0px';
             }
         }
+
     },[])
 
 
@@ -46,7 +47,7 @@ export default function Home() {
   return (
     <div className='home'>
     <Helmet>
-        <title>Home | Manohar Manu</title>
+        <title>Manohar Manu</title>
         <meta name="description" content="Hey, I'm Manohar. I'm a User Experience designer based out in Bangalore, India | manoharmanu"/>
         <meta name="robots" content="index,follow"/>
         <meta name="googlebot" content="index,follow"/>
@@ -65,7 +66,7 @@ export default function Home() {
                 </div>
 
                 <div className='pastExpereince'>
-                    <h6 className='subTitle'>Past Expereince</h6>
+                    <h6 className='subTitle'>PAST EXPERIENCES</h6>
                     <div className='experience-row'>
                         <div className='expereince-lineitems'>
                             <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India) </a>
@@ -119,7 +120,7 @@ export default function Home() {
                 </div>
 
                 <div className='location'>
-                    <h6 className='subTitle'>From where</h6>
+                    <h6 className='subTitle'>FROM WHERE</h6>
                     <div className='location-row'>
                        <img src={location} className='locationImg' alt="Vizag Location" ></img>
                        <p style={{textAlign:'right'}}> Vishakapatnam, India</p>
@@ -128,7 +129,7 @@ export default function Home() {
                 </div>
 
                 <div className='socialMedia'>
-                    <h6 className='subTitle'>Social Media</h6>
+                    <h6 className='subTitle'>SOCIAL MEDIA</h6>
                     <div className='social-row'>
                         <div className='social-lineitems'>
                             <h4 >Dribbble </h4>

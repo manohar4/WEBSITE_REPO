@@ -2,19 +2,23 @@
 import React,{useEffect} from 'react';
 import '../App.css'
 import notFoundGif from '../assets/404.gif'
-import { useNavigate } from "react-router-dom";
 
 
 export default function PageNotFound() {
-    const navigation = useNavigate();
     const onHomeClick =()=>{
-        navigation("/")
+        window.open("https://www.manoharmanu.in");
     }
 
 
+
+
     useEffect(()=>{
+
+        document.getElementsByClassName('nav-menu')[0].style.display = 'none'
+        document.getElementsByClassName('PageNotFound')[0].style.marginLeft='0px';
         if(window.innerWidth<1024){
             document.getElementsByClassName('PageNotFound')[0].style.marginLeft='0px';
+            document.getElementsByClassName('nav-menu-mobile')[0].style.display = 'none'
         }
     },
     // eslint-disable-next-line
@@ -29,7 +33,7 @@ export default function PageNotFound() {
                 </div>
                 
                 <h1 style={{marginBottom:"1rem"}}>Sorry! Page Not Found</h1>
-                <p style={{marginBottom:"1rem"}}>The Link you followed is probably broken or removed</p>
+                <p style={{marginBottom:"1rem"}}>The Link you followed is probably doesn't exist or broken or removed </p>
                 <button className='primaryBtn' onClick={()=> {onHomeClick()}}>Go to Home</button>
                 </div>
        </div>

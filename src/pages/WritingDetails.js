@@ -12,6 +12,8 @@ import Header from '../components/Header'
 import Plyr from 'plyr';
 import '../css/plyr.css'
 import { useNavigate } from "react-router-dom";
+import Carousel from '../components/Carousel'
+
 
 
 
@@ -176,7 +178,21 @@ export default function WritingDetails() {
                                 </button>       
                                 )
                             }
-                           
+                            else if(item.elementType === 'link'){
+                                return (
+                                <a className='link' key={index} href={item.elementData} target="_blank" rel="noreferrer">{item.elementTitle}</a>      
+                                )
+                            }
+                            else if(item.elementType === 'youtube'){
+                                return (
+                                    <iframe  key={index}  width="100%" height="315" src={item.elementData}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                                )
+                            }
+                            else if(item.elementType === 'carousel'){
+                                return(
+                                    <Carousel key={index}  elementData={item.elementData} elementWidth={item.elementWidth? item.elementWidth:"100%"} elementHeight={item.elementHeight?item.elementHeight:"24rem"}  ></Carousel>
+                                )
+                            }
                             return "";
                             }): ""}
                     </div>
