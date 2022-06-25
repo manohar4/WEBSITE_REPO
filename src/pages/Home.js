@@ -1,4 +1,5 @@
 import React, { useEffect,useState } from 'react'
+import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Home.css'
 import './../css/Global.css'
@@ -44,6 +45,12 @@ export default function Home() {
 
   return (
     <div className='home'>
+    <Helmet>
+        <title>Home | Manohar Manu</title>
+        <meta name="description" content="Hey, I'm Manohar. I'm a User Experience designer based out in Bangalore, India | manoharmanu"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="index,follow"/>
+    </Helmet>
         
         <div className='col'>
             <div className='row'>

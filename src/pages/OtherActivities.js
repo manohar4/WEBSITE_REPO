@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/OtherActivities.css'
 import './../css/Global.css'
@@ -119,6 +120,12 @@ const onAnimationClick =()=>{
 
   return (
     < div className = 'otherActivities'> 
+    <Helmet>
+        <title>More | Manohar Manu</title>
+        <meta name="description" content="Know More about myself and some Testimonials"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="index,follow"/>
+    </Helmet>
     <div className='col'>
             <div className='row'>
 

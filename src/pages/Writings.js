@@ -1,4 +1,5 @@
 import React, { useEffect,useContext } from 'react'
+import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Writings.css'
 import './../css/Global.css'
@@ -25,6 +26,12 @@ import Header from '../components/Header'
 
   return (
     <div className='writings'>
+      <Helmet>
+        <title>Writings | Manohar Manu</title>
+        <meta name="description" content="Articles, blogs - I write about design, UX UI, and Product Design, Visual Designs, best Practices in UX and UI, User Research and many more"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="index,follow"/>
+    </Helmet>
     <div className='col'>
         <div className='row'>
         <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>

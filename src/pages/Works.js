@@ -1,4 +1,5 @@
 import React, { useEffect,useContext } from 'react'
+import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Works.css'
 import './../css/Global.css'
@@ -26,6 +27,13 @@ function Works() {
 
   return (
     < div className = 'works' > 
+
+<Helmet>
+        <title>Works | Manohar Manu</title>
+        <meta name="description" content="List of all my design works"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="index,follow"/>
+    </Helmet>
       <div className='col'>
             <div className='row'>
 

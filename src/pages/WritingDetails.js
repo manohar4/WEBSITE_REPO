@@ -1,4 +1,5 @@
 import React, { useEffect,useContext } from 'react'
+import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
@@ -57,6 +58,12 @@ export default function WritingDetails() {
 
   return (
       <div className='writingDetails'>
+           <Helmet>
+        <title>{writingTitle}</title>
+        <meta name="description" content="Article about Design | UX UI | Best Practices | principles of UX | Laws of UX | UX writings and more "/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="index,follow"/>
+    </Helmet>
             <div className='col'>
                 <div className='row'>
                     <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>

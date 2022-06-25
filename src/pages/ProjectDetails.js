@@ -1,4 +1,5 @@
 import React, { useEffect,useContext } from 'react'
+import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
@@ -58,6 +59,12 @@ export default function ProjectDetails() {
 
   return (
       <div className='projectDetails'>
+           <Helmet>
+        <title>{projectTitle}</title>
+        <meta name="description" content="UX Project Details"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="index,follow"/>
+    </Helmet>
             <div className='col'>
                 <div className='row'>
                     <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
