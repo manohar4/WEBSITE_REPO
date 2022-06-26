@@ -38,6 +38,7 @@ p{
   font-weight:400;
   color:#a3a3a3;
   line-height:1.6rem;
+  white-space: pre-line;  
 }
 
 h1{
@@ -54,7 +55,7 @@ h2{
 
 h3{
   font-weight:400;
-  color:#ffffffd0;
+  color:#fffffff0;
   line-height:1.6rem;
 }
 h4{

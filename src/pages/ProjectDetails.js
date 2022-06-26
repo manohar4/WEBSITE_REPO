@@ -32,6 +32,14 @@ export default function ProjectDetails() {
         Prism.highlightAll();
         if(window.innerWidth<1024){
             document.getElementsByClassName('projectDetails')[0].style.marginLeft='0px';
+            if(document.getElementsByClassName('figmaMobile').length>0){
+                document.getElementsByClassName('figmaMobile')[0].style.width="100%";
+            }
+           if(document.getElementsByClassName('overview').length>0){
+            document.getElementsByClassName('overview')[0].style.flexDirection="column";
+            document.getElementsByClassName('overview')[0].style.gap="1rem";
+           }
+           
         }
     },
     // eslint-disable-next-line
@@ -47,6 +55,7 @@ export default function ProjectDetails() {
        
         else{
             var project= fitlerProjectarray[0].fields;
+           
             var projectTitle = project.project_title;
         }
         
@@ -84,6 +93,9 @@ export default function ProjectDetails() {
                                 return (<h3 key={index} style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</h3>);
                             }
                             else if(item.elementType === 'p'){
+                        
+                                item.elementData = item.elementData.replace(/\\n/g, '\n')
+
                                 return (<p key={index} style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementData}</p>);
                             }
                             else if(item.elementType === 'coverImg'){
@@ -196,9 +208,47 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'carousel'){
                                 return(
-                                    <Carousel elementData={item.elementData} elementWidth={item.elementWidth? item.elementWidth:"100%"} elementHeight={item.elementHeight?item.elementHeight:"24rem"}  ></Carousel>
+                                    <Carousel  key={index} elementData={item.elementData} elementWidth={item.elementWidth? item.elementWidth:"100%"} elementHeight={item.elementHeight?item.elementHeight:"24rem"}  ></Carousel>
                                 )
                             }
+                            else if(item.elementType === 'figmaMobile'){
+                                return(
+                                        <div key={index} style={{textAlign: "center"}}>
+                                            <iframe className='figmaMobile'  title="Figma player"   style={{border: "1px solid rgba(0, 0, 0, 0.1)", width:"400px" ,height:"774px"}} src={item.elementData} allowFullScreen></iframe>
+                                        </div>
+                                    )
+                            }
+                            else if(item.elementType === 'figmaDesktop'){
+                                return(
+                                        <div key={index}  style={{textAlign: "center"}}>
+                                          <iframe className='figmaDesktop'  title="Figma player"  style={{border: "1px solid rgba(0, 0, 0, 0.1)", width:"100%" ,height:"774px"}} src={item.elementData} allowFullScreen></iframe>
+
+                                           </div>
+                                    )
+                            }
+                            else if(item.elementType === 'overview'){
+                                return(
+                                        <div key={index} className="overview" style={{display:"flex",gap:"0.5rem"}}>
+                                            <div style={{flex:2}}>
+                                                <h3>Breif</h3>
+                                                <p>{item.elementBrief}</p>
+                                            </div>
+                                            <div style={{flex:1}}>
+                                                        {item.elementData.map((item,index)=>{
+                                                            console.log(Object.keys(item)[0])
+                                                             
+                                                        return( 
+                                                       
+                                                        <div style={{marginBottom:"0.5rem"}}>
+                                                            <h3>{Object.keys(item)[0]}</h3>
+                                                            <p>{item[Object.keys(item)[0]]}</p>
+                                                        </div>)
+                                                    })}
+                                            </div>
+                                        </div>
+                                    )
+                            }
+                            
                            
                             return "";
                         }): ""}
