@@ -13,7 +13,7 @@
 
 }
 
-button:hover,a:hover{
+button:hover,a:hover, .closeIcon:hover, .closeIcon.svg:hover{
   cursor: url(../src//assets/hover.png),auto !important;
 }
 a *:hover,button *:hover,a.svg:hover,a span:hover,div.writingItem, div.writingItem *{

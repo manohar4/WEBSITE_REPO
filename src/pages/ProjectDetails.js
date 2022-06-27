@@ -1,4 +1,4 @@
-import React, { useEffect,useContext } from 'react'
+import React, { useEffect,useContext,useState } from 'react'
 import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Global.css'
@@ -13,20 +13,35 @@ import Plyr from 'plyr';
 import '../css/plyr.css'
 import { useNavigate } from "react-router-dom";
 import Carousel from '../components/Carousel'
+import FullImage from '../components/FullImage';
 
 
 
 export default function ProjectDetails() {
-    window.scrollTo(0,0);
     const {projectsDetailsData} = useContext(FetchProjectsDetails);
+    const [isImgeOpen, setIsImgeOpen] = useState(false);
+    const [imgSrc,setImgSrc] = useState("");
     const { id } = useParams();
     const back = true;
     const navigation = useNavigate()
   
+    const toggleFullImagePopup = (event) => {
 
+        if(!isImgeOpen){
+            document.getElementsByTagName("body")[0].style.overflowY = "hidden"
+        }
+        else{
+            document.getElementsByTagName("body")[0].style.overflowY = ""
+        }
+        
+        console.log(event)
+        setImgSrc(event.target.src);
+        setIsImgeOpen(!isImgeOpen);
+      }
 
 
     useEffect(()=>{
+        window.scrollTo(0, 0);
         // eslint-disable-next-line
         const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
         Prism.highlightAll();
@@ -105,17 +120,11 @@ export default function ProjectDetails() {
                                 <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
                             }
-                            else if(item.elementType === 'projectOverview'){
-                                return (
-                                <figure key={index}>
-                                <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
-                                <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
-                                </figure>);
-                            }
+                    
                             else if(item.elementType === 'img'){
                                 return (
                                 <figure key={index}>
-                                    <img style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
+                                    <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
                             }
@@ -255,6 +264,8 @@ export default function ProjectDetails() {
                     </div>
                 </div>
             </div>
+
+            {isImgeOpen && <FullImage handleClose={toggleFullImagePopup} imgSrc={imgSrc}/>}
       </div>
   ) 
 }

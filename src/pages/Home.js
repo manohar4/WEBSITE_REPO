@@ -8,16 +8,42 @@ import Header from '../components/Header';
 import * as GiIcons from 'react-icons/gi';
 import Love from '../assets/love.gif';
 import SubmitFrom from '../components/submitForm';
+import FullImage from '../components/FullImage';
 
 
 
 export default function Home() {
     const back=false;
     const [isOpen, setIsOpen] = useState(false);
+    const [isImgeOpen, setIsImgeOpen] = useState(false);
+    const [imgSrc,setImgSrc] = useState("");
 
     const togglePopup = () => {
+
+        if(!isOpen){
+            document.getElementsByTagName("body")[0].style.overflowY = "hidden"
+        }
+        else{
+            document.getElementsByTagName("body")[0].style.overflowY = ""
+        }
+       
         setIsOpen(!isOpen);
       }
+
+    const toggleFullImagePopup = (event) => {
+
+        if(!isImgeOpen){
+            document.getElementsByTagName("body")[0].style.overflowY = "hidden"
+        }
+        else{
+            document.getElementsByTagName("body")[0].style.overflowY = ""
+        }
+        
+        console.log(event)
+        setImgSrc(event.target.src);
+        setIsImgeOpen(!isImgeOpen);
+      }
+
 
       
    
@@ -122,7 +148,7 @@ export default function Home() {
                 <div className='location'>
                     <h6 className='subTitle'>FROM WHERE</h6>
                     <div className='location-row'>
-                       <img src={location} className='locationImg' alt="Vizag Location" ></img>
+                       <img src={location} onClick={(event)=>{toggleFullImagePopup(event)}}  className='locationImg' alt="Vizag Location" ></img>
                        <p style={{textAlign:'right'}}> Vishakapatnam, India</p>
 
                     </div>
@@ -164,7 +190,7 @@ export default function Home() {
                 <div id="splineFlex" style={{display:"flex",flexDirection:"row",backgroundColor:"black",borderRadius:"1rem"}}>
                 {/* {// eslint-disable-next-line
                 <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>} */}
-                <img style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
+                <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
                 
                 
                 <div style={{flex:"1",display:"flex",alignItems:"center"}}>
@@ -180,6 +206,7 @@ export default function Home() {
             </div> 
         </div>
         {isOpen && <SubmitFrom handleClose={togglePopup}/>}
+        {isImgeOpen && <FullImage handleClose={toggleFullImagePopup} imgSrc={imgSrc}/>}
     </div>
   )
 }

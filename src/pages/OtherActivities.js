@@ -135,31 +135,31 @@ const onAnimationClick =()=>{
                     <h6 className='subTitle'>TOOLS I'm FAMILIAR WITH</h6>
                     <div className='tool-row'>
                         <div className='tool-lineitems'>
-                            <img src={Figma} alt="Brand Logo"/>
+                            <img className="toolLogo" src={Figma} alt="Brand Logo"/>
                             <h4 >Figma </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <p>Experienced</p>
                         </div>
                         <div className='tool-lineitems'>
-                            <img src={XD} alt="Brand Logo"/>
+                            <img className="toolLogo" src={XD} alt="Brand Logo"/>
                             <h4 >XD </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <p>Experienced</p>
                         </div>
                         <div className='tool-lineitems'>
-                            <img src={Sketch} alt="Brand Logo"/>
+                            <img className="toolLogo" src={Sketch} alt="Brand Logo"/>
                             <h4 >Sketch </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <p>Moderate</p>
                         </div>
                         <div className='tool-lineitems'>
-                            <img src={Miro} alt="Brand Logo"/>
+                            <img className="toolLogo" src={Miro} alt="Brand Logo"/>
                             <h4 >Miro </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <p>Good</p>
                         </div>
                         <div className='tool-lineitems'>
-                            <img src={Adobe_CC} alt="Brand Logo"/>
+                            <img className="toolLogo" src={Adobe_CC} alt="Brand Logo"/>
                             <h4 >Adobe Create Cloud Tools </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
                             <p>Moderate</p>
