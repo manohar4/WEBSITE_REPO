@@ -11,7 +11,6 @@ import SubmitFrom from '../components/submitForm';
 import FullImage from '../components/FullImage';
 
 
-
 export default function Home() {
     const back=false;
     const [isOpen, setIsOpen] = useState(false);
