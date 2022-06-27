@@ -18,6 +18,7 @@ export default function Navbar() {
 
 const[bgMusicImage,setBgMusicImage] = useState(RainPic)
 const[play,setPlay]=useState(true);
+const[disabled,setDisabled]= useState(true)
 
 
 var audiosList = [Rain,Waves,Forest,Clouds];
@@ -42,8 +43,8 @@ const [selectedChild,setSelectedChild]=  useState();
 
 
 useEffect(()=>{
+
     var selectionPath = document.location.pathname.split("/")[1];
-    console.log();
     if(selectionPath ===''){
         setSelectedChild(0);
     }
@@ -64,14 +65,17 @@ useEffect(()=>{
 
 
 const onPlayClick=()=>{
+   
     setPlay(!play);
     audio.volume = 0.2;
 
     if(play){
+        setDisabled(false);
         document.getElementsByClassName("albumCover")[0].style.animationPlayState="running";
         audio.play();
     }
     else{
+        setDisabled(true);
          document.getElementsByClassName("albumCover")[0].style.animationPlayState="paused";
          audio.pause();
     }
@@ -84,7 +88,6 @@ const onPlayNext=()=>{
        
         audioCount =0;
     }
-    console.log(audioCount);
     audio.src = audiosList[audioCount];
     audio.play();
 
@@ -100,7 +103,6 @@ const onPlayBack=()=>{
     audio.src = audiosList[audioCount];
     audio.play();
     audioCount === 0? setBgMusicImage(RainPic): audioCount === 1?setBgMusicImage(WavesPic):audioCount === 2? setBgMusicImage(ForestPic):setBgMusicImage(CloudsPic);
-    console.log(bgMusicImage);
 }
 
 
@@ -161,23 +163,23 @@ else{
                 <div style={{display:"flex",backgroundColor:"#ffffff20",height:"3.5rem",margin:"0rem 0.5rem",borderRadius:"0.5rem", backdropFilter: "blur(5px)",justifyContent: "space-evenly"}}>
                     <div>
                         <img className='albumCover' style={{borderRadius:"10rem",bottom:"1.5rem",width:"4rem",height:"4rem",position:"relative"}}  src={bgMusicImage} alt="cover pic"></img>
-                        <audio id="audio" src={Rain}></audio>
+                        <audio id="audio" src={Rain} loop></audio>
                     </div>
                     <div style={{borderRadius:"4px",display:"flex",justifyContent:"space-between",alignItems:"center",color:"white"}}>
 
-                        <IoIcons.IoPlayBack  className="musicIcon" onClick={onPlayBack}/>
-                        <IoIcons.IoPlayForward className="musicIcon" onClick={onPlayNext}/>
+                        <IoIcons.IoPlayBack    style={disabled ? {pointerEvents: "none", opacity: "0.4"} : {}}   className="musicIcon" onClick={onPlayBack}/>
+                        <IoIcons.IoPlayForward  style={disabled ? {pointerEvents: "none", opacity: "0.4"} : {}}  className="musicIcon" onClick={onPlayNext}/>
                         <div style={{alignItems: "center", display: "flex"}}>
                                {
-                               [1].map(()=>{
+                               [1].map((item,index)=>{
                                     if(play){
                                         return(
-                                        <IoIcons.IoPlay className="musicIcon" onClick={onPlayClick}/>     
+                                        <IoIcons.IoPlay key={index} className="musicIcon" onClick={onPlayClick}/>     
                                         )
                                         }  
                                     else{
                                         return(
-                                        <IoIcons.IoStop className="musicIcon" onClick={onPlayClick}/>   
+                                        <IoIcons.IoStop key={index} className="musicIcon" onClick={onPlayClick}/>   
                                         )  
                                     }
                                    } 
