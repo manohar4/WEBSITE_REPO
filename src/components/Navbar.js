@@ -2,14 +2,27 @@ import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import { SideBarData } from './SideBarData';
 import './Navbar.css';
-import bgMusicImage from "../assets/bgMusicImage.png"
+import RainPic from "../assets/BGMUSIC/albumCovers/Rain.png"
+import WavesPic from "../assets/BGMUSIC/albumCovers/Waves.png"
+import ForestPic from "../assets/BGMUSIC/albumCovers/Forest.png"
+import CloudsPic from "../assets/BGMUSIC/albumCovers/Clouds.png"
 import * as IoIcons from 'react-icons/io5';
 import Rain from '../assets/BGMUSIC/Rain.mp3'
+import Waves from '../assets/BGMUSIC/Waves.mp3'
+import Forest from '../assets/BGMUSIC/Forest.mp3'
+import Clouds from '../assets/BGMUSIC/Clouds.mp3'
 
+var audioCount =0;
 
 export default function Navbar() {
 
-const[play,setPlay]=useState(true)
+const[bgMusicImage,setBgMusicImage] = useState(RainPic)
+const[play,setPlay]=useState(true);
+
+
+var audiosList = [Rain,Waves,Forest,Clouds];
+var audio = document.getElementById("audio");
+
 
 
 var smallerDeviceCheck;
@@ -52,7 +65,6 @@ useEffect(()=>{
 
 const onPlayClick=()=>{
     setPlay(!play);
-    var audio = document.getElementById("audio");
     audio.volume = 0.2;
 
     if(play){
@@ -63,6 +75,32 @@ const onPlayClick=()=>{
          document.getElementsByClassName("albumCover")[0].style.animationPlayState="paused";
          audio.pause();
     }
+}
+
+const onPlayNext=()=>{
+    
+    audioCount++;
+    if(audioCount === audiosList.length){
+       
+        audioCount =0;
+    }
+    console.log(audioCount);
+    audio.src = audiosList[audioCount];
+    audio.play();
+
+    audioCount === 0? setBgMusicImage(RainPic): audioCount === 1?setBgMusicImage(WavesPic):audioCount === 2? setBgMusicImage(ForestPic):setBgMusicImage(CloudsPic);
+
+}
+
+const onPlayBack=()=>{
+    audioCount--;
+    if(audioCount<0){
+        audioCount =audiosList.length-1;
+    }
+    audio.src = audiosList[audioCount];
+    audio.play();
+    audioCount === 0? setBgMusicImage(RainPic): audioCount === 1?setBgMusicImage(WavesPic):audioCount === 2? setBgMusicImage(ForestPic):setBgMusicImage(CloudsPic);
+    console.log(bgMusicImage);
 }
 
 
@@ -127,8 +165,8 @@ else{
                     </div>
                     <div style={{borderRadius:"4px",display:"flex",justifyContent:"space-between",alignItems:"center",color:"white"}}>
 
-                        <IoIcons.IoPlayBack  className="musicIcon"/>
-                        <IoIcons.IoPlayForward className="musicIcon"/>
+                        <IoIcons.IoPlayBack  className="musicIcon" onClick={onPlayBack}/>
+                        <IoIcons.IoPlayForward className="musicIcon" onClick={onPlayNext}/>
                         <div style={{alignItems: "center", display: "flex"}}>
                                {
                                [1].map(()=>{
