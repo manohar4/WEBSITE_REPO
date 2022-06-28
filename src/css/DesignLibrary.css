@@ -1,17 +1,21 @@
 .grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
+    gap:0.4rem
 
 }
 .cardLib{
-    padding: 1rem ;
+    padding: 0.4rem ;
+    height: 6rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 
 .cardLib:hover{
     background-color: #ffffff20;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 .ItemName{
 
@@ -43,3 +47,29 @@
         padding: 0.4rem !important;
     }
 }
+
+.tabButton{
+    background: transparent;
+    border: 0;
+    color: #ffffff90;
+    display: flex;
+    height: 2.4rem;
+    align-items: center;
+    padding: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.tabButton-active {
+    background: transparent;
+    border: 0;
+    color: #fffffff0;
+    display: flex;
+    height: 2,4rem;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius:4px;
+    background-color: #ffffff20;
+} 

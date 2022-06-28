@@ -11,7 +11,6 @@ import {FetchProjectsList} from '../helper/Context'
 function Works() {
 
   const {projectsListData} = useContext(FetchProjectsList);
-  console.log(projectsListData);
   
 
  useEffect(()=>{
@@ -62,7 +61,7 @@ function Works() {
                                           <div style={{display:"flex",flexDirection:'row',gap:"8px"}}>
                                               {item.Project_Tags.map((item,index) => {
                                                 return(
-                                                  <p key={index} style={{marginBottom:"0.5rem",fontSize:"10px",border:"1px solid #ffffff50", paddingLeft:'4px',paddingRight:'4px',borderRadius:'4px'}}>{item}</p>
+                                                  <p key={index} style={{marginBottom:"0.5rem",fontSize:"10px",border:"1px solid #ffffff50", paddingLeft:'4px',paddingRight:'4px',borderRadius:'0.5rem'}}>{item}</p>
                                                 )
                                               })}    
                                           </div>

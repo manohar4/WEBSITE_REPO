@@ -97,31 +97,37 @@ function App() {
     }
 
     const getDesignLibrary = async()=>{
+
       const records = await base('DesignLibraryData').select({maxRecords: 100}).firstPage();
-        // Accepts the array and key
-        const groupBy = (array, key) => {
-          // Return the end result
-          return array.reduce((result, currentValue) => {
-            // If an array already present for key, push it to the array. Else create an array and push the object
+
+          const groupBy = (array, key) => {
+
+
+          var reduced = array.reduce((result, currentValue) => {
             (result[currentValue.fields[key]] = result[currentValue.fields[key]] || []).push(
               currentValue.fields
             );
-            // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+
             return result;
-          }, {}); // empty object is the initial value for result object
+
+          }, {});
+          return reduced
         };
 
-        // Group by color as key to the person array
-        const groupbyCategory = groupBy(records, "Category");
-        var designLibraryDataArray = Object.keys(groupbyCategory).map((key) => [String(key), groupbyCategory[key]]);
-        designLibraryDataArray.sort();
 
-              for( var i=0;i<=designLibraryDataArray.length-1;i++){
-                console.log(designLibraryDataArray[i][1])  
-                 designLibraryDataArray[i][1].sort((a, b) => b.Favourite-a.Favourite);
-             }
+   
+        const groupedObj = groupBy(records,"Category");
 
-      setDesignLibraryData(designLibraryDataArray);
+        let sortable = [];
+for (var item in groupedObj) {
+    sortable.push({"catergory":item,"order": item.split(". ")[0] ,"Items":groupedObj[item]});
+}
+
+
+  
+
+        var designLibraryDataArray = sortable.sort((a, b) =>  a.order-b.order);
+        setDesignLibraryData(designLibraryDataArray);      
     }
 
 

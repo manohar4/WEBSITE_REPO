@@ -22,8 +22,6 @@ import Header from '../components/Header'
     }
 },[])
     
-
-
   return (
     <div className='writings'>
       <Helmet>
