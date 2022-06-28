@@ -11,7 +11,7 @@ import {FetchProjectsList} from '../helper/Context'
 function Works() {
 
   const {projectsListData} = useContext(FetchProjectsList);
-
+  console.log(projectsListData);
   
 
  useEffect(()=>{

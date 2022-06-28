@@ -5,3 +5,4 @@ export const FetchProjectsDetails = createContext([]);
 
 export const FetchWritingList = createContext([]);
 export const FetchWritingDetails = createContext([]);
+export const FetchDesignLibrary = createContext([]);

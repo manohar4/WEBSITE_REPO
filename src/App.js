@@ -10,10 +10,13 @@ import Writings from './pages/Writings.js';
 import ProjectDetails from './pages/ProjectDetails.js';
 import WritingDetails from './pages/WritingDetails.js';
 import PageNotFound from './pages/PageNotFound.js';
+import DesignLibrary from './pages/DesignLibrary.js'
 import Airtable from 'airtable';
-import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchWritingDetails} from './helper/Context';
+import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchWritingDetails,FetchDesignLibrary} from './helper/Context';
 import { useState,useEffect } from 'react';
 import Plyr from 'plyr';
+
+
 
 function App() {
 
@@ -21,6 +24,8 @@ function App() {
     const[projectsDetailsData,setProjectsDetailsData] = useState([]);
     const[writingsListData,setWritingsListData] = useState([]);
     const[writingDetailsData,setWritingDetailsData] = useState([]);
+    const[designLibraryData,setDesignLibraryData] = useState([]);
+
 
       // eslint-disable-next-line
     const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
@@ -91,12 +96,41 @@ function App() {
       setWritingDetailsData(records);
     }
 
+    const getDesignLibrary = async()=>{
+      const records = await base('DesignLibraryData').select({maxRecords: 100}).firstPage();
+        // Accepts the array and key
+        const groupBy = (array, key) => {
+          // Return the end result
+          return array.reduce((result, currentValue) => {
+            // If an array already present for key, push it to the array. Else create an array and push the object
+            (result[currentValue.fields[key]] = result[currentValue.fields[key]] || []).push(
+              currentValue.fields
+            );
+            // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+            return result;
+          }, {}); // empty object is the initial value for result object
+        };
+
+        // Group by color as key to the person array
+        const groupbyCategory = groupBy(records, "Category");
+        var designLibraryDataArray = Object.keys(groupbyCategory).map((key) => [String(key), groupbyCategory[key]]);
+        designLibraryDataArray.sort();
+
+              for( var i=0;i<=designLibraryDataArray.length-1;i++){
+                console.log(designLibraryDataArray[i][1])  
+                 designLibraryDataArray[i][1].sort((a, b) => b.Favourite-a.Favourite);
+             }
+
+      setDesignLibraryData(designLibraryDataArray);
+    }
+
 
     useEffect(()=>{
         getRecords();
         getProjectsDetailsRecords();
         getWritingRecords();
         getWritingDetailsRecords();
+        getDesignLibrary();
     },
     // eslint-disable-next-line
     [])
@@ -107,6 +141,7 @@ function App() {
   <FetchProjectsDetails.Provider value={{projectsDetailsData,setProjectsDetailsData}}>
   <FetchWritingList.Provider value={{writingsListData,setWritingsListData}}>
     <FetchWritingDetails.Provider value={{writingDetailsData,setWritingDetailsData}}>
+      <FetchDesignLibrary.Provider value={{designLibraryData,setDesignLibraryData}}>
     <div className="App">
       <Router>
       <Helmet>
@@ -127,11 +162,14 @@ function App() {
           <Route path='/OtherActivities' element={<OtherActivities />}/>
           <Route path='/ProjectDetails/:id' element={<ProjectDetails />}/>
           <Route path='/WritingDetails/:id' element={<WritingDetails />}/>
+          <Route path='/DesignLibrary' element={<DesignLibrary />}/>
+          
           <Route path="*" element={<PageNotFound />} />
          
         </Routes>
       </Router>
     </div>
+    </FetchDesignLibrary.Provider>
     </FetchWritingDetails.Provider>
     </FetchWritingList.Provider>
     </FetchProjectsDetails.Provider>

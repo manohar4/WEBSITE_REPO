@@ -11,6 +11,8 @@ import Adobe_CC from "./../assets/tools/Adobe CC.png"
 import Header from '../components/Header'
 import Testimonials from '../components/Testimonials'
 import * as TbIcons from 'react-icons/tb'
+import * as IoIcons from 'react-icons/io5';
+
 
 import CustomCursor from "../assets/tools/Sketch.png"
 
@@ -49,11 +51,13 @@ import Animation_12 from './../assets/animationsGif/12.gif'
 import Animation_13 from './../assets/animationsGif/13.gif'
 import Carousel from '../components/Carousel'
 import { Hobbies } from '../data/hobbies'
+import { useNavigate } from "react-router-dom";
 
  function OtherActivities() {
 
     window.prevAnimoji =1;
-    
+
+    const navigation = useNavigate()
     const[gif,setGif] = useState(Animation_1)
 
   window.currentAnimoji = 9;
@@ -118,6 +122,10 @@ const onAnimationClick =()=>{
     }
 }
 
+const openDesignLibrary=()=>{
+    navigation("/DesignLibrary");
+}
+
   return (
     < div className = 'otherActivities'> 
     <Helmet>
@@ -131,6 +139,9 @@ const onAnimationClick =()=>{
 
             <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
             <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Other Activities</p>}></Header>
+            
+            <button className='resourcesButton' onClick={openDesignLibrary} > Check Out My Design Bookmarks <IoIcons.IoArrowForwardCircle  style={{fontSize:"2rem"}}/>  </button>
+            
             <div className='tools'>
                     <h6 className='subTitle'>TOOLS I'm FAMILIAR WITH</h6>
                     <div className='tool-row'>
@@ -176,8 +187,6 @@ const onAnimationClick =()=>{
                     <h6 className='subTitle'>PROCREATE {"&"} SKETCHES..</h6>
                    <Carousel elementData={Hobbies} elementWidth="100%" elementHeight="auto" ></Carousel>
                 </div>
-                
-               
             
             <Testimonials></Testimonials>
 
