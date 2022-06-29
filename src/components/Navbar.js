@@ -54,7 +54,7 @@ useEffect(()=>{
     else if(selectionPath === 'writings'|| selectionPath ==='writingDetails' || selectionPath ==='WritingDetails'){
         setSelectedChild(2);
     }
-    else if(selectionPath === 'otherActivities'){
+    else if(selectionPath === 'otherActivities' || selectionPath === 'DesignLibrary'){
         setSelectedChild(3);
     }
     else{

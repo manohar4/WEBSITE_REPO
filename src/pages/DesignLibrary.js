@@ -27,12 +27,15 @@ export default function DesignLibrary() {
         if(window.innerWidth<1024){
             document.getElementsByClassName('DesignLibrary')[0].style.marginLeft='0px';
         }
+        
     },
 
     // eslint-disable-next-line
     [])
 
     const onTabClick = (event)=>{
+
+        
 
         for(var i=0;i<= designLibraryData.length-1;i++){
            designLibraryData[i][2] = "tabButton";
@@ -42,6 +45,9 @@ export default function DesignLibrary() {
         setCurrentSeclection(parseInt(event.target.dataset.order, 10)-1);
 
     }
+   
+    
+    
 
 
     if(smallerDeviceCheck){
@@ -54,7 +60,7 @@ export default function DesignLibrary() {
         
                        <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                         <div style={{display:"flex",flexDirection:"column", width:"100%",gap:"1rem"}}>
-                            <div style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"black"}} >
+                            <div  className="HeaderFixed" style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"black"}} >
                                     {
                                     designLibraryData.map((item,index)=>{
                                         return(
@@ -98,10 +104,9 @@ export default function DesignLibrary() {
                     <div className='row'>
                         <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                         <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Library</p>}></Header>
-        
                         
                         <div style={{display:"flex", width:"100%",gap:"1rem"}}>
-                            <div style={{display:"flex",flexDirection:"column", flex:"1"}} >
+                            <div style={{display:"flex",flexDirection:"column", flex:"1",position:"sticky",top:"4rem",height: "0rem"}} >
                                     {
                                     designLibraryData.map((item,index)=>{
                                         return(
@@ -119,7 +124,7 @@ export default function DesignLibrary() {
                                                     <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
                                                 </div>
                                                 <div   style={{width:"100%"}}>
-                                                    <h3 className='ItemName'>{item.ItemName}<span className='myFav' style={{opacity: item.Favourite? "1":"0"}}>My Fav</span></h3>
+                                                    <h3 className='ItemName'>{item.ItemName}<span className='myFav' style={{opacity: item.Favourite? "1":"0"}}>{item.Favourite}</span></h3>
                                                     <p style={{fontSize:"14px"}} className='ItemName'>{item.Description}</p>
                                                     </div>
                                                 

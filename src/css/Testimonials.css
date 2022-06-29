@@ -12,16 +12,26 @@
   
   .Tcard {
     flex-shrink: 0;
-    width: 50%;
-    height: 16rem;
+    width: 56%;
+    height: 18rem;
     background-color: #171717;
     border-radius: 1rem;
-    margin-left: 10px;
+    margin-left: 16px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 0.5rem;
-    box-shadow: 4px 4px 0px 0px #ffffff20;
+     box-shadow: 1px 1px 0px #343434,
+                2px 2px 0px #343434,
+                3px 3px 0px #343434,
+                4px 4px 0px #343434,
+                5px 5px 0px #343434,
+                6px 6px 0px #343434
+                 
+    
+                
+                  
+               
 
   }
   .container::-webkit-scrollbar {
