@@ -70,3 +70,8 @@
     margin-left: 4px;
 
 }
+
+
+.HeaderFixed::-webkit-scrollbar {
+    display: none;        /* width of the entire scrollbar */
+}

@@ -1,5 +1,6 @@
 /* Popup style */
 .popup-box {
+  backdrop-filter: blur(0.5rem);
     position: fixed;
     background: #000000a0;
     width: 100%;

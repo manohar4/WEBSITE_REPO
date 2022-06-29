@@ -67,7 +67,7 @@ useEffect(()=>{
 const onPlayClick=()=>{
    
     setPlay(!play);
-    audio.volume = 0.2;
+    audio.volume = 0.4;
 
     if(play){
         setDisabled(false);

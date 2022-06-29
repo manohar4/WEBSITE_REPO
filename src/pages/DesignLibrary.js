@@ -60,7 +60,7 @@ export default function DesignLibrary() {
         
                        <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                         <div style={{display:"flex",flexDirection:"column", width:"100%",gap:"1rem"}}>
-                            <div  className="HeaderFixed" style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"black"}} >
+                            <div  className="HeaderFixed" style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"black",overflow:"scroll",maxWidth:"94vw"}} >
                                     {
                                     designLibraryData.map((item,index)=>{
                                         return(
