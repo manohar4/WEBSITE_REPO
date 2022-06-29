@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import Header from '../components/Header';
 import '../css/DesignLibrary.css'
 import { FetchDesignLibrary } from '../helper/Context';
-import * as TiIcons from 'react-icons/ti'
-
 
 
 export default function DesignLibrary() {
@@ -14,13 +12,14 @@ export default function DesignLibrary() {
     const[selected] = useState("tabButton-active")
     const[selectCount,setSelectCount] = useState(0)
 
-
-
-
-
-
-
-
+    var smallerDeviceCheck;
+    if(window.innerWidth<1024){
+        smallerDeviceCheck= true;
+        
+    }
+    else{
+        smallerDeviceCheck= false;
+    }
 
     useEffect(()=>{
         
@@ -35,7 +34,6 @@ export default function DesignLibrary() {
 
     const onTabClick = (event)=>{
 
-        debugger;
         for(var i=0;i<= designLibraryData.length-1;i++){
            designLibraryData[i][2] = "tabButton";
         }
@@ -46,87 +44,102 @@ export default function DesignLibrary() {
     }
 
 
+    if(smallerDeviceCheck){
 
-  return (
-    <div className='DesignLibrary'>
-        <div className='col'>
-            <div className='row'>
-                <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
-                <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Library</p>}></Header>
-
-                {/* <div style={{display:"flex",gap:"1rem",flexDirection:"column"}}>
-                {designLibraryData.map((item,index)=>{
-                      console.log(item);
-                    return(
-                      
-                        <div key={index}>
-                           
-                                 <h3 style={{marginBottom:"0.4rem"}}>{item[0].split(".")[1]}</h3>
-                                <div className="grid">        
-                               
-                                
+        return (
+            <div className='DesignLibrary'>
+                <div className='col'>
+                    <div className='row'>
+                       <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Library</p>}></Header>
+        
+                       <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
+                        <div style={{display:"flex",flexDirection:"column", width:"100%",gap:"1rem"}}>
+                            <div style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"black"}} >
                                     {
-                                    
-                                    item[1].map((item,index)=>{
-                                        
-
+                                    designLibraryData.map((item,index)=>{
                                         return(
-                                            <div className='cardLib' onClick={()=>{ window.open(item.Link); }}>
-                                                <TiIcons.TiStarFullOutline style={{ position: "absolute",fontSize: "24px",color:"#ff7744f0",opacity: item.Favourite? "1":"0",margin: "4px",stroke:"2px black solid"}} />
-                                                <div style={{aspectRatio: "1",width:"100%"}}>
+                                            <button className={index === selectCount? selected: "tabButton" } onClick={(event)=>{ onTabClick(event) }} data-order={item.order}  >{item.catergory.split(". ")[1]}</button>
+                                        )}
+                                    )}
+                            </div>
+                            <div className="grid" style={{display:"grid", flex:"4"}} >
+                            {
+                                designLibraryData.length>0 ? designLibraryData[currentSelection].Items.map((item,index)=>{                
+                                        return(
+                                            <div className='cardLib' onClick={()=> item.Link ? window.open(item.Link):null }>
+                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "white",borderRadius: "0.5rem"}}>
                                                     
-                                                    <img style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
-                                                 </div>
-                                                 <div  ><p className='ItemName'>{item.ItemName}</p></div>
+                                                    <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
+                                                </div>
+                                                <div style={{width:"100%"}}>
+                                                    <h3 className='ItemName'>{item.ItemName}<span className='myFav' style={{opacity: item.Favourite? "1":"0"}}>My Fav</span></h3>
+                                                    <p style={{fontSize:"14px"}} className='ItemName'>{item.Description}</p>
+                                                    </div>
                                                 
                                             </div>
-                                           
-                                        )
-                                    })}
-                                 </div>
-
-                                 <hr style={{opacity:"10%"}} className="solid"/>
-                        </div>
-                    
-                    )
-                 })
-                }
-                </div> */}
-
-
-                <div style={{display:"flex", width:"100%",padding: "1rem 0rem",gap:"1rem"}}>
-                    <div style={{display:"flex",flexDirection:"column", flex:"1"}} >
-                            {
-                            designLibraryData.map((item,index)=>{
-                                return(
-                                    <button className={index === selectCount? selected: "tabButton" } onClick={(event)=>{ onTabClick(event) }} data-order={item.order}  >{item.catergory}</button>
-                                )}
-                            )}
-                    </div>
-                    <div className="grid" style={{display:"grid", flex:"4"}} >
-                    {
-                        designLibraryData.length>0 ? designLibraryData[currentSelection].Items.map((item,index)=>{                
-                                return(
-                                    <div className='cardLib' onClick={()=>{ window.open(item.Link); }}>
-                                        <TiIcons.TiStarFullOutline style={{ position: "absolute",fontSize: "16px",color:"#ff7744f0",opacity: item.Favourite? "1":"0",margin: "4px",stroke:"2px black solid"}} />
-                                        <div style={{aspectRatio: "1",height:"100%"}}>
-                                            
-                                            <img style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
-                                        </div>
-                                        <div  ><p className='ItemName'>{item.ItemName}</p></div>
                                         
-                                    </div>
-                                
-                                )
-                           
-                            }):""
-                                    
-                    }
+                                        )
+                                   
+                                    }):""
+                                            
+                            }
+                            </div>
+                        </div>
                     </div>
-                </div>
+                 </div>
             </div>
-         </div>
-    </div>
-  )
+          )
+    }
+    else{
+
+        return (
+            <div className='DesignLibrary'>
+                <div className='col'>
+                    <div className='row'>
+                        <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
+                        <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Library</p>}></Header>
+        
+                        
+                        <div style={{display:"flex", width:"100%",gap:"1rem"}}>
+                            <div style={{display:"flex",flexDirection:"column", flex:"1"}} >
+                                    {
+                                    designLibraryData.map((item,index)=>{
+                                        return(
+                                            <button className={index === selectCount? selected: "tabButton" } onClick={(event)=>{ onTabClick(event) }} data-order={item.order}  >{item.catergory.split(". ")[1]}</button>
+                                        )}
+                                    )}
+                            </div>
+                            <div className="grid" style={{display:"grid", flex:"4"}} >
+                            {
+                                designLibraryData.length>0 ? designLibraryData[currentSelection].Items.map((item,index)=>{                
+                                        return(
+                                            <div className='cardLib' onClick={()=> item.Link ? window.open(item.Link):null }>
+                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "white", borderRadius: "0.5rem"}}>
+                                                    
+                                                    <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
+                                                </div>
+                                                <div   style={{width:"100%"}}>
+                                                    <h3 className='ItemName'>{item.ItemName}<span className='myFav' style={{opacity: item.Favourite? "1":"0"}}>My Fav</span></h3>
+                                                    <p style={{fontSize:"14px"}} className='ItemName'>{item.Description}</p>
+                                                    </div>
+                                                
+                                            </div>
+                                        
+                                        )
+                                   
+                                    }):""
+                                            
+                            }
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+          )
+
+    }
+
+
+ 
 }
 

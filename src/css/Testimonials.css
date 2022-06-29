@@ -21,6 +21,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 0.5rem;
+    box-shadow: 4px 4px 0px 0px #ffffff20;
 
   }
   .container::-webkit-scrollbar {
@@ -73,7 +74,7 @@
 @keyframes glowEffect {
   0% {
     width: 50%;
-    opacity: 0.1;
+    opacity: 0.2;
     transform: rotate(20deg) translate(200%, -20%);
     }
   100% {

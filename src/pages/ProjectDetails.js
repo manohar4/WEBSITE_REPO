@@ -91,7 +91,7 @@ export default function ProjectDetails() {
     </Helmet>
             <div className='col'>
                 <div className='row'>
-                    <p style={{opacity:"0",position:"relative"}} >----------------------------------------------------------------------------------------------------------------------</p>
+                    <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                     <div style={{alignItems:"center"}}>
                     <Header back={back} backTo="/works" headerTitle={<h2> {projectTitle}</h2>}></Header> 
 
