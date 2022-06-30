@@ -4,7 +4,7 @@ import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
-import {FetchWritingDetails} from '../helper/Context'
+import { FetchWritingList } from '../helper/Context';
 import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
@@ -18,7 +18,8 @@ import FullImage from '../components/FullImage';
 
 export default function WritingDetails() {
   
-    const {writingDetailsData} = useContext(FetchWritingDetails);
+    const {writingsListData} = useContext(FetchWritingList);
+
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
     const { id } = useParams();
@@ -51,10 +52,11 @@ export default function WritingDetails() {
     // eslint-disable-next-line
     [])
     
-    if(writingDetailsData.length!==0){
+    var count=-1;
 
-        const fitlerWritingsarray = writingDetailsData.filter(function (el){ return el.fields.writing_ID.toString() ===  id});
+    if(writingsListData.length!==0){
 
+        const fitlerWritingsarray = writingsListData.filter(function (el){ return el.fields.writing_ID.toString() ===  id});
         if(!fitlerWritingsarray[0]){
             navigation("/PageNotFound");
         }
@@ -102,18 +104,20 @@ export default function WritingDetails() {
                             else if(item.elementType === 'coverImg'){
                                 return (
                                 <figure key={index}>
-                                <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
+                                <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={writing.CoverPic[0].url} alt="Project Details" ></img>
                                 <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
                             }
                             else if(item.elementType === 'img'){
+                                count++;
                                 return (
                                 <figure key={index}>
-                                    <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
+                                    <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}} src={writing.mediaFiles[count].url} alt="Project Details" ></img>
                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
                             }
                             else if(item.elementType === 'video'){
+                                count++;
                                 return (
                                 // <figure>
                                 //     <video style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffff60",borderRadius:"8px",objectFit: "cover"}} controls="controls" src={item.elementData} />
@@ -121,7 +125,7 @@ export default function WritingDetails() {
 
                                 // </figure>
                                 <figure key={index} style={{boxShadow: "8px 8px #ff7744f0"}}>
-                                        <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={item.elementData} type='video/mp4'></source></video>
+                                        <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={writing.mediaFiles[count].url} type='video/mp4'></source></video>
                                      <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
 
                                  </figure>
@@ -201,6 +205,13 @@ export default function WritingDetails() {
                                 )
                             }
                             else if(item.elementType === 'carousel'){
+
+                                for(var i=0;i<=item.elementData.length-1;i++){
+                                    count++;
+                                    item.elementData[i]= writing.mediaFiles[count].url;
+                                    
+                                }
+
                                 return(
                                     <Carousel key={index}  elementData={item.elementData} elementWidth={item.elementWidth? item.elementWidth:"100%"} elementHeight={item.elementHeight?item.elementHeight:"24rem"}  ></Carousel>
                                 )

@@ -12,9 +12,10 @@ import WritingDetails from './pages/WritingDetails.js';
 import PageNotFound from './pages/PageNotFound.js';
 import DesignLibrary from './pages/DesignLibrary.js'
 import Airtable from 'airtable';
-import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchWritingDetails,FetchDesignLibrary} from './helper/Context';
-import { useState,useEffect } from 'react';
+import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchDesignLibrary, FetchAllAttachements} from './helper/Context';
+import { useState,useEffect, useMemo } from 'react';
 import Plyr from 'plyr';
+import { getActiveElement } from '@testing-library/user-event/dist/utils';
 
 
 
@@ -23,9 +24,8 @@ function App() {
     const[projectsListData,setProjectsListData] = useState([]);
     const[projectsDetailsData,setProjectsDetailsData] = useState([]);
     const[writingsListData,setWritingsListData] = useState([]);
-    const[writingDetailsData,setWritingDetailsData] = useState([]);
     const[designLibraryData,setDesignLibraryData] = useState([]);
-
+    const[allAttachements,setAllAttachments] = useState([]);
 
       // eslint-disable-next-line
     const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
@@ -49,11 +49,14 @@ function App() {
                   var obj = {"projectGroupName":key,"projectsDetails":projects[key]}
                   projectsList.push(obj);
           }
+
           setProjectsListData(projectsList);
+          console.log("rechedHere")
+         
     }
 
     const getProjectsDetailsRecords = async () =>{
-      const records = await base('Project Details').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage(); 
+      const records = await base('Projects List').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage(); 
       for(var i=0;i<=records.length-1;i++){
 
         const dataUrl = records[i].fields.jsonAttachement[0].url;
@@ -68,17 +71,13 @@ function App() {
         
         records[i].fields.ProjectDetails = ProjectDetailsFromJson;
       }
+      
       setProjectsDetailsData(records);
     }
 
     const getWritingRecords = async () =>{
       const records = await base('Writing List').select({maxRecords: 100,sort:[{field: "writing_ID"}]}).firstPage();  
-      setWritingsListData(records);
-    }
 
-    const getWritingDetailsRecords = async () =>{
-      const records = await base('Writing Details').select({maxRecords: 100,sort:[{field: "writing_ID"}]}).firstPage(); 
-     
       for(var i=0;i<=records.length-1;i++){
 
         const dataUrl = records[i].fields.jsonAttachement[0].url;
@@ -93,7 +92,9 @@ function App() {
        
         records[i].fields.WritingDetails = WritingDetailsFromJson;
       }
-      setWritingDetailsData(records);
+      setWritingsListData(records);
+
+
     }
 
     const getDesignLibrary = async()=>{
@@ -130,13 +131,17 @@ for (var item in groupedObj) {
         setDesignLibraryData(designLibraryDataArray);      
     }
 
+    const getAllAttachements = async()=>{
+      const allAttachementRecords = await base('All-Attachments').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage();  
+      setAllAttachments(allAttachementRecords);
+    }
 
     useEffect(()=>{
         getRecords();
         getProjectsDetailsRecords();
         getWritingRecords();
-        getWritingDetailsRecords();
         getDesignLibrary();
+        getAllAttachements();
     },
     // eslint-disable-next-line
     [])
@@ -146,8 +151,8 @@ for (var item in groupedObj) {
   <FetchProjectsList.Provider value={{projectsListData,setProjectsListData}}>
   <FetchProjectsDetails.Provider value={{projectsDetailsData,setProjectsDetailsData}}>
   <FetchWritingList.Provider value={{writingsListData,setWritingsListData}}>
-    <FetchWritingDetails.Provider value={{writingDetailsData,setWritingDetailsData}}>
       <FetchDesignLibrary.Provider value={{designLibraryData,setDesignLibraryData}}>
+        <FetchAllAttachements.Provider value={{allAttachements,setAllAttachments}}>
     <div className="App">
       <Router>
       <Helmet>
@@ -169,14 +174,13 @@ for (var item in groupedObj) {
           <Route path='/ProjectDetails/:id' element={<ProjectDetails />}/>
           <Route path='/WritingDetails/:id' element={<WritingDetails />}/>
           <Route path='/DesignLibrary' element={<DesignLibrary />}/>
-          
           <Route path="*" element={<PageNotFound />} />
          
         </Routes>
       </Router>
     </div>
+    </FetchAllAttachements.Provider>
     </FetchDesignLibrary.Provider>
-    </FetchWritingDetails.Provider>
     </FetchWritingList.Provider>
     </FetchProjectsDetails.Provider>
     </FetchProjectsList.Provider>

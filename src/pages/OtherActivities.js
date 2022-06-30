@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useContext, useEffect,useState} from 'react'
 import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/OtherActivities.css'
@@ -50,10 +50,42 @@ import Animation_11 from './../assets/animationsGif/11.gif'
 import Animation_12 from './../assets/animationsGif/12.gif'
 import Animation_13 from './../assets/animationsGif/13.gif'
 import Carousel from '../components/Carousel'
-import { Hobbies } from '../data/hobbies'
+import Hobbies  from '../data/Hobbies.js'
 import { useNavigate } from "react-router-dom";
+import { FetchAllAttachements, FetchWritingList } from '../helper/Context';
+
+var sketchData =[];
+var testimonData=[];
+var entered = true;
 
  function OtherActivities() {
+
+    
+    const {allAttachements} = useContext(FetchAllAttachements);
+    //Adding Skectes data into an array
+
+    if(allAttachements.length!==0){
+        if(entered){
+        entered=false;
+      
+        for(var i=0;i<= allAttachements[1].fields.Attachments.length-1;i++){
+            sketchData.push(allAttachements[1].fields.Attachments[i].url);
+        }
+
+        for(var i=0;i<= allAttachements[2].fields.Attachments.length-1;i++){
+            testimonData.push(allAttachements[2].fields.Attachments[i].url);
+        }
+    }
+    }
+
+
+       
+
+    //
+    // var testimonData =[] 
+
+    // 
+
 
     window.prevAnimoji =1;
 
@@ -185,10 +217,10 @@ const openDesignLibrary=()=>{
             
             <div className='tools'>
                     <h6 className='subTitle'>PROCREATE {"&"} SKETCHES..</h6>
-                   <Carousel elementData={Hobbies} elementWidth="100%" elementHeight="auto" ></Carousel>
+                   <Carousel elementData={sketchData} elementWidth="100%" elementHeight="auto" ></Carousel>
                 </div>
             
-            <Testimonials></Testimonials>
+            <Testimonials elementData={testimonData}></Testimonials>
 
             <div  className='animationFlex' style={{display:"flex",borderRadius:"1rem",backgroundColor:"#000000" ,cursor: "url(" + CustomCursor + ")"}}>
 

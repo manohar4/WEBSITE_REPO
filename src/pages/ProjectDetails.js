@@ -4,7 +4,7 @@ import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
-import {FetchProjectsDetails} from '../helper/Context'
+import {FetchProjectsDetails} from '../helper/Context' 
 import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
@@ -14,7 +14,6 @@ import '../css/plyr.css'
 import { useNavigate } from "react-router-dom";
 import Carousel from '../components/Carousel'
 import FullImage from '../components/FullImage';
-
 
 
 export default function ProjectDetails() {
@@ -59,23 +58,21 @@ export default function ProjectDetails() {
     },
     // eslint-disable-next-line
     [])
+
+    var count=-1;
     
     if(projectsDetailsData.length!==0){
-
+        
         const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
-
         if(!fitlerProjectarray[0]){
             navigation("/PageNotFound");
         }
        
         else{
             var project= fitlerProjectarray[0].fields;
-           
-            var projectTitle = project.project_title;
+            var projectTitle = project.project_Name;
         }
         
-        
-      
     }
    
   
@@ -97,6 +94,7 @@ export default function ProjectDetails() {
 
                         { 
                         project ? project.ProjectDetails.map((item,index)=>{
+                            
 
                             if(item.elementType === 'h1'){
                                 return (<h1 key={index} style={{marginBottom:" 1rem",marginTop: "1rem"}}>{item.elementData}</h1>);
@@ -116,29 +114,27 @@ export default function ProjectDetails() {
                             else if(item.elementType === 'coverImg'){
                                 return (
                                 <figure key={index}>
-                                <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
+                                <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={project.CoverPic[0].url} alt="Project Details" ></img>
                                 <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
                             }
                     
                             else if(item.elementType === 'img'){
+
+                                count++;
+                                
                                 return (
                                 <figure key={index}>
-                                    <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={item.elementData} alt="Project Details" ></img>
+                                    <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={project.mediaFiles[count].url} alt="Project Details" ></img>
                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
                                 </figure>);
                             }
                             else if(item.elementType === 'video'){
+                                count++;
                                 return (
-                                // <figure>
-                                //     <video style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffff60",borderRadius:"8px",objectFit: "cover"}} controls="controls" src={item.elementData} />
-                                //     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
-
-                                // </figure>
                                 <figure key={index} style={{boxShadow: "8px 8px #ff7744f0"}}>
-                                        <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={item.elementData} type='video/mp4'></source></video>
+                                        <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={project.mediaFiles[count].url} type='video/mp4'></source></video>
                                      <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
-
                                  </figure>
 
                                 );
@@ -216,6 +212,12 @@ export default function ProjectDetails() {
                                 )
                             }
                             else if(item.elementType === 'carousel'){
+
+                                for(var i=0;i<=item.elementData.length-1;i++){
+                                    count++;
+                                    item.elementData[i]= project.mediaFiles[count].url;
+                                    
+                                }
                                 return(
                                     <Carousel  key={index} elementData={item.elementData} elementWidth={item.elementWidth? item.elementWidth:"100%"} elementHeight={item.elementHeight?item.elementHeight:"24rem"}  ></Carousel>
                                 )
@@ -244,7 +246,7 @@ export default function ProjectDetails() {
                                             </div>
                                             <div style={{flex:1}}>
                                                         {item.elementData.map((item,index)=>{
-                                                            console.log(Object.keys(item)[0])
+                                                            
                                                              
                                                         return( 
                                                        
