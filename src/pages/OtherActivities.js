@@ -50,9 +50,8 @@ import Animation_11 from './../assets/animationsGif/11.gif'
 import Animation_12 from './../assets/animationsGif/12.gif'
 import Animation_13 from './../assets/animationsGif/13.gif'
 import Carousel from '../components/Carousel'
-import Hobbies  from '../data/Hobbies.js'
 import { useNavigate } from "react-router-dom";
-import { FetchAllAttachements, FetchWritingList } from '../helper/Context';
+import { FetchAllAttachements } from '../helper/Context';
 
 var sketchData =[];
 var testimonData=[];
@@ -72,8 +71,8 @@ var entered = true;
             sketchData.push(allAttachements[1].fields.Attachments[i].url);
         }
 
-        for(var i=0;i<= allAttachements[2].fields.Attachments.length-1;i++){
-            testimonData.push(allAttachements[2].fields.Attachments[i].url);
+        for(var j=0;j<= allAttachements[2].fields.Attachments.length-1;j++){
+            testimonData.push(allAttachements[2].fields.Attachments[j].url);
         }
     }
     }
