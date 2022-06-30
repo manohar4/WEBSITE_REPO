@@ -13,9 +13,8 @@ import PageNotFound from './pages/PageNotFound.js';
 import DesignLibrary from './pages/DesignLibrary.js'
 import Airtable from 'airtable';
 import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchDesignLibrary, FetchAllAttachements} from './helper/Context';
-import { useState,useEffect, useMemo } from 'react';
+import { useState,useEffect } from 'react';
 import Plyr from 'plyr';
-import { getActiveElement } from '@testing-library/user-event/dist/utils';
 
 
 
