@@ -16,19 +16,33 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+
+    box-shadow: 1px 1px 0px #343434,
+    2px 2px 0px #343434,
+
     
 }
 .card:hover{
     background-color: #FFFFFF20;
     cursor: url('../assets/hover.png'),auto;
+
+    box-shadow: 1px 1px 0px #ff764490,
+    2px 2px 0px #ff764490,
+    3px 3px 0px #ff764490,
+    4px 4px 0px #ff764490,
+    5px 5px 0px #ff764490,
+    6px 6px 0px #ff764490
   
 }
+
+
 
 .cardGroup{
     border-radius: 0.5rem;
     margin-bottom: 1rem;
 }
-.cardGroup:after {
+/* .cardGroup:after {
     
 	content: '';
 	height: 0.5rem;
@@ -46,4 +60,4 @@
     border-bottom: 0.2rem solid #ff764490;
 	width: 100%;
 	background: transparent;
-}
+} */
