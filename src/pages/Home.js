@@ -84,10 +84,17 @@ export default function Home() {
 
             <Header back={back} backTo="/" headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Manohar Manu</p>}></Header>
 
-                <div className='intro'>  
-                    <p >Hey, I'm Manohar. I'm a User Experience designer based out in Bangalore, India.</p>
-                    <p >I'm currently working in <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'>Agile Solutions</a> brazil based enterprise company as Senior User Experience Design. Most of my  previous work reflects with B2B Solutions in the area of Manufacturing, Fintech and many other sectors.</p>
-                    <p >  I'm a self Learned Design with an engineering background</p>
+                <div className='intro'>   
+                    <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer </span>based out of Bangalore, India.</p>
+                    <p >I'm currently designing enterprise products and leading the design team at 
+                        <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> as a 
+            <span className='highlighter'> Senior UX Designer</span>. Over the last five years, I've spent the majority of my time building B2B enterprise applications on <span className='highlighter'> SAP</span> and have also been part of working on various digital solutions in manufacturing, ecommerce, and many other sectors.</p>
+                   
+                    <div style={{width:"100%"}}>
+            
+                 
+                    </div>
+                    
                 </div>
 
                 <div className='pastExpereince'>
@@ -186,9 +193,16 @@ export default function Home() {
                     </div>
                 </div>
 
+                <div class="blockquote-wrapper">
+  <div class="blockquote">
+ 
+    <p>
+    "People don't use <span  >products</span>  because of  <span  >great design</span> ; <span  > Great designs</span> makes them to use the  <span  >Product</span>"
+     </p>
+  </div>
+                    </div>
+
                 <div id="splineFlex" style={{display:"flex",flexDirection:"row",backgroundColor:"black",borderRadius:"1rem"}}>
-                {/* {// eslint-disable-next-line
-                <iframe id="splineFrame" src='https://my.spline.design/hands3diconscopy-2ec50a090d9a40119a2af78435b922a2/' frameborder='0' width='60%' height='400px'></iframe>} */}
                 <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
                 
                 

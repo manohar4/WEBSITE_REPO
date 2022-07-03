@@ -87,3 +87,62 @@
     height: 100%;
     border-radius: 1rem;
 }
+
+
+/* center the blockquote in the page */
+.blockquote-wrapper {
+    display: flex;
+    font-style: italic;
+    margin-top: 2rem;
+ }
+ 
+ /* Blockquote main style */
+ .blockquote {
+     position: relative;
+     align-self: center;
+     background-color: #181818;
+     border-radius: 0.5rem;
+     padding-top: 0%;
+     margin-top: 0.4rem;
+ }
+ 
+ /* Blockquote header */
+ .blockquote p {
+     position: relative; /* for pseudos */
+     color: rgba(237, 237, 237, 0.8);
+     font-weight: normal;
+
+     padding: 0.5rem 1rem;
+     line-height: 1.6rem;
+ }
+ 
+ .blockquote span{
+    color: rgba(237, 237, 237, 1);
+    font-weight: 700;
+ }
+ 
+ 
+ /* increase header size after 600px */
+ @media all and (min-width: 600px) {
+     .blockquote p {
+         line-height: 1.6rem;
+    }
+ 
+ }
+
+
+
+ .highlighter{
+    background: linear-gradient(to top, #ff7744c0 0%, #ff7644c0 24%, transparent 25%, transparent 100%);
+    -webkit-transition: new 1000ms linear;
+    -ms-transition: new 1000ms linear;
+    transition: new 1000ms linear;
+ }
+
+ .highlighter:hover{
+    background: linear-gradient(to top, #ff7744 0%, #ff7744 100%);
+    color: azure;
+ }
+
+ 
+
