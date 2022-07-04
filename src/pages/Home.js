@@ -38,7 +38,6 @@ export default function Home() {
             document.getElementsByTagName("body")[0].style.overflowY = ""
         }
         
-        console.log(event)
         setImgSrc(event.target.src);
         setIsImgeOpen(!isImgeOpen);
       }

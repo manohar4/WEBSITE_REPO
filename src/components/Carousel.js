@@ -42,8 +42,6 @@ export default function Carousel(props) {
         else{
             document.getElementsByTagName("body")[0].style.overflowY = ""
         }
-        
-        console.log(event)
         setImgSrc(event.target.src);
         setIsImgeOpen(!isImgeOpen);
       }
@@ -51,7 +49,6 @@ export default function Carousel(props) {
       const[loaded,setLoaded]= useState(false)
       
   function onLoad() {
-    console.log('loaded');
     setLoaded(true);
   }
 

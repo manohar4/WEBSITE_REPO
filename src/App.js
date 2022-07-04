@@ -50,7 +50,7 @@ function App() {
           }
 
           setProjectsListData(projectsList);
-          console.log("rechedHere")
+
          
     }
 

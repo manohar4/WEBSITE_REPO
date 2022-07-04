@@ -16,26 +16,6 @@ import * as IoIcons from 'react-icons/io5';
 
 import CustomCursor from "../assets/tools/Sketch.png"
 
-
-
-
-
-// import Animation_1 from './../assets/animationsGif/1.gif'
-// import Animation_2 from './../assets/animationsGif/2.gif'
-// import Animation_3 from './../assets/animationsGif/3.gif'
-// import Animation_4 from './../assets/animationsGif/4.gif'
-// import Animation_5 from './../assets/animationsGif/5.gif'
-// import Animation_6 from './../assets/animationsGif/6.gif'
-// import Animation_7 from './../assets/animationsGif/7.gif'
-// import Animation_8 from './../assets/animationsGif/8.gif'
-// import Animation_9 from './../assets/animationsGif/9.gif'
-// import Animation_10 from './../assets/animationsGif/10.gif'
-// import Animation_11 from './../assets/animationsGif/11.gif'
-// import Animation_12 from './../assets/animationsGif/12.gif'
-// import Animation_13 from './../assets/animationsGif/13.gif'
-
-
-
 import Animation_1 from './../assets/animationsGif/1.gif'
 import Animation_2 from './../assets/animationsGif/2.gif'
 import Animation_3 from './../assets/animationsGif/3.gif'
@@ -58,6 +38,9 @@ var testimonData=[];
 var entered = true;
 
  function OtherActivities() {
+
+
+    const allAnimations=[Animation_1,Animation_2,Animation_3,Animation_4,Animation_5,Animation_6,Animation_7,Animation_8,Animation_9,Animation_10,Animation_11,Animation_12,Animation_13]
 
     
     const {allAttachements} = useContext(FetchAllAttachements);
@@ -88,8 +71,9 @@ var entered = true;
 
     window.prevAnimoji =1;
 
-    const navigation = useNavigate()
-    const[gif,setGif] = useState(Animation_1)
+    const navigation = useNavigate();
+    const[randomNum,setRandomNum]= useState(9);
+    const[gif,setGif] = useState(Animation_9)
 
   window.currentAnimoji = 9;
   window.previousArray = [];
@@ -109,8 +93,13 @@ var entered = true;
 
 const onAnimationClick =()=>{
 
+
     
-    window.currentAnimoji = Math.floor(Math.random() * 10) + 1;
+    window.currentAnimoji =Math.floor(Math.random() * (12))+1;
+
+    console.log(window.currentAnimoji);
+
+    setRandomNum(window.currentAnimoji);
 
     if(window.currentAnimoji === 1){
         setGif(Animation_1)
@@ -224,7 +213,22 @@ const openDesignLibrary=()=>{
             <div  className='animationFlex' style={{display:"flex",borderRadius:"1rem",backgroundColor:"#000000" ,cursor: "url(" + CustomCursor + ")"}}>
 
               <div className='animationGroup' style={{display:"flex",flex:"1",textAlign: "center",cursor: "pointer"}}>
-                  <img style={{width:"100%",borderRadius:"1rem"}} src={gif}  alt="emoji animation"></img>
+
+                {
+                    allAnimations.map((item,index)=>{
+                        return (
+                            <>
+                               <img style={{width:"100%",borderRadius:"1rem", display:index===randomNum?"block":"none"}} src={gif}  alt="emoji animation"></img>
+                
+                                {
+                                   index===12?  <img style={{width:"100%",borderRadius:"1rem",opacity:"0%",zIndex:"-100"}} src={Animation_1}  alt="emoji animation"></img>:null
+                                }           
+
+                            </>
+                         )
+                    })
+                }
+                  {/* <img style={{width:"100%",borderRadius:"1rem"}} src={gif}  alt="emoji animation"></img> */}
               </div>
 
               <div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"left",gap:"0.4rem"}}>
