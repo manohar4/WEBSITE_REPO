@@ -6,6 +6,7 @@ import './../css/Global.css'
 import location from'../assets/location.png';
 import Header from '../components/Header';
 import * as GiIcons from 'react-icons/gi';
+import * as FaIcons from 'react-icons/fa';
 import Love from '../assets/love.gif';
 import SubmitFrom from '../components/submitForm';
 import FullImage from '../components/FullImage';
@@ -87,13 +88,14 @@ export default function Home() {
                     <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer </span>based out of Bangalore, India.</p>
                     <p >I'm currently designing enterprise products and leading the design team at 
                         <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> as a 
-            <span className='highlighter'> Senior UX Designer</span>. Over the last five years, I've spent the majority of my time building B2B enterprise applications on <span className='highlighter'> SAP</span> and have also been part of working on various digital solutions in manufacturing, ecommerce, and many other sectors.</p>
-                   
-                    <div style={{width:"100%"}}>
-            
-                 
+                     <span className='highlighter'> Senior UX Designer</span>. Over the last five years, I've spent the majority of my time building B2B enterprise applications on <span className='highlighter'> SAP</span> and have also been part of working on various digital solutions in manufacturing, ecommerce, and many other sectors.</p>
+                    <div style={{display:"flex",gap:"1rem",marginTop:"1rem"}}>
+                         <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">
+                            <button  style={{margin:"0"}} className='fillBtn'   onClick={togglePopup} > <FaIcons.FaHandshake className='backIcon'/>  Get In Touch</button>
+                        </a>
+                        <button style={{margin:"0"}} className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Say Hello</button>
+                        
                     </div>
-                    
                 </div>
 
                 <div className='pastExpereince'>
@@ -206,7 +208,7 @@ export default function Home() {
                 
                 
                 <div style={{flex:"1",display:"flex",alignItems:"center"}}>
-                <button className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Just Say HI</button>
+                <button className='fillBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Say Hello</button>
 
                 </div>
 

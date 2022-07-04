@@ -140,14 +140,44 @@ background-color: red;
   gap:0.5rem;
   padding:0.5rem 0.5rem;
   border-radius: 0.25rem;
-  border: 1px  solid #ffffff;
+  border: 1px  solid #ffffff00;
   color: #ffffff;
   margin:0.5rem auto;
   align-self: center;
 }
 
 .primaryBtn:hover{
-  background-color: #ff7744f0;
+  background-color: #ffffff24;
+}
+
+.fillBtn{
+  background-color: #ffffff24;
+  
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px  solid #ffffff00;
+  color: #ffffff;
+  margin:0.5rem auto;
+  align-self: center;
+}
+
+.fillBtn:hover{
+  background-color: #ff7744;
+  
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px  solid #ffffff00;
+  color: #ffffff;
+  margin:0.5rem auto;
+  align-self: center;
 }
 
 .backButton{
@@ -160,6 +190,8 @@ background-color: red;
       border-radius: 0.25rem;
       border: 1px  solid #ffffff80;
 }
+
+
 
 
 

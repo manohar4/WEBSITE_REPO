@@ -235,7 +235,7 @@ const openDesignLibrary=()=>{
 
               <div style={{display:"flex", flexDirection:"column",flex:"1",justifyContent:"center",textAlign:"left",gap:"0.4rem"}}>
                 <h1 style={{lineHeight:"2.4rem",marginLeft:"2rem"}}> THANKS <br/> FOR  VISITING!</h1>
-                <button onClick={()=> onAnimationClick()} className='primaryBtn' style={{width:"auto",alignSelf:"flex-start",margin:"0rem",marginLeft:"2rem"}}> <TbIcons.TbConfetti className='backIcon'/><h3>Show Me A Move</h3></button>
+                <button onClick={()=> onAnimationClick()} className='fillBtn' style={{width:"auto",alignSelf:"flex-start",margin:"0rem",marginLeft:"2rem"}}> <TbIcons.TbConfetti className='backIcon'/><h3>Show Me A Move</h3></button>
               </div>
             </div>
             
