@@ -3,6 +3,7 @@ import '../css/Global.css'
 import * as FiIcons from 'react-icons/fi';
 import { useState } from 'react';
 import FullImage from '../components/FullImage';
+import Lottie from '../assets/lottie.gif'
 
 export default function Carousel(props) {
 
@@ -10,7 +11,7 @@ export default function Carousel(props) {
 
   const[currentURL,setCurrentURL] = useState(0);
   const [isImgeOpen, setIsImgeOpen] = useState(false);
-  const [imgSrc,setImgSrc] = useState("");
+  const [imgSrc,setImgSrc] = useState(Lottie);
 
     const onLeftClick =()=>{
 
@@ -47,11 +48,27 @@ export default function Carousel(props) {
         setIsImgeOpen(!isImgeOpen);
       }
 
-    
+      const[loaded,setLoaded]= useState(false)
+      
+  function onLoad() {
+    console.log('loaded');
+    setLoaded(true);
+  }
+
+ 
   return (
     <div>
-        <div style={{display:"flex",justifyContent:"center"}} >
-            <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{borderRadius:"0.5rem",width:props.elementWidth,height:props.elementHeight,objectFit: "cover"}}  src={imageURLS[currentURL]} alt="Designs"/>
+
+        
+        <div style={{display:"flex",justifyContent:"center"} } >
+            {
+                imageURLS.map((item,index)=>{
+                    return(
+                         <img onLoad={onLoad} className="imageBGloader" onClick={(event)=>{toggleFullImagePopup(event)}}  
+                        style={{borderRadius:"0.5rem",width:props.elementWidth,height:props.elementHeight,objectFit: "cover",display:index===currentURL?"unset":"none",opacity:loaded?"100%":"0"}}  src={loaded?item:Lottie} alt="Designs"/>
+                    )
+                })
+            }
         </div>
         <div className='controlGroup' style={{display:"flex",margin: "1rem auto",flexDirection:"row",justifyContent:"space-between",marginTop:"0.5rem",width:props.elementWidth}}>
             <button className='backButton' onClick={()=>{onLeftClick()}} >

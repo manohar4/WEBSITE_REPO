@@ -174,7 +174,7 @@ const openDesignLibrary=()=>{
             <button className='resourcesButton' onClick={openDesignLibrary} > Check Out My Design Bookmarks <IoIcons.IoArrowForwardCircle  style={{fontSize:"2rem"}}/>  </button>
             
             <div className='tools'>
-                    <h6 className='subTitle'>TOOLS I'm FAMILIAR WITH</h6>
+                    <h6 className='subTitle'>TOOLS I'M FAMILIAR WITH</h6>
                     <div className='tool-row'>
                         <div className='tool-lineitems'>
                             <img className="toolLogo" src={Figma} alt="Brand Logo"/>
