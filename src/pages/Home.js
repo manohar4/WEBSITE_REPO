@@ -91,7 +91,7 @@ export default function Home() {
                      <span className='highlighter'> Senior UX Designer</span>. Over the last five years, I've spent the majority of my time building B2B enterprise applications on <span className='highlighter'> SAP</span> and have also been part of working on various digital solutions in manufacturing, ecommerce, and many other sectors.</p>
                     <div style={{display:"flex",gap:"1rem",marginTop:"1rem"}}>
                          <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">
-                            <button  style={{margin:"0"}} className='fillBtn'   onClick={togglePopup} > <FaIcons.FaHandshake className='backIcon'/>  Get In Touch</button>
+                            <button  style={{margin:"0"}} className='fillBtn'> <FaIcons.FaHandshake className='backIcon'/>Get In Touch</button>
                         </a>
                         <button style={{margin:"0"}} className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Say Hello</button>
                         
