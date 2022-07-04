@@ -169,7 +169,7 @@ const openDesignLibrary=()=>{
             <div className='row'>
 
             <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
-            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Other Activities</p>}></Header>
+            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>More Details</p>}></Header>
             
             <button className='resourcesButton' onClick={openDesignLibrary} > Check Out My Design Bookmarks <IoIcons.IoArrowForwardCircle  style={{fontSize:"2rem"}}/>  </button>
             
