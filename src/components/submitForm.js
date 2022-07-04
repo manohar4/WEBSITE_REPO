@@ -150,8 +150,8 @@ const SubmitFrom = (props)=>{
                                 </div>
                             </div>
                             <div style={{display:"flex",justifyContent:"end",gap:"1rem"}}>
-                                <button className='backButton' onClick={props.handleClose} ><p>Close</p></button>
-                                <button className='primaryBtn' onClick={onHandleSubmit} style={{margin:"0px"}}>Send</button>
+                                <button className='primaryBtn' onClick={props.handleClose} ><p>Close</p></button>
+                                <button className='fillBtn' onClick={onHandleSubmit} style={{margin:"0px"}}>Send</button>
 
                             </div>
                 </div>
