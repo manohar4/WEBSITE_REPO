@@ -81,8 +81,10 @@ var entered = true;
 
   const back = false;
   useEffect(()=>{
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
+  
     if(window.innerWidth<1024){
+        document.getElementsByClassName('dummyGif')[0].style.marginLeft="-100vw";
         document.getElementsByClassName('otherActivities')[0].style.marginLeft='0px';
         document.getElementsByClassName('animationFlex')[0].style.flexDirection='column';
         document.getElementsByClassName('animationFlex')[0].style.gap='2rem';        
@@ -221,7 +223,7 @@ const openDesignLibrary=()=>{
                                <img style={{width:"100%",borderRadius:"1rem", display:index===randomNum?"block":"none"}} src={gif}  alt="emoji animation"></img>
                 
                                 {
-                                   index===12?  <img style={{width:"100%",borderRadius:"1rem",opacity:"0%",zIndex:"-100"}} src={Animation_1}  alt="emoji animation"></img>:null
+                                   index===12?  <img className='dummyGif' style={{width:"100%",borderRadius:"1rem",opacity:"0%",zIndex:"-100"}} src={Animation_1}  alt="emoji animation"></img>:null
                                 }           
 
                             </>
