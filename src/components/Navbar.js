@@ -7,6 +7,7 @@ import WavesPic from "../assets/BGMUSIC/albumCovers/Waves.png"
 import ForestPic from "../assets/BGMUSIC/albumCovers/Forest.png"
 import CloudsPic from "../assets/BGMUSIC/albumCovers/Clouds.png"
 import * as IoIcons from 'react-icons/io5';
+import * as FaIcons from 'react-icons/fa';
 import Rain from '../assets/BGMUSIC/Rain.mp3'
 import Waves from '../assets/BGMUSIC/Waves.mp3'
 import Forest from '../assets/BGMUSIC/Forest.mp3'
@@ -161,9 +162,13 @@ else{
                         })}
                 </ul>
                 <div style={{display:"flex",backgroundColor:"#ffffff20",height:"3.5rem",margin:"0rem 0.5rem",borderRadius:"0.5rem", backdropFilter: "blur(5px)",justifyContent: "space-evenly"}}>
-                    <div>
+             
+                    <div style={{position:"relative"}}>
+                    
                         <img className='albumCover' style={{borderRadius:"10rem",bottom:"1.5rem",width:"4rem",height:"4rem",position:"relative"}}  src={bgMusicImage} alt="cover pic"></img>
                         <audio id="audio" src={Rain} loop></audio>
+                        <div style={{ width:"100%",position:"absolute",zIndex:"1",top:"0px",fontSize:"12px",color:"#ffffff",textAlign:"center"}}><FaIcons.FaHeadphones style={{fontSize:"14px"}} title="Use Headphones For better Expereince"></FaIcons.FaHeadphones></div>
+
                     </div>
                     <div style={{borderRadius:"4px",display:"flex",justifyContent:"space-between",alignItems:"center",color:"white"}}>
 
