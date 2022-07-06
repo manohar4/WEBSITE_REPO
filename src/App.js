@@ -80,17 +80,19 @@ function App() {
 
       for(var i=0;i<=records.length-1;i++){
 
-        const dataUrl = records[i].fields.jsonAttachement[0].url;
-        const WritingDetailsFromJson = await fetch(dataUrl)
-        .then((response) => response.json())
-        .then((responseJson) => {
-          return responseJson;  
-        }) 
-        .catch((error) => {
-          console.error(error);
-        });
-       
+        if(records[i].fields.jsonAttachement){
+
+          const dataUrl = records[i].fields.jsonAttachement[0].url;
+          const WritingDetailsFromJson = await fetch(dataUrl)
+          .then((response) => response.json())
+          .then((responseJson) => {
+            return responseJson;  
+          }) 
+          .catch((error) => {
+            console.error(error);
+          });
         records[i].fields.WritingDetails = WritingDetailsFromJson;
+      }
       }
 
       writings = await records.reduce( function (r, a) {

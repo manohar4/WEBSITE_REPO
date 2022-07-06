@@ -56,7 +56,7 @@ export default function DesignLibrary() {
             <div className='DesignLibrary'>
                 <div className='col'>
                     <div className='row'>
-                       <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Library</p>}></Header>
+                       <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
         
                        <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                         <div style={{display:"flex",flexDirection:"column", width:"100%",gap:"1rem"}}>
@@ -103,7 +103,7 @@ export default function DesignLibrary() {
                 <div className='col'>
                     <div className='row'>
                         <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
-                        <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Library</p>}></Header>
+                        <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
                         
                         <div style={{display:"flex", width:"100%",gap:"1rem"}}>
                             <div style={{display:"flex",flexDirection:"column", flex:"1",position:"sticky",top:"4rem",height: "0rem"}} >

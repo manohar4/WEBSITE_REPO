@@ -61,7 +61,7 @@ export default function Carousel(props) {
             {
                 imageURLS.map((item,index)=>{
                     return(
-                         <img onLoad={onLoad} className="imageBGloader" onClick={(event)=>{toggleFullImagePopup(event)}}  
+                         <img key={index} onLoad={onLoad} className="imageBGloader" onClick={(event)=>{toggleFullImagePopup(event)}}  
                         style={{borderRadius:"0.5rem",width:props.elementWidth,height:props.elementHeight,objectFit: "cover",display:index===currentURL?"unset":"none",opacity:loaded?"100%":"0"}}  src={loaded?item:Lottie} alt="Designs"/>
                     )
                 })

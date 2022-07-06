@@ -218,14 +218,14 @@ const openDesignLibrary=()=>{
                 {
                     allAnimations.map((item,index)=>{
                         return (
-                            <>
+                            <div key={index}>
                                <img style={{width:"100%",borderRadius:"1rem", display:index===randomNum?"block":"none"}} src={gif}  alt="emoji animation"></img>
                 
                                 {
                                    index===12?  <img className='dummyGif' style={{width:"100%",borderRadius:"1rem",opacity:"0%",zIndex:"-100"}} src={Animation_1}  alt="emoji animation"></img>:null
                                 }           
 
-                            </>
+                            </div>
                          )
                     })
                 }

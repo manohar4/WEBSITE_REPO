@@ -264,12 +264,12 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === "thanks"){
                                 return (
-                                    <>
+                                    <div key={index}>
                                     <div key={index} style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>
                                     <div key={index} style={{opacity:"0%"}}><hr className="solid" /></div>
                                     <h2 style={{textAlign:"center"}}>🙏 Thanks for Reading</h2>
                                     <div key={index} style={{opacity:"0%"}}><hr className="solid" /></div>
-                                    </>
+                                    </div>
                                 )
                             }
                             
