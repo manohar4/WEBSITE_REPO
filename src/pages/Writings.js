@@ -9,7 +9,7 @@ import * as FiIcons from 'react-icons/fi'
 import {FetchWritingList} from '../helper/Context'
 import Header from '../components/Header'
 
-
+var emojiString;
  function Writings() {
 
   const back= false; 
@@ -40,7 +40,7 @@ import Header from '../components/Header'
                     const emojiCode= item.fields.emoji;
                       if(item.fields.linkIcon === "true"){
 
-                        var emojiString= emojiCode.split(",")
+                        emojiString= emojiCode.split(",")
                         if(emojiString.length===1){
                             emojiString.push("");
                         }
@@ -60,7 +60,7 @@ import Header from '../components/Header'
                         </div>)
                       }
                       else{
-                        var emojiString= emojiCode.split(",")
+                        emojiString= emojiCode.split(",")
                         if(emojiString.length===1){
                             emojiString.push("");
                         }
