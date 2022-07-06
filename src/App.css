@@ -20,6 +20,9 @@ a *:hover,button *:hover,a.svg:hover,a span:hover,div.writingItem, div.writingIt
   cursor: url(../src//assets/hover.png),auto !important;
 }
 
+figure .plyr{
+  border-radius: 0.5rem ;
+}
 
 .home, .works, .writings, .otherActivities,.projectDetails,.writingDetails,.PageNotFound,.DesignLibrary{
   display: flex;
