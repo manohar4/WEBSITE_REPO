@@ -156,8 +156,11 @@ export default function ProjectDetails() {
                                 return (<blockquote key={index} style={{margin:"0.6rem 0px"}}>❝ {item.elementData} ❞ </blockquote>)
                             } 
                             else if(item.elementType === 'callout'){
+                                
                                 return (
-                                 
+
+                                    
+
                                         <div key={index} style={{display:"flex",backgroundColor:"#ffffff20",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
                                             <span style={{fontSize:"16px"}}role="img">
                                               {String.fromCodePoint(item.elementEmoji) }
@@ -194,7 +197,7 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'button'){
                                 return (
-                                <button key={index} className='primaryBtn' onClick={()=>{window.open(item.elementLink)}} >
+                                <button key={index} className='fillBtn' onClick={()=>{window.open(item.elementLink)}} >
                                     {item.elementData}
                                 </button>       
                                 )
@@ -237,7 +240,7 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'overview'){
                                 return(
-                                        <div key={index} className="overview" style={{display:"flex",gap:"0.5rem"}}>
+                                        <div key={index} className="overview" style={{display:"flex",gap:"0.5rem",padding:"1rem",backgroundColor:"#ffffff10",borderRadius:"0.5rem"}}>
                                             <div style={{flex:2}}>
                                                 <h3>Breif</h3>
                                                 <p>{item.elementBrief}</p>

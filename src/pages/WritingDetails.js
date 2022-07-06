@@ -189,7 +189,7 @@ export default function WritingDetails() {
                             }
                             else if(item.elementType === 'button'){
                                 return (
-                                <button key={index} className='primaryBtn' onClick={()=>{window.open(item.elementLink)}} >
+                                <button key={index} className='fillBtn' onClick={()=>{window.open(item.elementLink)}} >
                                     {item.elementData}
                                 </button>       
                                 )

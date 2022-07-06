@@ -39,12 +39,17 @@ import Header from '../components/Header'
                   {writingsListData.map((item,index)=>{
                     const emojiCode= item.fields.emoji;
                       if(item.fields.linkIcon === "true"){
+
+                        var emojiString= emojiCode.split(",")
+                        if(emojiString.length===1){
+                            emojiString.push("");
+                        }
                         return(
                         <div key={index} className='writingItem' 
                         onClick={()=>{ window.open(item.fields.link); }}>
                           <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiCode) }
+                                {String.fromCodePoint(emojiString[0],emojiString[1]) }
                               </span>
                               <h4>{item.fields.WritingTitle}</h4>
                           </div>
@@ -55,12 +60,16 @@ import Header from '../components/Header'
                         </div>)
                       }
                       else{
+                        var emojiString= emojiCode.split(",")
+                        if(emojiString.length===1){
+                            emojiString.push("");
+                        }
                         return(
                           <Link key={index}  to={`/writingDetails/${item.fields.writing_ID}`}>
                           <div className='writingItem'>
                           <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiCode) }
+                                {String.fromCodePoint(emojiString[0],emojiString[1]) }
                               </span>
                               <h4>{item.fields.WritingTitle}</h4>
                           </div>
