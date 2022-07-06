@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import Carousel from '../components/Carousel'
 import FullImage from '../components/FullImage';
 
+var emojiString;
 
 export default function ProjectDetails() {
     const {projectsDetailsData} = useContext(FetchProjectsDetails);
@@ -156,14 +157,15 @@ export default function ProjectDetails() {
                                 return (<blockquote key={index} style={{margin:"0.6rem 0px"}}>❝ {item.elementData} ❞ </blockquote>)
                             } 
                             else if(item.elementType === 'callout'){
-                                
+
+                                emojiString= item.elementEmoji.split(",")
+                                emojiString.push("");
+                                emojiString.push("");
+                                emojiString.push("");
                                 return (
-
-                                    
-
                                         <div key={index} style={{display:"flex",backgroundColor:"#ffffff20",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
                                             <span style={{fontSize:"16px"}}role="img">
-                                              {String.fromCodePoint(item.elementEmoji) }
+                                              {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
                                             </span>
                                             <p>{item.elementData}</p>
                                         </div>

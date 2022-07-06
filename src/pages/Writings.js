@@ -41,15 +41,16 @@ var emojiString;
                       if(item.fields.linkIcon === "true"){
 
                         emojiString= emojiCode.split(",")
-                        if(emojiString.length===1){
-                            emojiString.push("");
-                        }
+                        emojiString.push("");
+                        emojiString.push("");
+                        emojiString.push("");
+                      
                         return(
                         <div key={index} className='writingItem' 
                         onClick={()=>{ window.open(item.fields.link); }}>
                           <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiString[0],emojiString[1]) }
+                                {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
                               </span>
                               <h4>{item.fields.WritingTitle}</h4>
                           </div>
@@ -61,15 +62,15 @@ var emojiString;
                       }
                       else{
                         emojiString= emojiCode.split(",")
-                        if(emojiString.length===1){
-                            emojiString.push("");
-                        }
+                        emojiString.push("");
+                        emojiString.push("");
+                        emojiString.push("");
                         return(
                           <Link key={index}  to={`/writingDetails/${item.fields.writing_ID}`}>
                           <div className='writingItem'>
                           <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                               <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiString[0],emojiString[1]) }
+                                {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
                               </span>
                               <h4>{item.fields.WritingTitle}</h4>
                           </div>
