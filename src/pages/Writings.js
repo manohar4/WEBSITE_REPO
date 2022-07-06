@@ -35,62 +35,76 @@ var emojiString;
         <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
         <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Writings</p>}></Header>
 
-        <div className='writingList'>
-                  {writingsListData.map((item,index)=>{
-                    const emojiCode= item.fields.emoji;
-                      if(item.fields.linkIcon === "true"){
 
-                        emojiString= emojiCode.split(",")
-                        emojiString.push("");
-                        emojiString.push("");
-                        emojiString.push("");
-                      
-                        return(
-                        <div key={index} className='writingItem' 
-                        onClick={()=>{ window.open(item.fields.link); }}>
-                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
-                              <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
-                              </span>
-                              <h4>{item.fields.WritingTitle}</h4>
-                          </div>
+        
+                          <div className='writingList'>
+                          {
+                            writingsListData.map((item,index)=>{
+                              return(
+                              <div key={index}>
+                              <h6 style={{marginBottom:"0.5rem"}}>{writingsListData[index].writingGroupName}</h6>
+                              {
+                              item.WritingDetails.map((item,index)=>{
+                                const emojiCode= item.emoji;
+                                  if(item.linkIcon === "true"){
+  
+                                    emojiString= emojiCode.split(",")
+                                    emojiString.push("");
+                                    emojiString.push("");
+                                    emojiString.push("");
+                                  
+                                    return(
+                                    <div key={index} className='writingItem' 
+                                    onClick={()=>{ window.open(item.link); }}>
+                                      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
+                                          <span style={{fontSize:"16px"}}role="img">
+                                            {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
+                                          </span>
+                                          <h4>{item.WritingTitle}</h4>
+                                      </div>
+                                        
+                                        {item.linkIcon === "true" &&  
+                                        <div style={{width:"24px",height:"24px",justifyContent:"flex-end"}}>
+                                        <FiIcons.FiArrowUpRight style={{fontSize:"24px"}} color='#ffffff'/> 
+                                        </div>
+                                        }
+                                    </div>)
+                                  }
+                                  else{
+                                    emojiString= emojiCode.split(",")
+                                    emojiString.push("");
+                                    emojiString.push("");
+                                    emojiString.push("");
+                                    return(
+                                      <Link key={index}  to={`/writingDetails/${item.writing_ID}`}>
+                                      <div className='writingItem'>
+                                      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
+                                          <span style={{fontSize:"16px"}}role="img">
+                                            {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
+                                          </span>
+                                          <h4>{item.WritingTitle}</h4>
+                                      </div>
+                                        
+                                        {item.linkIcon === "true" &&  
+                                        <div style={{width:"24px",height:"24px",justifyContent:"flex-end"}}>
+                                        <FiIcons.FiArrowUpRight style={{fontSize:"24px"}} color='#ffffff'/> 
+                                        </div>
+                                        }
+                                    </div>
+                                    </Link>)
+                                    }
+                              })}
+                             </div>
+                              )
+                            })
+                          }
+                         
+
                             
-                            {item.fields.linkIcon === "true" &&  
-                            <FiIcons.FiArrowUpRight style={{fontSize:"24px",justifyContent:"flex-end"}} color='#ffffff'/> 
-                            }
-                        </div>)
-                      }
-                      else{
-                        emojiString= emojiCode.split(",")
-                        emojiString.push("");
-                        emojiString.push("");
-                        emojiString.push("");
-                        return(
-                          <Link key={index}  to={`/writingDetails/${item.fields.writing_ID}`}>
-                          <div className='writingItem'>
-                          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
-                              <span style={{fontSize:"16px"}}role="img">
-                                {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
-                              </span>
-                              <h4>{item.fields.WritingTitle}</h4>
-                          </div>
-                            
-                            {item.fields.linkIcon === "true" &&  
-                            <FiIcons.FiArrowUpRight style={{fontSize:"24px",justifyContent:"flex-end"}} color='#ffffff'/> 
-                            }
-                        </div>
-                        </Link>)
-                        }
-                  })}
-              
-                     
-  
-                   
-  
-  
-                  </div>
-
-
+                            </div>
+                        
+        
+        
 
 
             

@@ -99,7 +99,6 @@ const onAnimationClick =()=>{
     
     window.currentAnimoji =Math.floor(Math.random() * (12))+1;
 
-    console.log(window.currentAnimoji);
 
     setRandomNum(window.currentAnimoji);
 

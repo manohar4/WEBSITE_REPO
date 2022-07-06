@@ -4,7 +4,7 @@ import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
-import { FetchWritingList } from '../helper/Context';
+import { FetchWritingsDetails } from '../helper/Context';
 import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
 import './../css/prism.css';
@@ -19,7 +19,7 @@ var emojiString;
 
 export default function WritingDetails() {
   
-    const {writingsListData} = useContext(FetchWritingList);
+    const {writingsDetailsData} = useContext(FetchWritingsDetails);
 
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
@@ -55,9 +55,9 @@ export default function WritingDetails() {
     
     var count=-1;
 
-    if(writingsListData.length!==0){
+    if(writingsDetailsData.length!==0){
 
-        const fitlerWritingsarray = writingsListData.filter(function (el){ return el.fields.writing_ID.toString() ===  id});
+        const fitlerWritingsarray = writingsDetailsData.filter(function (el){ return el.fields.writing_ID.toString() ===  id});
         if(!fitlerWritingsarray[0]){
             navigation("/PageNotFound");
         }
@@ -65,6 +65,12 @@ export default function WritingDetails() {
         else{
             var writing= fitlerWritingsarray[0].fields;
             var writingTitle = writing.WritingTitle;
+            var writerAvatar = writing.writerAvatar[0].url;
+            var writerName = writing.writerName;
+            var date = writing.date;
+            var readTime = writing.readTime;
+            var writerDesignation = writing.writerDesignation;
+            var writerHandle = writing.writerHandle
         }
 
         
@@ -86,6 +92,17 @@ export default function WritingDetails() {
                     <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                     <div style={{alignItems:"center"}}>
                     <Header back={back} backTo="/writings" headerTitle={<h2> {writingTitle}</h2>}></Header> 
+
+                    
+                             <div style={{display:"flex", flexDirection:"row",gap:"0.5rem",margin:"1rem 0rem"}}>
+                                        <img style={{width:"40px",height:"40px"}} src={writerAvatar} alt="User profile pic"></img>
+                                        <div style={{display:"flex", flexDirection:"column"}}>   
+                                        <a href={writerHandle?writerHandle:""} target="_blank" rel="noreferrer"><h6 style={{color:"white"}}>{writerName} · <span style={{fontSize:"13px"}}>{writerDesignation? writerDesignation:null} </span></h6></a>
+                                        <p style={{fontSize:"13px"}}>{date?date:null} · {readTime?readTime:null} read</p>
+
+                                        </div>
+                                        
+                                    </div>
 
                         { 
                         writing ? writing.WritingDetails.map((item,index)=>{
@@ -120,15 +137,9 @@ export default function WritingDetails() {
                             else if(item.elementType === 'video'){
                                 count++;
                                 return (
-                                // <figure>
-                                //     <video style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",marginTop: "1rem", marginBottom: "1rem",border:"2px solid #ffffff60",borderRadius:"8px",objectFit: "cover"}} controls="controls" src={item.elementData} />
-                                //     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
-
-                                // </figure>
-                                <figure key={index} style={{boxShadow: "8px 8px #ff7744f0"}}>
+                                <figure key={index} style={{borderRadius:"0.5rem",boxShadow: "1px 1px 0px #ff7644,2px 2px 0px #ff7644,3px 3px 0px #ff7644,4px 4px 0px #ff7644,5px 5px 0px #ff7644,6px 6px 0px #ff7644"}}>
                                         <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={writing.mediaFiles[count].url} type='video/mp4'></source></video>
                                      <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
-
                                  </figure>
 
                                 );

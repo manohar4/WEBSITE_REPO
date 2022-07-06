@@ -12,7 +12,7 @@ import WritingDetails from './pages/WritingDetails.js';
 import PageNotFound from './pages/PageNotFound.js';
 import DesignLibrary from './pages/DesignLibrary.js'
 import Airtable from 'airtable';
-import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchDesignLibrary, FetchAllAttachements} from './helper/Context';
+import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchDesignLibrary, FetchAllAttachements,FetchWritingsDetails} from './helper/Context';
 import { useState,useEffect } from 'react';
 import Plyr from 'plyr';
 
@@ -23,6 +23,7 @@ function App() {
     const[projectsListData,setProjectsListData] = useState([]);
     const[projectsDetailsData,setProjectsDetailsData] = useState([]);
     const[writingsListData,setWritingsListData] = useState([]);
+    const[writingsDetailsData,setWritingsDetailsData] = useState([]);
     const[designLibraryData,setDesignLibraryData] = useState([]);
     const[allAttachements,setAllAttachments] = useState([]);
 
@@ -31,7 +32,7 @@ function App() {
 
 
 
-    var projects,tagArray; 
+    var projects,tagArray,writings; 
     var base = new Airtable({apiKey: 'keybsrdTHoDUuYEPf'}).base('app6Go1Ou8TXBXOW8');
     
     const getRecords = async () =>{
@@ -91,8 +92,24 @@ function App() {
        
         records[i].fields.WritingDetails = WritingDetailsFromJson;
       }
-      setWritingsListData(records);
 
+      writings = await records.reduce( function (r, a) {
+        r[a.fields.writingGroupName] = r[a.fields.writingGroupName] || [];
+        r[a.fields.writingGroupName].push(a.fields);
+        return r;
+    }, {});
+    var writingsList=[];
+    for(let key in writings) {
+                var obj = {"writingGroupName":key,"WritingDetails":writings[key]}
+                writingsList.push(obj);
+        }
+
+
+
+
+
+      setWritingsListData(writingsList);
+      setWritingsDetailsData(records);
 
     }
 
@@ -151,6 +168,7 @@ for (var item in groupedObj) {
   <FetchProjectsDetails.Provider value={{projectsDetailsData,setProjectsDetailsData}}>
   <FetchWritingList.Provider value={{writingsListData,setWritingsListData}}>
       <FetchDesignLibrary.Provider value={{designLibraryData,setDesignLibraryData}}>
+        <FetchWritingsDetails.Provider value={{writingsDetailsData,setWritingsDetailsData}}>
         <FetchAllAttachements.Provider value={{allAttachements,setAllAttachments}}>
     <div className="App">
       <Router>
@@ -179,6 +197,7 @@ for (var item in groupedObj) {
       </Router>
     </div>
     </FetchAllAttachements.Provider>
+    </FetchWritingsDetails.Provider>
     </FetchDesignLibrary.Provider>
     </FetchWritingList.Provider>
     </FetchProjectsDetails.Provider>
