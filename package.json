@@ -11,7 +11,7 @@
     "airtable": "^0.11.4",
     "babel-plugin-prismjs": "^2.1.0",
     "json-loader": "^0.5.7",
-    "npm": "^8.12.1",
+    "npm": "^8.13.2",
     "plyr": "^3.7.2",
     "prismjs": "^1.28.0",
     "react": "^18.1.0",

@@ -204,10 +204,10 @@ export default function Home() {
                     </div>
 
                 <div id="splineFlex" style={{display:"flex",flexDirection:"row",backgroundColor:"black",borderRadius:"1rem"}}>
-                <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"5%"}} src={Love} alt="korean Love symbol"></img>
+                <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"10%"}} src={Love} alt="korean Love symbol"></img>
                 
                 
-                <div style={{flex:"1",display:"flex",alignItems:"center"}}>
+                <div style={{flex:"2",display:"flex",alignItems:"center"}}>
                 <button className='fillBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Say Hello</button>
 
                 </div>
