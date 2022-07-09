@@ -14,6 +14,7 @@ import '../css/plyr.css'
 import { useNavigate } from "react-router-dom";
 import Carousel from '../components/Carousel'
 import FullImage from '../components/FullImage';
+import ImageGrid from '../components/ImageGrid';
 
 var emojiString;
 
@@ -270,6 +271,16 @@ export default function ProjectDetails() {
                                     <h2 style={{textAlign:"center"}}>🙏 Thanks for Reading</h2>
                                     <div key={index} style={{opacity:"0%"}}><hr className="solid" /></div>
                                     </div>
+                                )
+                            }
+                            else if(item.elementType === "imageGrid"){
+                                for(var j=0;j<=item.elementData.length-1;j++){
+                                    count++;
+                                    item.elementData[j]= project.mediaFiles[count].url;                                    
+                                }
+
+                                return(
+                                    <ImageGrid key={index} elementData={item.elementData} elementWidth={Math.round(100/item.elementColumns).toString()+"%"} elementCaptions={item.elementCaptions} ></ImageGrid>
                                 )
                             }
                             
