@@ -172,6 +172,13 @@ for (var item in groupedObj) {
           vistorBasicData = JSON.parse(this.responseText)
           if(vistorBasicData.ip && count===0 && vistorBasicData.city && vistorBasicData.country_name && vistorBasicData.latitude && vistorBasicData.longitude){
             count++;
+            var currentdate = new Date(); 
+            var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
             if( vistorBasicData.ip === "183.83.252.8"){
               vistorBasicData.me = "manohar"
             }
@@ -185,7 +192,8 @@ for (var item in groupedObj) {
                   "Location":  vistorBasicData.city+','+ vistorBasicData.region,
                   "Country": vistorBasicData.emoji_flag + vistorBasicData.country_name,
                   'Latandlong': vistorBasicData.latitude+','+ vistorBasicData.longitude,
-                  'me': vistorBasicData.me 
+                  'me': vistorBasicData.me,
+                  'dateAndTime':datetime
                   }
               }
               ]
