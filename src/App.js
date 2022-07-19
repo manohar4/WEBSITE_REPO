@@ -17,7 +17,8 @@ import { useState,useEffect } from 'react';
 import Plyr from 'plyr';
 
 
-
+var vistorBasicData;
+var count=0;
 function App() {
 
     const[projectsListData,setProjectsListData] = useState([]);
@@ -26,6 +27,8 @@ function App() {
     const[writingsDetailsData,setWritingsDetailsData] = useState([]);
     const[designLibraryData,setDesignLibraryData] = useState([]);
     const[allAttachements,setAllAttachments] = useState([]);
+    const[allTools,setAllTools] = useState([])
+   
 
       // eslint-disable-next-line
     const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
@@ -152,7 +155,54 @@ for (var item in groupedObj) {
     const getAllAttachements = async()=>{
       const allAttachementRecords = await base('All-Attachments').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage();  
       setAllAttachments(allAttachementRecords);
+      console.log()
     }
+    const getToolsFamiliar = async()=>{
+      const allToolsRecords = await base('Tools').select({maxRecords: 100,sort:[{field:"orderID"}]}).firstPage(); 
+      setAllTools(allToolsRecords);
+    }
+
+    const getIPAddress = async()=>{
+        
+        var request = new XMLHttpRequest();
+        request.open('GET', 'https://api.ipdata.co/?api-key=bfbd3dee6eec431ac604ab6154fb6564f95e6849474ee3de3ba9601b');
+        request.setRequestHeader('Accept', 'application/json');
+      request.onreadystatechange = function () {
+        if (this.readyState === 4) {
+          vistorBasicData = JSON.parse(this.responseText)
+          if(vistorBasicData.ip && count===0 && vistorBasicData.city && vistorBasicData.country_name && vistorBasicData.latitude && vistorBasicData.longitude){
+            count++;
+            if( vistorBasicData.ip === "183.83.252.8"){
+              vistorBasicData.me = "manohar"
+            }
+            else{
+              vistorBasicData.me = ""
+            }
+            var recordSet = [
+              {
+                  "fields": {
+                  "IP Address": vistorBasicData.ip,
+                  "Location":  vistorBasicData.city+','+ vistorBasicData.region,
+                  "Country": vistorBasicData.emoji_flag + vistorBasicData.country_name,
+                  'Latandlong': vistorBasicData.latitude+','+ vistorBasicData.longitude,
+                  'me': vistorBasicData.me 
+                  }
+              }
+              ]
+            base('Visitors').create(recordSet, function(err, records) {
+              if (err) {
+                  console.error(err);
+                  return;
+              }
+              });
+    };
+        }
+       
+  }
+
+request.send();
+    }
+    
 
     useEffect(()=>{
         getRecords();
@@ -160,6 +210,8 @@ for (var item in groupedObj) {
         getWritingRecords();
         getDesignLibrary();
         getAllAttachements();
+        getToolsFamiliar();
+        getIPAddress();
     },
     // eslint-disable-next-line
     [])
@@ -171,7 +223,7 @@ for (var item in groupedObj) {
   <FetchWritingList.Provider value={{writingsListData,setWritingsListData}}>
       <FetchDesignLibrary.Provider value={{designLibraryData,setDesignLibraryData}}>
         <FetchWritingsDetails.Provider value={{writingsDetailsData,setWritingsDetailsData}}>
-        <FetchAllAttachements.Provider value={{allAttachements,setAllAttachments}}>
+        <FetchAllAttachements.Provider value={{allAttachements,setAllAttachments,allTools,setAllTools}}>
     <div className="App">
       <Router>
       <Helmet>

@@ -43,28 +43,6 @@ export default function ImageGrid(props) {
         })
     }
   
-  {/* <div class="tile" >
-
-       
-    <img src='https://bit.ly/1tSEfja'/>
-  </div>
-  
-  <div class="tile" >
-    <img src='https://bit.ly/1rXAWHn'/>
-  </div>
-  
-   <div class="tile" >
-    <img src='https://bit.ly/Ux98xe'/>
-  </div>
-  
-   <div class="tile" >
-    <img src='https://bit.ly/1nR24qx'/>
-  </div>
-  
-  <div class="tile" >
-    <img src='https://bit.ly/1oAM0tK'/>
-  </div> */}
-  
   
   {isImgeOpen && <FullImage handleClose={toggleFullImagePopup} imgSrc={imgSrc}/>}
 </div>

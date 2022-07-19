@@ -178,7 +178,7 @@ export default function Home() {
                         <div className='social-lineitems' >
                             <h4 >Twitter </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
-                            <a target='_blank' rel="noreferrer" href="https://twitter.com/manoharmanu4444?ref_src=twsrc%5Etfw" className="twitter-follow-button link" data-show-count="false">Follow</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <a target='_blank' rel="noreferrer" href="https://twitter.com/manoharmanu4444?ref_src=twsrc%5Etfw" className="twitter-follow-button link" data-show-count="false">Follow</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                         </div>
                         <div className='social-lineitems'>
                             <h4 >Linkedin </h4>
@@ -194,8 +194,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div class="blockquote-wrapper">
-  <div class="blockquote">
+                <div className="blockquote-wrapper">
+  <div className="blockquote">
  
     <p>
     "People don't use <span  >products</span>  because of  <span  >great design</span> ; <span  > Great designs</span> makes them to use the  <span  >Product</span>"

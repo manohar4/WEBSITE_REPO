@@ -21,7 +21,12 @@
 }
 
 .toolLogo{
-    width: 1.6rem;;
+    width: 1.6rem;
+    border-radius: 0.2rem;
+    max-height: 24px;
+    max-width: 24px;
+    aspect-ratio: 1;
+    padding: 0.1rem;
 }
 
 

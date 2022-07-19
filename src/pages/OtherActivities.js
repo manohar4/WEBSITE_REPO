@@ -3,11 +3,6 @@ import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/OtherActivities.css'
 import './../css/Global.css'
-import Figma from "./../assets/tools/figma.png"
-import Miro from "./../assets/tools/Miro.png"
-import Sketch from "./../assets/tools/Sketch.png"
-import XD from "./../assets/tools/XD.png"
-import Adobe_CC from "./../assets/tools/Adobe CC.png"
 import Header from '../components/Header'
 import Testimonials from '../components/Testimonials'
 import * as TbIcons from 'react-icons/tb'
@@ -43,7 +38,7 @@ var entered = true;
     const allAnimations=[Animation_1,Animation_2,Animation_3,Animation_4,Animation_5,Animation_6,Animation_7,Animation_8,Animation_9,Animation_10,Animation_11,Animation_12,Animation_13]
 
     
-    const {allAttachements} = useContext(FetchAllAttachements);
+    const {allAttachements,allTools} = useContext(FetchAllAttachements);
     //Adding Skectes data into an array
 
     if(allAttachements.length!==0){
@@ -74,6 +69,7 @@ var entered = true;
     const navigation = useNavigate();
     const[randomNum,setRandomNum]= useState(9);
     const[gif,setGif] = useState(Animation_9)
+    const[showMore,setShowMore]= useState(false)
 
   window.currentAnimoji = 9;
   window.previousArray = [];
@@ -148,6 +144,17 @@ const openDesignLibrary=()=>{
     navigation("/DesignLibrary");
 }
 
+const onShowMore=(e)=>{
+    if(showMore === false){ 
+        setShowMore(true);
+        e.target.innerHTML = "Show Less"
+    }
+    if(showMore === true){ 
+        setShowMore(false);
+        e.target.innerHTML = "Show More"
+    }
+}
+
   return (
     < div className = 'otherActivities'> 
     <Helmet>
@@ -167,39 +174,38 @@ const openDesignLibrary=()=>{
             <div className='tools'>
                     <h6 className='subTitle'>TOOLS I'M FAMILIAR WITH</h6>
                     <div className='tool-row'>
-                        <div className='tool-lineitems'>
-                            <img className="toolLogo" src={Figma} alt="Brand Logo"/>
-                            <h4 >Figma </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
-                            <p>Experienced</p>
-                        </div>
-                        <div className='tool-lineitems'>
-                            <img className="toolLogo" src={XD} alt="Brand Logo"/>
-                            <h4 >XD </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
-                            <p>Experienced</p>
-                        </div>
-                        <div className='tool-lineitems'>
-                            <img className="toolLogo" src={Sketch} alt="Brand Logo"/>
-                            <h4 >Sketch </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
-                            <p>Moderate</p>
-                        </div>
-                        <div className='tool-lineitems'>
-                            <img className="toolLogo" src={Miro} alt="Brand Logo"/>
-                            <h4 >Miro </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
-                            <p>Good</p>
-                        </div>
-                        <div className='tool-lineitems'>
-                            <img className="toolLogo" src={Adobe_CC} alt="Brand Logo"/>
-                            <h4 >Adobe Create Cloud Tools </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
-                            <p>Moderate</p>
-                        </div>
-                        <div className='tool-lineitems'>
-                            <h4 >and Zeplin, Marvel, Framer, Procreate and more</h4>
-                        </div>
+                        {
+                             allTools.slice(0, 5).map((item,index)=>{
+                                return (
+                                    <div key={index} className='tool-lineitems'>
+                                        <img className="toolLogo" src={item.fields.ToolLogo[0].url} alt="Brand Logo"/>
+                                        <h4 >{item.fields.ToolName} </h4>
+                                        <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                                    <p>{item.fields.Level}</p>
+                                </div>
+                                )
+                            })
+                        }
+
+                        {
+                            showMore?allTools.map((item,index)=>{
+                                if(index<5){
+                                    return ""
+                                }
+                                else{
+                                return (
+                                    <div key={index} className='tool-lineitems'>
+                                        <img className="toolLogo" src={item.fields.ToolLogo[0].url} alt="Brand Logo"/>
+                                        <h4 >{item.fields.ToolName} </h4>
+                                        <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                                    <p>{item.fields.Level}</p>
+                                </div>
+                                )
+                                }
+                            }):null
+                        }
+                        <button className='primaryBtn' onClick={(e)=> onShowMore(e)} >Show More</button>
+
                     </div>
                 </div>
             
@@ -220,10 +226,10 @@ const openDesignLibrary=()=>{
                     allAnimations.map((item,index)=>{
                         return (
                             <>
-                               <img style={{width:"100%",borderRadius:"1rem", display:index===randomNum?"block":"none"}} src={gif}  alt="emoji animation"></img>
+                               <img key={index+10000} style={{width:"100%",borderRadius:"1rem", display:index===randomNum?"block":"none"}} src={gif}  alt="emoji animation"></img>
                 
                                 {
-                                   index===12?  <img className='dummyGif' style={{width:"100%",borderRadius:"1rem",opacity:"0%",zIndex:"-100"}} src={Animation_1}  alt="emoji animation"></img>:null
+                                   index===12?  <img key={index+1000} className='dummyGif' style={{width:"100%",borderRadius:"1rem",opacity:"0%",zIndex:"-100"}} src={Animation_1}  alt="emoji animation"></img>:null
                                 }           
 
                             </>
