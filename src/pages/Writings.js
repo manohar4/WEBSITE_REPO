@@ -76,7 +76,7 @@ var emojiString;
                                     emojiString.push("");
                                     emojiString.push("");
                                     return(
-                                      <Link key={index}  to={`/writingDetails/${item.writing_ID}`}>
+                                      <Link key={index}  to={ item.linkIcon=== "false"?`/writingDetails/${item.writing_ID}`: `/${item.linkIcon}` }>
                                       <div className='writingItem'>
                                       <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                                           <span style={{fontSize:"16px"}}role="img">
