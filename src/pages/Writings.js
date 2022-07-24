@@ -49,9 +49,9 @@ var emojiString;
                                   if(item.linkIcon === "true"){
   
                                     emojiString= emojiCode.split(",")
-                                    emojiString.push("");
-                                    emojiString.push("");
-                                    emojiString.push("");
+                                    emojiString.push(null);
+                                    emojiString.push(null);
+                                    emojiString.push(null);
                                   
                                     return(
                                     <div key={index} className='writingItem' 
