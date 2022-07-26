@@ -9,7 +9,7 @@ import * as FiIcons from 'react-icons/fi'
 import {FetchWritingList} from '../helper/Context'
 import Header from '../components/Header'
 
-var emojiString;
+var emojiString,emojiOutput;
  function Writings() {
 
   const back= false; 
@@ -51,16 +51,28 @@ var emojiString;
                                   if(item.linkIcon === "true"){
   
                                     emojiString= emojiCode.split(",")
-                                    emojiString.push(null);
-                                    emojiString.push(null);
-                                    emojiString.push(null);
+                                    if(emojiString.length === 1){
+                                      emojiOutput = String.fromCodePoint(emojiString[0]) ;
+                                    }
+                                    if(emojiString.length === 2){
+                                      emojiOutput = String.fromCodePoint(emojiString[0],emojiString[1]) ;
+                                    }
+                                    if(emojiString.length === 3){
+                                      emojiOutput = String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2]) ;
+                                    }
+                                    if(emojiString.length === 4){
+                                      emojiOutput =String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]);
+                                    }
+
+                                    
+                                  
                                   
                                     return(
                                     <div key={index} className='writingItem' 
                                     onClick={()=>{ window.open(item.link); }}>
                                       <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                                           <span style={{fontSize:"16px"}}role="img">
-                                            {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
+                                            {emojiOutput }
                                           </span>
                                           <h4>{item.WritingTitle}</h4>
                                       </div>
@@ -74,15 +86,25 @@ var emojiString;
                                   }
                                   else{
                                     emojiString= emojiCode.split(",")
-                                    emojiString.push("");
-                                    emojiString.push("");
-                                    emojiString.push("");
+                                    emojiString= emojiCode.split(",")
+                                    if(emojiString.length === 1){
+                                      emojiOutput = String.fromCodePoint(emojiString[0]) ;
+                                    }
+                                    if(emojiString.length === 2){
+                                      emojiOutput = String.fromCodePoint(emojiString[0],emojiString[1]) ;
+                                    }
+                                    if(emojiString.length === 3){
+                                      emojiOutput = String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2]) ;
+                                    }
+                                    if(emojiString.length === 4){
+                                      emojiOutput =String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]);
+                                    }
                                     return(
                                       <Link key={index}  to={ item.linkIcon=== "false"?`/writingDetails/${item.writing_ID}`: `/${item.linkIcon}` }>
                                       <div className='writingItem'>
                                       <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                                           <span style={{fontSize:"16px"}}role="img">
-                                            {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
+                                            {emojiOutput }
                                           </span>
                                           <h4>{item.WritingTitle}</h4>
                                       </div>
