@@ -11,7 +11,7 @@
 }
 
 .nav-menu {
-    background-color: #171717;
+    background-color: var(--bg-color2);
     width: 18rem;
     height: 100vh;
     display: flex;
@@ -43,7 +43,7 @@
 }
 
 .nav-text a {
-    color: rgb(255, 255, 255);
+    color: var(--text-color0);
     font-size: 14px;
     width: 100%;
     height: 100%;
@@ -57,8 +57,8 @@
 }
 
 .nav-text a:hover{
-    background-color: #ffffff40;
-    color: #fff;
+    background-color: var(--text-color2);
+    color: var( --text-color0);
 }
 
 .nav-text-selected{
@@ -77,8 +77,8 @@
     align-items: center;
     border-radius: 4px;
     padding: 8px;
-    background-color: #ffffff40;
-    color: #fff;
+    background-color: var(--bg-color5);
+    color: var( --text-color0);
     margin-bottom: 0.5rem;
 
 }
@@ -89,7 +89,7 @@
     gap: 0.5rem;
     flex: 1;
     display: flex;
-    color: white ;
+    color: var(--text-color0) ;
     padding: 8px;
     margin-bottom: 1rem;
 }
@@ -105,7 +105,7 @@
     align-items: center;
     border-radius: 4px;
     padding: 8px;
-    color: #fff;
+    color: var( --text-color0);
     display: flex;
     flex: 1;
   flex-direction: column;
@@ -114,7 +114,7 @@
 }
 
 .nav-menu-mobile{
-    background-color: #171717;
+    background-color: var(--bg-color2);
     height: 4rem;
     width: 100vw;
     display: flex;
@@ -137,10 +137,9 @@
     align-items: center;
     border-radius: 4px;
     padding: 8px;
-    background-color: #ffffff40;
-    color: #fff;
-    background-color: #ffffff40;
-    color: #fff;
+    background-color: var(--text-color2);
+    color: var( --text-color0);
+
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -161,13 +160,13 @@
 
 .nav-mobile-text-selected a{
     text-decoration: none;
-    color: #fff;
+    color: var( --text-color0);
     
 }
 
 .nav-mobile-text a{
     text-decoration: none;
-    color: #fff;
+    color: var( --text-color0);
 
 }
 

@@ -89,6 +89,8 @@
 }
 
 
+
+
 /* center the blockquote in the page */
 .blockquote-wrapper {
     display: flex;
@@ -100,7 +102,7 @@
  .blockquote {
      position: relative;
      align-self: center;
-     background-color: #181818;
+     background-color: var(--bg-color1);
      border-radius: 0.5rem;
      padding-top: 0%;
      margin-top: 0.4rem;
@@ -109,7 +111,7 @@
  /* Blockquote header */
  .blockquote p {
      position: relative; /* for pseudos */
-     color: rgba(237, 237, 237, 0.8);
+     color: var(--text-color4);
      font-weight: normal;
 
      padding: 0.5rem 1rem;
@@ -117,7 +119,7 @@
  }
  
  .blockquote span{
-    color: rgba(237, 237, 237, 1);
+    color: var(--text-color4);
     font-weight: 700;
  }
  

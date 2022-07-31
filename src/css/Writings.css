@@ -12,11 +12,11 @@
     justify-content:space-between;
     align-items:center;
     padding:0.8rem 0.5rem;
-    background-color: #FFFFFF10;
+    background-color: var(--text-color8);
     border-radius:0.25rem;
     margin-bottom: 0.5rem;
 }
 .writingItem:hover{
-    background-color: #FFFFFF20;
+    background-color: var(--text-color2);
     cursor: url('../assets/hover.png'),auto;
 }

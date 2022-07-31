@@ -17,16 +17,16 @@
 }
 
 .closeIcon{
-    background-color: #FFFFFF00;
+    background-color: transparent;
     display:flex;
     flex-direction:row;
     align-items:center;
     gap:0.5rem;
     padding:1px;
     border-radius: 0.25rem;
-    border: 1px  solid #ffffff80;
+    border: 1px  solid var(--text-color5);
 }
 
 .closeIcon:hover{
-    background-color: #ffffff40;
+    background-color: var(--text-color2);
 }

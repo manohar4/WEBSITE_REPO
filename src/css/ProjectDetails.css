@@ -3,7 +3,7 @@
 .backIcon{
     width: 1.2rem ;
     height:1.2rem;
-    color: #ffffff90;
+    color: var(--text-color5);
 }
 
 /*---------------*/

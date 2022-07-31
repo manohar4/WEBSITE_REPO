@@ -100,7 +100,7 @@ export default function WritingDetails() {
                              <div style={{display:"flex", flexDirection:"row",gap:"0.5rem",margin:"1rem 0rem"}}>
                                         <img style={{width:"40px",height:"40px"}} src={writerAvatar} alt="User profile pic"></img>
                                         <div style={{display:"flex", flexDirection:"column"}}>   
-                                        <a href={writerHandle?writerHandle:""} target="_blank" rel="noreferrer"><h6 style={{color:"white"}}>{writerName} · <span style={{fontSize:"13px"}}>{writerDesignation? writerDesignation:null} </span></h6></a>
+                                        <a href={writerHandle?writerHandle:""} target="_blank" rel="noreferrer"><h6 style={{color:"var(--text-color0)"}}>{writerName} · <span style={{fontSize:"13px"}}>{writerDesignation? writerDesignation:null} </span></h6></a>
                                         <p style={{fontSize:"13px"}}>{date?date:null} · {readTime?readTime:null} read</p>
 
                                         </div>
@@ -151,7 +151,7 @@ export default function WritingDetails() {
                                 return (<hr key={index} className="solid"/>);
                             }
                             else if(item.elementType === '...'){
-                                return (<div key={index} style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>);
+                                return (<div key={index} style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"var(--text-color0)",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>);
                             }
                             else if(item.elementType === 'spacer_small'){
                                 return (<div key={index} style={{opacity:"0%"}}><hr className="solid" /></div>);
@@ -175,7 +175,7 @@ export default function WritingDetails() {
 
                                 return (
                                         
-                                        <div key={index} style={{display:"flex",backgroundColor:"#ffffff20",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                                        <div key={index} style={{display:"flex",backgroundColor:"var(--text-color3)",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
                                             <span style={{fontSize:"16px"}}role="img">
                                               {String.fromCodePoint(emojiString[0],emojiString[1],emojiString[2],emojiString[3]) }
                                             </span>
@@ -189,7 +189,7 @@ export default function WritingDetails() {
                                 return (
                                     <ul key={index} style={{margin:"1rem 0rem",listStyleType: "square",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"#ffffffd0", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ul>
                                 )
@@ -198,7 +198,7 @@ export default function WritingDetails() {
                                 return (
                                     <ol key={index} style={{margin:"1rem 0rem",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"#ffffffd0", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ol>
                                 )
@@ -241,7 +241,7 @@ export default function WritingDetails() {
                             else if(item.elementType === "thanks"){
                                 return (
                                     <div key={index}>
-                                    <div key={index} style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"white",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>
+                                    <div key={index} style={{display:"flex",justifyContent:"space-evenly"}}><hr style={{border: "0px",opacity: "60%",content:"...",color:"var(--text-color0)",letterSpacing: "1rem",marginLeft: "1rem"}} className="solid dot"/></div>
                                     <div key={index} style={{opacity:"0%"}}><hr className="solid" /></div>
                                     <h2 style={{textAlign:"center"}}>🙏 Thanks for Reading</h2>
                                     <div key={index} style={{opacity:"0%"}}><hr className="solid" /></div>

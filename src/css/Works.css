@@ -9,7 +9,7 @@
 .card{
     max-width: 768px;
     height: 12rem;
-    background-color: #101010;
+    background-color: var(--bg-color3);
     border-radius: 0.5rem;
 
     padding: 1rem;
@@ -25,20 +25,9 @@
 }
 
 .card:hover{
-    background-color: #1a1a1a;
+    background-color: var(--bg-color4);
 }
-/* .card:hover{
-    background-color: #000000;
-    cursor: url('../assets/hover.png'),auto;
 
-    box-shadow: 1px 1px 0px #ff764490,
-    2px 2px 0px #ff764490,
-    3px 3px 0px #ff764490,
-    4px 4px 0px #ff764490,
-    5px 5px 0px #ff764490,
-    6px 6px 0px #ff764490
-  
-} */
 
 
 
@@ -110,22 +99,3 @@
   .cardGroup:hover:after {
     transform: rotate(46deg) scale(1);
   }
-/* .cardGroup:after {
-    
-	content: '';
-	height: 0.5rem;
-	width: 100%;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    display: block;
-    border-bottom: 0.2rem solid #000000d0;
-    margin-top: -0.6rem;
- 	transition: width 1s ease
-}
-.cardGroup:hover:after {
-    display: block;
-
-    border-bottom: 0.2rem solid #ff764490;
-	width: 100%;
-	background: transparent;
-} */

@@ -56,11 +56,11 @@ export default function DesignLibrary() {
             <div className='DesignLibrary'>
                 <div className='col'>
                     <div className='row'>
-                       <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
+                       <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
         
                        <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                         <div style={{display:"flex",flexDirection:"column", width:"100%",gap:"1rem"}}>
-                            <div  className="HeaderFixed" style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"black",overflow:"scroll",maxWidth:"94vw"}} >
+                            <div  className="HeaderFixed" style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"var(--bg-color1)",overflow:"scroll",maxWidth:"94vw"}} >
                                     {
                                     designLibraryData.map((item,index)=>{
                                         return(
@@ -73,7 +73,7 @@ export default function DesignLibrary() {
                                 designLibraryData.length>0 ? designLibraryData[currentSelection].Items.map((item,index)=>{                
                                         return(
                                             <div className='cardLib' onClick={()=> item.Link ? window.open(item.Link):null }>
-                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "white",borderRadius: "0.5rem"}}>
+                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "var(--text-color0)",borderRadius: "0.5rem"}}>
                                                     
                                                     <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
                                                 </div>
@@ -103,7 +103,7 @@ export default function DesignLibrary() {
                 <div className='col'>
                     <div className='row'>
                         <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
-                        <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
+                        <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
                         
                         <div style={{display:"flex", width:"100%",gap:"1rem"}}>
                             <div style={{display:"flex",flexDirection:"column", flex:"1",position:"sticky",top:"4rem",height: "0rem"}} >
@@ -119,7 +119,7 @@ export default function DesignLibrary() {
                                 designLibraryData.length>0 ? designLibraryData[currentSelection].Items.map((item,index)=>{                
                                         return(
                                             <div className='cardLib' onClick={()=> item.Link ? window.open(item.Link):null }>
-                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "white", borderRadius: "0.5rem"}}>
+                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "var(--text-color0)", borderRadius: "0.5rem"}}>
                                                     
                                                     <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
                                                 </div>

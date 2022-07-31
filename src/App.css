@@ -2,6 +2,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@300;400;500;600;700&display=swap');
 
 
+:root{
+
+  --bg-color0:#000000;
+  --bg-color1 : black;
+  --bg-color2 : #171717; 
+  --bg-color3: #101010;
+  --bg-color4: #1a1a1a;
+  --bg-color5: #ffffff40;
+
+  --text-color0: #fff;
+  --text-color1: #fffffff0;
+  --text-color2: #ffffff40;
+  --text-color3: #ffffff20;
+  --text-color4:#bbbbbb;
+  --text-color5:#ffffff80;
+  --text-color6:#ffffffd0;
+  --text-color7:#ffffff60;
+  --text-color8:#ffffff10;
+ 
+}
+
+[data-theme="light"] {
+ 
+  --bg-color0:#e4e4e4;
+  --bg-color1 : white;
+  --bg-color2 : #fefefe; 
+  --bg-color3: #f1f0f0;
+  --bg-color4: #e9e9e9;
+  --bg-color5: #00000020;
+
+  --text-color0: #000;
+  --text-color1: #000000f0;
+  --text-color2: #00000040;
+  --text-color3: #00000020;
+  --text-color4:#272727;
+  --text-color5:#00000080;
+  --text-color6:#000000d0;
+  --text-color7:#00000060;
+  --text-color8:#00000010;
+}
+
 
 *{
   box-sizing: border-box;
@@ -10,7 +51,7 @@
   font-family: 'space Grotesk',sans-serif;
   --plyr-color-main: #ff7744f0;
  cursor: url(../src//assets/customCursor.png),auto !important;
-
+ list-style: none;
 }
 
 button:hover,a:hover, .closeIcon:hover, .closeIcon path:hover,.musicIcon:hover,.musicIcon path:hover,.cardLib:hover,.cardLib *:hover,.backButton *:hover{
@@ -32,39 +73,35 @@ figure .plyr{
 
 }
 
-.app{
-  background-color: blue;
-}
-
 p{
   font-size:16px;
   font-weight:400;
-  color:#bbbbbb;
+  color:var(--text-color4);
   line-height:1.6rem;
   white-space: pre-line;  
 }
 
 h1{
   font-weight:600;
-color:#fffffff0;
+color:var(--text-color1);
 line-height:1.6rem;
 }
 
 h2{
   font-weight:600;
-  color:#fffffff0;
+  color:var(--text-color1);
   line-height:1.6rem;
 }
 
 h3{
   font-weight:600;
-  color:#fffffff0;
+  color:var(--text-color1);
   line-height:1.6rem;
 }
 h4{
   font-size: medium;
   font-weight:500;
-  color:#ffffffd0;
+  color:var(--text-color6);
   line-height:1.6rem;
 }
 
@@ -72,11 +109,13 @@ h4{
 h6{
   font-size:16px;
   font-weight:400;
-  color: #ffffff80;
+  color: var(--text-color5);
 }
 
 a {
   text-decoration: none;
+  text-decoration-color :initial;
+  color: initial;
 }
 
 hr{
@@ -90,10 +129,10 @@ hr.dot::before{
 }
 
 blockquote{
-  color: #ffffffd0;
-  border-left: #fffffff0 solid 4px;
+  color: var(--text-color6);
+  border-left: var(--text-color1) solid 4px;
   padding: 1rem;
-  background-color: #ffffff20;
+  background-color: var(--text-color3);
 }
 
 code{
@@ -105,7 +144,7 @@ background-color: red;
 
 
 .HeaderFixed{
-  background-color: #da040400;
+  background-color: transparent;
   display:flex;
   flex-direction: column;
   gap:1rem;
@@ -113,8 +152,8 @@ background-color: red;
   z-index: 100;
 }
 .HeaderSticky{
-  background-color: #050505;
-  border-bottom: 2px #ffffff20 solid;
+  background-color: var(--bg-color0);
+  border-bottom: 2px var(--text-color3) solid;
   height: auto;
   display:flex;
   gap:1rem;
@@ -135,7 +174,7 @@ background-color: red;
 }
 
 .primaryBtn{
-  background-color: #ffffff00;
+  background-color: transparent;
   
   display:flex;
   flex-direction:row;
@@ -143,17 +182,17 @@ background-color: red;
   gap:0.5rem;
   padding:0.5rem 0.5rem;
   border-radius: 0.25rem;
-  border: 1px  solid #ffffff00;
-  color: #ffffff;
+  border: 1px  solid transparent;
+  color: var( --text-color0);
   align-self: center;
 }
 
 .primaryBtn:hover{
-  background-color: #ffffff24;
+  background-color: var(--text-color3);
 }
 
 .fillBtn{
-  background-color: #ffffff24;
+  background-color: var(--text-color3);
   
   display:flex;
   flex-direction:row;
@@ -161,8 +200,8 @@ background-color: red;
   gap:0.5rem;
   padding:0.5rem 0.5rem;
   border-radius: 0.25rem;
-  border: 1px  solid #ffffff00;
-  color: #ffffff;
+  border: 1px  solid transparent;
+  color: var( --text-color0);
   margin:0.5rem auto;
   align-self: center;
 }
@@ -176,21 +215,21 @@ background-color: red;
   gap:0.5rem;
   padding:0.5rem 0.5rem;
   border-radius: 0.25rem;
-  border: 1px  solid #ffffff00;
-  color: #ffffff;
+  border: 1px  solid transparent;
+  color: var( --text-color0);
   margin:0.5rem auto;
   align-self: center;
 }
 
 .backButton{
-  background-color: #FFFFFF00;
+  background-color: transparent;
       display:flex;
       flex-direction:row;
       align-items:center;
       gap:0.5rem;
       padding:0.2rem 0.5rem;
       border-radius: 0.25rem;
-      border: 1px  solid #ffffff80;
+      border: 1px  solid var(--text-color5);
 }
 
 
@@ -198,7 +237,7 @@ background-color: red;
 
 
 .backButton:hover{
-  background-color: #ffffff40;
+  background-color: var(--text-color2);
 }
 
 body .spline-watermark{

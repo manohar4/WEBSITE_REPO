@@ -161,16 +161,16 @@ else{
                             )
                         })}
                 </ul>
-                <div style={{display:"flex",backgroundColor:"#ffffff20",height:"3.5rem",margin:"0rem 0.5rem",borderRadius:"0.5rem", backdropFilter: "blur(5px)",justifyContent: "space-evenly"}}>
+                <div style={{display:"flex",backgroundColor:"var(--text-color3)",height:"3.5rem",margin:"0rem 0.5rem",borderRadius:"0.5rem", backdropFilter: "blur(5px)",justifyContent: "space-evenly"}}>
              
                     <div style={{position:"relative"}}>
                     
                         <img className='albumCover' style={{borderRadius:"10rem",bottom:"1.5rem",width:"4rem",height:"4rem",position:"relative"}}  src={bgMusicImage} alt="cover pic"></img>
                         <audio id="audio" src={Rain} loop></audio>
-                        <div style={{ width:"100%",position:"absolute",zIndex:"1",top:"0px",fontSize:"12px",color:"#ffffff",textAlign:"center"}}><FaIcons.FaHeadphones style={{fontSize:"14px"}} title="Use Headphones For better Expereince"></FaIcons.FaHeadphones></div>
+                        <div style={{ width:"100%",position:"absolute",zIndex:"1",top:"0px",fontSize:"12px",color:"var( --text-color0)",textAlign:"center"}}><FaIcons.FaHeadphones style={{fontSize:"14px"}} title="Use Headphones For better Expereince"></FaIcons.FaHeadphones></div>
 
                     </div>
-                    <div style={{borderRadius:"4px",display:"flex",justifyContent:"space-between",alignItems:"center",color:"white"}}>
+                    <div style={{borderRadius:"4px",display:"flex",justifyContent:"space-between",alignItems:"center",color:"var(--text-color0)"}}>
 
                         <IoIcons.IoPlayBack    style={disabled ? {pointerEvents: "none", opacity: "0.4"} : {}}   className="musicIcon" onClick={onPlayBack}/>
                         <IoIcons.IoPlayForward  style={disabled ? {pointerEvents: "none", opacity: "0.4"} : {}}  className="musicIcon" onClick={onPlayNext}/>

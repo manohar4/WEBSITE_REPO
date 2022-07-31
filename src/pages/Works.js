@@ -40,7 +40,7 @@ function Works() {
 
 
             <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
-            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Works</p>}></Header>
+            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Works</p>}></Header>
 
                 <div className='projectsList'>
                   
@@ -58,12 +58,12 @@ function Works() {
                                         <div style={{display:'flex',flexDirection:'column',flex:2,justifyContent:"space-between",height:'100%'}}>
                                           <div>
                                             <p style={{marginBottom:"0.5rem",fontSize:"12px"}}>{item.Project_Duraction}</p>
-                                            <p style={{marginBottom:"0.5rem",fontSize:"20px",color:"#fff",width:"100%",height: "auto", wordBreak: "break-all" }}>{item.project_Name}</p>
+                                            <p style={{marginBottom:"0.5rem",fontSize:"20px",color:"var( --text-color0)",width:"100%",height: "auto", wordBreak: "break-all" }}>{item.project_Name}</p>
                                           </div>
                                           <div style={{display:"flex",flexDirection:'row',gap:"8px"}}>
                                               {item.Project_Tags.map((item,index) => {
                                                 return(
-                                                  <p key={index} style={{marginBottom:"0.5rem",fontSize:"10px",border:"1px solid #ffffff50", paddingLeft:'4px',paddingRight:'4px',borderRadius:'0.5rem'}}>{item}</p>
+                                                  <p key={index} style={{marginBottom:"0.5rem",fontSize:"10px",border:"1px solid var(--text-color3)", paddingLeft:'4px',paddingRight:'4px',borderRadius:'0.5rem'}}>{item}</p>
                                                 )
                                               })}    
                                           </div>

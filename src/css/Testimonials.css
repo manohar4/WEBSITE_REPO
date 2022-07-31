@@ -43,7 +43,7 @@
 }
 
 .container::-webkit-scrollbar-thumb {
-  background-color: #171717;   /* color of the scroll thumb */
+  background-color: var(--bg-color2);   /* color of the scroll thumb */
   border-radius: 20px; 
   height:1rem; 
       /* roundness of the scroll thumb */

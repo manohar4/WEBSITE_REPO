@@ -20,7 +20,7 @@
     height: fit-content;
     margin: 0 auto;
     max-width: 576px;
-    background: #171717;
+    background: var(--bg-color2);
     border-radius: 0.5rem;
     padding: 2rem 2rem;
     overflow: auto;
@@ -34,18 +34,18 @@
   input{
     height: 3rem;
     border-radius: 4px;
-    background: #131313;
-    border: 1px solid #ffffff20;
+    background: var(--bg-color3);
+    border: 1px solid var(--text-color3);
     padding: 0.5rem;
-    color: white;
+    color: var(--text-color0);
   }
   textarea{
 
     border-radius: 4px;
-    background: #131313;
-    border: 1px solid #ffffff20;
+    background: var(--bg-color3);
+    border: 1px solid var(--text-color3);
     padding: 0.5rem;
-    color: white;
+    color: var(--text-color0);
     resize: none;
   }
    

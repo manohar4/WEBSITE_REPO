@@ -35,7 +35,7 @@ var emojiString,emojiOutput;
     <div className='col'>
         <div className='row'>
         <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
-        <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Writings</p>}></Header>
+        <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Writings</p>}></Header>
 
 
         
@@ -79,7 +79,7 @@ var emojiString,emojiOutput;
                                         
                                         {item.linkIcon === "true" &&  
                                         <div style={{width:"24px",height:"24px",justifyContent:"flex-end"}}>
-                                        <FiIcons.FiArrowUpRight style={{fontSize:"24px"}} color='#ffffff'/> 
+                                        <FiIcons.FiArrowUpRight style={{fontSize:"24px"}} color='var( --text-color0)'/> 
                                         </div>
                                         }
                                     </div>)
@@ -111,7 +111,7 @@ var emojiString,emojiOutput;
                                         
                                         {item.linkIcon === "true" &&  
                                         <div style={{width:"24px",height:"24px",justifyContent:"flex-end"}}>
-                                        <FiIcons.FiArrowUpRight style={{fontSize:"24px"}} color='#ffffff'/> 
+                                        <FiIcons.FiArrowUpRight style={{fontSize:"24px"}} color='var( --text-color0)'/> 
                                         </div>
                                         }
                                     </div>

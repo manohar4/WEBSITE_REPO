@@ -7,7 +7,7 @@ import location from'../assets/location.png';
 import Header from '../components/Header';
 import * as GiIcons from 'react-icons/gi';
 import * as FaIcons from 'react-icons/fa';
-import Love from '../assets/love.gif';
+import handlight from '../assets/handsLight.png';
 import SubmitFrom from '../components/submitForm';
 import FullImage from '../components/FullImage';
 
@@ -17,6 +17,8 @@ export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
+
+    
 
     const togglePopup = () => {
 
@@ -62,7 +64,35 @@ export default function Home() {
             }
         }
 
+
+        if(document.documentElement.getAttribute('data-theme') === 'light'){
+            document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0FF"
+         }
+         else{
+            document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0N"
+         }
+
     },[])
+
+
+function darkify(event) {
+
+    
+if(document.documentElement.getAttribute('data-theme') === 'light'){
+    document.documentElement.setAttribute('data-theme', "");
+    event.target.title = "Dark"
+    event.target.innerHTML = "Dark Mode: ON"
+ }
+ else{
+
+    document.documentElement.setAttribute('data-theme', "light");
+    event.target.title = "Light"
+    event.target.innerHTML = "Dark Mode: OFF"
+ }
+  
+}
+
+
 
 
  
@@ -84,7 +114,7 @@ export default function Home() {
             <div className='row'>
             <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
 
-            <Header back={back} backTo="/" headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>Manohar Manu</p>}></Header>
+            <Header back={back} backTo="/" headerTitle={<div style={{width:"100%",display:"flex",justifyContent: "space-between"}}><p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p> <button  title='Dark' onClick={(event)=>{darkify(event)}} className="primaryBtn toggleMode"></button></div>}></Header>
 
                 <div className='intro'>   
                     <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer </span>based out of Bangalore, India.</p>
@@ -105,7 +135,7 @@ export default function Home() {
                     <div className='experience-row'>
                         <div className='expereince-lineitems'>
                             <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India) </a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Jul &#8212;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -115,7 +145,7 @@ export default function Home() {
                         </div>
                         <div className='expereince-lineitems'>
                             <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil) </a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Designer</h4>
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Feb &#8212;'21Jun</p>
@@ -124,7 +154,7 @@ export default function Home() {
                         </div>
                         <div className='expereince-lineitems' >
                             <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bngl, India)</a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Designer</h4>
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2019Aug &#8212;'21Jan</p>
@@ -133,7 +163,7 @@ export default function Home() {
                         </div>
                         <div className='expereince-lineitems'>
                             <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bngl, India)</a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             
                             <div className="desgPeriod" >
                                 <h4 style={{textAlign:'right'}} >Ass. Designer</h4>
@@ -143,7 +173,7 @@ export default function Home() {
                         </div>
                         <div className='expereince-lineitems' >
                             <h4 >Gleefie, Brisky(Interships) </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Graphic/UI Designer</h4>
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}}>2017Jun &#8212;'17Oct</p>
@@ -168,28 +198,28 @@ export default function Home() {
                     <div className='social-row'>
                         <div className='social-lineitems'>
                             <h4 >Dribbble </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <a className='link' target='_blank' rel="noreferrer" href='https://dribbble.com/manoharmanu'>Follow</a>
 
                         </div>
                         <div className='social-lineitems'>
                         <h4 >Behance </h4>
-                           <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                           <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <a className='link' target='_blank' rel="noreferrer" href='https://www.behance.net/manoharmande31'>Follow</a>
                         </div>
                         <div className='social-lineitems' >
                             <h4 >Twitter </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <a target='_blank' rel="noreferrer" href="https://twitter.com/manoharmanu4444?ref_src=twsrc%5Etfw" className="twitter-follow-button link" data-show-count="false">Follow</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                         </div>
                         <div className='social-lineitems'>
                             <h4 >Linkedin </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <a target='_blank' rel="noreferrer" className='link' href='https://www.linkedin.com/in/manoharmanu4444/'>Connect</a>
                         </div>
                         <div className='social-lineitems'>
                             <h4 >Email </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                
                                        <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">Get In Touch</a>
                         </div>
@@ -205,8 +235,8 @@ export default function Home() {
   </div>
                     </div>
 
-                <div id="splineFlex" style={{display:"flex",flexDirection:"row",backgroundColor:"black",borderRadius:"1rem"}}>
-                <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"10%"}} src={Love} alt="korean Love symbol"></img>
+                <div id="splineFlex" style={{display:"flex",flexDirection:"row",borderRadius:"1rem"}}>
+                <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"10%"}} src={handlight} alt="korean Love symbol"></img>
                 
                 
                 <div style={{flex:"2",display:"flex",alignItems:"center"}}>

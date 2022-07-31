@@ -240,7 +240,7 @@ request.send();
         <meta name="robots" content="index,follow"/>
         <meta name="googlebot" content="index,follow"/>
         <meta name='keywords' content='manoharmanu,manoharmanu.in,manu,manohar,manohar ui/ux,manoharmanu ui/ux,ui/ux designer in bagalore,ui/ux,ui/ux designer,ui/ux developer,ui/ux architect,ui/ux artist,ui/ux analyst,ui/ux app design,about ui/ux developer,all about ui/ux design,best ui ux design,best ui ux designer,cv ui ux designer,ui/ux designer job description' />
-      <style>{"body { background-color: #000000 }"}</style>
+      <style>{"body { background-color: var(--bg-color0) }"}</style>
     </Helmet>
 
         <Navbar></Navbar>

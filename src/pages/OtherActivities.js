@@ -169,7 +169,7 @@ const onShowMore=(e)=>{
             <div className='row'>
 
             <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
-            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'#fff',padding:"0.5rem 0rem"}}>More Details</p>}></Header>
+            <Header back={back} backTo="/"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>More Details</p>}></Header>
             
             <button className='resourcesButton' onClick={openDesignLibrary} > Check Out My Design Bookmarks <IoIcons.IoArrowForwardCircle  style={{fontSize:"2rem"}}/>  </button>
             
@@ -182,7 +182,7 @@ const onShowMore=(e)=>{
                                     <div key={index} className='tool-lineitems'>
                                         <img className="toolLogo" src={item.fields.ToolLogo[0].url} alt="Brand Logo"/>
                                         <h4 >{item.fields.ToolName} </h4>
-                                        <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                                        <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                                     <p>{item.fields.Level}</p>
                                 </div>
                                 )
@@ -199,7 +199,7 @@ const onShowMore=(e)=>{
                                     <div key={index} className='tool-lineitems'>
                                         <img className="toolLogo" src={item.fields.ToolLogo[0].url} alt="Brand Logo"/>
                                         <h4 >{item.fields.ToolName} </h4>
-                                        <div style={{flexGrow:1,borderBottom:'dotted 2px #ffffff60'}}></div>
+                                        <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                                     <p>{item.fields.Level}</p>
                                 </div>
                                 )
@@ -220,7 +220,7 @@ const onShowMore=(e)=>{
             
             <Testimonials elementData={testimonData}></Testimonials>
 
-            <div  className='animationFlex' style={{display:"flex",borderRadius:"1rem",backgroundColor:"#000000" ,cursor: "url(" + CustomCursor + ")"}}>
+             <div  className='animationFlex' style={{display:"flex",marginTop: "2rem",borderRadius:"1rem" ,cursor: "url(" + CustomCursor + ")"}}>
 
               <div className='animationGroup' style={{display:"flex",flex:"1",textAlign: "center",cursor: "pointer"}}>
 

@@ -14,7 +14,7 @@
 }
 
 .cardLib:hover{
-    background-color: #ffffff20;
+    background-color: var(--text-color3);
     border-radius: 0.5rem;
 }
 .ItemName{
@@ -39,7 +39,7 @@
 .tabButton{
     background: transparent;
     border: 0;
-    color: #ffffff90;
+    color: var(--text-color5);
     display: flex;
     height: 2.4rem;
     align-items: center;
@@ -51,7 +51,7 @@
 .tabButton-active {
     background: transparent;
     border: 0;
-    color: #fffffff0;
+    color: var(--text-color1);
     display: flex;
     height: 2,4rem;
     align-items: center;
@@ -59,7 +59,7 @@
     font-size: 1rem;
     font-weight: 700;
     border-radius:4px;
-    background-color: #ffffff20;
+    background-color: var(--text-color3);
 } 
 
 .myFav{
