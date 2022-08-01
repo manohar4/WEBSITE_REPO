@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Home.css'
 import './../css/Global.css'
-import location from'../assets/location.png';
+import Location_DarkMode from'../assets/Location_DarkMode.png';
+import Location_LightMode from'../assets/Location_LightMode.png';
 import Header from '../components/Header';
 import * as GiIcons from 'react-icons/gi';
 import * as FaIcons from 'react-icons/fa';
@@ -17,6 +18,7 @@ export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
+    const [location,setLocation] = useState(Location_DarkMode);
 
     
 
@@ -66,9 +68,14 @@ export default function Home() {
 
 
         if(document.documentElement.getAttribute('data-theme') === 'light'){
+
+            setLocation(Location_LightMode);
+
             document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0FF"
          }
          else{
+            setLocation(Location_DarkMode);
+
             document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0N"
          }
 
@@ -80,12 +87,17 @@ function darkify(event) {
     
 if(document.documentElement.getAttribute('data-theme') === 'light'){
     document.documentElement.setAttribute('data-theme', "");
+    setLocation(Location_DarkMode);
+
     event.target.title = "Dark"
     event.target.innerHTML = "Dark Mode: ON"
+
  }
  else{
 
     document.documentElement.setAttribute('data-theme', "light");
+    setLocation(Location_LightMode);
+
     event.target.title = "Light"
     event.target.innerHTML = "Dark Mode: OFF"
  }
@@ -188,7 +200,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     <h6 className='subTitle'>FROM WHERE</h6>
                     <div className='location-row'>
                        <img src={location} onClick={(event)=>{toggleFullImagePopup(event)}}  className='locationImg' alt="Vizag Location" ></img>
-                       <p style={{textAlign:'right'}}> Vishakapatnam, India</p>
+                       <p style={{textAlign:'right'}}> Visakhapatnam, India</p>
 
                     </div>
                 </div>
