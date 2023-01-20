@@ -196,6 +196,33 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     </div>
                 </div>
 
+                <div className='pastExpereince'>
+                    <h6 className='subTitle'>EDUCATION and CERTIFICATION</h6>
+                    <div className='experience-row'>
+                        
+                        <div className='expereince-lineitems'>
+                            <a className='link' target='_blank' rel="noreferrer" href='' >IIT Guhawati</a>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div className="desgPeriod">
+                                <h4 style={{textAlign:'right'}} >PG Certification</h4>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2022Dec &#8212;'23May</p>
+                            </div>
+                        </div>
+                       
+                        <div className='expereince-lineitems'>
+                            <a className='link' target='_blank' rel="noreferrer" href='' >NIT Durgapur</a>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div className="desgPeriod">
+                                <h4 style={{textAlign:'right'}} >Mechanical Engg.</h4>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2013Aug &#8212;'27May</p>
+                            </div>
+                        </div>
+                       
+                       
+
+                    </div>
+                </div>
+
                 <div className='location'>
                     <h6 className='subTitle'>FROM WHERE</h6>
                     <div className='location-row'>
