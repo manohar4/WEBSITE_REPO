@@ -5,6 +5,14 @@ import './../css/Home.css'
 import './../css/Global.css'
 import Location_DarkMode from'../assets/Location_DarkMode.png';
 import Location_LightMode from'../assets/Location_LightMode.png';
+import yale from '../assets/Certifications/yale.png';
+import IDF from '../assets/Certifications/idf.jpeg';
+import IITG from '../assets/Certifications/IITG.png';
+import NITDGP from '../assets/Certifications/NITDGP.png';
+import Agile from '../assets/Certifications/Agile.png';
+import Incture from '../assets/Certifications/Incture.jpeg';
+
+
 import Header from '../components/Header';
 import * as GiIcons from 'react-icons/gi';
 import * as FaIcons from 'react-icons/fa';
@@ -129,7 +137,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
             <Header back={back} backTo="/" headerTitle={<div style={{width:"100%",display:"flex",justifyContent: "space-between"}}><p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p> <button  title='Dark' onClick={(event)=>{darkify(event)}} className="primaryBtn toggleMode"></button></div>}></Header>
 
                 <div className='intro'>   
-                    <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer </span>based out of Bangalore, India.</p>
+                    <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
                     <p >I'm currently designing enterprise products and leading the design team at 
                         <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> as a 
                      <span className='highlighter'> Senior UX Designer</span>. Over the last five years, I've spent the majority of my time building B2B enterprise applications on <span className='highlighter'> SAP</span> and have also been part of working on various digital solutions in manufacturing, ecommerce, and many other sectors.</p>
@@ -146,16 +154,17 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     <h6 className='subTitle'>PAST EXPERIENCES</h6>
                     <div className='experience-row'>
                         <div className='expereince-lineitems'>
-                            <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India) </a>
+                            <img className="CertLogo" src={Agile} alt="Brand Logo"/>
+                            <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India, 2+Yrs) </a>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Jul &#8212;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Jan &#8212;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             </div>
                             
 
                         </div>
-                        <div className='expereince-lineitems'>
+                        {/* <div className='expereince-lineitems'>
                             <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil) </a>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
@@ -163,26 +172,18 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Feb &#8212;'21Jun</p>
                             </div>
                         
-                        </div>
+                        </div> */}
                         <div className='expereince-lineitems' >
-                            <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bngl, India)</a>
+                            <img className="CertLogo" src={Incture} alt="Brand Logo"/>
+                            <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bangalore, 3Yrs)</a>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2019Aug &#8212;'21Jan</p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2018Feb &#8212;'21Jan</p>
                             </div>
                             
                         </div>
-                        <div className='expereince-lineitems'>
-                            <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bngl, India)</a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
-                            
-                            <div className="desgPeriod" >
-                                <h4 style={{textAlign:'right'}} >Ass. Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2017Nov &#8212;'19Aug</p>
-                            </div>
-                           
-                        </div>
+                       
                         <div className='expereince-lineitems' >
                             <h4 >Gleefie, Brisky(Interships) </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
@@ -197,27 +198,58 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                 </div>
 
                 <div className='pastExpereince'>
-                    <h6 className='subTitle'>EDUCATION and CERTIFICATION</h6>
+                    <h6 className='subTitle'>EDUCATION & CERTIFICATIONS</h6>
                     <div className='experience-row'>
                         
                         <div className='expereince-lineitems'>
-                            <a className='link' target='_blank' rel="noreferrer" href='' >IIT Guhawati</a>
+                        <img className="CertLogo" src={IITG} alt="Brand Logo"/>
+                            <a className='link' target='_blank' rel="noreferrer"  href='https://www.coursera.org/certificates/ux-design-human-computer-interaction-iitguwahati' >PG Certification in UX Design & HCI</a>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
-                                <h4 style={{textAlign:'right'}} >PG Certification</h4>
+                                <h4 style={{textAlign:'right'}} > IIT Guhawati</h4>
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2022Dec &#8212;'23May</p>
                             </div>
                         </div>
                        
                         <div className='expereince-lineitems'>
-                            <a className='link' target='_blank' rel="noreferrer" href='' >NIT Durgapur</a>
+                        <img className="CertLogo" src={NITDGP} alt="Brand Logo"/>
+                            <h4>Bachelors in Mechanical Engineering </h4>
+                            
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
                             <div className="desgPeriod">
-                                <h4 style={{textAlign:'right'}} >Mechanical Engg.</h4>
+                                <h4 style={{textAlign:'right'}} >NIT Durgapur</h4>
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2013Aug &#8212;'27May</p>
                             </div>
                         </div>
-                       
+
+                        {/* <div className='expereince-lineitems'>
+                           
+                            <br></br>
+                            <div style={{flexGrow:0.2,opacity:"20%",borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <br></br>
+                        </div> */}
+
+                        <div className='expereince-lineitems'>
+                            
+                            <img className="CertLogo" src={yale} alt="Brand Logo"/>
+                            <h4 >Introduction to Psychology Course</h4>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div className="desgPeriod">
+                                <h4 style={{textAlign:'right'}} >Yale University (Coursera)</h4>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023Jan &#8212;'23Feb</p>
+                            </div>
+                        </div>
+
+                        <div className='expereince-lineitems'>
+                        <img className="CertLogo" src={IDF} alt="Brand Logo"/>
+                            <a className='link' target='_blank' rel="noreferrer" href='https://www.interaction-design.org/members/manohar/certificate/course/fltqnHSHvRvNKv6ZS2' >Usability Testing In UX Design</a>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div className="desgPeriod">
+                                <h4 style={{textAlign:'right'}} >Interaction Design Foundation(IxDF)</h4>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2019Sep &#8212;'19Oct</p>
+                            </div>
+                        </div>
+                        
                        
 
                     </div>

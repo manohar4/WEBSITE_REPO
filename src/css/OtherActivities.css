@@ -29,6 +29,15 @@
     padding: 0.1rem;
 }
 
+.CertLogo{
+    width: 1.8rem;
+    border-radius: 0.24rem;
+    max-height: 42px;
+    max-width: 42px;
+    aspect-ratio: 1;
+    padding: 0.1rem;
+}
+
 
 .resourcesButton{
     display: flex;
