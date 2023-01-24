@@ -180,7 +180,7 @@ export default function ProjectDetails() {
                                 return (
                                     <ul key={index} style={{margin:"1rem 0rem",listStyleType: "square",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{ listStyle:"auto inside",fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ul>
                                 )
@@ -189,7 +189,7 @@ export default function ProjectDetails() {
                                 return (
                                     <ol key={index} style={{margin:"1rem 0rem",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{listStyle:"auto inside", fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ol>
                                 )
@@ -245,18 +245,18 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'overview'){
                                 return(
-                                        <div key={index} className="overview" style={{display:"flex",gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color3)",borderRadius:"0.5rem"}}>
-                                            <div style={{flex:2}}>
+                                        <div key={index} className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color3)",borderRadius:"0.5rem"}}>
+                                            <div>
                                                 <h3>Breif</h3>
                                                 <p>{item.elementBrief}</p>
                                             </div>
-                                            <div style={{flex:1}}>
+                                            <hr key={index} className="solid"/>
+                                            <div style={{display:"flex"}}>
                                                         {item.elementData.map((item,index)=>{
-                                                            
                                                              
                                                         return( 
                                                        
-                                                        <div style={{marginBottom:"0.5rem"}}>
+                                                        <div style={{flex:"auto"}}>
                                                             <h3>{Object.keys(item)[0]}</h3>
                                                             <p>{item[Object.keys(item)[0]]}</p>
                                                         </div>)

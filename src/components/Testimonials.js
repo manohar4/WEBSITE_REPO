@@ -30,4 +30,6 @@ export default function Testimonials(props) {
     return (
         <div className="container" {...bind()}>
               { props.elementData ? props.elementData.map((src,index) => (
-                  <animated.div key={index} className="Tcard" style={{...style,backgroundImage: `url(${src})`}}> <div className="glow-wrap"><i className="glow"></i></div>  </animated.div>)):""}</div>)}
+                  <animated.div key={index} className="Tcard" style={{...style,backgroundImage: `url(${src})`}}> <div className="glow-wrap"><i className="glow"></i></div>  </animated.div>)):""}
+        </div>)
+        }
