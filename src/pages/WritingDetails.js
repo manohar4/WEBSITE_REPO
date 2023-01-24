@@ -189,7 +189,7 @@ export default function WritingDetails() {
                                 return (
                                     <ul key={index} style={{margin:"1rem 0rem",listStyleType: "square",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{listStyle:"auto inside", fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ul>
                                 )
@@ -198,7 +198,7 @@ export default function WritingDetails() {
                                 return (
                                     <ol key={index} style={{margin:"1rem 0rem",listStylePosition: "inside"}}>
                                           {item.elementData.map((item,index)=>{
-                                              return( <li key={index} style={{ fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
+                                              return( <li key={index} style={{ listStyle:"auto inside",fontSize:"16px",fontWeight:400,color:"var(--text-color6)", margin: "0.4rem 0px"}}>{item}</li>)
                                           })}
                                     </ol>
                                 )
