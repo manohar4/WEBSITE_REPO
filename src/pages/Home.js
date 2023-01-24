@@ -299,15 +299,23 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
 
                 <div className="blockquote-wrapper">
   <div className="blockquote">
- 
-    <p>
+    
+  <div style={{display:"flex",backgroundColor:"var(--text-color3)",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+                                            <span style={{fontSize:"24px"}}role="img">
+                                              {String.fromCodePoint(0x1F344)}
+                                            </span>
+                                            <p>
     "People don't use <span  >products</span>  because of  <span  >great design</span> ; <span  > Great designs</span> makes them to use the  <span  >Product</span>"
      </p>
+     
+                                             </div>
+                                        
+    
   </div>
                     </div>
 
                 <div id="splineFlex" style={{display:"flex",flexDirection:"row",borderRadius:"1rem"}}>
-                <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"10%"}} src={handlight} alt="korean Love symbol"></img>
+                <img  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"10%"}} src={handlight} alt="korean Love symbol"></img>
                 
                 
                 <div style={{flex:"2",display:"flex",alignItems:"center"}}>

@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react'
 import Airtable from 'airtable';
 import '../App.css'
 import '../css/submitForm.css'
+import MsgDelivered from'../assets/messageDelivered.png';
 
 
 const SubmitFrom = (props)=>{
@@ -55,7 +56,7 @@ const SubmitFrom = (props)=>{
                     document.getElementsByClassName("msgform")[0].style.display = "none";
                     document.getElementsByClassName("msgSuccess")[0].style.display = "unset";
                     
-                    setTimeout(function() {props.handleClose()}, 2000);
+                    setTimeout(function() {props.handleClose()}, 4000);
                     //props.handleClose();
                 }
             }
@@ -156,6 +157,10 @@ const SubmitFrom = (props)=>{
                             </div>
                 </div>
                 <div className="msgSuccess" >
+                    
+                         <img  style={{width:"120px",height:"120px"}} src={MsgDelivered} alt="Msg Delivered"></img>
+
+
                     <h2> Your Message has been delivered</h2><br/><br/>
                     <p>Thanks <br/>Manohar</p>
                 </div>
