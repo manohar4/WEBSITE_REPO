@@ -131,7 +131,7 @@ function Works() {
                 </div>
 
                 <div >
-                  <h6 style={{marginBottom:"1rem"}}>SOME SHOTS OF MY WORK</h6>
+                  <h6 style={{marginBottom:"1rem"}}>FEW SNAPSHOTS OF MY WORK</h6>
                 
 
                     <LightGrid key="lightGRIDID" elementData={shotData}  ></LightGrid>

@@ -28,7 +28,7 @@
     flex:1;
     display:flex;
     flex-direction:column;
-    gap:0.5rem;
+    gap:1rem;
 }
 
 .expereince-lineitems{
@@ -59,7 +59,7 @@
     flex:1;
     display:flex;
     flex-direction:column;
-    gap:0.5rem;
+    gap:1rem;
 }
 
 .social-lineitems{
