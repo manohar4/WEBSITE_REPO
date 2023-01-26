@@ -213,13 +213,16 @@ const onShowMore=(e)=>{
             
             <div  style={{opacity:"0%"}}><hr className="solid" /><hr className="solid" /></div>
             
+          
+            
+                <h6 className='subTitle'>FEW ENDORSEMENTS</h6>
+            <Testimonials elementData={testimonData}></Testimonials>
+
+
             <div className='tools'>
                     <h6 className='subTitle'>PROCREATE {"&"} SKETCHES..</h6>
                    <Carousel elementData={sketchData} elementWidth="100%" elementHeight="auto" ></Carousel>
                 </div>
-            
-                <h6 className='subTitle'>FEW ENDORSEMENTS</h6>
-            <Testimonials elementData={testimonData}></Testimonials>
 
              <div  className='animationFlex' style={{display:"flex",marginTop: "2rem",borderRadius:"1rem" ,cursor: "url(" + CustomCursor + ")"}}>
 
