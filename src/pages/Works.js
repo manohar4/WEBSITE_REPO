@@ -8,7 +8,48 @@ import {Link} from 'react-router-dom'
 import Header from '../components/Header'
 import {FetchProjectsList} from '../helper/Context'
 
+import LightGrid from '../components/LightGallery'
+import { FetchAllAttachements } from '../helper/Context';
+
+
+import { LightgalleryProvider } from "react-lightgallery";
+import { LightgalleryItem,ItemTitle,LinesEllipsis } from "react-lightgallery";
+
+
+import lightGallery from 'lightgallery';
+
+// Plugins
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
+import Img from '../assets/hobbies/1.png'
+
+var shotData=[];
+var entered = true;
+
 function Works() {
+
+
+
+  const {allAttachements,allTools} = useContext(FetchAllAttachements);
+  //Adding Skectes data into an array
+
+  if(allAttachements.length!==0){
+      if(entered){
+      entered=false;
+    
+      for(var j=0;j<= allAttachements[3].fields.Attachments.length-1;j++){
+        shotData.push(allAttachements[3].fields.Attachments[j].url);
+      }
+  }
+  }
+
+  // const GROUP2 = [
+  //   "https://images.unsplash.com/photo-1594818898109-44704fb548f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+  //   "https://images.unsplash.com/photo-1594818896795-35ad7bcf3c6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+  //   "https://images.unsplash.com/photo-1594818896744-57eca4d47b07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+  //   "https://images.unsplash.com/photo-1594818897077-aec41f55241f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80",
+  //   "https://images.unsplash.com/photo-1594818896744-57eca4d47b07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+  // ];
 
   const {projectsListData} = useContext(FetchProjectsList);
   
@@ -70,7 +111,7 @@ function Works() {
                                         </div>
                                         <div style={{flex:1,display:"flex",justifyContent:'flex-end'}} >
                                         {/* <img  style={{height:"100%",width:"100%",objectFit: "cover",borderRadius:"4px"}} src={item.Project_Image} alt="Project_Cover" /> */}
-                                        <img  style={{height:"100%",width:"100%",objectFit: "cover",borderRadius:"4px"}} src={item.Project_Image[0].url} alt="Project_Cover" />
+                                        <img key={index} style={{height:"100%",width:"100%",objectFit: "cover",borderRadius:"4px"}} src={item.Project_Image[0].url} alt="Project_Cover" />
 
                                         </div>
                                     </div>
@@ -86,6 +127,14 @@ function Works() {
                 })}
             
                 </div>
+
+                <div >
+                  <h6 style={{marginBottom:"1rem"}}>SOME SHOTS OF MY WORK</h6>
+                
+
+                    <LightGrid key="lightGRIDID" elementData={shotData}  ></LightGrid>
+                  </div>
+                  
             </div>
         </div>
     </div>
