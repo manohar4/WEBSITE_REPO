@@ -216,7 +216,10 @@ const onShowMore=(e)=>{
           
             
                 <h6 className='subTitle'>FEW ENDORSEMENTS</h6>
-            <Testimonials elementData={testimonData}></Testimonials>
+                <div style={ {marginBottom: "4rem"}}>
+                <Testimonials elementData={testimonData}></Testimonials>
+
+                </div>
 
 
             <div className='tools'>
