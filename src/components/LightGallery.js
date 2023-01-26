@@ -16,6 +16,17 @@ import {
 
 export default function LightGallery(props) {
 
+
+  var smallerDeviceCheck;
+  if(window.innerWidth<1024){
+      smallerDeviceCheck= true;
+      
+  }
+  else{
+      smallerDeviceCheck= false;
+  }
+
+
     const GROUP2 = props.elementData;
 
     const PhotoItem = ({ image, thumb, group }) => (
@@ -41,9 +52,9 @@ export default function LightGallery(props) {
           <LightgalleryProvider>
             
           {GROUP2.map((p, idx) => (
-            <div className="cardGroup" style={{width:"48%",display:"inline-block",backgroundSize:"cover",backgroundPosition:"center center",backgroundRepeat: "no-repeat",marginBottom:"2rem",marginRight: "0.5rem"}}>
+            <div className="cardGroup" style={{width: smallerDeviceCheck?"100%":"47%",display:"inline-block",backgroundSize:"cover",backgroundPosition:"center center",backgroundRepeat: "no-repeat",marginBottom:"1.2rem",marginRight: "1rem"}}>
               
-              <div className="card" style={{padding:"0px",height:"auto"}}>
+              <div className="card" style={{padding:"0px",height:"auto",  minHeight:"246px"}}>
                 <PhotoItem  key={idx} image={p} group="group2" />
               </div>
               
