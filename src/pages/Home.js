@@ -11,6 +11,7 @@ import IITG from '../assets/Certifications/IITG.png';
 import NITDGP from '../assets/Certifications/NITDGP.png';
 import Agile from '../assets/Certifications/Agile.png';
 import Incture from '../assets/Certifications/Incture.jpeg';
+import Brisky from '../assets/Certifications/brisky.png'
 
 
 import Header from '../components/Header';
@@ -75,17 +76,17 @@ export default function Home() {
         }
 
 
-        if(document.documentElement.getAttribute('data-theme') === 'light'){
+        // if(document.documentElement.getAttribute('data-theme') === 'light'){
 
-            setLocation(Location_LightMode);
+        //     setLocation(Location_LightMode);
 
-            document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0FF"
-         }
-         else{
-            setLocation(Location_DarkMode);
+        //     document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0FF"
+        //  }
+        //  else{
+        //     setLocation(Location_DarkMode);
 
-            document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0N"
-         }
+        //     document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0N"
+        //  }
 
     },[])
 
@@ -134,8 +135,23 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
             <div className='row'>
             <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
 
-            <Header back={back} backTo="/" headerTitle={<div style={{width:"100%",display:"flex",justifyContent: "space-between"}}><p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p> <button  title='Dark' onClick={(event)=>{darkify(event)}} className="primaryBtn toggleMode"></button></div>}></Header>
-
+            <Header back={back} backTo="/" headerTitle={
+                                                            <div style={{width:"100%",display:"flex",justifyContent: "space-between"}}>
+                                                                
+                                                                <p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p>                
+                                                                <div style={{transform:"scale(0.8)"}}>
+                                                                    <div className="button b2" id="button-18">
+                                                                        <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" />
+                                                                    <div className="knobs">
+                                                                        <span></span>
+                                                                    </div>
+                                                                        <div className="layer"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }></Header>         
+                            
+                          
                 <div className='intro'>   
                     <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
                     <p >I'm currently designing enterprise products and leading the design team at 
@@ -150,64 +166,71 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     </div>
                 </div>
 
-                <div className='pastExpereince'>
-                    <h6 className='subTitle'>PAST EXPERIENCES</h6>
-                    <div className='experience-row'>
-                        <div className='expereince-lineitems'>
-                            <img className="CertLogo" src={Agile} alt="Brand Logo"/>
-                            <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India, 2+Yrs) </a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
-                            <div className="desgPeriod">
-                                <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Jan &#8212;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                            </div>
-                            
+                <div className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                    <div className='pastExpereince' style={{marginBottom:'0px'}}>
+                        <h6 className='subTitle'>PAST EXPERIENCES</h6>
+                        <div className='experience-row'>
+                            <div className='expereince-lineitems'>
+                                <img className="CertLogo" src={Agile} alt="Brand Logo"/>
+                                <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India, 2+Yrs) </a>
+                                <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
+                                <div className="desgPeriod">
+                                    <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021&#8212;&nbsp;&nbsp;&nbsp;</p>
+                                </div>
+                                
 
-                        </div>
-                        {/* <div className='expereince-lineitems'>
-                            <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil) </a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
-                            <div className="desgPeriod">
-                                <h4 style={{textAlign:'right'}} >Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Feb &#8212;'21Jun</p>
+                            </div>
+                            {/* <div className='expereince-lineitems'>
+                                <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil) </a>
+                                <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
+                                <div className="desgPeriod">
+                                    <h4 style={{textAlign:'right'}} >Designer</h4>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021Feb &#8212;'21Jun</p>
+                                </div>
+                            
+                            </div> */}
+                            <div className='expereince-lineitems' >
+                                <img className="CertLogo" src={Incture} alt="Brand Logo"/>
+                                <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bangalore, 3Yrs)</a>
+                                <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
+                                <div className="desgPeriod">
+                                    <h4 style={{textAlign:'right'}} >Designer</h4>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2018&#8212;'21</p>
+                                </div>
+                                
                             </div>
                         
-                        </div> */}
-                        <div className='expereince-lineitems' >
-                            <img className="CertLogo" src={Incture} alt="Brand Logo"/>
-                            <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bangalore, 3Yrs)</a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
-                            <div className="desgPeriod">
-                                <h4 style={{textAlign:'right'}} >Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2018Feb &#8212;'21Jan</p>
+                            <div className='expereince-lineitems' >
+                                <img className="CertLogo" src={Brisky} alt="Brand Logo"/>
+                                <h4 >Gleefie, Brisky(Interships) </h4>
+                                <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
+                                <div className="desgPeriod">
+                                    <h4 style={{textAlign:'right'}} >Graphic/UI Designer</h4>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}}>2017&#8212;'17</p>
+                                </div>
+                                
                             </div>
-                            
-                        </div>
-                       
-                        <div className='expereince-lineitems' >
-                            <h4 >Gleefie, Brisky(Interships) </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
-                            <div className="desgPeriod">
-                                <h4 style={{textAlign:'right'}} >Graphic/UI Designer</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}}>2017Jun &#8212;'17Oct</p>
-                            </div>
-                            
-                        </div>
 
+                        </div>
                     </div>
+                    
+                   
                 </div>
-
-                <div className='pastExpereince'>
+                
+                <div className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                   
+                <div className='pastExpereince' style={{marginBottom:'0px'}}>
                     <h6 className='subTitle'>EDUCATION & CERTIFICATIONS</h6>
                     <div className='experience-row'>
                         
                         <div className='expereince-lineitems'>
                         <img className="CertLogo" src={IITG} alt="Brand Logo"/>
                             <a className='link' target='_blank' rel="noreferrer"  href='https://www.coursera.org/certificates/ux-design-human-computer-interaction-iitguwahati' >PG Certification in UX Design & HCI</a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} > IIT Guhawati</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2022Dec &#8212;'23May</p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2022&#8212;'23</p>
                             </div>
                         </div>
                        
@@ -215,17 +238,17 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                         <img className="CertLogo" src={NITDGP} alt="Brand Logo"/>
                             <h4>Bachelors in Mechanical Engineering </h4>
                             
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >NIT Durgapur</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2013Aug &#8212;'27May</p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2013&#8212;'17</p>
                             </div>
                         </div>
 
                         {/* <div className='expereince-lineitems'>
                            
                             <br></br>
-                            <div style={{flexGrow:0.2,opacity:"20%",borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:0.2,opacity:"20%",borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <br></br>
                         </div> */}
 
@@ -233,20 +256,20 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                             
                             <img className="CertLogo" src={yale} alt="Brand Logo"/>
                             <h4 >Introduction to Psychology Course</h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Yale University (Coursera)</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023Jan &#8212;'23Feb</p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023&#8212;'23</p>
                             </div>
                         </div>
 
                         <div className='expereince-lineitems'>
                         <img className="CertLogo" src={IDF} alt="Brand Logo"/>
                             <a className='link' target='_blank' rel="noreferrer" href='https://www.interaction-design.org/members/manohar/certificate/course/fltqnHSHvRvNKv6ZS2' >Usability Testing In UX Design</a>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Interaction Design Foundation(IxDF)</h4>
-                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2019Sep &#8212;'19Oct</p>
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2019&#8212;'19</p>
                             </div>
                         </div>
                         
@@ -254,6 +277,14 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
 
                     </div>
                 </div>
+
+                   
+                </div>
+                
+
+               
+
+               
 
                 <div className='location'>
                     <h6 className='subTitle'>FROM WHERE</h6>
@@ -269,28 +300,28 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     <div className='social-row'>
                         <div className='social-lineitems'>
                             <h4 >Dribbble </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <a className='link' target='_blank' rel="noreferrer" href='https://dribbble.com/manoharmanu'>Follow</a>
 
                         </div>
                         <div className='social-lineitems'>
                         <h4 >Behance </h4>
-                           <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                           <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <a className='link' target='_blank' rel="noreferrer" href='https://www.behance.net/manoharmande31'>Follow</a>
                         </div>
                         <div className='social-lineitems' >
                             <h4 >Twitter </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <a target='_blank' rel="noreferrer" href="https://twitter.com/manoharmanu4444?ref_src=twsrc%5Etfw" className="twitter-follow-button link" data-show-count="false">Follow</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                         </div>
                         <div className='social-lineitems'>
                             <h4 >Linkedin </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <a target='_blank' rel="noreferrer" className='link' href='https://www.linkedin.com/in/manoharmanu4444/'>Connect</a>
                         </div>
                         <div className='social-lineitems'>
                             <h4 >Email </h4>
-                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                            <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                
                                        <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">Get In Touch</a>
                         </div>

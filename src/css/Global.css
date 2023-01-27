@@ -1,5 +1,11 @@
 .link{
     text-decoration: none;
+    color: var(--text-color6);
+    font-weight:700
+}
+
+.link:hover{
+    text-decoration: underline;
     color: #ff7744f0;
     font-weight:700
 }

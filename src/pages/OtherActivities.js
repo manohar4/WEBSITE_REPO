@@ -182,7 +182,7 @@ const onShowMore=(e)=>{
                                     <div key={index} className='tool-lineitems'>
                                         <img className="toolLogo" src={item.fields.ToolLogo[0].url} alt="Brand Logo"/>
                                         <h4 >{item.fields.ToolName} </h4>
-                                        <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                                        <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                                     <p>{item.fields.Level}</p>
                                 </div>
                                 )
@@ -199,7 +199,7 @@ const onShowMore=(e)=>{
                                     <div key={index} className='tool-lineitems'>
                                         <img className="toolLogo" src={item.fields.ToolLogo[0].url} alt="Brand Logo"/>
                                         <h4 >{item.fields.ToolName} </h4>
-                                        <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color7)'}}></div>
+                                        <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                                     <p>{item.fields.Level}</p>
                                 </div>
                                 )
