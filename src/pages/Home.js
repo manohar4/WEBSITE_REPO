@@ -16,6 +16,7 @@ import Brisky from '../assets/Certifications/brisky.png'
 
 import Header from '../components/Header';
 import * as GiIcons from 'react-icons/gi';
+
 import * as FaIcons from 'react-icons/fa';
 import handlight from '../assets/handsLight.png';
 import SubmitFrom from '../components/submitForm';
