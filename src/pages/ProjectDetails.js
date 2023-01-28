@@ -1,4 +1,5 @@
 import React, { useEffect,useContext,useState } from 'react'
+import {Link} from 'react-router-dom'
 import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Global.css'
@@ -15,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import Carousel from '../components/Carousel'
 import FullImage from '../components/FullImage';
 import ImageGrid from '../components/ImageGrid';
+
 
 var emojiString;
 
@@ -53,17 +55,33 @@ export default function ProjectDetails() {
             document.getElementsByClassName('overview')[0].style.flexDirection="column";
             document.getElementsByClassName('overview')[0].style.gap="1rem";
            }
-           
         }
+
+
+        
     },
     // eslint-disable-next-line
     [])
+
+    
 
     var count=-1;
     
     if(projectsDetailsData.length!==0){
         
         const fitlerProjectarray = projectsDetailsData.filter(function (el){ return el.fields.project_Id.toString() ===  id});
+
+        var indexOfCurrentPage = projectsDetailsData.indexOf(fitlerProjectarray[0]);
+
+        if(indexOfCurrentPage!==0){
+            var previousProjectID = projectsDetailsData[projectsDetailsData.indexOf(fitlerProjectarray[0])-1].fields.project_Id;
+        }
+
+
+        if(indexOfCurrentPage !== projectsDetailsData.length-1){
+            var nextProjectID = projectsDetailsData[projectsDetailsData.indexOf(fitlerProjectarray[0])+1].fields.project_Id;
+        }
+
         if(!fitlerProjectarray[0]){
             navigation("/PageNotFound");
         }
@@ -289,6 +307,24 @@ export default function ProjectDetails() {
                            
                             return "";
                         }): ""}
+
+
+                        <div style={{marginTop:"4rem"}}>
+
+                       
+                       
+                        <Link onClick={()=>{window.scrollTo(0, 0);}} to={'/ProjectDetails/'+ previousProjectID} className='fillBtn pBtn' style={{float: "left",display:indexOfCurrentPage=== 0?"none":"unset"}} >
+                             <span style={{fontSize:"16px", transform: "rotate(180deg)"}}>⇦</span> Previous Project
+                             </Link>
+                            
+                               
+                                <Link onClick={()=>{window.scrollTo(0, 0);}}  to={'/ProjectDetails/'+ nextProjectID}  style={{float: "right",display:indexOfCurrentPage === projectsDetailsData.length-1?"none":"unset"}} className='fillBtn nBtn'>
+                             Next Project <span style={{fontSize:"16px"}}>⇨</span> 
+                             </Link>
+                           
+                           
+                        </div>
+                       
                     </div>
                 </div>
             </div>
