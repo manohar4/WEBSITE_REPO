@@ -12,16 +12,6 @@ import LightGrid from '../components/LightGallery'
 import { FetchAllAttachements } from '../helper/Context';
 
 
-import { LightgalleryProvider } from "react-lightgallery";
-import { LightgalleryItem,ItemTitle,LinesEllipsis } from "react-lightgallery";
-
-
-import lightGallery from 'lightgallery';
-
-// Plugins
-import lgThumbnail from 'lightgallery/plugins/thumbnail'
-import lgZoom from 'lightgallery/plugins/zoom'
-import Img from '../assets/hobbies/1.png'
 
 var shotData=[];
 var entered = true;
@@ -32,7 +22,7 @@ function Works() {
 
 
 
-  const {allAttachements,allTools} = useContext(FetchAllAttachements);
+  const {allAttachements} = useContext(FetchAllAttachements);
   //Adding Skectes data into an array
 
   if(allAttachements.length!==0){

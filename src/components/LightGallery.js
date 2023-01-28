@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import PT from "prop-types";
-import ReactDOM from "react-dom";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Col';
-import Col from 'react-bootstrap/Row';
 import {
   LightgalleryProvider,
-  LightgalleryItem,
-  withLightgallery,
-  useLightgallery
+  LightgalleryItem
 } from "react-lightgallery";
 
 
@@ -30,9 +24,8 @@ export default function LightGallery(props) {
     const GROUP2 = props.elementData;
 
     const PhotoItem = ({ image, thumb, group }) => (
-        
           <LightgalleryItem style={{width:"100%"}} group={group} src={image} thumb={thumb}>
-            <img src={image} style={{ width: "100%",objectFit: "cover",height:"100%",borderRadius: "0.5rem",    display: "block"}}  />
+            <img src={image} style={{ width: "100%",objectFit: "cover",height:"100%",borderRadius: "0.5rem",display: "block"}} alt="Snapshots"  />
           </LightgalleryItem>
       
       );
