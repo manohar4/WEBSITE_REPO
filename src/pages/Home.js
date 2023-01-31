@@ -256,7 +256,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                         <div className='expereince-lineitems'>
                             
                             <img className="CertLogo" src={yale} alt="Brand Logo"/>
-                            <h4 >Introduction to Psychology Course</h4>
+                            <a className='link' target='_blank' rel="noreferrer"  href='                            https://coursera.org/share/f1db3a7cb5b3d1231b140b019d9610fc' >Introduction to Psychology Course</a>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                             <div className="desgPeriod">
                                 <h4 style={{textAlign:'right'}} >Yale University (Coursera)</h4>
