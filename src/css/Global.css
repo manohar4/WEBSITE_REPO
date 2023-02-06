@@ -69,6 +69,9 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation: fade ease-in 3.2s;
+    
+    -webkit-animation-iteration-count:1;
+    -webkit-animation: fade ease-in 3.2s;
     -webkit-animation-fill-mode: forwards;
 }
 
@@ -76,6 +79,9 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation: fade ease-in 2.6s;
+    
+    -webkit-animation-iteration-count:1;
+    -webkit-animation: fade ease-in 2.6s;
     -webkit-animation-fill-mode: forwards;
 }
 
