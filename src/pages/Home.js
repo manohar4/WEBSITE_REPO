@@ -155,9 +155,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                           
                 <div className='intro'>   
                     <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
-                    <p >I'm currently designing enterprise products and leading the design team at 
-                        <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> as a 
-                     <span className='highlighter'> Senior UX Designer</span>. Over the last five years, I've spent the majority of my time building B2B enterprise applications on <span className='highlighter'> SAP</span> and have also been part of working on various digital solutions in manufacturing, ecommerce, and many other sectors.</p>
+                    <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. Currently, I'm a part of the design team at  <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> where I continue to drive successful design projects.</p>
                     <div style={{display:"flex",gap:"1rem",marginTop:"1rem"}}>
                          <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">
                             <button  style={{margin:"0"}} className='fillBtn'> <FaIcons.FaHandshake className='backIcon'/>Get In Touch</button>
@@ -273,9 +271,6 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                 <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2019&#8212;'19</p>
                             </div>
                         </div>
-                        
-                       
-
                     </div>
                 </div>
 

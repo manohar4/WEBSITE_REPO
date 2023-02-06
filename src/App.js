@@ -15,6 +15,8 @@ import Airtable from 'airtable';
 import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchDesignLibrary, FetchAllAttachements,FetchWritingsDetails} from './helper/Context';
 import { useState,useEffect } from 'react';
 import Plyr from 'plyr';
+import Spinner from './components/Spinner';
+
 
 
 var vistorBasicData;
@@ -27,7 +29,9 @@ function App() {
     const[writingsDetailsData,setWritingsDetailsData] = useState([]);
     const[designLibraryData,setDesignLibraryData] = useState([]);
     const[allAttachements,setAllAttachments] = useState([]);
-    const[allTools,setAllTools] = useState([])
+    const[allTools,setAllTools] = useState([]);
+
+    const[loading,setLoading]= useState(true);
    
 
       // eslint-disable-next-line
@@ -210,6 +214,25 @@ for (var item in groupedObj) {
 
 request.send();
     }
+
+    const setLoaderOff = async() =>{
+
+  
+
+    
+      document.getElementsByTagName("body")[0].style.overflowY = "hidden"
+   
+            
+       
+
+
+      setTimeout(()=>{
+        setLoading(false)
+        document.getElementsByTagName("body")[0].style.overflowY = ""
+        
+      },4000)
+      
+    }
     
 
     useEffect(()=>{
@@ -220,6 +243,7 @@ request.send();
         getAllAttachements();
         getToolsFamiliar();
         getIPAddress();
+        setLoaderOff();
     },
     // eslint-disable-next-line
     [])
@@ -232,7 +256,18 @@ request.send();
       <FetchDesignLibrary.Provider value={{designLibraryData,setDesignLibraryData}}>
         <FetchWritingsDetails.Provider value={{writingsDetailsData,setWritingsDetailsData}}>
         <FetchAllAttachements.Provider value={{allAttachements,setAllAttachments,allTools,setAllTools}}>
+       
     <div className="App">
+
+    {loading?
+    
+
+    <Spinner className="spinnerSecondOverlay"></Spinner>
+      
+   
+    :
+    <div style={{display:"none"}}></div> }
+
       <Router>
       <Helmet>
         <title> Manohar Manu | UX UI</title>
@@ -243,6 +278,7 @@ request.send();
       <style>{"body { background-color: var(--bg-color0) }"}</style>
     </Helmet>
 
+        
         <Navbar></Navbar>
         <Routes>
         <Route exact path='/' element={<Home />}/>
