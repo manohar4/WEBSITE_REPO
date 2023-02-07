@@ -11,6 +11,8 @@ import {FetchProjectsList} from '../helper/Context'
 import LightGrid from '../components/LightGallery'
 import { FetchAllAttachements } from '../helper/Context';
 
+import  Aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 var shotData=[];
@@ -19,7 +21,9 @@ var entered = true;
 function Works() {
 
 
-
+  useEffect(()=>{
+    Aos.init({duration:1600,once:true});
+},[]);
 
 
   const {allAttachements} = useContext(FetchAllAttachements);
@@ -81,7 +85,7 @@ function Works() {
                   return(
                     <div key={index}>
                     <h6 style={{marginBottom:"0.5rem"}}>{projectsListData[index].projectGroupName}</h6>
-                    <ul className='projectsItems'>
+                    <ul data-aos="fade-up" className='projectsItems'>
                         {item.projectsDetails.map((item,index)=>{
                             return(
                            

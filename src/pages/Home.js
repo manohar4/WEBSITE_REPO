@@ -11,7 +11,9 @@ import IITG from '../assets/Certifications/IITG.png';
 import NITDGP from '../assets/Certifications/NITDGP.png';
 import Agile from '../assets/Certifications/Agile.png';
 import Incture from '../assets/Certifications/Incture.jpeg';
-import Brisky from '../assets/Certifications/brisky.png'
+import Brisky from '../assets/Certifications/brisky.png';
+import  Aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 import Header from '../components/Header';
@@ -30,6 +32,9 @@ export default function Home() {
     const [imgSrc,setImgSrc] = useState("");
     const [location,setLocation] = useState(Location_DarkMode);
 
+    useEffect(()=>{
+        Aos.init({duration:1600,once:true});
+    },[]);
     
 
     const togglePopup = () => {
@@ -153,7 +158,9 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                                         }></Header>         
                             
                           
-                <div className='intro'>   
+
+                    
+                <div data-aos="fade-up" className='intro'>   
                     <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
                     <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. Currently, I'm a part of the design team at  <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> where I continue to drive successful design projects.</p>
                     <div style={{display:"flex",gap:"1rem",marginTop:"1rem"}}>
@@ -165,7 +172,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     </div>
                 </div>
 
-                <div className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="200" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
                         <h6 className='subTitle'>PAST EXPERIENCES</h6>
                         <div className='experience-row'>
@@ -217,7 +224,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                    
                 </div>
                 
-                <div className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="300" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                    
                 <div className='pastExpereince' style={{marginBottom:'0px'}}>
                     <h6 className='subTitle'>EDUCATION & CERTIFICATIONS</h6>
@@ -275,23 +282,18 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                 </div>
 
                    
+                </div> 
+
+                <div data-aos="fade-up"  data-aos-offset="400" className='location'>
+                <h6 className='subTitle'>FROM WHERE</h6>
+                <div className='location-row'>
+                <img src={location} onClick={(event)=>{toggleFullImagePopup(event)}}  className='locationImg' alt="Vizag Location" ></img>
+                <p style={{textAlign:'right'}}> Visakhapatnam, India</p>
+
                 </div>
-                
-
-               
-
-               
-
-                <div className='location'>
-                    <h6 className='subTitle'>FROM WHERE</h6>
-                    <div className='location-row'>
-                       <img src={location} onClick={(event)=>{toggleFullImagePopup(event)}}  className='locationImg' alt="Vizag Location" ></img>
-                       <p style={{textAlign:'right'}}> Visakhapatnam, India</p>
-
-                    </div>
                 </div>
 
-                <div className='socialMedia'>
+                <div data-aos="fade-up" className='socialMedia'>
                     <h6 className='subTitle'>SOCIAL MEDIA</h6>
                     <div className='social-row'>
                         <div className='social-lineitems'>
@@ -324,7 +326,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     </div>
                 </div>
 
-                <div className="blockquote-wrapper">
+                <div data-aos="fade-up" className="blockquote-wrapper">
   <div className="blockquote">
     
   <div style={{display:"flex",backgroundColor:"var(--text-color3)",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
