@@ -139,3 +139,16 @@
         opacity: 0%;
      }
 }
+
+
+.littleThingsCard{
+
+    background-color: var(--bg-color3);
+    border-radius: 0.5rem;
+    margin-bottom:2rem;
+    padding: 1rem;
+    display: grid;
+    flex-direction: row;
+    gap:0.6rem;
+    border:0.5px var(--bg-color4) solid;
+}

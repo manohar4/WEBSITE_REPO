@@ -11,8 +11,9 @@ import ProjectDetails from './pages/ProjectDetails.js';
 import WritingDetails from './pages/WritingDetails.js';
 import PageNotFound from './pages/PageNotFound.js';
 import DesignLibrary from './pages/DesignLibrary.js'
+import LittleThings from './pages/LittleThings.js'
 import Airtable from 'airtable';
-import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchDesignLibrary, FetchAllAttachements,FetchWritingsDetails} from './helper/Context';
+import { FetchProjectsList,FetchProjectsDetails,FetchWritingList,FetchDesignLibrary, FetchAllAttachements,FetchWritingsDetails,FetchLittleThings} from './helper/Context';
 import { useState,useEffect } from 'react';
 import Plyr from 'plyr';
 import Spinner from './components/Spinner';
@@ -28,6 +29,7 @@ function App() {
     const[writingsListData,setWritingsListData] = useState([]);
     const[writingsDetailsData,setWritingsDetailsData] = useState([]);
     const[designLibraryData,setDesignLibraryData] = useState([]);
+    const[littleThingsData,setLittleThingsData]=  useState([]);
     const[allAttachements,setAllAttachments] = useState([]);
     const[allTools,setAllTools] = useState([]);
 
@@ -156,6 +158,12 @@ for (var item in groupedObj) {
         setDesignLibraryData(designLibraryDataArray);      
     }
 
+    const getLittleThings = async()=>{
+      const littleThingsData = await base('Little Details').select({maxRecords: 100,sort:[{field: "Name"}]}).firstPage();  
+      setLittleThingsData(littleThingsData);
+      console.log()
+    }
+
     const getAllAttachements = async()=>{
       const allAttachementRecords = await base('All-Attachments').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage();  
       setAllAttachments(allAttachementRecords);
@@ -241,6 +249,7 @@ request.send();
         getWritingRecords();
         getDesignLibrary();
         getAllAttachements();
+        getLittleThings();
         getToolsFamiliar();
         getIPAddress();
         setLoaderOff();
@@ -250,6 +259,7 @@ request.send();
 
 
   return (
+    <FetchLittleThings.Provider value={{littleThingsData,setLittleThingsData}}>
   <FetchProjectsList.Provider value={{projectsListData,setProjectsListData}}>
   <FetchProjectsDetails.Provider value={{projectsDetailsData,setProjectsDetailsData}}>
   <FetchWritingList.Provider value={{writingsListData,setWritingsListData}}>
@@ -287,6 +297,7 @@ request.send();
           <Route path='/OtherActivities' element={<OtherActivities />}/>
           <Route path='/ProjectDetails/:id' element={<ProjectDetails />}/>
           <Route path='/WritingDetails/:id' element={<WritingDetails />}/>
+          <Route path='/littleThings' element={<LittleThings />}/>
           <Route path='/DesignLibrary' element={<DesignLibrary />}/>
           <Route path="*" element={<PageNotFound />} />
          
@@ -299,6 +310,7 @@ request.send();
     </FetchWritingList.Provider>
     </FetchProjectsDetails.Provider>
     </FetchProjectsList.Provider>
+    </FetchLittleThings.Provider>
   );
 }
 

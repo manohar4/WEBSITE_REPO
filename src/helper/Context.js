@@ -8,3 +8,6 @@ export const FetchWritingsDetails = createContext([]);
 
 export const FetchDesignLibrary = createContext([]);
 export const FetchAllAttachements = createContext([]);
+
+
+export const FetchLittleThings = createContext([]);

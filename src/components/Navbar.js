@@ -58,6 +58,9 @@ useEffect(()=>{
     else if(selectionPath === 'otherActivities' || selectionPath === 'DesignLibrary'){
         setSelectedChild(3);
     }
+    else if(selectionPath === 'littleThings' || selectionPath === 'LittleThings'){
+        setSelectedChild(4);
+    }
     else{
         setSelectedChild(0);
     }
