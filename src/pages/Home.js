@@ -31,6 +31,7 @@ export default function Home() {
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
     const [location,setLocation] = useState(Location_DarkMode);
+    const [darkChecked,setDarkChecked]= useState(false);
 
     useEffect(()=>{
         Aos.init({duration:1600,once:true});
@@ -67,6 +68,10 @@ export default function Home() {
    
 
     useEffect(()=>{
+
+        if(document.documentElement.getAttribute('data-theme') === 'light'){
+            setDarkChecked(true);
+        }
         
         window.scrollTo(0, 0);
         if(window.innerWidth<1024){
@@ -103,6 +108,7 @@ function darkify(event) {
 if(document.documentElement.getAttribute('data-theme') === 'light'){
     document.documentElement.setAttribute('data-theme', "");
     setLocation(Location_DarkMode);
+    setDarkChecked(false);
 
     event.target.title = "Dark"
     event.target.innerHTML = "Dark Mode: ON"
@@ -112,7 +118,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
 
     document.documentElement.setAttribute('data-theme', "light");
     setLocation(Location_LightMode);
-
+    setDarkChecked(true);
     event.target.title = "Light"
     event.target.innerHTML = "Dark Mode: OFF"
  }
@@ -147,7 +153,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                                                 <p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p>                
                                                                 <div style={{transform:"scale(0.8)"}}>
                                                                     <div className="button b2" id="button-18">
-                                                                        <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" />
+                                                                        <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
                                                                     <div className="knobs">
                                                                         <span></span>
                                                                     </div>

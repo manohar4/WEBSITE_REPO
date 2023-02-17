@@ -45,7 +45,7 @@ var emojiString,emojiOutput;
 
         littleThingsData ? littleThingsData.map((item,index)=>{
           return(
-          <div  className='littleThingsCard'>
+          <div  className='littleThingsCard' style={{}}>
               <h3>{item.fields.Name}</h3>
               
               {
@@ -76,8 +76,11 @@ var emojiString,emojiOutput;
             
             }
               <p>{item.fields.Description}</p>
-              <h6 style={{fontSize:"14px"}}>Courtesy: {item.fields.Courtesy}</h6>
-              <h6 style={{fontSize:"14px"}}>Upload Date: {item.fields.CreatedDate}</h6>
+              <div style={{marginTop:"1rem"}}>
+                 <h6 style={{fontSize:"14px",float:"left"}}>Courtesy: {item.fields.Courtesy}</h6>
+                 <h6 style={{fontSize:"14px",float:"right"}}>Upload Date: {item.fields.CreatedDate}</h6>
+              </div>
+              
               
           </div>
 
