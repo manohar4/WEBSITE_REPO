@@ -128,7 +128,12 @@ var emojiString,emojiOutput;
                             </div>
                         
         
-        
+                            <div style={{marginTop:"4rem",textAlign:"center"}}>
+            <p style={{marginBottom:"0.5rem"}}>that's it</p>
+            <svg width="125" height="17" viewBox="0 0 125 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.99999 8.31634C10.2957 0.983039 23.3769 0.983037 31.6726 8.31634C41.8853 17.0653 55 15.3989 62.0828 8.31634C71 -0.600851 84.1441 1.35869 92.1241 8.31634C100.569 15.6791 114.555 15.6791 123 8.31634"  className="ender" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>   
 
 
             

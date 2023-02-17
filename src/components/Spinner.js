@@ -13,7 +13,7 @@ export default function Spinner() {
   
 
     <div className='spinnerMain' style={{height:'100vh',width:"100vw",position:'fixed',margin:"auto",overflowY:'hidden',alignItems:'center',display:'flex',zIndex:"1000",background:"black"}} >
-        <video className='spinnerVideo' width="320" height="240" autoPlay loop style={{margin:"auto"}} >
+        <video className='spinnerVideo' width="160" height="160" autoPlay loop style={{margin:"auto"}} >
         <source src={loading} type="video/mp4"/>
                  Your browser does not support the video tag.
         </video>
