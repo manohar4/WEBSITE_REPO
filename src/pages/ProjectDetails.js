@@ -135,7 +135,7 @@ export default function ProjectDetails() {
                                 return (
                                 <figure key={index}>
                                 <img style={{height:item.elementHeight? item.elementHeight :"100%",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={project.CoverPic[0].url} alt="Project Details" ></img>
-                                <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+                                <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaptions?"":"none"}}><cite>{item.elementCaptions}</cite></figcaption>
                                 </figure>);
                             }
                     
@@ -146,7 +146,7 @@ export default function ProjectDetails() {
                                 return (
                                 <figure key={index}>
                                     <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={project.mediaFiles[count].url} alt="Project Details" ></img>
-                                    <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+                                    <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaptions?"":"none"}}><cite>{item.elementCaptions}</cite></figcaption>
                                 </figure>);
                             }
                             else if(item.elementType === 'video'){
@@ -154,7 +154,7 @@ export default function ProjectDetails() {
                                 return (
                                 <figure key={index} style={{borderRadius:"0.5rem",boxShadow: "1px 1px 0px #ff7644,2px 2px 0px #ff7644,3px 3px 0px #ff7644,4px 4px 0px #ff7644,5px 5px 0px #ff7644,6px 6px 0px #ff7644"}}>
                                         <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={project.mediaFiles[count].url} type='video/mp4'></source></video>
-                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaptions?"":"none"}}><cite>{item.elementCaptions}</cite></figcaption>
                                  </figure>
 
                                 );
@@ -220,8 +220,8 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'button'){
                                 return (
-                                <button key={index} className='fillBtn' onClick={()=>{window.open(item.elementLink)}} >
-                                    {item.elementData}
+                                <button key={index} className='fillBtn' onClick={()=>{window.open(item.elementData[1])}} >
+                                    {item.elementData[0]}
                                 </button>       
                                 )
                             }
