@@ -270,7 +270,7 @@ export default function WritingDetails() {
                                                         {item.elementData.map((item,index)=>{
                                                              
                                                         return( 
-                                                            <a className='link' key={index} href={item.elementData[index]} target="_blank" rel="noreferrer">href={item.elementData[index]}</a>      
+                                                            <a className='link' key={index} href={item} target="_blank" rel="noreferrer">{item}</a>      
                                                         )
                                                     })}
                                             </div>
