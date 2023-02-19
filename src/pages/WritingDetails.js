@@ -263,9 +263,9 @@ export default function WritingDetails() {
                                 return(
                                         <div key={index} className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color3)",borderRadius:"0.5rem"}}>
                                             <div>
-                                                <h3>{item.elementBrief}</h3>
+                                                <h3 style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementBrief}</h3>
                                             </div>
-                                            <div>
+                                            <div style={{display:"flex",flexDirection:"column"}}>
                                                         {item.elementData.map((item,index)=>{
                                                              
                                                         return( 

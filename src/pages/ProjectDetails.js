@@ -265,7 +265,7 @@ export default function ProjectDetails() {
                                 return(
                                         <div key={index} className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color3)",borderRadius:"0.5rem"}}>
                                             <div>
-                                                <h3>Breif</h3>
+                                                <h3 style={{marginBottom:" 1rem",marginTop: "1rem"}} >Breif</h3>
                                                 <p>{item.elementBrief}</p>
                                             </div>
                                             <hr key={index} className="solid"/>
@@ -275,7 +275,7 @@ export default function ProjectDetails() {
                                                         return( 
                                                        
                                                         <div style={{flex:"auto"}}>
-                                                            <h3>{Object.keys(item)[0]}</h3>
+                                                            <h3 style={{marginBottom:" 1rem",marginTop: "1rem"}} >{Object.keys(item)[0]}</h3>
                                                             <p>{item[Object.keys(item)[0]]}</p>
                                                         </div>)
                                                     })}
@@ -308,10 +308,10 @@ export default function ProjectDetails() {
                                 return(
                                         <div key={index} className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color3)",borderRadius:"0.5rem"}}>
                                             <div>
-                                                <h3>{item.elementBrief}</h3>
+                                                <h3 style={{marginBottom:" 1rem",marginTop: "1rem"}} >{item.elementBrief}</h3>
                                             </div>
                                             <hr key={index} className="solid"/>
-                                            <div style={{display:"flex"}}>
+                                            <div style={{display:"flex",flexDirection:"column"}}>
                                                         {item.elementData.map((item,index)=>{
                                                              
                                                         return( 
