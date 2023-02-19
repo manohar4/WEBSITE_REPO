@@ -303,6 +303,26 @@ export default function ProjectDetails() {
                                     <ImageGrid key={index} elementData={item.elementData} elementWidth={Math.round(100/item.elementColumns).toString()+"%"} elementCaptions={item.elementCaptions} ></ImageGrid>
                                 )
                             }
+
+                            else if(item.elementType === 'reference'){
+                                return(
+                                        <div key={index} className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color3)",borderRadius:"0.5rem"}}>
+                                            <div>
+                                                <h3>{item.elementBrief}</h3>
+                                            </div>
+                                            <hr key={index} className="solid"/>
+                                            <div style={{display:"flex"}}>
+                                                        {item.elementData.map((item,index)=>{
+                                                             
+                                                        return( 
+                                                            <a className='link' key={index} href={item.elementData[index]} target="_blank" rel="noreferrer">href={item.elementData[index]}</a>      
+                                                        )
+                                                    })}
+                                            </div>
+                                        </div>
+                                    )
+                            }
+
                             
                            
                             return "";
