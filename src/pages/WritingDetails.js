@@ -59,6 +59,19 @@ export default function WritingDetails() {
     if(writingsDetailsData.length!==0){
 
         const fitlerWritingsarray = writingsDetailsData.filter(function (el){ return el.fields.writing_ID.toString() ===  id});
+        
+        var indexOfCurrentPage = writingsDetailsData.indexOf(fitlerProjectarray[0]);
+
+        if(indexOfCurrentPage!==0){
+            var previousWritingID = writingsDetailsData[writingsDetailsData.indexOf(fitlerProjectarray[0])-1].fields.writing_ID;
+        }
+
+
+        if(indexOfCurrentPage !== writingsDetailsData.length-1){
+            var nextWritingID = writingsDetailsData[writingsDetailsData.indexOf(fitlerProjectarray[0])+1].fields.writing_ID;
+        }
+
+        
         if(!fitlerWritingsarray[0]){
             navigation("/PageNotFound");
         }
@@ -279,6 +292,23 @@ export default function WritingDetails() {
 
                             return "";
                             }): ""}
+
+                            <div style={{marginTop:"4rem"}}>
+
+                                                
+                                                
+                            <Link onClick={()=>{window.scrollTo(0, 0);}} to={'/writingDetails/'+ previousWritingID} className='fillBtn pBtn' style={{float: "left",display:indexOfCurrentPage=== 0?"none":"unset"}} >
+                                <span style={{fontSize:"16px", transform: "rotate(180deg)"}}>⇦</span> Previous
+                                </Link>
+                                
+                                
+                                    <Link onClick={()=>{window.scrollTo(0, 0);}}  to={'/writingDetails/'+ nextWritingID}  style={{float: "right",display:indexOfCurrentPage === writingsDetailsData.length-1?"none":"unset"}} className='fillBtn nBtn'>
+                                Next<span style={{fontSize:"16px"}}>⇨</span> 
+                                </Link>
+                            
+                            
+                            </div>
+
                     </div>
                 </div>
             </div>
