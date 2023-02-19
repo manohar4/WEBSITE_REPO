@@ -265,8 +265,7 @@ export default function WritingDetails() {
                                             <div>
                                                 <h3>{item.elementBrief}</h3>
                                             </div>
-                                            <hr key={index} className="solid"/>
-                                            <div style={{display:"flex"}}>
+                                            <div>
                                                         {item.elementData.map((item,index)=>{
                                                              
                                                         return( 
