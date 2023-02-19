@@ -61,8 +61,16 @@ export default function Carousel(props) {
             {
                 imageURLS.map((item,index)=>{
                     return(
-                         <img key={index} onLoad={onLoad} className="imageBGloader" onClick={(event)=>{toggleFullImagePopup(event)}}  
-                        style={{borderRadius:"0.5rem",width:props.elementWidth,height:props.elementHeight,objectFit: "cover",display:index===currentURL?"unset":"none",opacity:loaded?"100%":"0"}}  src={loaded?item:Lottie} alt="Designs"/>
+
+                        <figure key={index} style={{display:index===currentURL?"unset":"none"}}>
+                       <img key={index} onLoad={onLoad} className="imageBGloader" onClick={(event)=>{toggleFullImagePopup(event)}}  
+                        style={{borderRadius:"0.5rem",width:props.elementWidth,height:props.elementHeight,objectFit: "cover",opacity:loaded?"100%":"0"}}  src={loaded?item.elementUrl:Lottie} alt="Designs"/>
+                        <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem", display: item.elementCaption?"":"none"}}><cite>{item.elementCaption}</cite></figcaption>
+                    </figure>
+            
+                        
+                      
+                       
                     )
                 })
             }

@@ -234,8 +234,8 @@ export default function WritingDetails() {
 
                                 for(var i=0;i<=item.elementData.length-1;i++){
                                     count++;
-                                    item.elementData[i]= writing.mediaFiles[count].url;
-                                    
+                                    item.elementData[i]= {"elementUrl": writing.mediaFiles[count].url,"elementCaption":item.elementCaptions[i]};
+
                                 }
 
                                 return(

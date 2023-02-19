@@ -46,7 +46,7 @@ var entered = true;
         entered=false;
       
         for(var i=0;i<= allAttachements[1].fields.Attachments.length-1;i++){
-            sketchData.push(allAttachements[1].fields.Attachments[i].url);
+            sketchData.push({"elementUrl":allAttachements[1].fields.Attachments[i].url,"elementCaption":""});
         }
 
         for(var j=0;j<= allAttachements[2].fields.Attachments.length-1;j++){

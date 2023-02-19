@@ -239,7 +239,8 @@ export default function ProjectDetails() {
 
                                 for(var i=0;i<=item.elementData.length-1;i++){
                                     count++;
-                                    item.elementData[i]= project.mediaFiles[count].url;
+
+                                    item.elementData[i]= {"elementUrl": project.mediaFiles[count].url,"elementCaption":item.elementCaptions[i]};
                                     
                                 }
                                 return(
