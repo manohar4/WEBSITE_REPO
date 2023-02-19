@@ -36,7 +36,7 @@ export default function PageNotFound() {
                 </div>
                 
                 <h1 style={{marginBottom:"1rem"}}>Sorry! Page Not Found</h1>
-                <p style={{marginBottom:"1rem"}}>The Link you followed is probably doesn't exist or broken or removed </p>
+                <p style={{marginBottom:"1rem"}}>The link you tried to access doesn't exist or is no longer available. </p>
                 <button className='fillBtn' onClick={()=> {onHomeClick()}}>Go to Home</button>
                 </div>
        </div>
