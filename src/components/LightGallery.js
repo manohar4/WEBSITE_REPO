@@ -54,7 +54,7 @@ export default function LightGallery(props) {
           GROUP2.map((p, idx) => (
 
             
-            <div  data-aos="fade-up" data-aos-delay={idx% 2 == 0?"0":"200"} className="cardGroup" style={{width: smallerDeviceCheck?"100%":"47%",display:"inline-block",backgroundSize:"cover",backgroundPosition:"center center",backgroundRepeat: "no-repeat",marginBottom:"1.2rem",marginRight: "1rem"}}>
+            <div  data-aos="fade-up" data-aos-delay={idx% 2 === 0?"0":"200"} className="cardGroup" style={{width: smallerDeviceCheck?"100%":"47%",display:"inline-block",backgroundSize:"cover",backgroundPosition:"center center",backgroundRepeat: "no-repeat",marginBottom:"1.2rem",marginRight: "1rem"}}>
               
               <div className="card" style={{padding:"0px",height:"auto",  minHeight:"246px"}}>
                 <PhotoItem  key={idx} image={p} group="group2" />

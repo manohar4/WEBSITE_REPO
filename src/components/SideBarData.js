@@ -3,8 +3,7 @@ import React from 'react'
 
 
 
-export const SideBarData =[
-    {title:"Home",
+export const SideBarData=[{title:"Home",
         path:"/",
         mobileTitle:"Home",
         icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F3E0)}</span>,

@@ -3,15 +3,15 @@ import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Writings.css'
 import './../css/Global.css'
-import {Link} from 'react-router-dom'
-import * as FiIcons from 'react-icons/fi'
-import ender from './../assets/ender.svg'
+import Plyr from 'plyr';
+import '../css/plyr.css'
+import Prism from 'prismjs';
+import './../css/prism.css';
 // import data from '../data/writings.json'
 import {FetchLittleThings} from '../helper/Context'
 import Header from '../components/Header'
 import Carousel from '../components/Carousel'
 
-var emojiString,emojiOutput;
  function LittleThings() {
 
   const back= false; 
@@ -19,6 +19,10 @@ var emojiString,emojiOutput;
   const {littleThingsData} = useContext(FetchLittleThings);
   console.log(littleThingsData);
   useEffect(()=>{
+
+    const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
+    Prism.highlightAll();
+
     window.scrollTo(0, 0);
     if(window.innerWidth<1024){
         document.getElementsByClassName('writings')[0].style.marginLeft='0px';
@@ -55,14 +59,19 @@ var emojiString,emojiOutput;
                   if(item.fields.AttachmentType === "Image"){
                     return(
                       <div style={{maxHeight:"600px",textAlign:"center"}} >
-                    <img style={{maxWidth:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} src={item.fields.Attachments[0].url}></img>
+                    <img style={{maxWidth:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} src={item.fields.Attachments[0].url} alt="Reference Pic"></img>
                     </div>
                     )
                   }
                   else if(item.fields.AttachmentType === "Video"){
                      return(
-                    <div style={{paddingTop: "50%", position: "relative",overflow: "hidden"}}><iframe frameBorder="0" allowFullScreen="" scrolling="no" allow="autoplay;fullscreen" src={item.fields.VideoUrl} style={{position: "absolute",height: "100%",width: "100%",left: "0px",top: "0px"}}></iframe></div>
-                    )
+
+                      <figure key={index} style={{borderRadius:"0.5rem"}}>
+                                        <video className="js-player" style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",  display:"flex" , margin: "auto",objectFit: "cover"}} crossorigin playsinline  > <source src={item.fields.Attachments[0].url} type='video/mp4'></source></video>
+                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaptions?"":"none"}}><cite>{item.fields.elementCaptions}</cite></figcaption>
+                                 </figure>
+
+                     )
                   }
                   else if(item.fields.AttachmentType === "Carousel"){
                     for(var i=0;i<=item.fields.Attachments.length-1;i++){
