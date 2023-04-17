@@ -42,7 +42,7 @@ function App() {
 
 
     var projects,tagArray,writings; 
-    var base = new Airtable({apiKey: 'keybsrdTHoDUuYEPf'}).base('app6Go1Ou8TXBXOW8');
+    var base = new Airtable({apiKey: 'patA5rPF7pM9PBs5D.92677489e8f5e8d589a993ea8f020854800562cbce30a65ba9cf7077849f4b7b'}).base('app6Go1Ou8TXBXOW8');
     
     const getRecords = async () =>{
       const records = await base('Projects List').select({maxRecords: 100,sort:[{field: "project_Id"}]}).firstPage();  
