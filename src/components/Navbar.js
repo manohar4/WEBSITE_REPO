@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import { SideBarData } from './SideBarData';
 import './Navbar.css';
+import LogoAvatar from '../assets/logoAvatar.png'
 import RainPic from "../assets/BGMUSIC/albumCovers/Rain.png"
 import WavesPic from "../assets/BGMUSIC/albumCovers/Waves.png"
 import ForestPic from "../assets/BGMUSIC/albumCovers/Forest.png"
@@ -145,7 +146,7 @@ else{
         
             <nav className={'nav-menu'}>
                 <div className='logo'>
-                <a style={{display:"unset"}} href="https://www.manoharmanu.in"><img style={{width:"1.6rem",height:"1.6rem",borderRadius:"4px"}} src="https://dl.airtable.com/.attachmentThumbnails/8b23df7c5c7e9046e9787b82c5200b75/0394af73" alt="My Notion Avatar"></img></a>
+                <a style={{display:"unset"}} href="https://www.manoharmanu.in"><img style={{width:"1.6rem",height:"1.6rem",borderRadius:"4px"}} src={LogoAvatar} alt="My Notion Avatar"></img></a>
                     <h3>Manohar Manu</h3>
                     
                 </div>
