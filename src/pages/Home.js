@@ -189,7 +189,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                 <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                                 <div className="desgPeriod">
                                     <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
-                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023&#8212; &#160;</p>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023&#8212; &#160;&#160;</p>
                                 </div>
                                 
 
