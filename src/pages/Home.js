@@ -10,6 +10,7 @@ import IDF from '../assets/Certifications/idf.jpeg';
 import IITG from '../assets/Certifications/IITG.png';
 import NITDGP from '../assets/Certifications/NITDGP.png';
 import Agile from '../assets/Certifications/Agile.png';
+import Vitech from '../assets/Certifications/vitech.jpg';
 import Incture from '../assets/Certifications/Incture.jpeg';
 import Brisky from '../assets/Certifications/brisky.png';
 import  Aos from 'aos';
@@ -182,13 +183,24 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
                         <h6 className='subTitle'>PAST EXPERIENCES</h6>
                         <div className='experience-row'>
+                        <div className='expereince-lineitems'>
+                                <img className="CertLogo" src={Agile} alt="Brand Logo"/>
+                                <a className='link' target='_blank' rel="noreferrer" href='https://www.vitechinc.com/' >Vitech Systems (Hyd/India,0+Yrs) </a>
+                                <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
+                                <div className="desgPeriod">
+                                    <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023&#8212; &#8212;</p>
+                                </div>
+                                
+
+                            </div>
                             <div className='expereince-lineitems'>
                                 <img className="CertLogo" src={Agile} alt="Brand Logo"/>
                                 <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India, 2+Yrs) </a>
                                 <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                                 <div className="desgPeriod">
                                     <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
-                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021&#8212;&nbsp;&nbsp;&nbsp;</p>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2021&#8212;'23</p>
                                 </div>
                                 
 
