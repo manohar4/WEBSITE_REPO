@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f273646f.css",
+    "main.js": "/static/js/main.800397cf.js",
+    "static/media/6.gif": "/static/media/6.a8da69f4e0226d9e3d33.gif",
+    "static/media/3.gif": "/static/media/3.1e3fda123bbf52f08229.gif",
+    "static/media/11.gif": "/static/media/11.8903cfe7e23f4a9bd43c.gif",
+    "static/media/1.gif": "/static/media/1.039f11eb5e49e3ab209f.gif",
+    "static/media/5.gif": "/static/media/5.94e21793772398b9a5a0.gif",
+    "static/media/12.gif": "/static/media/12.597a78a0b63291515296.gif",
+    "static/media/2.gif": "/static/media/2.a5a3331cffe0e1e7a87f.gif",
+    "static/media/9.gif": "/static/media/9.d690a67c6a0b0a69ceaf.gif",
+    "static/media/4.gif": "/static/media/4.02e89aa7afedfd4dfb87.gif",
+    "static/media/7.gif": "/static/media/7.7df35e897c6329f9bf2d.gif",
+    "static/media/10.gif": "/static/media/10.9346ad1f74636ac56450.gif",
+    "static/media/404.gif": "/static/media/404.a1395e1d073872e6464e.gif",
+    "static/media/13.gif": "/static/media/13.4a45296b8636ccf0918b.gif",
+    "static/media/8.gif": "/static/media/8.f830eea01dcb0e980d25.gif",
+    "static/media/Rain.mp3": "/static/media/Rain.a776b3d463b46c1fff95.mp3",
+    "static/media/Forest.mp3": "/static/media/Forest.dedfd49430a0ab082244.mp3",
+    "static/media/Waves.mp3": "/static/media/Waves.58c2b6c74a493b5020b3.mp3",
+    "static/media/Clouds.mp3": "/static/media/Clouds.278ea796a0c09d076437.mp3",
+    "static/media/preloader.mp4": "/static/media/preloader.06ebae2c81e801ac1f80.mp4",
+    "static/media/handsLight.png": "/static/media/handsLight.3ca5f1ede66f2d8d4925.png",
+    "static/media/lottie.gif": "/static/media/lottie.f08947866aa1d6fca387.gif",
+    "static/media/Location_LightMode.png": "/static/media/Location_LightMode.e928df8a364242714ff0.png",
+    "static/media/logoAvatar.png": "/static/media/logoAvatar.a5d7bfc5fa0f7cc4539f.png",
+    "static/media/messageDelivered.png": "/static/media/messageDelivered.d6d4a52410e3934ccffd.png",
+    "static/media/Location_DarkMode.png": "/static/media/Location_DarkMode.20b9eefea77fc3a3ffab.png",
+    "static/media/Sketch.png": "/static/media/Sketch.9829c81242f6014a1951.png",
+    "static/media/Rain.png": "/static/media/Rain.b9e45c6dac0caaea0bf0.png",
+    "static/media/Forest.png": "/static/media/Forest.f51a777f1034cd1de076.png",
+    "static/media/Clouds.png": "/static/media/Clouds.4bfa11603b097b82ca74.png",
+    "static/media/Waves.png": "/static/media/Waves.7beec820df7ffd5a9c24.png",
+    "index.html": "/index.html",
+    "main.f273646f.css.map": "/static/css/main.f273646f.css.map",
+    "main.800397cf.js.map": "/static/js/main.800397cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f273646f.css",
+    "static/js/main.800397cf.js"
+  ]
+}

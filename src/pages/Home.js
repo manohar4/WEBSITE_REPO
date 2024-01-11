@@ -12,7 +12,7 @@ import NITDGP from '../assets/Certifications/NITDGP.png';
 import Agile from '../assets/Certifications/Agile.png';
 import Vitech from '../assets/Certifications/vitech.jpg';
 import Incture from '../assets/Certifications/Incture.jpeg';
-import Brisky from '../assets/Certifications/brisky.png';
+import Persistent from '../assets/Certifications/Persistent.png';
 import  Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -181,22 +181,32 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
 
                 <div data-aos="fade-up"  data-aos-offset="200" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
-                        <h6 className='subTitle'>PAST EXPERIENCES</h6>
+                        <h6 className='subTitle'>EXPERIENCES (6+)</h6>
                         <div className='experience-row'>
                         <div className='expereince-lineitems'>
+                                <img className="CertLogo" src={Persistent} alt="Brand Logo"/>
+                                <a className='link' target='_blank' rel="noreferrer" href='https://www.persistent.com/' >Persistent Systems (Bangalore) </a>
+                                <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
+                                <div className="desgPeriod">
+                                    <h4 style={{textAlign:'right'}} >UX Lead</h4>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2024&#8212; &#160;&#160;</p>
+                                </div>
+
+                            </div>
+                        <div className='expereince-lineitems'>
                                 <img className="CertLogo" src={Vitech} alt="Brand Logo"/>
-                                <a className='link' target='_blank' rel="noreferrer" href='https://www.vitechinc.com/' >Vitech Systems (Hyd/India,0+Yrs) </a>
+                                <a className='link' target='_blank' rel="noreferrer" href='https://www.vitechinc.com/' >Vitech Systems (Hyderabad) </a>
                                 <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                                 <div className="desgPeriod">
                                     <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
-                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023&#8212; &#160;&#160;</p>
+                                    <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >2023&#8212;'23</p>
                                 </div>
                                 
 
                             </div>
                             <div className='expereince-lineitems'>
                                 <img className="CertLogo" src={Agile} alt="Brand Logo"/>
-                                <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India, 2.5Yrs) </a>
+                                <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/' >Agile Solutions (Brazil/India) </a>
                                 <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                                 <div className="desgPeriod">
                                     <h4 style={{textAlign:'right'}} >Sr. Designer</h4>
@@ -216,7 +226,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                             </div> */}
                             <div className='expereince-lineitems' >
                                 <img className="CertLogo" src={Incture} alt="Brand Logo"/>
-                                <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bangalore, 3Yrs)</a>
+                                <a className='link' target='_blank' rel="noreferrer" href='https://incture.com/' >Incture (Bangalore)</a>
                                 <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                                 <div className="desgPeriod">
                                     <h4 style={{textAlign:'right'}} >Designer</h4>
@@ -225,7 +235,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                 
                             </div>
                         
-                            <div className='expereince-lineitems' >
+                            {/* <div className='expereince-lineitems' >
                                 <img className="CertLogo" src={Brisky} alt="Brand Logo"/>
                                 <h4 >Gleefie, Brisky(Interships) </h4>
                                 <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
@@ -234,7 +244,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                     <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}}>2017&#8212;'17</p>
                                 </div>
                                 
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>
