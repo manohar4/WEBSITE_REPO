@@ -181,7 +181,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
 
                 <div data-aos="fade-up"  data-aos-offset="200" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
-                        <h6 className='subTitle'>EXPERIENCES (6+)</h6>
+                        <h6 className='subTitle'>EXPERIENCES (6+ Years)</h6>
                         <div className='experience-row'>
                         <div className='expereince-lineitems'>
                                 <img className="CertLogo" src={Persistent} alt="Brand Logo"/>
