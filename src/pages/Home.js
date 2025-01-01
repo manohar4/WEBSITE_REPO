@@ -172,9 +172,9 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                     <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. Currently, I'm a part of the design team at  <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> where I continue to drive successful design projects.</p>
                     <div style={{display:"flex",gap:"1rem",marginTop:"1rem"}}>
                          <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">
-                            <button  style={{margin:"0"}} className='fillBtn'> <FaIcons.FaHandshake className='backIcon'/>Get In Touch</button>
+                            <button  style={{margin:"0"}} className='fillBtn'> <FaIcons.FaHandshake className='backIcon' style={{color:'var( --text-color0)'}}/>Get In Touch</button>
                         </a>
-                        <button style={{margin:"0"}} className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon'/>Say Hello</button>
+                        <button style={{margin:"0"}} className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon' style={{color:'var( --text-color0)'}}/>Say Hello</button>
                         
                     </div>
                 </div>
@@ -362,9 +362,8 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                               {String.fromCodePoint(0x1F344)}
                                             </span>
                                             <p>
-    "People don't use <span  >products</span>  because of  <span  >great design</span> ; <span  > Great designs</span> makes them to use the  <span  >Product</span>"
+    "People don't use <span  >products</span>  because of  <span  >great design</span> ; <span  > great design</span> makes them to use the  <span  >product</span>"
      </p>
-     
                                              </div>
                                         
     

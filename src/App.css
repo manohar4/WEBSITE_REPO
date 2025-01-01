@@ -184,11 +184,13 @@ background-color: red;
   border-radius: 0.25rem;
   border: 1px  solid transparent;
   color: var( --text-color0);
+  margin:0.5rem auto;
   align-self: center;
 }
 
 .primaryBtn:hover{
   background-color: var(--text-color3);
+
 }
 
 .fillBtn{

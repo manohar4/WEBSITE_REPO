@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import './../App.css'
 import './../css/Writings.css'
 import './../css/Global.css'
-import Plyr from 'plyr';
+//import Plyr from 'plyr';
 import '../css/plyr.css'
 import Prism from 'prismjs';
 import './../css/prism.css';
@@ -20,7 +20,7 @@ import Carousel from '../components/Carousel'
   console.log(littleThingsData);
   useEffect(()=>{
 
-    const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
+    //const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
     Prism.highlightAll();
 
     window.scrollTo(0, 0);
@@ -80,6 +80,9 @@ import Carousel from '../components/Carousel'
                     return(
                       <Carousel elementData={caroData} elementWidth="100%" elementHeight="auto" ></Carousel>
                       )
+                  }
+                  else {
+                    return null;
                   }
                     
                 })

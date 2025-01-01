@@ -41,23 +41,21 @@
 
 .cardGroup {
     position: relative;
-    background-color:#ff7644;
+    background:linear-gradient(to bottom right, #ff7644 47%, #bd3706 53%)
   }
   
     .cardGroup:after {
       content: '';
-      background-color:#ff7644;
       width:8px;
       height: 10px;
       position: absolute;
       transition: all .15s ease;
-      margin-right: 2.6px;
-      margin-bottom: 1.4px;
+      margin-right: 3.3px;
+      margin-bottom: 2px;
     }
 
     .cardGroup:before{
         content: '';
-        background-color: #ff7644;
         width: 12px;
         height: 12px;
         position: absolute;
@@ -70,6 +68,7 @@
       top: 0;
       left: 0;
       transform-origin: top left;
+      background-color: #ff7644;
       transform: rotate(-45deg) scale(0);
     }
   
@@ -77,6 +76,7 @@
       right: 0;
       bottom: 0;
       transform-origin: bottom right;
+      background-color: #bd3706;
       transform: rotate(45deg) scale(0);
     }
   

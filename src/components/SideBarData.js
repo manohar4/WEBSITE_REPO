@@ -2,9 +2,8 @@ import React from 'react'
 // import * as FiIcons from 'react-icons/fi'
 
 
-
-export const SideBarData=[{title:"Home",
-        path:"/",
+// eslint-disable-next-line
+export const SideBarData= [{title:"Home",path:"/",
         mobileTitle:"Home",
         icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F3E0)}</span>,
         cName:'nav-text',

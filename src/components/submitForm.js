@@ -12,7 +12,9 @@ const SubmitFrom = (props)=>{
        name:"",
        message:""
    })
-   var base = new Airtable({apiKey: 'keybsrdTHoDUuYEPf'}).base('app6Go1Ou8TXBXOW8');
+  // var base = new Airtable({apiKey: 'keybsrdTHoDUuYEPf'}).base('app6Go1Ou8TXBXOW8');
+
+   var base = new Airtable({apiKey: 'patA5rPF7pM9PBs5D.92677489e8f5e8d589a993ea8f020854800562cbce30a65ba9cf7077849f4b7b'}).base('app6Go1Ou8TXBXOW8');
    
    useEffect(()=>{
 
@@ -109,22 +111,22 @@ const SubmitFrom = (props)=>{
         <div  className="popup-box"> 
            <div className="box">
                 <div className="msgform">
-                        <h2>Want to Say Something or Just a Hi? </h2>
-                        <p style={{lineHeight:"1rem",marginTop:"1rem"}}> If you are asking a question or query Please do mention your email/contact so I can revert you back</p>
+                        <h2>Have a Question or Just Want to Say Hi?</h2>
+                        <p style={{lineHeight:"1.6rem",marginTop:"1rem"}}> If you have a question, please include your email or contact information so I can respond to you.</p>
 
-                        <div style={{display:"flex", flexDirection:"column",margin:"1rem 0rem"}}>
+                        <div style={{display:"flex", flexDirection:"column",margin:"2rem 0rem"}}>
                                 <p style={{marginBottom:"0.4rem"}}>Name</p>
                                 <input id='senderName' name='name' autoComplete="new-password" onChange={onInputChange} value={form.name}></input>
                                 <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.5rem"}}>
                                     <input style={{height:"2rem"}} type="checkbox" onClick={onAnonymous}/>
-                                    <p>Be Annoymous</p>
+                                    <p>Be Anonymous</p>
                                 </div>
                                 
                             
                         </div>
 
                         <div style={{display:"flex", flexDirection:"column"}}>
-                                <p style={{marginBottom:"0.4rem"}}>Message</p>
+                                <p style={{marginBottom:"0.4rem"}}>Type your message here...</p>
                                 <textarea  data-emoji-input="unicode" rows="4" id='senderMsg'  name='message' autoComplete="new-password" onChange={onInputChange} value={form.message}></textarea>
                                 
                                 <div style={{width:"20px",margin:"0.5rem 0rem",display:"flex"}}>
@@ -151,8 +153,8 @@ const SubmitFrom = (props)=>{
                                 </div>
                             </div>
                             <div style={{display:"flex",justifyContent:"end",gap:"1rem"}}>
-                                <button className='primaryBtn' onClick={props.handleClose} ><p>Close</p></button>
-                                <button className='fillBtn' onClick={onHandleSubmit} style={{margin:"0px"}}>Send</button>
+                                <button className='primaryBtn' style={{margin:"0px"}} onClick={props.handleClose} >CLOSE</button>
+                                <button className='fillBtn' onClick={onHandleSubmit} style={{margin:"0px"}}>SEND</button>
 
                             </div>
                 </div>
