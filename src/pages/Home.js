@@ -32,7 +32,6 @@ export default function Home() {
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
     const [location,setLocation] = useState(Location_DarkMode);
-    const [darkChecked,setDarkChecked]= useState(false);
 
     useEffect(()=>{
         Aos.init({duration:1600,once:true});
@@ -70,9 +69,7 @@ export default function Home() {
 
     useEffect(()=>{
 
-        if(document.documentElement.getAttribute('data-theme') === 'light'){
-            setDarkChecked(true);
-        }
+       
         
         window.scrollTo(0, 0);
         if(window.innerWidth<1024){
@@ -101,36 +98,6 @@ export default function Home() {
         //  }
 
     },[])
-
-
-function darkify(event) {
-
-    
-if(document.documentElement.getAttribute('data-theme') === 'light'){
-    document.documentElement.setAttribute('data-theme', "");
-    setLocation(Location_DarkMode);
-    setDarkChecked(false);
-
-    event.target.title = "Dark"
-    event.target.innerHTML = "Dark Mode: ON"
-
- }
- else{
-
-    document.documentElement.setAttribute('data-theme', "light");
-    setLocation(Location_LightMode);
-    setDarkChecked(true);
-    event.target.title = "Light"
-    event.target.innerHTML = "Dark Mode: OFF"
- }
-  
-}
-
-
-
-
- 
-
     
 
   return (
@@ -152,7 +119,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                                             <div style={{width:"100%",display:"flex",justifyContent: "space-between"}}>
                                                                 
                                                                 <p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p>                
-                                                                <div style={{transform:"scale(0.8)"}}>
+                                                                {/* <div style={{transform:"scale(0.8)"}}>
                                                                     <div className="button b2" id="button-18">
                                                                         <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
                                                                     <div className="knobs">
@@ -160,7 +127,7 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                                                                     </div>
                                                                         <div className="layer"></div>
                                                                     </div>
-                                                                </div>
+                                                                </div> */}
                                                             </div>
                                                         }></Header>         
                             
@@ -181,7 +148,13 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
 
                 <div data-aos="fade-up"  data-aos-offset="200" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
-                        <h6 className='subTitle'>EXPERIENCES (6+ Years)</h6>
+                        <div className='expereince-lineitems'>
+                            <h6 className='subTitle'>EXPERIENCES</h6>
+                            <div style={{opacity:0,flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
+                            <div className="desgPeriod">
+                                <p style={{textAlign:'right',fontFamily: 'space Mono,sans-serif',fontSize:"14px"}} >6+ Years</p>
+                            </div>
+                        </div>
                         <div className='experience-row'>
                         <div className='expereince-lineitems'>
                                 <img className="CertLogo" src={Persistent} alt="Brand Logo"/>
@@ -255,7 +228,10 @@ if(document.documentElement.getAttribute('data-theme') === 'light'){
                 <div data-aos="fade-up"  data-aos-offset="300" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                    
                 <div className='pastExpereince' style={{marginBottom:'0px'}}>
-                    <h6 className='subTitle'>EDUCATION & CERTIFICATIONS</h6>
+                    <div className='expereince-lineitems'>
+                        <h6 className='subTitle'>EDUCATION & CERTIFICATIONS</h6>
+                    </div>
+                  
                     <div className='experience-row'>
                         
                         <div className='expereince-lineitems'>

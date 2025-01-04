@@ -58,6 +58,10 @@
  list-style: none;
 }
 
+body{
+  overflow-y: scroll;
+}
+
 button:hover,a:hover, .closeIcon:hover, .closeIcon path:hover,.musicIcon:hover,.musicIcon path:hover,.cardLib:hover,.cardLib *:hover,.backButton *:hover{
   cursor: url(../src//assets/hover.png),auto !important;
 }
@@ -73,7 +77,6 @@ figure .plyr{
   display: flex;
   height: auto;
   justify-content: center;
-  margin-left: 18rem;
 
 }
 
@@ -154,9 +157,10 @@ background-color: red;
   gap:1rem;
   margin-bottom: 1rem;
   z-index: 100;
+  display: none;
 }
 .HeaderSticky{
-  background-color: var(--bg-color0);
+  background-color: var(--bg-mainBG);
   border-bottom: 2px var(--text-color3) solid;
   height: auto;
   display:flex;

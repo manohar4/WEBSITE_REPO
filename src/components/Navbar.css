@@ -11,24 +11,21 @@
 }
 
 .nav-menu {
-    background-color: var(--bg-color4);
-    width: 18rem;
-    height: 100vh;
     display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: flex-start;
-    position: fixed;
+    flex-direction: row;
+    justify-content: center;
+    position: sticky;
     top: 0;
     transition: 850ms;
-    padding: 1rem;
+    padding: 0.5rem;
+    z-index: 1000;
   
 }
 
-.nav-menu-items{
+/* .nav-menu-items{
     width: 100%;
     flex: 32;
-}
+} */
 
 .nav-menu.active {
     left: 0;
@@ -85,13 +82,12 @@
 
 
 .logo{
-    height: 2rem;
+    align-items: center;
     gap: 0.5rem;
     flex: 1;
     display: flex;
     color: var(--text-color0) ;
     padding: 8px;
-    margin-bottom: 1rem;
 }
 
 /* ------------Mobile CSS Starts -------------------- */
@@ -201,3 +197,53 @@
       transform: rotate(360deg);
     }
   }
+
+
+/* -------- New Code for Menu List ------------- */
+#menu {
+    color: var(--text-color1);
+}
+
+#menu .content {
+    position: relative;
+}
+
+#menu .content #pill{
+    position: absolute;
+    left: 0px;
+    background-color: var(--bg-color5);
+    border-radius: 2rem;
+    transition: left .5s ease, width .5s ease;
+}
+
+#menu .content .nav-menu-items{
+    display: flex;
+    background-color: var(--bg-color4);
+    border-radius: 2rem;
+    padding: 2px;
+    border: 0.5px var(--bg-color5) solid;
+}
+
+#menu .content .nav-menu-items .item{
+    padding: 0.5rem 0.75rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: 1s ease;
+}
+
+#menu .content .nav-menu-items .item a {
+    color: var(--text-color1);
+}
+
+#menu .content .nav-menu-items .item a span{
+    margin-left: 4px;
+}
+
+#menu .content .nav-menu-items .item.active{
+    color: #fff;
+}
+
+#menu .content .nav-menu-items .item:not(.active):hover{
+    color: rgb(127, 127, 127);
+}

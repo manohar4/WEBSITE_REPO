@@ -1,12 +1,20 @@
-import React, {useEffect } from 'react'
+import React, {useEffect,useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../App.css'
 import * as FiIcons from 'react-icons/fi'
 
 export default function Header(props) {
 
+    var [smallerDeviceCheck, setSmallerDeviceCheck] = useState(false);
+
     useEffect(()=>{
-        
+        if(window.innerWidth<1024){
+            setSmallerDeviceCheck= true;
+        }
+        else{
+            setSmallerDeviceCheck = false;
+        }
+
         if(props.back){
             // eslint-disable-next-line
             document.getElementsByClassName('back')[0].style.display= "unset";
@@ -23,15 +31,19 @@ export default function Header(props) {
 
     window.addEventListener("scroll",()=>{
         var header = document.querySelector("#headerID");
-        if(window.scrollY>104){
+        if(smallerDeviceCheck){
+            if(window.scrollY>104){
 
-            header.classList.remove("HeaderFixed");
-            header.classList.add("HeaderSticky");
+                header.classList.remove("HeaderFixed");
+                header.classList.add("HeaderSticky");
+            }
+            else if(window.scrollY===0){
+                header.classList.remove("HeaderSticky");
+                header.classList.add("HeaderFixed");
+            }
+
         }
-        else if(window.scrollY===0){
-            header.classList.remove("HeaderSticky");
-            header.classList.add("HeaderFixed");
-        }
+        
     })
    
 
