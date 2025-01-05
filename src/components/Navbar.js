@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import { SideBarData } from './SideBarData';
 import './Navbar.css';
@@ -14,6 +14,7 @@ import Rain from '../assets/BGMUSIC/Rain.mp3'
 import Waves from '../assets/BGMUSIC/Waves.mp3'
 import Forest from '../assets/BGMUSIC/Forest.mp3'
 import Clouds from '../assets/BGMUSIC/Clouds.mp3'
+import { update } from 'react-spring';
 
 var audioCount =0;
 
@@ -41,12 +42,17 @@ var smallerDeviceCheck;
 
 
 
-const [selectedChild,setSelectedChild]=  useState();
+const [selectedChild,setSelectedChild]=  useState(null);
 
 
 
 
 useEffect(()=>{
+
+   
+
+
+
 
     if(document.documentElement.getAttribute('data-theme') === 'light'){
         setDarkChecked(true);
@@ -54,25 +60,69 @@ useEffect(()=>{
 
     var selectionPath = document.location.pathname.split("/")[1];
     if(selectionPath ===''){
+        updateNavSelection(1);
         setSelectedChild(1);
+        
+       
     }
     else if(selectionPath ==='works' || selectionPath ==='ProjectDetails' || selectionPath ==='projectDetails'  ){
+        updateNavSelection(2);
         setSelectedChild(2);
+       
+        
     }
     else if(selectionPath === 'writings'|| selectionPath ==='writingDetails' || selectionPath ==='WritingDetails'){
+        updateNavSelection(3);
         setSelectedChild(3);
+       
     }
     else if(selectionPath === 'littleThings' || selectionPath === 'LittleThings'){
+        updateNavSelection(4);
         setSelectedChild(4);
+       
     }
-    else if(selectionPath === 'otherActivities' || selectionPath === 'DesignLibrary'){
+    else if(selectionPath === 'OtherActivities' || selectionPath === 'DesignLibrary'){
+        updateNavSelection(5);
         setSelectedChild(5);
     }
     else{
+        updateNavSelection(1);
         setSelectedChild(1);
     }
 
+
+    function updateNavSelection(index){
+        //setting default selected nav item - selected
+           const PILL = document.querySelector('#pill');
+           const MENU_LINKS = document.querySelectorAll('.item');
+           const MENULINKSPARENT = document.querySelector('#items');
+   
+           const dimensions = MENU_LINKS[index-1].getBoundingClientRect();
+               PILL.style.width = dimensions.width+ 'px';
+               PILL.style.height = 36 + 'px';
+               PILL.style.top = 2.5 + 'px';
+               PILL.style.left = dimensions.left - MENULINKSPARENT.getBoundingClientRect().left + 'px';
+               PILL.style.paddingRight = 12;
+               PILL.style.paddingTop = 8;
+               PILL.style.paddingBottom = 8;
+               let selected = selectedChild;
+               function setPill() {
+               MENU_LINKS.forEach((e, i) => {
+                   if (i === selected) {
+                   e.classList.add('custom-button');
+                   } else {
+                   e.classList.remove('custom-button');
+                   }
+               });
+               };
+              setPill();
+
+   }
+
 },[])
+
+
+
 
 
 // const onPlayClick=()=>{
@@ -126,11 +176,11 @@ ripple.style.animation = "none";
     document.getElementById('bulbonID').style.display = "unset";
     document.getElementById('bulboffID').style.display = "none";
 
-    ripple.style.backgroundColor = '#fcfcfc';
+    ripple.style.backgroundColor = '#dfdfdf';
     ripple.style.animation = 'ripple-animation 1s ease-in forwards'; 
 
     setTimeout(() => {
-        document.body.style.backgroundColor = "#fcfcfc";
+        document.body.style.backgroundColor = "#dfdfdf";
         ripple.style.animation = "none";
         document.documentElement.setAttribute('data-theme','light');
         event.target.title = 'Light';
@@ -268,7 +318,7 @@ else{
                                 const MENULINKSPARENT = document.querySelector('#items');
                                 const dimensions = event.target.parentElement.getBoundingClientRect();
                                 PILL.style.width = 24+  dimensions.width+ 'px';
-                                PILL.style.height = 37 + 'px';
+                                PILL.style.height = 36 + 'px';
                                 PILL.style.top = 2.5 + 'px';
                                 PILL.style.left = dimensions.left -12 -MENULINKSPARENT.getBoundingClientRect().left + 'px';
                                 PILL.style.paddingRight = 12;

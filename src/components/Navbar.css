@@ -313,6 +313,7 @@
 
 #menu .content #pill{
 
+    height: 36px;
     position: absolute;
     left: 0px;
     background-color: var(--bg-color5);
