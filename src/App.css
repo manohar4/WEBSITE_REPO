@@ -210,11 +210,11 @@ background-color: red;
   flex-direction:row;
   align-items:center;
   gap:0.5rem;
-  padding:0.5rem 0.5rem;
-  border-radius: 0.25rem;
+  padding:0.5rem 1rem;
+  border-radius: 2rem;
   border: 1px  solid transparent;
   color: var( --text-color0);
-  margin:0.5rem auto;
+  margin:0.5rem 1rem;
   align-self: center;
 }
 
@@ -230,11 +230,11 @@ background-color: red;
   flex-direction:row;
   align-items:center;
   gap:0.5rem;
-  padding:0.5rem 0.5rem;
-  border-radius: 0.25rem;
+  padding:0.5rem 1rem;
+  border-radius: 2rem;
   border: 1px  solid transparent;
   color: var( --text-color0);
-  margin:0.5rem auto;
+  margin:0.5rem 1rem;
   align-self: center;
 }
 
@@ -245,11 +245,9 @@ background-color: red;
   flex-direction:row;
   align-items:center;
   gap:0.5rem;
-  padding:0.5rem 0.5rem;
-  border-radius: 0.25rem;
   border: 1px  solid transparent;
   color: var( --text-color0);
-  margin:0.5rem auto;
+  margin:0.5rem 1rem;
   align-self: center;
 }
 

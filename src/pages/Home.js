@@ -130,22 +130,28 @@ export default function Home() {
                                                                     </div>
                                                                 </div> */}
                                                             </div>
-                                                        }></Header>         
+             }></Header>         
                             
                           
 
-                    
-                <div data-aos="fade-up" className='intro'>   
-                    <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
-                    <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. Currently, I'm a part of the design team at  <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> where I continue to drive successful design projects.</p>
-                    <div style={{display:"flex",gap:"1rem",marginTop:"1rem"}}>
-                         <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">
-                            <button  style={{margin:"0"}} className='fillBtn'> <FaIcons.FaHandshake className='backIcon' style={{color:'var( --text-color0)'}}/>Get In Touch</button>
-                        </a>
-                        <button style={{margin:"0"}} className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon' style={{color:'var( --text-color0)'}}/>Say Hello</button>
-                        
+                <div data-aos="fade-up" id="splineFlex" className='heroContainer' >
+               
+                    <div className='intro'>   
+                        <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
+                        <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. Currently, I'm a part of the design team at  <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> where I continue to drive successful design projects.</p>
                     </div>
+                    <img  style={{width:"200px", height:"200px"}} src={handlight} alt="korean Love symbol"></img>
+
                 </div>
+
+                <div data-aos="fade-up" style={{display:"flex",gap:"1rem",marginTop:"1rem", marginBottom:"3rem"}}>
+                         <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">
+                            <button  style={{margin:"0rem",padding:"0.5rem 0.8rem",borderRadius:"2rem"}} className='fillBtn'> <FaIcons.FaHandshake className='backIcon' style={{color:'var( --text-color0)'}}/>Get In Touch</button>
+                        </a>
+                        <button style={{margin:"0",padding:"0.5rem 0.8rem",borderRadius:"2rem"}} className='primaryBtn'   onClick={togglePopup} >  <GiIcons.GiHand className='backIcon' style={{color:'var( --text-color0)'}}/>Say Hello</button>
+                        
+                </div>
+               
 
                 <div data-aos="fade-up"  data-aos-offset="200" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
@@ -347,7 +353,7 @@ export default function Home() {
   </div>
                     </div>
 
-                <div id="splineFlex" style={{display:"flex",flexDirection:"row",borderRadius:"1rem"}}>
+                {/* <div id="splineFlex" style={{display:"flex",flexDirection:"row",borderRadius:"1rem"}}>
                 <img  style={{flex:"1",width:"50%",height:"50%",padding:"10%",marginLeft:"10%"}} src={handlight} alt="korean Love symbol"></img>
                 
                 
@@ -356,7 +362,7 @@ export default function Home() {
 
                 </div>
 
-                </div>
+                </div> */}
                 
                 <div className='svg-container'>
                 <svg width="545" height="208" viewBox="0 0 545 208" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

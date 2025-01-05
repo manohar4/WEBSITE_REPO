@@ -7,7 +7,7 @@ import Header from '../components/Header'
 import Testimonials from '../components/Testimonials'
 import * as TbIcons from 'react-icons/tb'
 import * as IoIcons from 'react-icons/io5';
-
+import { FaAngleDown } from "react-icons/fa";
 
 import CustomCursor from "../assets/tools/Sketch.png"
 
@@ -206,7 +206,7 @@ const onShowMore=(e)=>{
                                 }
                             }):null
                         }
-                        <button className='primaryBtn' onClick={(e)=> onShowMore(e)} >Show More</button>
+                        <button className='primaryBtn' onClick={(e)=> onShowMore(e)} > Show More</button>
 
                     </div>
                 </div>
