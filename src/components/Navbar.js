@@ -8,6 +8,7 @@ import WavesPic from "../assets/BGMUSIC/albumCovers/Waves.png"
 import ForestPic from "../assets/BGMUSIC/albumCovers/Forest.png"
 import CloudsPic from "../assets/BGMUSIC/albumCovers/Clouds.png"
 import * as IoIcons from 'react-icons/io5';
+import { RiLightbulbFlashFill, RiLightbulbFlashLine } from "react-icons/ri";
 import * as FaIcons from 'react-icons/fa';
 import Rain from '../assets/BGMUSIC/Rain.mp3'
 import Waves from '../assets/BGMUSIC/Waves.mp3'
@@ -94,18 +95,51 @@ useEffect(()=>{
 
 function darkify(event) {
 
+
+
+const ripple = document.querySelector('.ripple');
+ripple.style.animation = "none";   
+
+
+
+
     if(document.documentElement.getAttribute('data-theme') === 'light'){
+
+    // Trigger the animation
+    document.getElementById('bulbonID').style.display = "none";
+    document.getElementById('bulboffID').style.display = "unset";
+   
+    ripple.style.backgroundColor = '#0d0d0d';
+    ripple.style.animation = 'ripple-animation 1s ease-in forwards'; // Use forwards to retain final state
+
+    setTimeout(() => {
+        document.body.style.backgroundColor = "#0d0d0d";
+        ripple.style.animation = "none";
         document.documentElement.setAttribute('data-theme','');
-        setDarkChecked(false);
-        event.target.title = 'Dark';
-        event.target.innerHTML = 'Dark Mode: ON';
+    event.target.title = 'Dark';
+    }, 500);
+    setDarkChecked(false);
+    
     }
     else{
+
+    document.getElementById('bulbonID').style.display = "unset";
+    document.getElementById('bulboffID').style.display = "none";
+
+    ripple.style.backgroundColor = '#fcfcfc';
+    ripple.style.animation = 'ripple-animation 1s ease-in forwards'; 
+
+    setTimeout(() => {
+        document.body.style.backgroundColor = "#fcfcfc";
+        ripple.style.animation = "none";
         document.documentElement.setAttribute('data-theme','light');
-        setDarkChecked(true);
         event.target.title = 'Light';
-        event.target.innerHTML = 'Dark Mode: OFF';
+    }, 500);
+
+    setDarkChecked(true);
+   
     }
+
 
 }
 
@@ -234,7 +268,7 @@ else{
                                 const MENULINKSPARENT = document.querySelector('#items');
                                 const dimensions = event.target.parentElement.getBoundingClientRect();
                                 PILL.style.width = 24+  dimensions.width+ 'px';
-                                PILL.style.height = 36 + 'px';
+                                PILL.style.height = 37 + 'px';
                                 PILL.style.top = 2.5 + 'px';
                                 PILL.style.left = dimensions.left -12 -MENULINKSPARENT.getBoundingClientRect().left + 'px';
                                 PILL.style.paddingRight = 12;
@@ -244,9 +278,9 @@ else{
                                 function setPill() {
                                 MENU_LINKS.forEach((e, i) => {
                                     if (i === selected) {
-                                    e.classList.add('active');
+                                    e.classList.add('custom-button');
                                     } else {
-                                    e.classList.remove('active');
+                                    e.classList.remove('custom-button');
                                     }
                                 });
                                 };
@@ -254,9 +288,9 @@ else{
                             };
 
                             return(
-                                <li key={index} className={`item ${index === selectedChild ?"active":""}`}>
+                                <li key={index} className={`item`}>
 
-                                    <Link  to={item.path}  onClick={event =>changeStyle(event,index)} >
+                                    <Link  to={item.path}  onClick={event =>changeStyle(event,index)}  >
 
                                         {item.icon}
 
@@ -272,23 +306,41 @@ else{
                 </div>
             </div>
 
-            <div style={{flex:1, display:"flex", paddingRight: "1rem"}}>
-        
+            {/* <div style={{flex:1, display:"flex", paddingRight: "1rem"}}>
+                <div className="button b2" style={{marginRight:"unset"}} id="button-18">
 
-            <div className="button b2" style={{marginRight:"unset"}} id="button-18">
+                    <input id="darkToggle" onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
 
-                <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
+                <div className="knobs">
 
-            <div className="knobs">
+                    <span></span>
 
-                <span></span>
+                </div>
 
-            </div>
+                    <div className="layer"></div>
 
-                <div className="layer"></div>
+                </div>
+            </div> */}
 
-            </div>
-            </div>
+            <div style={{flex:1, display:"flex", paddingRight: "1rem", alignItems:"center",justifyContent:"end"}}
+                         type="checkbox" checked = {darkChecked}
+                        onClick={(event)=>{darkify(event)}} 
+                    >
+
+                <div className="icon-container">
+
+                <RiLightbulbFlashFill id='bulbonID'
+                            className="backIcon bulbIcon" 
+                            style={{ display:"none", color: "#ff7744f0",transform: `scale(1.2)`,marginLeft:"auto"}}
+                            />
+
+                            <RiLightbulbFlashLine id='bulboffID'
+                            className="backIcon bulbIcon" 
+                            style={{ color: "#fff",transform: `scale(1.2)`,marginLeft:"auto"}}
+                            />
+                </div>
+         
+                </div>
         </nav>
         </>
     );

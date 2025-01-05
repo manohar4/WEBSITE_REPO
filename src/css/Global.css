@@ -158,3 +158,27 @@
     stroke: var(--bg-color5);
 }
 
+/* Ripple styling */
+.ripple {
+    position: fixed; /* Fixed to viewport for full-screen coverage */
+      top: 0; /* Start from center */
+      left: 100%; /* Start from center */
+      width: 40px; /* Initial size */
+      height: 40px; /* Initial size */
+      background-color: rgba(192, 37, 37, 0.5); /* Semi-transparent color */
+      border-radius: 50%; /* Makes it circular */
+      transform: translate(0%, -50%) scale(0); /* Center and start at scale 0 */
+      pointer-events: none; /* Prevent blocking interactions */
+  }
+  
+  /* Ripple animation */
+  @keyframes ripple-animation {
+    0% {
+        transform: translate(0, -50%) scale(0); /* Start small */
+         /* Slightly visible at start */
+      }
+      100% {
+        transform: translate(-200%, -50%) scale(300); /* Scale up to cover viewport */
+         /* Fade out at the end */
+      }
+  }

@@ -208,28 +208,50 @@
     position: relative;
 }
 
-#menu .content #pill{
-    position: absolute;
-    left: 0px;
-    background-color: var(--bg-color5);
-    border-radius: 2rem;
-    transition: left .5s ease, width .5s ease;
-}
-
 #menu .content .nav-menu-items{
     display: flex;
-    background-color: var(--bg-color4);
+    background-color: var(--bg-color1);
     border-radius: 2rem;
     padding: 2px;
-    border: 0.5px var(--bg-color5) solid;
+
+     /* Shadows for depth and lighting */
+     box-shadow: 
+     inset 0.5px 0.5px 1px var(--shadow-color1), /* Inner shadow for surface cut */
+  inset 0px 1px 2px var(--shadow-color2),     /* Mid-level inner shadow */
+  inset 0px 2px 4px var(--shadow-color3);     /* Deeper inner shadow for depth */
+
+
+  box-shadow: 
+   0.5px 0.5px 1px var(--shadow-color1), /* Inner shadow for surface cut */
+ 0px 1px 2px var(--shadow-color2),     /* Mid-level inner shadow */
+ 0px 2px 4px var(--shadow-color3);  
+  /* Subtle gradient background */
+  
+  background: rgb(0,0,0);
+  background: 
+  /* linear-gradient(180deg,rgb(21, 21, 21) 0%, rgb(8, 8, 8) 61%,  rgb(10, 10, 10)  100%); */
+  linear-gradient(180deg, var(--bg-color1) 0%, var(--bg-color1) 100%);
+
+
+
+    /* Button shape and spacing */
+    border: 1px solid var(--text-color3);
 }
 
 #menu .content .nav-menu-items .item{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     padding: 0.5rem 0.75rem;
     border-radius: 2rem;
     cursor: pointer;
     z-index: 1;
-    transition: 1s ease;
+    transition: 0.5s ease;
+}
+
+#menu .content .nav-menu-items .item:hover {
+  
+    background-color: var(--gradient-color4) ;
 }
 
 #menu .content .nav-menu-items .item a {
@@ -247,3 +269,76 @@
 #menu .content .nav-menu-items .item:not(.active):hover{
     color: rgb(127, 127, 127);
 }
+
+
+.icon-container{
+    position: relative;
+    display: inline-block; /* Ensures proper alignment */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Pseudo-element for circular background */
+.icon-container::before {
+    cursor: pointer;
+    content: ""; /* Empty content for the circle */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 0; /* Start with no size */
+    height: 0; /* Start with no size */
+    background-color: #ff76442f;
+    ; /* Semi-transparent white */
+    border-radius: 50%; /* Makes it circular */
+   /* Smooth scaling and opacity transition */
+  }
+  
+  /* Hover effect for the container */
+  .icon-container:hover::before {
+    width: 44px; /* Final width of the circle */
+    height: 44px; /* Final height of the circle */
+    transform: translate(-50%, -50%) scale(1); /* Scale up to full size */
+    cursor: pointer;
+  }
+
+  .bulbIcon{
+    cursor: pointer;
+  }
+
+
+
+
+
+   
+
+
+#menu .content #pill{
+
+    position: absolute;
+    left: 0px;
+    background-color: var(--bg-color5);
+    border-radius: 2rem;
+    transition: left .5s ease, width .5s ease;
+   
+    background: 
+    linear-gradient(180deg,var(--gradient-color4) 0%, var(--gradient-color3) 61%, var(--gradient-color4) 100%);
+    
+    box-shadow: 
+    0.5px 0.5px 1px var(--shadow-color1), /* Outer shadow for surface cut */
+    0px 1px 2px var(--shadow-color2),     /* Mid-level shadow */
+    0px 2px 4px var(--shadow-color3);
+
+    /* Button shape and spacing */
+    border: 1px solid var(--text-color3);
+    border-radius: 100px;
+    padding: 10px 20px;
+
+    /* Text styling */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between text and icon if needed */
+}
+
