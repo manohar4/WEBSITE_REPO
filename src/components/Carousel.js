@@ -1,6 +1,7 @@
 
 import '../css/Global.css'
 import * as FiIcons from 'react-icons/fi';
+import * as FaIcons  from "react-icons/fa";
 import { useState } from 'react';
 import FullImage from '../components/FullImage';
 import Lottie from '../assets/lottie.gif'
@@ -76,14 +77,15 @@ export default function Carousel(props) {
             }
         </div>
         <div className='controlGroup' style={{display:"flex",margin: "1rem auto",flexDirection:"row",justifyContent:"space-between",marginTop:"0.5rem",width:props.elementWidth}}>
-            <button className='backButton' onClick={()=>{onLeftClick()}} >
-                 <FiIcons.FiArrowLeft className='backIcon' style={{fontSize:"24px"}} ></FiIcons.FiArrowLeft>
-            </button>
+            <button className='fillBtn' style={{margin:"0rem"}} onClick={()=>{onLeftClick()}} >
+                 <FaIcons.FaArrowAltCircleLeft className='fillbtn' style={{fontSize:"24px"}} color='var( --text-color2)'/> 
+          </button>
            
             <p>{currentURL+1+"/"}{imageURLS.length}</p>
 
-            <button className='backButton'  onClick={()=>{onRightClick()}}  >
-                  <FiIcons.FiArrowRight className='backIcon' style={{fontSize:"24px"}} ></FiIcons.FiArrowRight>
+            <button className='fillBtn' style={{margin:"0rem"}}   onClick={()=>{onRightClick()}}  >
+
+                  <FaIcons.FaArrowAltCircleRight className='fillbtn' style={{fontSize:"24px"}} color='var( --text-color2)'/> 
             </button>
         </div>
         {isImgeOpen && <FullImage handleClose={toggleFullImagePopup} imgSrc={imgSrc}/>}

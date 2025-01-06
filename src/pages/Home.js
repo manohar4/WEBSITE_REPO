@@ -138,7 +138,7 @@ export default function Home() {
                
                     <div className='intro'>   
                         <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
-                        <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. Currently, I'm a part of the design team at  <a className='link' target='_blank' rel="noreferrer" href='http://agilesolutions.com/'> Agile Solutions</a> where I continue to drive successful design projects.</p>
+                        <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. </p>
                     </div>
                     <img  style={{width:"200px", height:"200px"}} src={handlight} alt="korean Love symbol"></img>
 

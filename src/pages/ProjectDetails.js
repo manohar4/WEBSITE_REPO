@@ -5,6 +5,7 @@ import './../App.css'
 import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
+import * as FaIcons  from "react-icons/fa";
 import {FetchProjectsDetails} from '../helper/Context' 
 import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
@@ -334,13 +335,14 @@ export default function ProjectDetails() {
 
                        
                        
-                        <Link onClick={()=>{window.scrollTo(0, 0);}} to={'/ProjectDetails/'+ previousProjectID} className='fillBtn pBtn' style={{float: "left",display:indexOfCurrentPage=== 0?"none":"unset"}} >
-                             <span style={{fontSize:"16px", transform: "rotate(180deg)"}}>⇦</span> Previous Project
+                        <Link onClick={()=>{window.scrollTo(0, 0);}} to={'/ProjectDetails/'+ previousProjectID} className='fillBtn pBtn' style={{padding: "0.4rem 0.8rem 0.4rem 0.4rem", float: "left",display:indexOfCurrentPage=== 0?"none":"flex"}} >
+                            <FaIcons.FaArrowAltCircleLeft style={{fontSize:"24px"}} color='var( --text-color2)'/> 
+                             Previous Project
                              </Link>
                             
                                
-                                <Link onClick={()=>{window.scrollTo(0, 0);}}  to={'/ProjectDetails/'+ nextProjectID}  style={{float: "right",display:indexOfCurrentPage === projectsDetailsData.length-1?"none":"unset"}} className='fillBtn nBtn'>
-                             Next Project <span style={{fontSize:"16px"}}>⇨</span> 
+                                <Link onClick={()=>{window.scrollTo(0, 0);}}  to={'/ProjectDetails/'+ nextProjectID}  style={{padding: "0.4rem 0.4rem 0.4rem 0.8rem",float: "right",display:indexOfCurrentPage === projectsDetailsData.length-1?"none":"flex"}} className='fillBtn nBtn'>
+                             Next Project  <FaIcons.FaArrowAltCircleRight style={{fontSize:"24px"}} color='var( --text-color2)'/>
                              </Link>
                            
                            

@@ -343,3 +343,15 @@
     gap: 8px; /* Space between text and icon if needed */
 }
 
+
+.gradient-blur {
+    position: fixed;
+    width: 100vw; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    background: transparent;
+    backdrop-filter: blur(36px);
+    mask-image: linear-gradient(to bottom, black, rgb(0 0 0 / 60%), #00000000);
+    -webkit-mask-image: linear-gradient(to bottom, black, rgb(0 0 0 / 60%), #00000000);
+    z-index: 1;
+  }
+

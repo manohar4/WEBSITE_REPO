@@ -70,7 +70,7 @@ var emojiString,emojiOutput;
                                     return(
                                     <div key={index} className='writingItem' 
                                     onClick={()=>{ window.open(item.link); }}>
-                                      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.8rem"}}>
+                                      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.rem"}}>
                                           <span style={{fontSize:"16px"}}role="img">
                                             {emojiOutput }
                                           </span>

@@ -76,7 +76,7 @@ useEffect(()=>{
         setSelectedChild(3);
        
     }
-    else if(selectionPath === 'littleThings' || selectionPath === 'LittleThings'){
+    else if(selectionPath === 'littleThings' || selectionPath === 'LittleThings' || selectionPath === 'Littlethings' ){
         updateNavSelection(4);
         setSelectedChild(4);
        
@@ -251,7 +251,10 @@ else{
     return(
 
         <>
+        <div class="gradient-blur"></div>
         <nav className={'nav-menu'}>
+        
+
             <div className='logo'>
                 <a style={{display:"unset"}} href="https://www.manoharmanu.in"><img style={{width:"1.6rem",height:"1.6rem",borderRadius:"4px"}} src={LogoAvatar} alt="My Notion Avatar"></img></a>
                 <h3>Manohar Manu</h3>    

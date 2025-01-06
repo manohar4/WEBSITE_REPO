@@ -223,6 +223,10 @@ background-color: red;
 
 }
 
+.primaryBtn:hover svg{
+  color: var(--text-color1);
+}
+
 .fillBtn{
   background-color: var(--text-color3);
   
@@ -251,6 +255,10 @@ background-color: red;
   align-self: center;
 }
 
+.fillBtn:hover svg{
+  fill: var(--text-color1) !important;
+}
+
 .backButton{
   background-color: transparent;
       display:flex;
@@ -260,14 +268,15 @@ background-color: red;
       padding:0.2rem 0.5rem;
       border-radius: 0.25rem;
       border: 1px  solid var(--text-color5);
+    
 }
-
-
-
-
 
 .backButton:hover{
   background-color: var(--text-color2);
+}
+
+.backButton:hover svg{
+  color: var(--text-color1);
 }
 
 body .spline-watermark{
