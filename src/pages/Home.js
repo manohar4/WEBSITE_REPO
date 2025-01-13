@@ -1,10 +1,25 @@
-import React, { useEffect,useState } from 'react'
-import { Helmet } from "react-helmet";
-import './../App.css'
-import './../css/Home.css'
-import './../css/Global.css'
+/**
+ * Home Component
+ * Main landing page component that displays personal portfolio information
+ * Includes sections for experience, education, location, and social media
+ * Features responsive design and animations
+ */
+
+// ===== Core Dependencies =====
+import React, { useEffect, useState } from 'react'
+import { Helmet } from "react-helmet";  // For SEO and document head management
+
+// ===== Stylesheet Imports =====
+import './../App.css'        // Global application styles
+import './../css/Home.css'   // Home component specific styles
+import './../css/Global.css' // Shared global styles
+
+// ===== Asset Imports =====
+// Location images for theme switching
 import Location_DarkMode from'../assets/Location_DarkMode.png';
 import Location_LightMode from'../assets/Location_LightMode.png';
+
+// Certification and company logos
 import yale from '../assets/Certifications/yale.png';
 import IDF from '../assets/Certifications/idf.jpeg';
 import IITG from '../assets/Certifications/IITG.png';
@@ -13,14 +28,15 @@ import Agile from '../assets/Certifications/Agile.png';
 import Vitech from '../assets/Certifications/vitech.jpg';
 import Incture from '../assets/Certifications/Incture.jpeg';
 import Persistent from '../assets/Certifications/Persistent.png';
-import  Aos from 'aos';
-import 'aos/dist/aos.css';
 
+// ===== Animation Library =====
+import Aos from 'aos';           // Animate on scroll library
+import 'aos/dist/aos.css';       // AOS styles
 
+// ===== Component Imports =====
 import Header from '../components/Header';
-import * as GiIcons from 'react-icons/gi';
-
-import * as FaIcons from 'react-icons/fa';
+import * as GiIcons from 'react-icons/gi';    // Game icons
+import * as FaIcons from 'react-icons/fa';    // Font Awesome icons
 import handlight from '../assets/handsLight.png';
 import SubmitFrom from '../components/submitForm';
 import FullImage from '../components/FullImage';
@@ -69,8 +85,6 @@ export default function Home() {
 
     useEffect(()=>{
 
-       
-        
         window.scrollTo(0, 0);
         if(window.innerWidth<1024){
             document.getElementsByClassName('home')[0].style.marginLeft='0px';
@@ -114,19 +128,19 @@ export default function Home() {
             <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
 
             <Header back={back} backTo="/" headerTitle={
-                                                            <div style={{width:"100%",display:"flex",justifyContent: "space-between"}}>
-                                                                
-                                                                <p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p>                
-                                                                {/* <div style={{transform:"scale(0.8)"}}>
-                                                                    <div className="button b2" id="button-18">
-                                                                        <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
-                                                                    <div className="knobs">
-                                                                        <span></span>
-                                                                    </div>
-                                                                        <div className="layer"></div>
-                                                                    </div>
-                                                                </div> */}
-                                                            </div>
+                <div style={{width:"100%",display:"flex",justifyContent: "space-between"}}>
+                    
+                    <p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p>                
+                    {/* <div style={{transform:"scale(0.8)"}}>
+                        <div className="button b2" id="button-18">
+                            <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
+                        <div className="knobs">
+                            <span></span>
+                        </div>
+                            <div className="layer"></div>
+                        </div>
+                    </div> */}
+                </div>
              }></Header>         
                             
                           
@@ -150,7 +164,7 @@ export default function Home() {
                 </div>
                
 
-                <div data-aos="fade-up"  data-aos-offset="200" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="100" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
                         <div className='expereince-lineitems'>
                             <h6 className='subTitle'>EXPERIENCES</h6>
@@ -292,7 +306,7 @@ export default function Home() {
                    
                 </div> 
 
-                <div data-aos="fade-up"  data-aos-offset="400" className='location'>
+                <div data-aos="fade-up"  data-aos-offset="200" className='location'>
                 <h6 className='subTitle'>FROM WHERE</h6>
                 <div className='location-row'>
                 <img src={location} onClick={(event)=>{toggleFullImagePopup(event)}}  className='locationImg' alt="Vizag Location" ></img>
@@ -301,7 +315,7 @@ export default function Home() {
                 </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-offset="500" className='socialMedia'>
+                <div data-aos="fade-up" data-aos-offset="200" className='socialMedia'>
                     <h6 className='subTitle'>SOCIAL MEDIA</h6>
                     <div className='social-row'>
                         <div className='social-lineitems'>
@@ -334,7 +348,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div data-aos="fade-up"  data-aos-offset="600"  className="blockquote-wrapper">
+                <div data-aos="fade-up"  data-aos-offset="300"  className="blockquote-wrapper">
   <div className="blockquote">
     
   <div style={{display:"flex",backgroundColor:"var(--text-color3)",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>

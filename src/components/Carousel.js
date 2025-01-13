@@ -1,6 +1,5 @@
 
 import '../css/Global.css'
-import * as FiIcons from 'react-icons/fi';
 import * as FaIcons  from "react-icons/fa";
 import { useState } from 'react';
 import FullImage from '../components/FullImage';

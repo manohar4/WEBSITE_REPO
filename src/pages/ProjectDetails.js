@@ -6,6 +6,8 @@ import './../css/Global.css'
 import './../css/ProjectDetails.css'
 // import * as FiIcons from 'react-icons/fi'
 import * as FaIcons  from "react-icons/fa";
+import { TiArrowBack } from "react-icons/ti";
+
 import {FetchProjectsDetails} from '../helper/Context' 
 import { useParams} from 'react-router-dom'
 import Prism from 'prismjs';
@@ -111,6 +113,14 @@ export default function ProjectDetails() {
                 <div className='row'>
                     <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                     <div style={{alignItems:"center"}}>
+                        <div style={{display:"flex",alignItems:"center",gap:"1rem",marginBottom:"2rem "}}>
+                            <Link to="/works" >
+                                <button style={{margin:"0rem",padding:"0.5rem 0.8rem",borderRadius:"2rem",top:"1rem",left:"1rem",zIndex:"1000"}} className='fillBtn'> <TiArrowBack className='backIcon' style={{color:'var( --text-color0)'}}/>Back</button>
+                            </Link>
+                            <h2 style={{margin:"0rem"}}> {projectTitle}</h2>
+                        </div>
+                    
+                   
                     <Header back={back} backTo="/works" headerTitle={<h2> {projectTitle}</h2>}></Header> 
 
                         { 
@@ -221,8 +231,8 @@ export default function ProjectDetails() {
                             }
                             else if(item.elementType === 'button'){
                                 return (
-                                <button key={index} className='fillBtn' onClick={()=>{window.open(item.elementData[1])}} >
-                                    {item.elementData[0]}
+                                <button key={index} className='fillBtn' onClick={()=>{window.open(item.elementData[1])}} style={{textTransform:"uppercase",margin:"auto"}} >
+                                    {item.elementData}
                                 </button>       
                                 )
                             }
