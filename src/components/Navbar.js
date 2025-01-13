@@ -49,10 +49,6 @@ const [selectedChild,setSelectedChild]=  useState(null);
 
 useEffect(()=>{
 
-   
-
-
-
 
     if(document.documentElement.getAttribute('data-theme') === 'light'){
         setDarkChecked(true);
@@ -81,7 +77,7 @@ useEffect(()=>{
         setSelectedChild(4);
        
     }
-    else if(selectionPath === 'OtherActivities' || selectionPath === 'DesignLibrary'){
+    else if(selectionPath === 'OtherActivities' || selectionPath === 'DesignLibrary' || selectionPath === "otherActivities"){
         updateNavSelection(5);
         setSelectedChild(5);
     }
@@ -92,7 +88,10 @@ useEffect(()=>{
 
 
     function updateNavSelection(index){
-        //setting default selected nav item - selected
+
+
+        if(!smallerDeviceCheck){
+             //setting default selected nav item - selected
            const PILL = document.querySelector('#pill');
            const MENU_LINKS = document.querySelectorAll('.item');
            const MENULINKSPARENT = document.querySelector('#items');
@@ -116,6 +115,11 @@ useEffect(()=>{
                });
                };
               setPill();
+
+        }
+       else{
+        return;
+       }
 
    }
 
@@ -165,7 +169,7 @@ ripple.style.animation = "none";
     setTimeout(() => {
         document.body.style.backgroundColor = "#0d0d0d";
         ripple.style.animation = "none";
-        document.documentElement.setAttribute('data-theme','');
+        document.documentElement.setAttribute('data-theme','dark');
     event.target.title = 'Dark';
     }, 500);
     setDarkChecked(false);
@@ -231,7 +235,7 @@ if(smallerDeviceCheck){
                             };
                             return(
                                 <li key={index} className={ index === selectedChild ?item.mobileselectedCName:item.mobileCname} >
-                                    <Link  to={item.path} onClick={event =>changeStyle(event,index)}>
+                                    <Link  to={item.path} onClick={event =>changeStyle(event,index)} style={{textAlign:"center"}}>
                                     <div>{item.icon}</div>
                                     <span>{item.mobileTitle}</span>
                                     </Link>

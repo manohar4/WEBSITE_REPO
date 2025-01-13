@@ -31,7 +31,7 @@ export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
-    const [location,setLocation] = useState(Location_DarkMode);
+    const [location,setLocation] = useState(Location_LightMode);
 
     useEffect(()=>{
         Aos.init({duration:1600,once:true});
@@ -85,17 +85,14 @@ export default function Home() {
         }
 
 
-        // if(document.documentElement.getAttribute('data-theme') === 'light'){
+        if(document.documentElement.getAttribute('data-theme') === 'light'){
 
-        //     setLocation(Location_LightMode);
-
-        //     document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0FF"
-        //  }
-        //  else{
-        //     setLocation(Location_DarkMode);
-
-        //     document.getElementsByClassName("toggleMode")[0].innerHTML = "Dark Mode: 0N"
-        //  }
+            setLocation(Location_DarkMode);
+         }
+         else{
+            setLocation(Location_LightMode);
+            
+         }
 
     },[])
     
@@ -138,13 +135,13 @@ export default function Home() {
                
                     <div className='intro'>   
                         <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
-                        <p>With five years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. </p>
+                        <p>With six years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. </p>
                     </div>
                     <img  style={{width:"200px", height:"200px"}} src={handlight} alt="korean Love symbol"></img>
 
                 </div>
 
-                <div data-aos="fade-up" style={{display:"flex",gap:"1rem",marginTop:"1rem", marginBottom:"3rem"}}>
+                <div data-aos="fade-up" style={{display:"flex",gap:"1rem",marginTop:"0rem", marginBottom:"8rem"}}>
                          <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">
                             <button  style={{margin:"0rem",padding:"0.5rem 0.8rem",borderRadius:"2rem"}} className='fillBtn'> <FaIcons.FaHandshake className='backIcon' style={{color:'var( --text-color0)'}}/>Get In Touch</button>
                         </a>
@@ -232,7 +229,7 @@ export default function Home() {
                    
                 </div>
                 
-                <div data-aos="fade-up"  data-aos-offset="300" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="100" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                    
                 <div className='pastExpereince' style={{marginBottom:'0px'}}>
                     <div className='expereince-lineitems'>
@@ -304,7 +301,7 @@ export default function Home() {
                 </div>
                 </div>
 
-                <div data-aos="fade-up" className='socialMedia'>
+                <div data-aos="fade-up" data-aos-offset="500" className='socialMedia'>
                     <h6 className='subTitle'>SOCIAL MEDIA</h6>
                     <div className='social-row'>
                         <div className='social-lineitems'>
@@ -337,7 +334,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div data-aos="fade-up" className="blockquote-wrapper">
+                <div data-aos="fade-up"  data-aos-offset="600"  className="blockquote-wrapper">
   <div className="blockquote">
     
   <div style={{display:"flex",backgroundColor:"var(--text-color3)",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>

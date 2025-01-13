@@ -142,16 +142,202 @@
 
 
 .littleThingsCard{
-
-    background-color: var(--bg-color4);
+   
     border-radius: 0.5rem;
     margin-bottom:2rem;
     padding: 1rem;
     display: grid;
     flex-direction: row;
     gap:0.6rem;
-    border:0.5px var(--bg-color4) solid;
+    
+    
 }
+
+.littleThingsCard:hover{
+    background-color: var(--bg-color4);
+}
+
+
+
+
+.littlethings-card-grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.littlethings-cardGroup{
+    background-color: white;
+    border-radius: 0.54rem;
+  
+    margin: 10px;
+
+    width: calc(33.33% - 20px); /* For three cards */
+    transition: transform 0.2s; /* Smooth hover effect */
+
+    
+}
+
+.littlethings-card{
+    background-color: var(--bg-color4);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+    border: 0.5px var(--bg-color5) solid;
+}
+
+.littlethings-card:hover{
+    background-color: var(--bg-color4);
+    border: 0.5px var(--bg-color5) solid;
+}
+
+
+
+
+.littlethings-cardGroup {
+    position: relative;
+    background:linear-gradient(to bottom right, #ff7644 47%, #bd3706 53%)
+  }
+  
+    .littlethings-cardGroup:after {
+      content: '';
+      width:8px;
+      height: 10px;
+      position: absolute;
+      transition: all .15s ease;
+      margin-right: 3.3px;
+      margin-bottom: 2px;
+    }
+
+    .littlethings-cardGroup:before{
+        content: '';
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        transition: all .15s ease;
+        margin-top: 4px;
+        margin-left: 1px;
+    }
+  
+    .littlethings-cardGroup:before {
+      top: 0;
+      left: 0;
+      transform-origin: top left;
+      background-color: #ff7644;
+      transform: rotate(-45deg) scale(0);
+    }
+  
+    .littlethings-cardGroup:after {
+      right: 0;
+      bottom: 0;
+      transform-origin: bottom right;
+      background-color: #bd3706;
+      transform: rotate(45deg) scale(0);
+    }
+  
+    .littlethings-card {
+      transform: translate(0, 0);
+      transition: all .15s ease;
+      position: relative;
+      z-index: 10;
+      
+    }
+  
+  .littlethings-cardGroup:hover .littlethings-card{
+    transform: translate(6px, -6px);
+  }
+  
+  .littlethings-cardGroup:hover:before {
+    transform: rotate(-45deg) scale(1);
+  }
+  
+  .littlethings-cardGroup:hover:after {
+    transform: rotate(46deg) scale(1);
+  }
+
+
+  .description-container {
+    position: relative;
+    overflow: hidden; /* Hides overflow content */
+}
+
+.description {
+    line-height: 1.5em; /* Adjust line height as needed */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* Limits the text to 3 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.show-more {
+    display: none; /* Initially hide the button */
+}
+
+
+
+
+/* New post layout */
+
+
+
+
+
+
+  .littleCardList{
+    position: sticky;
+    top: 80px;
+    max-width: 30%;
+    display: inline-block;
+  }
+
+  .littleCardDetails {
+    max-width: 68%;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 2%;
+  }
+  
+  .littleCardTitle {
+    cursor: pointer;
+    padding: 10px;
+    vertical-align: top;
+    color: var(--text-color2);
+    display: flex;
+    border-left:2px solid var(--text-color2);
+
+  }
+  .littleCardTitle.selected {
+   
+    color: var(--text-color1); /* Change text color for better contrast */
+    border-left:2px solid var(--text-color4);
+ 
+  }
+  
+  .littleCardTitle:hover {
+    cursor: pointer;
+    color: var(--text-color1); 
+   
+  }
+  
+  
+  
+  .littleCard {
+    margin-bottom: 50px;
+  }
+  
+  .littleCard img {
+    max-width: 100%;
+  }
+
+
+
+
 
 
 .ender{

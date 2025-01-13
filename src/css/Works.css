@@ -18,6 +18,9 @@
     justify-content: space-between;
     transition: box-shadow 0.3s ease;
     border: 0.5px var(--bg-color5) solid;
+
+
+    
 }
 
 .card:hover{
@@ -26,16 +29,9 @@
 
 
 
-
-.cardGroup{
-    border-radius: 0.54rem;
-    margin-bottom: 1rem;
-}
-
-
-
-
 .cardGroup {
+  border-radius: 0.54rem;
+    margin-bottom: 1rem;
     position: relative;
     background:linear-gradient(to bottom right, #ff7644 47%, #bd3706 53%)
   }
