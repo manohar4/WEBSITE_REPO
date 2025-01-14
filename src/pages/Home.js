@@ -148,8 +148,8 @@ export default function Home() {
                 <div data-aos="fade-up" id="splineFlex" className='heroContainer' >
                
                     <div className='intro'>   
-                        <p >Hey, I'm Manohar. I'm a  <span className='highlighter'> UX and interface designer</span> based out of Bangalore, India.</p>
-                        <p>With six years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter'> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. </p>
+                        <p >Hey, I'm Manohar. I'm a  <span className='highlighter' style={{color:"var(--text-color1)", fontWeight:'500'}}> UX and Interface designer</span> based out of Bangalore, India.</p>
+                        <p>With six years of experience in the field, I've honed my skills in designing enterprise products, leading design teams, and building B2B applications on  <span className='highlighter' style={{color:"var(--text-color1)", fontWeight:'500'}}> SAP</span>. My expertise extends to a variety of industries, including manufacturing, ecommerce, and more. </p>
                     </div>
                     <img  style={{width:"200px", height:"200px"}} src={handlight} alt="korean Love symbol"></img>
 
@@ -164,7 +164,7 @@ export default function Home() {
                 </div>
                
 
-                <div data-aos="fade-up"  data-aos-offset="100" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="100" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color2)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
                         <div className='expereince-lineitems'>
                             <h6 className='subTitle'>EXPERIENCES</h6>
@@ -243,7 +243,7 @@ export default function Home() {
                    
                 </div>
                 
-                <div data-aos="fade-up"  data-aos-offset="100" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--text-color8)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="100" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color2)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                    
                 <div className='pastExpereince' style={{marginBottom:'0px'}}>
                     <div className='expereince-lineitems'>
@@ -340,10 +340,10 @@ export default function Home() {
                             <a target='_blank' rel="noreferrer" className='link' href='https://www.linkedin.com/in/manoharmanu4444/'>Connect</a>
                         </div>
                         <div className='social-lineitems'>
-                            <h4 >Email </h4>
+                            <h4 >manoharmanu4444@gmail.com </h4>
                             <div style={{flexGrow:1,borderBottom:'dotted 2px var(--text-color3)'}}></div>
                
-                                       <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">Get In Touch</a>
+                                       <a rel="noreferrer" className='link' href="mailto:manoharmanu4444@gmail.com" target="_blank">Write to me</a>
                         </div>
                     </div>
                 </div>
