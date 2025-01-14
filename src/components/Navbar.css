@@ -249,9 +249,10 @@
     transition: 0.5s ease;
 }
 
-#menu .content .nav-menu-items .item:hover {
+#menu .content .nav-menu-items .item:hover span{
   
-    background-color: var(--gradient-color4) ;
+   color: var(--text-color4);
+   
 }
 
 #menu .content .nav-menu-items .item a {
