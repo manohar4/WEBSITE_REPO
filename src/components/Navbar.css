@@ -19,13 +19,22 @@
     transition: 850ms;
     padding: 0.5rem;
     z-index: 1000;
+
   
 }
-
-/* .nav-menu-items{
+.nav-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    flex: 32;
-} */
+    height: 1px;
+    background: linear-gradient(270deg, 
+        var(--bg-color1) 0%, 
+        var(--bg-color6) 50%, 
+        var(--bg-color1) 100%
+    );
+}
 
 .nav-menu.active {
     left: 0;
@@ -83,11 +92,12 @@
 
 .logo{
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex: 1;
     display: flex;
     color: var(--text-color0) ;
-    padding: 8px;
+    padding: 4px 8px;
+    margin-left: 1rem;
 }
 
 /* ------------Mobile CSS Starts -------------------- */
@@ -171,6 +181,10 @@
     font-weight: 400;
 }
 
+.nav_Icons{
+    color:var(--text-color4);
+}
+
 .musicIcon{
     font-size:1.5rem;
     width: 3rem;
@@ -202,40 +216,34 @@
 /* -------- New Code for Menu List ------------- */
 #menu {
     color: var(--text-color1);
+    position: fixed;
+    top: 94vh; /* Keeps it near the bottom of the page */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    z-index: 1000;
+    margin-bottom: 10rem; /* Adjust spacing from the bottom */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 #menu .content {
     position: relative;
+    background: var(--bg-color7);    
+    backdrop-filter: saturate(60%) blur(36px);
+    -webkit-backdrop-filter: saturate(60%) blur(36px);
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--bg-color6) ;
 }
 
 #menu .content .nav-menu-items{
     display: flex;
-    background-color: var(--bg-color1);
     border-radius: 2rem;
     padding: 2px;
 
-     /* Shadows for depth and lighting */
-     box-shadow: 
-     inset 0.5px 0.5px 1px var(--shadow-color1), /* Inner shadow for surface cut */
-  inset 0px 1px 2px var(--shadow-color2),     /* Mid-level inner shadow */
-  inset 0px 2px 4px var(--shadow-color3);     /* Deeper inner shadow for depth */
-
-
-  box-shadow: 
-   0.5px 0.5px 1px var(--shadow-color1), /* Inner shadow for surface cut */
- 0px 1px 2px var(--shadow-color2),     /* Mid-level inner shadow */
- 0px 2px 4px var(--shadow-color3);  
-  /* Subtle gradient background */
-  
-  background: rgb(0,0,0);
-  background: 
-  /* linear-gradient(180deg,rgb(21, 21, 21) 0%, rgb(8, 8, 8) 61%,  rgb(10, 10, 10)  100%); */
-  linear-gradient(180deg, var(--bg-color1) 0%, var(--bg-color1) 100%);
-
-
-
-    /* Button shape and spacing */
-    border: 1px solid var(--text-color3);
+    border-radius: 2rem;
 }
 
 #menu .content .nav-menu-items .item{
@@ -247,29 +255,46 @@
     cursor: pointer;
     z-index: 1;
     transition: 0.5s ease;
-}
+    .nav_Icons {
+        color: var(--text-color1);
+    }
+    span{
+        color: var(--text-color1);
+    }
 
-#menu .content .nav-menu-items .item:hover span{
-  
-   color: var(--text-color4);
    
 }
 
+#menu .content .nav-menu-items .item:hover {
+
+    .nav_Icons {
+        color: var(--bg-color5);
+    }
+    span{   
+        color: var(--bg-color5);
+    }
+}
+
+
+
+
 #menu .content .nav-menu-items .item a {
+    align-items: center;
+    display: flex;
+    vertical-align: middle;
     color: var(--text-color1);
+    svg {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 #menu .content .nav-menu-items .item a span{
     margin-left: 4px;
 }
 
-#menu .content .nav-menu-items .item.active{
-    color: #fff;
-}
 
-#menu .content .nav-menu-items .item:not(.active):hover{
-    color: rgb(127, 127, 127);
-}
+
 
 
 .icon-container{
@@ -317,20 +342,15 @@
     height: 36px;
     position: absolute;
     left: 0px;
-    background-color: var(--bg-color5);
-    border-radius: 2rem;
-    transition: left .5s ease, width .5s ease;
-   
-    background: 
-    linear-gradient(180deg,var(--gradient-color4) 0%, var(--gradient-color3) 61%, var(--gradient-color4) 100%);
-    
-    box-shadow: 
-    0.5px 0.5px 1px var(--shadow-color1), /* Outer shadow for surface cut */
-    0px 1px 2px var(--shadow-color2),     /* Mid-level shadow */
-    0px 2px 4px var(--shadow-color3);
 
+
+    transition: left .5s ease, width .5s ease;
+    z-index: -1;
+   
+    
+   
     /* Button shape and spacing */
-    border: 1px solid var(--text-color3);
+    border: 1px solid var(--bg-color6);
     border-radius: 100px;
     padding: 10px 20px;
 
@@ -342,6 +362,12 @@
     align-items: center;
     justify-content: center;
     gap: 8px; /* Space between text and icon if needed */
+
+    background: linear-gradient(180deg, var(--gradient-color4) 0, var(--gradient-color3) 61%, var(--gradient-color4) 100%);
+    border: 1px solid var(--text-color3);
+    border-radius: 2rem;
+    border-radius: 100px;
+    box-shadow: .5px .5px 1px var(--shadow-color1), 0 1px 2px var(--shadow-color2), 0 2px 4px var(--shadow-color3);
 }
 
 

@@ -121,7 +121,7 @@ export default function Home() {
         <meta name="keywords" content="manoharmanu,manoharmanu.in,manu,manohar,manohar ui/ux,manoharmanu ui/ux,ui/ux designer in bagalore,ui/ux,ui/ux designer,ui/ux developer,ui/ux architect,ui/ux artist,ui/ux analyst,ui/ux app design,about ui/ux developer,all about ui/ux design,best ui ux design,best ui ux designer,cv ui ux designer,ui/ux designer job description" />
 
     </Helmet>
-        <div class="blur-overlay"></div>
+        
         
         <div className='col'>
             <div className='row'>
@@ -164,7 +164,7 @@ export default function Home() {
                 </div>
                
 
-                <div data-aos="fade-up"  data-aos-offset="100" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color2)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="100" className="overview" style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color7)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                     <div className='pastExpereince' style={{marginBottom:'0px'}}>
                         <div className='expereince-lineitems'>
                             <h6 className='subTitle'>EXPERIENCES</h6>
@@ -243,7 +243,7 @@ export default function Home() {
                    
                 </div>
                 
-                <div data-aos="fade-up"  data-aos-offset="100" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color2)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="200" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color7)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                    
                 <div className='pastExpereince' style={{marginBottom:'0px'}}>
                     <div className='expereince-lineitems'>
@@ -351,7 +351,7 @@ export default function Home() {
                 <div data-aos="fade-up"  data-aos-offset="300"  className="blockquote-wrapper">
   <div className="blockquote">
     
-  <div style={{display:"flex",backgroundColor:"var(--text-color3)",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
+  <div style={{display:"flex",padding:"1rem",borderRadius:"4px",justifyContent:"flex-start",alignItems:"center",gap:"4px"}}>
                                             <span style={{fontSize:"24px"}}role="img">
                                               {String.fromCodePoint(0x1F344)}
                                             </span>

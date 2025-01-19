@@ -11,7 +11,7 @@
 }
 
 .col{
-    max-width: 864px;
+    max-width: min(864px, 100vw);
     display: flex;
     justify-content: flex-start;
     margin: 3rem 1rem 8rem 1rem;
@@ -154,7 +154,7 @@
 }
 
 .littleThingsCard:hover{
-    background-color: var(--bg-color4);
+    background-color: var(--bg-color3);
 }
 
 
@@ -347,24 +347,30 @@
 /* Ripple styling */
 .ripple {
     position: fixed; /* Fixed to viewport for full-screen coverage */
-      top: 0; /* Start from center */
-      left: 100%; /* Start from center */
+      top: 94vh; /* Start from center */
       width: 40px; /* Initial size */
       height: 40px; /* Initial size */
       background-color: rgba(192, 37, 37, 0.5); /* Semi-transparent color */
       border-radius: 50%; /* Makes it circular */
       transform: translate(0%, -50%) scale(0); /* Center and start at scale 0 */
       pointer-events: none; /* Prevent blocking interactions */
+      z-index: 100;
   }
   
   /* Ripple animation */
   @keyframes ripple-animation {
     0% {
         transform: translate(0, -50%) scale(0); /* Start small */
+        opacity: 100%;
+        backdrop-filter: saturate(180%) blur(36px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
          /* Slightly visible at start */
       }
       100% {
-        transform: translate(-200%, -50%) scale(300); /* Scale up to cover viewport */
+        transform: translate(-100vh, -50%) scale(200); /* Scale up to cover viewport */
+        opacity: 100%;
+        backdrop-filter: saturate(90%) blur(20px);
+        -webkit-backdrop-filter: saturate(0%) blur(20px);
          /* Fade out at the end */
       }
   }

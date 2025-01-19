@@ -9,6 +9,7 @@ import ForestPic from "../assets/BGMUSIC/albumCovers/Forest.png"
 import CloudsPic from "../assets/BGMUSIC/albumCovers/Clouds.png"
 import * as IoIcons from 'react-icons/io5';
 import { RiLightbulbFlashFill, RiLightbulbFlashLine } from "react-icons/ri";
+
 import * as FaIcons from 'react-icons/fa';
 import Rain from '../assets/BGMUSIC/Rain.mp3'
 import Waves from '../assets/BGMUSIC/Waves.mp3'
@@ -87,6 +88,22 @@ useEffect(()=>{
     }
 
 
+    window.addEventListener("scroll",()=>{
+        var header = document.querySelector("#headerID");
+        if(window.scrollY>104){
+            document.querySelector('.nav-menu').style.backgroundColor = "var(--bg-color7)";
+            document.querySelector('.nav-menu').style.backdropFilter = "saturate(180%) blur(20px)";
+            document.querySelector('.nav-menu').style.webkitBackdropFilter = "saturate(180%) blur(20px)";
+         }
+         else if(window.scrollY===0){
+             document.querySelector('.nav-menu').style.backgroundColor = "#00000000";
+         }
+        
+    })
+
+   
+
+
     function updateNavSelection(index){
 
 
@@ -98,7 +115,7 @@ useEffect(()=>{
    
            const dimensions = MENU_LINKS[index-1].getBoundingClientRect();
                PILL.style.width = dimensions.width+ 'px';
-               PILL.style.height = 36 + 'px';
+               PILL.style.height = 32 + 'px';
                PILL.style.top = 2.5 + 'px';
                PILL.style.left = dimensions.left - MENULINKSPARENT.getBoundingClientRect().left + 'px';
                PILL.style.paddingRight = 12;
@@ -109,6 +126,7 @@ useEffect(()=>{
                MENU_LINKS.forEach((e, i) => {
                    if (i === selected) {
                    e.classList.add('custom-button');
+                   
                    } else {
                    e.classList.remove('custom-button');
                    }
@@ -127,31 +145,16 @@ useEffect(()=>{
 
 
 
-
-
-// const onPlayClick=()=>{
-   
-//     setPlay(!play);
-//     audio.volume = 0.4;
-
-//     if(play){
-//         setDisabled(false);
-//         document.getElementsByClassName("albumCover")[0].style.animationPlayState="running";
-//         audio.play();
-//     }
-//     else{
-//         setDisabled(true);
-//          document.getElementsByClassName("albumCover")[0].style.animationPlayState="paused";
-//          audio.pause();
-//     }
-// }
-
-
 function darkify(event) {
 
 
 
 const ripple = document.querySelector('.ripple');
+const bulbXPosition = document.querySelector('.icon-container').getBoundingClientRect().x;
+const bulbYPosition = document.querySelector('.icon-container').getBoundingClientRect().y;
+
+ripple.style.top = bulbYPosition + 'px';
+ripple.style.left = bulbXPosition + 'px';
 ripple.style.animation = "none";   
 
 
@@ -197,29 +200,6 @@ ripple.style.animation = "none";
 
 }
 
-// const onPlayNext=()=>{
-    
-//     audioCount++;
-//     if(audioCount === audiosList.length){
-       
-//         audioCount =0;
-//     }
-//     audio.src = audiosList[audioCount];
-//     audio.play();
-
-//     audioCount === 0? setBgMusicImage(RainPic): audioCount === 1?setBgMusicImage(WavesPic):audioCount === 2? setBgMusicImage(ForestPic):setBgMusicImage(CloudsPic);
-
-// }
-
-// const onPlayBack=()=>{
-//     audioCount--;
-//     if(audioCount<0){
-//         audioCount =audiosList.length-1;
-//     }
-//     audio.src = audiosList[audioCount];
-//     audio.play();
-//     audioCount === 0? setBgMusicImage(RainPic): audioCount === 1?setBgMusicImage(WavesPic):audioCount === 2? setBgMusicImage(ForestPic):setBgMusicImage(CloudsPic);
-// }
 
 
 if(smallerDeviceCheck){
@@ -256,63 +236,10 @@ else{
 
         <>
         <div class="gradient-blur"></div>
-        <nav className={'nav-menu'}>
-        
 
-            <div className='logo'>
-                <a style={{display:"unset"}} href="https://www.manoharmanu.in"><img style={{width:"1.6rem",height:"1.6rem",borderRadius:"4px"}} src={LogoAvatar} alt="My Notion Avatar"></img></a>
-                <h3>Manohar Manu</h3>    
-            </div>
-            {/* <ul className='nav-menu-items'>
-                {SideBarData.map((item,index)=>{
-                    const changeStyle = (event,index) => {
-                        setSelectedChild(index);
-                    };
-                    return(
-                        <li key={index} className={ index === selectedChild ?item.selectedCName:item.cName}>
-                            <Link  to={item.path}  onClick={event =>changeStyle(event,index)}>
-                                {item.icon}
-                                <span>{item.title}</span>
-                            </Link>
-                        </li>
-                    )
-                })}
-            </ul> */}
-                
-            {/* <div style={{display:"flex",backgroundColor:"var(--text-color3)",height:"3.5rem",margin:"0rem 0.5rem",borderRadius:"0.5rem", backdropFilter: "blur(5px)",justifyContent: "space-evenly"}}>
-                <div style={{position:"relative"}}>
-                
-                    <img className='albumCover' style={{borderRadius:"10rem",bottom:"1.5rem",width:"4rem",height:"4rem",position:"relative"}}  src={bgMusicImage} alt="cover pic"></img>
-                    <audio id="audio" src={Rain} loop></audio>
-                    <div style={{ width:"100%",position:"absolute",zIndex:"1",top:"0px",fontSize:"12px",color:"var( --text-color0)",textAlign:"center"}}><FaIcons.FaHeadphones style={{fontSize:"14px"}} title="Use Headphones For better Expereince"></FaIcons.FaHeadphones></div>
-
-                </div>
-                <div style={{borderRadius:"4px",display:"flex",justifyContent:"space-between",alignItems:"center",color:"var(--text-color0)"}}>
-
-                    <IoIcons.IoPlayBack    style={disabled ? {pointerEvents: "none", opacity: "0.4"} : {}}   className="musicIcon" onClick={onPlayBack}/>
-                    <IoIcons.IoPlayForward  style={disabled ? {pointerEvents: "none", opacity: "0.4"} : {}}  className="musicIcon" onClick={onPlayNext}/>
-                    <div style={{alignItems: "center", display: "flex"}}>
-                        {
-                        [1].map((item,index)=>{
-                                if(play){
-                                    return(
-                                    <IoIcons.IoPlay key={index} className="musicIcon" onClick={onPlayClick}/>     
-                                    )
-                                    }  
-                                else{
-                                    return(
-                                    <IoIcons.IoStop key={index} className="musicIcon" onClick={onPlayClick}/>   
-                                    )  
-                                }
-                            } 
-                        
-                        )}
-                    </div>
-                    
-                </div>
-            </div> */}
-            <div id="menu" className='nav-menu'>
+        <div id="menu">
                 <div class="content">
+                        
                     <div id="pill"></div>
                     <div id="items" className='nav-menu-items' >
                         { SideBarData.map((item,index)=>{
@@ -325,7 +252,7 @@ else{
                                 const MENULINKSPARENT = document.querySelector('#items');
                                 const dimensions = event.target.parentElement.getBoundingClientRect();
                                 PILL.style.width = 24+  dimensions.width+ 'px';
-                                PILL.style.height = 36 + 'px';
+                                PILL.style.height = 32 + 'px';
                                 PILL.style.top = 2.5 + 'px';
                                 PILL.style.left = dimensions.left -12 -MENULINKSPARENT.getBoundingClientRect().left + 'px';
                                 PILL.style.paddingRight = 12;
@@ -336,6 +263,7 @@ else{
                                 MENU_LINKS.forEach((e, i) => {
                                     if (i === selected) {
                                     e.classList.add('custom-button');
+
                                     } else {
                                     e.classList.remove('custom-button');
                                     }
@@ -347,11 +275,11 @@ else{
                             return(
                                 <li key={index} className={`item`}>
 
-                                    <Link  to={item.path}  onClick={event =>changeStyle(event,index)}  >
+                                    <Link  to={item.path}  onClick={event =>changeStyle(event,index)} >
 
                                         {item.icon}
 
-                                        <span>{item.title}</span>
+                                        <span style={{fontSize:"14px",lineHeight:"16px"}}>{item.title}</span>
 
                                     </Link>
 
@@ -360,26 +288,11 @@ else{
 
                         })} 
                     </div>
-                </div>
-            </div>
-
-            {/* <div style={{flex:1, display:"flex", paddingRight: "1rem"}}>
-                <div className="button b2" style={{marginRight:"unset"}} id="button-18">
-
-                    <input id="darkToggle" onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
-
-                <div className="knobs">
-
-                    <span></span>
-
+              
+                    
                 </div>
 
-                    <div className="layer"></div>
-
-                </div>
-            </div> */}
-
-            <div style={{flex:1, display:"flex", paddingRight: "1rem", alignItems:"center",justifyContent:"end"}}
+                <div style={{flex:1, display:"flex", paddingRight: "1rem", alignItems:"center",justifyContent:"end"}}
                          type="checkbox" checked = {darkChecked}
                         onClick={(event)=>{darkify(event)}} 
                     >
@@ -388,17 +301,27 @@ else{
 
                 <RiLightbulbFlashFill id='bulbonID'
                             className="backIcon bulbIcon" 
-                            style={{ display:"none", color: "#ff7744f0",transform: `scale(1.2)`,marginLeft:"auto"}}
+                            style={{ display:"none", color: "#ff7744f0",transform: `scale(1)`,marginLeft:"auto"}}
                             />
 
                             <RiLightbulbFlashLine id='bulboffID'
                             className="backIcon bulbIcon" 
-                            style={{ color: "#fff",transform: `scale(1.2)`,marginLeft:"auto"}}
+                            style={{ color: "#fff",transform: `scale(1)`,marginLeft:"auto"}}
                             />
                 </div>
          
                 </div>
+            </div>
+
+        <nav className={'nav-menu'}>
+            <div style={{maxWidth:"min(864px,100vw)",width:"864px"}}>
+                <div className='logo'>
+                    <a style={{display:"grid"}} href="https://www.manoharmanu.in"><img style={{width:"1.5rem",height:"1.5rem",borderRadius:"4px"}} src={LogoAvatar} alt="My Notion Avatar"></img></a>
+                    <h4 style={{lineHeight:"1.2rem"}}>Manohar Manu</h4>    
+                </div>
+            </div> 
         </nav>
+        
         </>
     );
 }

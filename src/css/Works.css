@@ -7,9 +7,9 @@
 }
 
 .card{
-    max-width: 864px;
+    max-width: min(864px, 100vw);
     height: 12rem;
-    background-color: var(--bg-color4);
+    background-color: var(--bg-color2);
     border-radius: 0.5rem;
 
     padding: 1rem;
@@ -17,14 +17,10 @@
     flex-direction: row;
     justify-content: space-between;
     transition: box-shadow 0.3s ease;
-    border: 0.5px var(--bg-color5) solid;
-
-
-    
 }
 
 .card:hover{
-    background-color: var(--bg-color4);
+    background-color: var(--bg-color2);
 }
 
 

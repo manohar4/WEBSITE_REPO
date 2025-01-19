@@ -43,9 +43,13 @@ var emojiString,emojiOutput;
                           {
                             writingsListData.map((item,index)=>{
                               return(
-                              <div key={index}>
-                              <h6 style={{marginBottom:"0.5rem"}}>{writingsListData[index].writingGroupName}</h6>
+                                <>
+                                 <h6 style={{marginBottom:"0.5rem"}}>{writingsListData[index].writingGroupName}</h6>
+                              <div key={index} style={{display:"flex",backgroundColor:"var(--bg-color2)",flexDirection:"column",borderRadius:"0.5rem",overflow:"hidden",marginBottom:"1.2rem"}}>
+                             
                               {
+
+                               
                               item.WritingDetails.map((item,index)=>{
                                 const emojiCode= item.emoji;
                                   if(item.linkIcon === "true"){
@@ -70,7 +74,7 @@ var emojiString,emojiOutput;
                                     return(
                                     <div key={index} className='writingItem' 
                                     onClick={()=>{ window.open(item.link); }}>
-                                      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",gap:"0.rem"}}>
+                                      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
                                           <span style={{fontSize:"16px"}}role="img">
                                             {emojiOutput }
                                           </span>
@@ -119,6 +123,8 @@ var emojiString,emojiOutput;
                                     }
                               })}
                              </div>
+
+                             </>
                               )
                             })
                           }

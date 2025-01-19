@@ -46,67 +46,16 @@ export default function DesignLibrary() {
 
     }
    
-    
-    
-
-
-    if(smallerDeviceCheck){
 
         return (
             <div className='DesignLibrary'>
-                <div className='col'>
-                    <div className='row'>
-                       <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
-        
-                       <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
-                        <div style={{display:"flex",flexDirection:"column", width:"100%",gap:"1rem"}}>
-                            <div  className="HeaderFixed" style={{display:"flex",flexDirection:"row", flex:"1",position:"sticky",top:"3rem",zIndex:"100",backgroundColor:"var(--bg-color1)",overflow:"scroll",maxWidth:"94vw"}} >
-                                    {
-                                    designLibraryData.map((item,index)=>{
-                                        return(
-                                            <button className={index === selectCount? selected: "tabButton" } onClick={(event)=>{ onTabClick(event) }} data-order={item.order}  >{item.catergory.split(". ")[1]}</button>
-                                        )}
-                                    )}
-                            </div>
-                            <div className="grid" style={{display:"grid", flex:"4"}} >
-                            {
-                                designLibraryData.length>0 ? designLibraryData[currentSelection].Items.map((item,index)=>{                
-                                        return(
-                                            <div className='cardLib' onClick={()=> item.Link ? window.open(item.Link):null }>
-                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "var(--text-color0)",borderRadius: "0.5rem"}}>
-                                                    
-                                                    <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
-                                                </div>
-                                                <div style={{width:"100%"}}>
-                                                    <h3 className='ItemName'>{item.ItemName}<span className='myFav' style={{opacity: item.Favourite? "1":"0"}}>My Fav</span></h3>
-                                                    <p style={{fontSize:"14px"}} className='ItemName'>{item.Description}</p>
-                                                    </div>
-                                                
-                                            </div>
-                                        
-                                        )
-                                   
-                                    }):""
-                                            
-                            }
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-            </div>
-          )
-    }
-    else{
-
-        return (
-            <div className='DesignLibrary'>
-                <div className='col'>
-                    <div className='row'>
+                <div className='col' style={{overflowX:"hidden"}}>
+                    <div className='row' style={{overflowX:"hidden"}}>
                         <p style={{opacity:"0",position:"relative",zIndex:"-100",maxHeight:"1px"}} >----------------------------------------------------------------------------------------------------------------------</p>
                         <Header back={back} backTo="/OtherActivities"   headerTitle={<p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Design Bookmarks</p>}></Header>
                         
-                        <div style={{display:"flex", width:"100%",gap:"1rem"}}>
-                            <div style={{display:"flex",flexDirection:"column", flex:"1",position:"sticky",top:"4rem",height: "0rem"}} >
+                        <div style={{display:"flex", flexDirection:"column",gap:"2px"}}>
+                            <div style={{display:"flex",flexDirection:"row", padding:"1rem",flex:"1",position:"sticky",height: "0rem", backgroundColor:"var(--bg-color7)", gap:"0.2rem",borderRadius:"1rem 1rem 0rem 0rem"}} >
                                     {
                                     designLibraryData.map((item,index)=>{
                                         return(
@@ -114,18 +63,19 @@ export default function DesignLibrary() {
                                         )}
                                     )}
                             </div>
-                            <div className="grid" style={{display:"grid", flex:"4"}} >
+                            <div className="grid" style={{display:"grid", padding:"1rem", flex:"4", borderRadius:"0rem 0rem 1rem 1rem", backgroundColor:"var(--bg-color7)"}} >
                             {
                                 designLibraryData.length>0 ? designLibraryData[currentSelection].Items.map((item,index)=>{                
                                         return(
                                             <div className='cardLib' onClick={()=> item.Link ? window.open(item.Link):null }>
-                                                <div style={{aspectRatio: "1",height:"100%",backgroundColor: "var(--text-color0)", borderRadius: "0.5rem"}}>
+                                                <div style={{aspectRatio: "1",height:"100%"}}>
                                                     
-                                                    <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius:"0.5rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
+                                                    <img style={{width:"100%",height:"100%",objectFit:"contain",borderRadius: "0.3rem" }} src={item.Attachments[0].url}  alt="resource logo"></img>
                                                 </div>
                                                 <div   style={{width:"100%"}}>
-                                                    <h3 className='ItemName'>{item.ItemName}<span className='myFav' style={{opacity: item.Favourite? "1":"0"}}>{item.Favourite}</span></h3>
-                                                    <p style={{fontSize:"14px"}} className='ItemName'>{item.Description}</p>
+                                                    
+                                                    <h4 className='ItemName' style={{color: "var(--text-color0)"}}>{item.ItemName}<span className='myFav' style={{fontSize:"10px",opacity: item.Favourite? "1":"0"}}>{item.Favourite}</span></h4>
+                                                    <p style={{fontSize:"12px"}} className='ItemName'>{item.Description}</p>
                                                     </div>
                                                 
                                             </div>
@@ -141,8 +91,6 @@ export default function DesignLibrary() {
                  </div>
             </div>
           )
-
-    }
 
 
  

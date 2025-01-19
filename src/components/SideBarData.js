@@ -1,11 +1,17 @@
 import React from 'react'
-// import * as FiIcons from 'react-icons/fi'
+import { RiHomeSmile2Fill } from "react-icons/ri";
+import { MdWork } from "react-icons/md";
+import { FaFeather } from "react-icons/fa";
+import { HiMiniSparkles } from "react-icons/hi2";
+import { BiSolidUserCircle } from "react-icons/bi";
+
 
 
 // eslint-disable-next-line
 export const SideBarData= [{title:"Home",path:"/",
         mobileTitle:"Home",
-        icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F3E0)}</span>,
+        //icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F3E0)}</span>,
+        icon:<RiHomeSmile2Fill className="nav_Icons" />,
         cName:'nav-text',
         selectedCName:'nav-text-selected',
         mobileCname:'nav-mobile-text',
@@ -14,7 +20,8 @@ export const SideBarData= [{title:"Home",path:"/",
 {title:"Works",
 mobileTitle:"Works",
 path:"/works",
-icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">👨‍💻</span>,
+//icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">👨‍💻</span>,
+icon:<MdWork className="nav_Icons"/>,
 cName:'nav-text',
 selectedCName:'nav-text-selected',
 mobileCname:'nav-mobile-text',
@@ -23,7 +30,8 @@ mobileselectedCName:'nav-mobile-text-selected',
 {title:"Writings",
 mobileTitle:"Writings",
 path:"/writings",
-icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">✏️</span>,
+//icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">✏️</span>,
+icon:<FaFeather className="nav_Icons" style={{width:"14px",height:"14px"}}/>,
 cName:'nav-text',
 selectedCName:'nav-text-selected',
 mobileCname:'nav-mobile-text',
@@ -33,16 +41,18 @@ mobileselectedCName:'nav-mobile-text-selected',
 {title:"Little Things",
 mobileTitle:"LT",
 path:"/littleThings",
-icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">✨</span>,
+//icon:<span className='emoji' style={{fontSize:"14px",lineHeight:"1rem"}}role="img">✨</span>,
+icon:<HiMiniSparkles className="nav_Icons"/>,
 cName:'nav-text',
 selectedCName:'nav-text-selected',
 mobileCname:'nav-mobile-text',
 mobileselectedCName:'nav-mobile-text-selected',
 },
-{title:"More Details",
+{title:"About Me",
 mobileTitle:"More",
 path:"/otherActivities",
-icon:<span style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F918)}</span>,
+//icon:<span style={{fontSize:"14px",lineHeight:"1rem"}}role="img">{String.fromCodePoint(0x1F918)}</span>,
+icon:<BiSolidUserCircle className="nav_Icons"/>,
 cName:'nav-text',
 selectedCName:'nav-text-selected',
 mobileCname:'nav-mobile-text',

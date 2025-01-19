@@ -34,7 +34,7 @@
   input{
     height: 3rem;
     border-radius: 4px;
-    background: var(--bg-color3);
+    background: var(--bg-color1);
     border: 1px solid var(--text-color3);
     padding: 0.5rem;
     color: var(--text-color0);
@@ -42,7 +42,7 @@
   textarea{
 
     border-radius: 4px;
-    background: var(--bg-color3);
+    background: var(--bg-color1);
     border: 1px solid var(--text-color3);
     padding: 0.5rem;
     color: var(--text-color0);

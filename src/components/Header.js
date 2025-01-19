@@ -1,11 +1,11 @@
 import React, {useEffect,useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../App.css'
-import * as FiIcons from 'react-icons/fi'
+import { TiArrowBack } from 'react-icons/ti'
 
 export default function Header(props) {
 
-    var [smallerDeviceCheck, setSmallerDeviceCheck] = useState(false);
+    var [smallerDeviceCheck, setSmallerDeviceCheck] = useState(true);
 
     useEffect(()=>{
         if(window.innerWidth<1024){
@@ -60,9 +60,7 @@ export default function Header(props) {
         <>
         <div id="headerID" className='HeaderFixed'>
                          <Link className='back' to={props.backTo}>
-                            <button className='backButton'  >
-                                <FiIcons.FiArrowLeftCircle className='backIcon'/><p>Back</p>
-                            </button>       
+                             <button style={{margin:"0rem",padding:"0.5rem 0.8rem",borderRadius:"2rem",top:"1rem",left:"1rem",zIndex:"1000"}} className='fillBtn'> <TiArrowBack className='backIcon' style={{color:'var( --text-color0)'}}/>Back</button>
                         </Link>
             {props.headerTitle}
         </div>

@@ -54,10 +54,8 @@ export default function Carousel(props) {
 
  
   return (
-    <div>
-
-        
-        <div style={{display:"flex",justifyContent:"center"} } >
+    <div> 
+        <div style={{display:"flex",justifyContent:"center", backgroundColor:"var(--bg-color7)",padding:"1rem",borderRadius:"1rem 1rem 0rem 0rem"} } >
             {
                 imageURLS.map((item,index)=>{
                     return(
@@ -75,14 +73,14 @@ export default function Carousel(props) {
                 })
             }
         </div>
-        <div className='controlGroup' style={{display:"flex",margin: "1rem auto",flexDirection:"row",justifyContent:"space-between",marginTop:"0.5rem",width:props.elementWidth}}>
-            <button className='fillBtn' style={{margin:"0rem"}} onClick={()=>{onLeftClick()}} >
+        <div className='controlGroup' style={{padding:"0.5rem",borderRadius:"0rem 0rem 1rem 1rem",backgroundColor:"var(--bg-color7)",display:"flex",marginTop: "2px",flexDirection:"row",justifyContent:"space-between",width:props.elementWidth}}>
+            <button className='primaryBtn' style={{margin:"0rem"}} onClick={()=>{onLeftClick()}} >
                  <FaIcons.FaArrowAltCircleLeft className='fillbtn' style={{fontSize:"24px"}} color='var( --text-color2)'/> 
           </button>
            
-            <p>{currentURL+1+"/"}{imageURLS.length}</p>
+            <p style={{width:"4rem",alignSelf:"center",textAlign:"center"}}>{currentURL+1+"/"}{imageURLS.length}</p>
 
-            <button className='fillBtn' style={{margin:"0rem"}}   onClick={()=>{onRightClick()}}  >
+            <button className='primaryBtn' style={{margin:"0rem"}}   onClick={()=>{onRightClick()}}  >
 
                   <FaIcons.FaArrowAltCircleRight className='fillbtn' style={{fontSize:"24px"}} color='var( --text-color2)'/> 
             </button>
