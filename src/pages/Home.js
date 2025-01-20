@@ -14,10 +14,6 @@ import './../App.css'        // Global application styles
 import './../css/Home.css'   // Home component specific styles
 import './../css/Global.css' // Shared global styles
 
-// ===== Asset Imports =====
-// Location images for theme switching
-import Location_DarkMode from'../assets/Location_DarkMode.png';
-import Location_LightMode from'../assets/Location_LightMode.png';
 
 // Certification and company logos
 import yale from '../assets/Certifications/yale.png';
@@ -47,7 +43,6 @@ export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const [isImgeOpen, setIsImgeOpen] = useState(false);
     const [imgSrc,setImgSrc] = useState("");
-    const [location,setLocation] = useState(Location_LightMode);
 
     useEffect(()=>{
         Aos.init({duration:1600,once:true});
@@ -80,35 +75,24 @@ export default function Home() {
       }
 
 
+      window.scrollTo(0, 0);
+      if(window.innerWidth<1024){
+          document.getElementsByClassName('home')[0].style.marginLeft='0px';
+      }
+      if(window.innerWidth<560){
+          const desgPeriodArray = document.getElementsByClassName('desgPeriod');
+         
+          for (var i = 0, len = desgPeriodArray.length; i < len; i++) {
+              desgPeriodArray[i].style.flexDirection='column';
+              desgPeriodArray[i].style.gap='0px';
+          }
+      }
+
+
+
+
       
    
-
-    useEffect(()=>{
-
-        window.scrollTo(0, 0);
-        if(window.innerWidth<1024){
-            document.getElementsByClassName('home')[0].style.marginLeft='0px';
-        }
-        if(window.innerWidth<560){
-            const desgPeriodArray = document.getElementsByClassName('desgPeriod');
-           
-            for (var i = 0, len = desgPeriodArray.length; i < len; i++) {
-                desgPeriodArray[i].style.flexDirection='column';
-                desgPeriodArray[i].style.gap='0px';
-            }
-        }
-
-
-        if(document.documentElement.getAttribute('data-theme') === 'light'){
-
-            setLocation(Location_DarkMode);
-         }
-         else{
-            setLocation(Location_LightMode);
-            
-         }
-
-    },[])
     
 
   return (
@@ -131,15 +115,6 @@ export default function Home() {
                 <div style={{width:"100%",display:"flex",justifyContent: "space-between"}}>
                     
                     <p style={{fontSize:'18px',fontWeight:'700',color:'var( --text-color0)',padding:"0.5rem 0rem"}}>Manohar Manu</p>                
-                    {/* <div style={{transform:"scale(0.8)"}}>
-                        <div className="button b2" id="button-18">
-                            <input onClick={(event)=>{darkify(event)}}  type="checkbox" className="checkbox" checked = {darkChecked} />
-                        <div className="knobs">
-                            <span></span>
-                        </div>
-                            <div className="layer"></div>
-                        </div>
-                    </div> */}
                 </div>
              }></Header>         
                             
@@ -273,12 +248,6 @@ export default function Home() {
                             </div>
                         </div>
 
-                        {/* <div className='expereince-lineitems'>
-                           
-                            <br></br>
-                            <div style={{flexGrow:0.2,opacity:"20%",borderBottom:'dotted 2px var(--text-color3)'}}></div>
-                            <br></br>
-                        </div> */}
 
                         <div className='expereince-lineitems'>
                             
@@ -309,7 +278,8 @@ export default function Home() {
                 <div data-aos="fade-up"  data-aos-offset="200" className='location'>
                 <h6 className='subTitle'>FROM WHERE</h6>
                 <div className='location-row'>
-                <img src={location} onClick={(event)=>{toggleFullImagePopup(event)}}  className='locationImg' alt="Vizag Location" ></img>
+                <div role="img" aria-label="Map Location:Vizag"  className='locationImg'></div>
+
                 <p style={{textAlign:'right'}}> Visakhapatnam, India</p>
 
                 </div>

@@ -34,6 +34,10 @@
   --gradient-color3: rgba(40, 40, 40, 0.9);
   --gradient-color4: rgba(60, 60, 60, 0.9);
   --gradient-color5: rgba(90, 90, 90, 0.9);
+
+  --bg-location: url('./assets/Location_DarkMode.png');
+  --testimonial-filter: invert(0);
+
  
 }
 
@@ -71,6 +75,8 @@
   --gradient-color4: rgba(195, 195, 195, 0.9);
   --gradient-color5: rgba(175, 175, 175, 0.9);
 
+  --bg-location: url('./assets/Location_LightMode.png');
+  --testimonial-filter: invert(1);
   
 }
 

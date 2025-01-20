@@ -82,10 +82,14 @@
 }
 
 .locationImg{
-  object-fit:cover;
     width: 100%;
     height: 16rem;
     border-radius: 1rem;
+    display: block;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: initial;
+    background-image: var(--bg-location);
 }
 
 

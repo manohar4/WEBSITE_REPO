@@ -4,18 +4,10 @@ import { SideBarData } from './SideBarData';
 import './Navbar.css';
 import LogoAvatar from '../assets/logoAvatar.png'
 import RainPic from "../assets/BGMUSIC/albumCovers/Rain.png"
-import WavesPic from "../assets/BGMUSIC/albumCovers/Waves.png"
-import ForestPic from "../assets/BGMUSIC/albumCovers/Forest.png"
-import CloudsPic from "../assets/BGMUSIC/albumCovers/Clouds.png"
-import * as IoIcons from 'react-icons/io5';
+
 import { RiLightbulbFlashFill, RiLightbulbFlashLine } from "react-icons/ri";
 
-import * as FaIcons from 'react-icons/fa';
-import Rain from '../assets/BGMUSIC/Rain.mp3'
-import Waves from '../assets/BGMUSIC/Waves.mp3'
-import Forest from '../assets/BGMUSIC/Forest.mp3'
-import Clouds from '../assets/BGMUSIC/Clouds.mp3'
-import { update } from 'react-spring';
+
 
 var audioCount =0;
 
@@ -53,6 +45,7 @@ useEffect(()=>{
 
     if(document.documentElement.getAttribute('data-theme') === 'light'){
         setDarkChecked(true);
+       
     }
 
     var selectionPath = document.location.pathname.split("/")[1];
@@ -162,6 +155,8 @@ ripple.style.animation = "none";
 
     if(document.documentElement.getAttribute('data-theme') === 'light'){
 
+   
+
     // Trigger the animation
     document.getElementById('bulbonID').style.display = "none";
     document.getElementById('bulboffID').style.display = "unset";
@@ -170,6 +165,7 @@ ripple.style.animation = "none";
     ripple.style.animation = 'ripple-animation 1s ease-in forwards'; // Use forwards to retain final state
 
     setTimeout(() => {
+
         document.body.style.backgroundColor = "#0d0d0d";
         ripple.style.animation = "none";
         document.documentElement.setAttribute('data-theme','dark');
@@ -180,6 +176,7 @@ ripple.style.animation = "none";
     }
     else{
 
+    
     document.getElementById('bulbonID').style.display = "unset";
     document.getElementById('bulboffID').style.display = "none";
 
@@ -187,6 +184,7 @@ ripple.style.animation = "none";
     ripple.style.animation = 'ripple-animation 1s ease-in forwards'; 
 
     setTimeout(() => {
+
         document.body.style.backgroundColor = "#dfdfdf";
         ripple.style.animation = "none";
         document.documentElement.setAttribute('data-theme','light');
@@ -238,8 +236,7 @@ else{
         <div class="gradient-blur"></div>
 
         <div id="menu">
-                <div class="content">
-                        
+                <div class="content">   
                     <div id="pill"></div>
                     <div id="items" className='nav-menu-items' >
                         { SideBarData.map((item,index)=>{
@@ -288,26 +285,23 @@ else{
 
                         })} 
                     </div>
-              
-                    
                 </div>
 
                 <div style={{flex:1, display:"flex", paddingRight: "1rem", alignItems:"center",justifyContent:"end"}}
                          type="checkbox" checked = {darkChecked}
-                        onClick={(event)=>{darkify(event)}} 
-                    >
+                        onClick={(event)=>{darkify(event)}}>
+                
 
                 <div className="icon-container">
+                        <RiLightbulbFlashFill id='bulbonID'
+                                    className="backIcon bulbIcon" 
+                                    style={{ display:"none", color: "#ff7744f0",transform: `scale(1)`,marginLeft:"auto"}}
+                                    />
 
-                <RiLightbulbFlashFill id='bulbonID'
-                            className="backIcon bulbIcon" 
-                            style={{ display:"none", color: "#ff7744f0",transform: `scale(1)`,marginLeft:"auto"}}
-                            />
-
-                            <RiLightbulbFlashLine id='bulboffID'
-                            className="backIcon bulbIcon" 
-                            style={{ color: "#fff",transform: `scale(1)`,marginLeft:"auto"}}
-                            />
+                        <RiLightbulbFlashLine id='bulboffID'
+                        className="backIcon bulbIcon" 
+                        style={{ color: "#fff",transform: `scale(1)`,marginLeft:"auto"}}
+                        />
                 </div>
          
                 </div>

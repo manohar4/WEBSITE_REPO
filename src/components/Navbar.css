@@ -231,8 +231,8 @@
 #menu .content {
     position: relative;
     background: var(--bg-color7);    
-    backdrop-filter: saturate(60%) blur(36px);
-    -webkit-backdrop-filter: saturate(60%) blur(36px);
+    backdrop-filter: saturate(180%) blur(36px);
+    -webkit-backdrop-filter: saturate(180%) blur(36px);
     border-radius: 2rem;
     overflow: hidden;
     border: 1px solid var(--bg-color6) ;

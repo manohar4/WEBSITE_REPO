@@ -11,9 +11,10 @@
   }
   
   .Tcard {
+    filter: var(--testimonial-filter);
     flex-shrink: 0;
-    width: 56%;
-    height: 18rem;
+    width: 44%;
+    height: 14rem;
     background-color: #171717;
     border-radius: 1rem;
     margin-left: 16px;
