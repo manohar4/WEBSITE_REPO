@@ -6,6 +6,9 @@ import LogoAvatar from '../assets/logoAvatar.png'
 import RainPic from "../assets/BGMUSIC/albumCovers/Rain.png"
 
 import { RiLightbulbFlashFill, RiLightbulbFlashLine } from "react-icons/ri";
+import { HiSun } from "react-icons/hi";
+import { PiMoonStarsFill } from "react-icons/pi";
+
 
 
 
@@ -141,13 +144,14 @@ useEffect(()=>{
 function darkify(event) {
 
 
+    
+
 
 const ripple = document.querySelector('.ripple');
-const bulbXPosition = document.querySelector('.icon-container').getBoundingClientRect().x;
-const bulbYPosition = document.querySelector('.icon-container').getBoundingClientRect().y;
+ripple.style.display = "unset";
+const bulb = document.querySelector('.darkModeIcon');
 
-ripple.style.top = bulbYPosition + 'px';
-ripple.style.left = bulbXPosition + 'px';
+ripple.style.left =  bulb.offsetLeft + 'px';
 ripple.style.animation = "none";   
 
 
@@ -162,7 +166,7 @@ ripple.style.animation = "none";
     document.getElementById('bulboffID').style.display = "unset";
    
     ripple.style.backgroundColor = '#0d0d0d';
-    ripple.style.animation = 'ripple-animation 1s ease-in forwards'; // Use forwards to retain final state
+    ripple.style.animation = 'ripple-animation 1.2s ease-in forwards'; // Use forwards to retain final state
 
     setTimeout(() => {
 
@@ -170,7 +174,7 @@ ripple.style.animation = "none";
         ripple.style.animation = "none";
         document.documentElement.setAttribute('data-theme','dark');
     event.target.title = 'Dark';
-    }, 500);
+    }, 700);
     setDarkChecked(false);
     
     }
@@ -181,7 +185,7 @@ ripple.style.animation = "none";
     document.getElementById('bulboffID').style.display = "none";
 
     ripple.style.backgroundColor = '#dfdfdf';
-    ripple.style.animation = 'ripple-animation 1s ease-in forwards'; 
+    ripple.style.animation = 'ripple-animation 1.2s ease-in forwards'; 
 
     setTimeout(() => {
 
@@ -189,7 +193,7 @@ ripple.style.animation = "none";
         ripple.style.animation = "none";
         document.documentElement.setAttribute('data-theme','light');
         event.target.title = 'Light';
-    }, 500);
+    }, 700);
 
     setDarkChecked(true);
    
@@ -234,8 +238,10 @@ else{
 
         <>
         <div class="gradient-blur"></div>
+        <div class="bottom-gradient-blur"></div>
 
         <div id="menu">
+               
                 <div class="content">   
                     <div id="pill"></div>
                     <div id="items" className='nav-menu-items' >
@@ -287,25 +293,19 @@ else{
                     </div>
                 </div>
 
-                <div style={{flex:1, display:"flex", paddingRight: "1rem", alignItems:"center",justifyContent:"end"}}
+                <div className="content darkModeIcon" style={{ zIndex:"1000",border:"1px solid var(--bg-color6)",backgroundColor:"var(--bg-color7)",borderRadius:"50%", flex:1, display:"flex", alignItems:"center",justifyContent:"end"}}
                          type="checkbox" checked = {darkChecked}
                         onClick={(event)=>{darkify(event)}}>
+
+                    <div style={{width:"34px",height:"34px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                        <HiSun id='bulboffID' style={{  color: "#fff",transform: `scale(1)`}} />
+                        <PiMoonStarsFill id='bulbonID' style={{ display:"none", color: "#000",transform: `scale(1)`}}/>
+                    </div>
+
+                </div>
+                <div class="ripple"></div>
                 
-
-                <div className="icon-container">
-                        <RiLightbulbFlashFill id='bulbonID'
-                                    className="backIcon bulbIcon" 
-                                    style={{ display:"none", color: "#ff7744f0",transform: `scale(1)`,marginLeft:"auto"}}
-                                    />
-
-                        <RiLightbulbFlashLine id='bulboffID'
-                        className="backIcon bulbIcon" 
-                        style={{ color: "#fff",transform: `scale(1)`,marginLeft:"auto"}}
-                        />
-                </div>
-         
-                </div>
-            </div>
+        </div>
 
         <nav className={'nav-menu'}>
             <div style={{maxWidth:"min(864px,100vw)",width:"864px"}}>

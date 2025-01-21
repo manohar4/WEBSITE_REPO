@@ -346,15 +346,14 @@
 
 /* Ripple styling */
 .ripple {
+  display: none;
     position: fixed; /* Fixed to viewport for full-screen coverage */
-      top: 94vh; /* Start from center */
-      width: 40px; /* Initial size */
-      height: 40px; /* Initial size */
+      width: 34px; /* Initial size */
+      height: 34px; /* Initial size */
       background-color: rgba(192, 37, 37, 0.5); /* Semi-transparent color */
       border-radius: 50%; /* Makes it circular */
-      transform: translate(0%, -50%) scale(0); /* Center and start at scale 0 */
       pointer-events: none; /* Prevent blocking interactions */
-      z-index: 100;
+      z-index: 10;
   }
   
   /* Ripple animation */

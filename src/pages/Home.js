@@ -75,18 +75,19 @@ export default function Home() {
       }
 
 
-      window.scrollTo(0, 0);
-      if(window.innerWidth<1024){
-          document.getElementsByClassName('home')[0].style.marginLeft='0px';
-      }
-      if(window.innerWidth<560){
-          const desgPeriodArray = document.getElementsByClassName('desgPeriod');
+    //   window.scrollTo(0, 0);
+    //   if(window.innerWidth<1024){
+    //     debugger;
+    //       document.getElementsByClassName('home')[0].style.marginLeft='0px';
+    //   }
+    //   if(window.innerWidth<560){
+    //       const desgPeriodArray = document.getElementsByClassName('desgPeriod');
          
-          for (var i = 0, len = desgPeriodArray.length; i < len; i++) {
-              desgPeriodArray[i].style.flexDirection='column';
-              desgPeriodArray[i].style.gap='0px';
-          }
-      }
+    //       for (var i = 0, len = desgPeriodArray.length; i < len; i++) {
+    //           desgPeriodArray[i].style.flexDirection='column';
+    //           desgPeriodArray[i].style.gap='0px';
+    //       }
+    //   }
 
 
 
@@ -218,7 +219,7 @@ export default function Home() {
                    
                 </div>
                 
-                <div data-aos="fade-up"  data-aos-offset="200" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color7)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
+                <div data-aos="fade-up"  data-aos-offset="00" className="overview " style={{gap:"0.5rem",padding:"1rem",backgroundColor:"var(--bg-color7)",borderRadius:"0.5rem",marginBottom:"2rem"}}>
                    
                 <div className='pastExpereince' style={{marginBottom:'0px'}}>
                     <div className='expereince-lineitems'>

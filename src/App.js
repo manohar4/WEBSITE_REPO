@@ -268,7 +268,7 @@ request.send();
         <FetchAllAttachements.Provider value={{allAttachements,setAllAttachments,allTools,setAllTools}}>
        
     <div className="App">
-    <div class="ripple"></div>
+   
 
     {loading?
     

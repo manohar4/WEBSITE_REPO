@@ -18,7 +18,7 @@
     top: 0;
     transition: 850ms;
     padding: 0.5rem;
-    z-index: 1000;
+    z-index: 10;
 
   
 }
@@ -225,7 +225,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 #menu .content {
@@ -253,7 +253,7 @@
     padding: 0.5rem 0.75rem;
     border-radius: 2rem;
     cursor: pointer;
-    z-index: 1;
+    z-index:2;
     transition: 0.5s ease;
     .nav_Icons {
         color: var(--text-color1);
@@ -323,14 +323,16 @@
     width: 44px; /* Final width of the circle */
     height: 44px; /* Final height of the circle */
     transform: translate(-50%, -50%) scale(1); /* Scale up to full size */
-    cursor: pointer;
-  }
-
-  .bulbIcon{
-    cursor: pointer;
   }
 
 
+.darkModeIcon:hover{
+    background-color: var(--text-color3) !important;
+    div,svg,path{
+    cursor: pointer !important;
+   }
+
+}
 
 
 
@@ -345,7 +347,7 @@
 
 
     transition: left .5s ease, width .5s ease;
-    z-index: -1;
+    z-index: 0;
    
     
    
@@ -381,4 +383,18 @@
     -webkit-mask-image: linear-gradient(to bottom, black, rgb(0 0 0 / 60%), #00000000);
     z-index: 1;
   }
+
+
+  .bottom-gradient-blur{
+    position: fixed;
+    width: 100vw; /* Adjust as needed */
+    height: 76px; /* Adjust as needed */
+    z-index: 1;
+    background: linear-gradient(180deg, 
+        rgba(var(--bg-color1-rgb), 0) 0%, 
+        rgba(var(--bg-color1-rgb), 0) 1%, 
+        rgba(var(--bg-color1-rgb), 0.3) 30%, 
+        rgba(var(--bg-color1-rgb), 1) 100%); 
+    bottom: 0;
+}
 

@@ -37,6 +37,7 @@
 
   --bg-location: url('./assets/Location_DarkMode.png');
   --testimonial-filter: invert(0);
+  --bg-color1-rgb: 0, 0, 0;
 
  
 }
@@ -77,6 +78,7 @@
 
   --bg-location: url('./assets/Location_LightMode.png');
   --testimonial-filter: invert(1);
+  --bg-color1-rgb: 255, 255, 255;
   
 }
 
