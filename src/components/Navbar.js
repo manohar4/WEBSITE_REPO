@@ -20,6 +20,8 @@ const[bgMusicImage,setBgMusicImage] = useState(RainPic)
 const[play,setPlay]=useState(true);
 const[disabled,setDisabled]= useState(true);
 const[darkChecked,setDarkChecked] = useState(false);
+const[headerTitle,setHeaderTitle] = useState("Manohar Manu");
+
 
 
 // var audiosList = [Rain,Waves,Forest,Clouds];
@@ -140,12 +142,40 @@ useEffect(()=>{
 },[])
 
 
+function scrambleText(element, newText, duration = 400) {
+
+    if(newText === "Home"){
+        newText = "Manohar Manu";
+    }
+    const chars = '!<>-_\\/[]{}—=+*^?#___';
+    const oldText = element.textContent;
+    const length = Math.max(oldText.length, newText.length);
+    let scrambledText = '';
+    let frame = 0;
+
+    const interval = setInterval(() => {
+        scrambledText = '';
+        for (let i = 0; i < length; i++) {
+            if (i < frame && i < newText.length) {
+                scrambledText += newText[i];
+            } else {
+                scrambledText += chars[Math.floor(Math.random() * chars.length)];
+            }
+        }
+        element.textContent = scrambledText;
+
+        frame++;
+        if (frame > length) {
+            clearInterval(interval);
+            element.textContent = newText; // Set final text
+        }
+    }, duration / length);
+}
+
+
+
 
 function darkify(event) {
-
-
-    
-
 
 const ripple = document.querySelector('.ripple');
 ripple.style.display = "unset";
@@ -153,9 +183,6 @@ const bulb = document.querySelector('.darkModeIcon');
 
 ripple.style.left =  bulb.offsetLeft + 'px';
 ripple.style.animation = "none";   
-
-
-
 
     if(document.documentElement.getAttribute('data-theme') === 'light'){
 
@@ -166,7 +193,7 @@ ripple.style.animation = "none";
     document.getElementById('bulboffID').style.display = "unset";
    
     ripple.style.backgroundColor = '#0d0d0d';
-    ripple.style.animation = 'ripple-animation 1.2s ease-in forwards'; // Use forwards to retain final state
+    ripple.style.animation = 'ripple-animation 1s ease-in forwards'; // Use forwards to retain final state
 
     setTimeout(() => {
 
@@ -185,7 +212,7 @@ ripple.style.animation = "none";
     document.getElementById('bulboffID').style.display = "none";
 
     ripple.style.backgroundColor = '#dfdfdf';
-    ripple.style.animation = 'ripple-animation 1.2s ease-in forwards'; 
+    ripple.style.animation = 'ripple-animation 1s ease-in forwards'; 
 
     setTimeout(() => {
 
@@ -198,7 +225,6 @@ ripple.style.animation = "none";
     setDarkChecked(true);
    
     }
-
 
 }
 
@@ -248,12 +274,19 @@ else{
                         { SideBarData.map((item,index)=>{
 
                             const changeStyle = (event,index) => {
+
+                                scrambleText(document.querySelector('#pageTitleId'),item.title);
                              
                                 setSelectedChild(index+1);
+                                let selected = selectedChild;
+                              
                                 const PILL = document.querySelector('#pill');
                                 const MENU_LINKS = document.querySelectorAll('.item');
                                 const MENULINKSPARENT = document.querySelector('#items');
-                                const dimensions = event.target.parentElement.getBoundingClientRect();
+
+                                const dimensions = event.currentTarget.querySelector('a').getBoundingClientRect();
+
+                                
                                 PILL.style.width = 24+  dimensions.width+ 'px';
                                 PILL.style.height = 32 + 'px';
                                 PILL.style.top = 2.5 + 'px';
@@ -261,7 +294,7 @@ else{
                                 PILL.style.paddingRight = 12;
                                 PILL.style.paddingTop = 8;
                                 PILL.style.paddingBottom = 8;
-                                let selected = selectedChild;
+                               
                                 function setPill() {
                                 MENU_LINKS.forEach((e, i) => {
                                     if (i === selected) {
@@ -276,9 +309,9 @@ else{
                             };
 
                             return(
-                                <li key={index} className={`item`}>
+                                <li key={index} className={`item`} onClick={event =>changeStyle(event,index)} >
 
-                                    <Link  to={item.path}  onClick={event =>changeStyle(event,index)} >
+                                    <Link  to={item.path}  >
 
                                         {item.icon}
 
@@ -311,7 +344,7 @@ else{
             <div style={{maxWidth:"min(864px,100vw)",width:"864px"}}>
                 <div className='logo'>
                     <a style={{display:"grid"}} href="https://www.manoharmanu.in"><img style={{width:"1.5rem",height:"1.5rem",borderRadius:"4px"}} src={LogoAvatar} alt="My Notion Avatar"></img></a>
-                    <h4 style={{lineHeight:"1.2rem"}}>Manohar Manu</h4>    
+                    <h4 id='pageTitleId' style={{lineHeight:"1.2rem"}}>{headerTitle}</h4>    
                 </div>
             </div> 
         </nav>
