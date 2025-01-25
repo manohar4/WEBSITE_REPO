@@ -275,6 +275,7 @@ else{
 
                             const changeStyle = (event,index) => {
 
+                               
                                 scrambleText(document.querySelector('#pageTitleId'),item.title);
                              
                                 setSelectedChild(index+1);
@@ -284,7 +285,7 @@ else{
                                 const MENU_LINKS = document.querySelectorAll('.item');
                                 const MENULINKSPARENT = document.querySelector('#items');
 
-                                const dimensions = event.currentTarget.querySelector('a').getBoundingClientRect();
+                                const dimensions = event.currentTarget.tagName==='A' ? event.currentTarget.getBoundingClientRect() : event.currentTarget.querySelector('a').getBoundingClientRect();
 
                                 
                                 PILL.style.width = 24+  dimensions.width+ 'px';
@@ -309,9 +310,9 @@ else{
                             };
 
                             return(
-                                <li key={index} className={`item`} onClick={event =>changeStyle(event,index)} >
+                                <li  key={index} className={`item`}  >
 
-                                    <Link  to={item.path}  >
+                                    <Link to={item.path} onClick={event =>changeStyle(event,index)}  >
 
                                         {item.icon}
 
@@ -343,8 +344,10 @@ else{
         <nav className={'nav-menu'}>
             <div style={{maxWidth:"min(864px,100vw)",width:"864px"}}>
                 <div className='logo'>
-                    <a style={{display:"grid"}} href="https://www.manoharmanu.in"><img style={{width:"1.5rem",height:"1.5rem",borderRadius:"4px"}} src={LogoAvatar} alt="My Notion Avatar"></img></a>
-                    <h4 id='pageTitleId' style={{lineHeight:"1.2rem"}}>{headerTitle}</h4>    
+                    <Link to="/">
+                    <a style={{display:"grid"}}                 ><img style={{width:"1.5rem",height:"1.5rem",borderRadius:"4px"}} src={LogoAvatar} alt="My Notion Avatar"></img></a>
+                    </Link>
+                   <h4 id='pageTitleId' style={{lineHeight:"1.2rem"}}>{headerTitle}</h4>    
                 </div>
             </div> 
         </nav>
