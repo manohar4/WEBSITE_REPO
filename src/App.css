@@ -45,7 +45,7 @@
 [data-theme="light"] {
  
   /* Light Mode Colors */
-  --bg-color1: #FFFFFF;       /* White (instead of black) */
+  --bg-color1: #f7f2f2;       /* White (instead of black) */
   --bg-color2: #f0f0f0;       /* Very Light Gray (instead of dark gray) */
   --bg-color3: #E0E0E0;       /* Light Gray (instead of medium dark gray) */
   --bg-color4: #999999;       /* Medium Gray (instead of gray) */
