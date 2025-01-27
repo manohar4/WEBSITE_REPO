@@ -156,7 +156,7 @@ export default function ProjectDetails() {
                                 
                                 return (
                                 <figure key={index}>
-                                    <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem'}}  src={project.mediaFiles[count].url} alt="Project Details" ></img>
+                                    <img onClick={(event)=>{toggleFullImagePopup(event)}}  style={{height:item.elementHeight? item.elementHeight :"24rem",width:item.elementWidth? item.elementWidth :"100%",objectFit: "cover",borderRadius:"4px",marginBottom:'0.5rem', border:'1px solid var(--bg-color3)'}}  src={project.mediaFiles[count].url} alt="Project Details" ></img>
                                     <figcaption style={{color:"#7f7f7f",textAlign:"center",fontSize:"0.8rem",marginTop:"-0.6rem",marginBottom:"1rem", display: item.elementCaptions?"":"none"}}><cite>{item.elementCaptions}</cite></figcaption>
                                 </figure>);
                             }
